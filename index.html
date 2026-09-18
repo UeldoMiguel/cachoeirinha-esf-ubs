@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa Territorial da Saúde — Cachoeirinha/RS</title>
+<meta name="description" content="Mapa interativo das áreas de ESF e UBS e das unidades de saúde do município de Cachoeirinha/RS.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="pular" href="#mapa">Pular para o mapa</a>
+
+<header class="topo">
+  <div class="titulos">
+    <h1>Mapa Territorial da Saúde — Cachoeirinha/RS</h1>
+    <p class="sub">Áreas de ESF e UBS</p>
+  </div>
+  <nav class="links" aria-label="Outras ferramentas">
+    <a href="consulta/">Consulta por endereço</a>
+  </nav>
+</header>
+
+<main class="corpo">
+  <aside class="painel" aria-label="Controles e legenda">
+
+    <section class="bloco">
+      <h2 id="rot-busca">Buscar</h2>
+      <label class="rotulo" for="busca">Unidade ou área</label>
+      <input id="busca" type="search" autocomplete="off" placeholder="ex.: Canarinho"
+             aria-describedby="busca-dica" aria-controls="resultados">
+      <p class="dica" id="busca-dica">Digite parte do nome. O mapa vai até o resultado escolhido.</p>
+      <ul id="resultados" class="resultados" role="listbox" aria-labelledby="rot-busca"></ul>
+    </section>
+
+    <section class="bloco">
+      <h2>Camadas</h2>
+      <ul class="camadas" id="camadas"></ul>
+    </section>
+
+    <section class="bloco">
+      <h2>Legenda</h2>
+      <ul class="legenda">
+        <li><span class="amostra area-esf" aria-hidden="true"></span> Área de ESF — Estratégia Saúde da Família</li>
+        <li><span class="amostra area-ubs" aria-hidden="true"></span> Área de UBS — Unidade Básica de Saúde</li>
+        <li><span class="amostra ponto-esf" aria-hidden="true"></span> Unidade ESF</li>
+        <li><span class="amostra ponto-ubs" aria-hidden="true"></span> Unidade UBS</li>
+        <li><span class="amostra ponto-outro" aria-hidden="true"></span> Outros serviços (UPA, hospital, CAPS, CEO, especialidades)</li>
+        <li><span class="amostra limite" aria-hidden="true"></span> Limite do município</li>
+      </ul>
+    </section>
+
+    <section class="bloco" id="detalhe-bloco">
+      <h2>Seleção</h2>
+      <div id="detalhe" class="detalhe" role="status" aria-live="polite">
+        <p class="vazio">Clique em uma área ou em uma unidade no mapa para ver os dados aqui.</p>
+      </div>
+    </section>
+
+    <section class="bloco">
+      <h2>Procedência</h2>
+      <p class="proc" id="procedencia">Carregando metadados…</p>
+    </section>
+  </aside>
+
+  <div class="mapa-caixa">
+    <div id="mapa" role="application" aria-label="Mapa das áreas de ESF e UBS de Cachoeirinha/RS" tabindex="0"></div>
+    <p class="aviso" role="note">
+      Dados de trabalho, digitalizados de mapa colaborativo público. <strong>Não substituem o cadastro
+      oficial</strong> da Secretaria Municipal de Saúde de Cachoeirinha.
+    </p>
+  </div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="js/map.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+/* Mapa Territorial da Saúde — Cachoeirinha/RS
+   Folha única, sem framework. Cores em tokens para facilitar ajuste de identidade. */
+
+:root {
+  --esf: #0d7a63;
+  --esf-claro: #0d7a6329;
+  --ubs: #2f4c8c;
+  --ubs-claro: #2f4c8c26;
+  --outro: #6b5b95;
+  --limite: #8a5a2b;
+  --tinta: #1c2220;
+  --tinta-2: #4a544f;
+  --tinta-3: #6f7a74;
+  --fundo: #f3f5f2;
+  --painel: #ffffff;
+  --linha: #d7dcd6;
+  --linha-suave: #e8ebe6;
+  --foco: #0d7a63;
+  --sombra: 0 1px 2px rgba(28, 34, 32, .06), 0 10px 26px rgba(28, 34, 32, .06);
+  --raio: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--tinta);
+  font: 15px/1.5 "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Atalho de teclado para quem navega por tabulação */
+.pular {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--painel);
+  color: var(--tinta);
+  padding: 10px 14px;
+  border-radius: 0 0 var(--raio) 0;
+  z-index: 1200;
+}
+.pular:focus { left: 0; }
+
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: var(--painel);
+  border-bottom: 1px solid var(--linha);
+}
+
+.topo h1 {
+  margin: 0;
+  font-size: clamp(17px, 2.4vw, 22px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.sub {
+  margin: 2px 0 0;
+  color: var(--tinta-2);
+  font-size: 14px;
+}
+
+.links a {
+  color: var(--ubs);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.corpo {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px 20px 20px;
+}
+
+.painel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: auto;
+  max-height: calc(100vh - 120px);
+  padding-right: 4px;
+}
+
+.bloco {
+  background: var(--painel);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 14px 16px;
+}
+
+.bloco h2 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+}
+
+.rotulo {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+#busca {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--tinta);
+  background: var(--painel);
+  border: 1px solid var(--linha);
+  border-radius: 8px;
+}
+
+.dica {
+  margin: 7px 0 0;
+  font-size: 12.5px;
+  color: var(--tinta-3);
+}
+
+.resultados {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  max-height: 210px;
+  overflow: auto;
+}
+
+.resultados:empty { margin: 0; }
+
+.resultados button {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--linha-suave);
+  padding: 8px 4px;
+  font: inherit;
+  color: var(--tinta);
+  cursor: pointer;
+}
+
+.resultados button:hover,
+.resultados button:focus-visible { background: var(--linha-suave); }
+
+.marca {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: 2px 7px;
+  border-radius: 5px;
+  align-self: center;
+  white-space: nowrap;
+}
+.marca-ESF { background: var(--esf-claro); color: var(--esf); }
+.marca-UBS { background: var(--ubs-claro); color: var(--ubs); }
+.marca-outro { background: #6b5b9520; color: var(--outro); }
+
+.camadas,
+.legenda {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 13.5px;
+}
+
+.camadas label {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.camadas input { width: 16px; height: 16px; accent-color: var(--esf); }
+
+.camadas .contagem { color: var(--tinta-3); font-size: 12.5px; }
+
+.legenda li { display: flex; gap: 9px; align-items: flex-start; color: var(--tinta-2); }
+
+.amostra {
+  width: 18px;
+  height: 14px;
+  border-radius: 3px;
+  flex: none;
+  margin-top: 2px;
+}
+.amostra.area-esf { background: var(--esf-claro); border: 2px solid var(--esf); }
+.amostra.area-ubs { background: var(--ubs-claro); border: 2px solid var(--ubs); }
+.amostra.ponto-esf,
+.amostra.ponto-ubs,
+.amostra.ponto-outro {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--esf);
+  background: var(--painel);
+}
+.amostra.ponto-ubs { border-color: var(--ubs); }
+.amostra.ponto-outro { border-color: var(--outro); }
+.amostra.limite { height: 0; border-top: 3px dashed var(--limite); border-radius: 0; margin-top: 8px; }
+
+.detalhe h3 { margin: 0 0 4px; font-size: 16px; }
+.detalhe .vazio { margin: 0; color: var(--tinta-3); font-size: 13.5px; }
+.detalhe dl { margin: 8px 0 0; font-size: 13.5px; }
+.detalhe dt { font-weight: 600; color: var(--tinta-3); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; margin-top: 8px; }
+.detalhe dd { margin: 2px 0 0; color: var(--tinta-2); white-space: pre-line; }
+.detalhe .ruas { max-height: 160px; overflow: auto; margin-top: 6px; font-size: 13px; color: var(--tinta-2); }
+
+.proc { margin: 0; font-size: 12.5px; color: var(--tinta-3); }
+
+.mapa-caixa { display: flex; flex-direction: column; min-height: 0; gap: 8px; }
+
+#mapa {
+  flex: 1 1 auto;
+  min-height: 420px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  background: #e9ece8;
+}
+
+#mapa:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
+
+.aviso {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--tinta-2);
+  background: #fff6ec;
+  border: 1px solid #f0dcc4;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+/* Popups do Leaflet ------------------------------------------------------ */
+.leaflet-popup-content { margin: 12px 14px; font: inherit; max-width: 280px; max-height: 45vh; overflow-y: auto; }
+.pop h3 { margin: 0 0 6px; font-size: 15px; }
+.pop dl { margin: 0; font-size: 13px; }
+.pop dt { font-weight: 600; color: var(--tinta-3); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; margin-top: 7px; }
+.pop dd { margin: 1px 0 0; color: var(--tinta-2); white-space: pre-line; }
+.pop .marca { display: inline-block; margin-bottom: 4px; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.leaflet-control a:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
+
+/* Telas pequenas: painel em cima, mapa embaixo, ambos utilizáveis --------- */
+@media (max-width: 860px) {
+  .corpo {
+    grid-template-columns: 1fr;
+    padding: 12px 14px 16px;
+  }
+  .painel { max-height: none; overflow: visible; order: 2; }
+  .mapa-caixa { order: 1; }
+  #mapa { height: 62vh; min-height: 320px; }
+  .topo { padding: 12px 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Impressão: só o mapa e os títulos importam */
+@media print {
+  .painel, .links, .pular { display: none; }
+  .corpo { display: block; padding: 0; }
+  #mapa { height: 16cm; box-shadow: none; }
+}

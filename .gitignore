@@ -1,0 +1,8 @@
+# Intermediários grandes e regeneráveis pelos scripts de dados
+dados/cnefe.zip
+dados/_osm_raw_geom.json
+dados/osm.json
+
+# Lixo de sistema
+Thumbs.db
+.DS_Store
