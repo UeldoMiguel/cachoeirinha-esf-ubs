@@ -207,9 +207,19 @@
   /* Controle de camadas próprio (o do Leaflet não acompanha o painel) ------ */
 
   var elCamadas = document.getElementById('camadas');
+  var linhasCamada = {};
+
+  /* As caixas nascem na ordem de FONTES; o carregamento é assíncrono e
+     chegaria fora de ordem se cada uma fosse criada ao terminar o fetch. */
+  FONTES.forEach(function (fonte) {
+    var li = document.createElement('li');
+    li.innerHTML = '<span class="contagem">' + esc(fonte.rotulo) + ' — carregando…</span>';
+    elCamadas.appendChild(li);
+    linhasCamada[fonte.id] = li;
+  });
 
   function criaControleCamada(fonte, grupo, quantidade) {
-    var li = document.createElement('li');
+    var li = linhasCamada[fonte.id] || elCamadas.appendChild(document.createElement('li'));
     var id = 'cam-' + fonte.id;
     li.innerHTML =
       '<label for="' + id + '"><input type="checkbox" id="' + id + '" checked>' +
@@ -219,7 +229,6 @@
     input.addEventListener('change', function () {
       if (input.checked) grupo.addTo(mapa); else mapa.removeLayer(grupo);
     });
-    elCamadas.appendChild(li);
   }
 
   /* Busca ----------------------------------------------------------------- */
@@ -312,10 +321,11 @@
         return camada;
       })
       .catch(function (e) {
-        var li = document.createElement('li');
-        li.className = 'dica';
-        li.textContent = 'Não foi possível carregar ' + fonte.arquivo + '.';
-        elCamadas.appendChild(li);
+        var li = linhasCamada[fonte.id];
+        if (li) {
+          li.className = 'dica';
+          li.textContent = 'Não foi possível carregar ' + fonte.arquivo + '.';
+        }
         if (window.console) console.error(e);
         return null;
       });
