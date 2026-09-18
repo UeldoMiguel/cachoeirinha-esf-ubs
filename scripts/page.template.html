@@ -1,0 +1,850 @@
+<title>Cobertura ESF e UBS de Cachoeirinha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --ground:#f4f5f3; --panel:#ffffff; --panel-2:#eceee9; --line:#d8dcd5; --line-soft:#e6e9e2;
+  --ink:#1d221f; --ink-2:#4c544e; --ink-3:#77817a;
+  --esf:#0d7a63; --esf-soft:#0d7a6326; --esf-ink:#0a5f4d;
+  --ubs:#3a5da8; --ubs-soft:#3a5da820; --ubs-ink:#2f4c8c;
+  --alert:#b8461f; --alert-soft:#b8461f1a;
+  --map-ground:#eaece7; --map-out:#c7ccc2; --rua:#9aa49b; --via:#d81f26;
+  --shadow:0 1px 2px rgba(29,34,31,.06),0 8px 24px rgba(29,34,31,.05);
+  --r:10px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#14181a; --panel:#1b2022; --panel-2:#222829; --line:#313839; --line-soft:#272d2f;
+  --ink:#e8ecea; --ink-2:#aab3b0; --ink-3:#7e8a87;
+  --esf:#3fbfa1; --esf-soft:#3fbfa126; --esf-ink:#7bd8c1;
+  --ubs:#7c9ee8; --ubs-soft:#7c9ee826; --ubs-ink:#a3bdf3;
+  --alert:#e8845c; --alert-soft:#e8845c1f;
+  --map-ground:#1e2426; --map-out:#3a4244; --rua:#5c6866; --via:#ff4d4f;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.28);
+}}
+:root[data-theme="dark"]{
+  --ground:#14181a; --panel:#1b2022; --panel-2:#222829; --line:#313839; --line-soft:#272d2f;
+  --ink:#e8ecea; --ink-2:#aab3b0; --ink-3:#7e8a87;
+  --esf:#3fbfa1; --esf-soft:#3fbfa126; --esf-ink:#7bd8c1;
+  --ubs:#7c9ee8; --ubs-soft:#7c9ee826; --ubs-ink:#a3bdf3;
+  --alert:#e8845c; --alert-soft:#e8845c1f;
+  --map-ground:#1e2426; --map-out:#3a4244; --rua:#5c6866; --via:#ff4d4f;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:"Source Sans 3",system-ui,-apple-system,Segoe UI,sans-serif;font-size:15px;line-height:1.5}
+h1,h2,h3,.disp{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;text-wrap:balance;margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:20px 48px}
+header.top{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:20px}
+.eyebrow{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+h1{font-size:clamp(23px,3.4vw,32px);font-weight:700;letter-spacing:-.015em;margin-top:4px}
+.sub{color:var(--ink-2);font-size:14px;max-width:62ch;margin-top:6px}
+.counts{display:flex;gap:18px;flex-wrap:wrap}
+.count b{font-family:Archivo,sans-serif;font-size:21px;font-weight:600;display:block;font-variant-numeric:tabular-nums}
+.count span{font-size:11.5px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+
+.tabs{display:flex;gap:2px;margin-bottom:18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.tab{appearance:none;background:none;border:0;border-bottom:2px solid transparent;padding:9px 14px;font:600 14px Archivo,sans-serif;color:var(--ink-3);cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.tab:focus-visible{outline:2px solid var(--esf);outline-offset:2px;border-radius:4px}
+
+.cols{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:22px;align-items:start}
+@media (max-width:880px){.cols{grid-template-columns:1fr}}
+
+.search{position:relative}
+.search input{width:100%;padding:13px 14px;font-size:16px;font-family:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.search input:focus{outline:2px solid var(--esf);outline-offset:1px}
+.hint{font-size:12.5px;color:var(--ink-3);margin-top:7px}
+.sugg{position:absolute;z-index:30;top:100%;left:0;right:0;margin-top:5px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);max-height:320px;overflow:auto}
+.sugg button{display:flex;justify-content:space-between;gap:10px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line-soft);padding:9px 12px;font:inherit;color:var(--ink);cursor:pointer}
+.sugg button:last-child{border-bottom:0}
+.sugg button:hover,.sugg button.on{background:var(--panel-2)}
+.tagmini{font-size:11px;font-weight:600;letter-spacing:.05em;padding:2px 6px;border-radius:5px;white-space:nowrap;align-self:center}
+.t-ESF{background:var(--esf-soft);color:var(--esf-ink)}
+.t-UBS{background:var(--ubs-soft);color:var(--ubs-ink)}
+.t-NA{background:var(--alert-soft);color:var(--alert)}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);margin-top:16px;overflow:hidden}
+.verdict{padding:16px 18px;border-left:5px solid var(--line)}
+.verdict.esf{border-left-color:var(--esf)}
+.verdict.ubs{border-left-color:var(--ubs)}
+.verdict.na{border-left-color:var(--alert)}
+.verdict .rua{font:600 13px "Source Sans 3",sans-serif;color:var(--ink-3)}
+.verdict .head{font-family:Archivo,sans-serif;font-size:19px;font-weight:600;margin:3px 0 2px;letter-spacing:-.01em}
+.verdict.esf .head{color:var(--esf-ink)} .verdict.ubs .head{color:var(--ubs-ink)} .verdict.na .head{color:var(--alert)}
+.verdict p{margin:8px 0 0;color:var(--ink-2);font-size:14px}
+.unit{padding:14px 18px;border-top:1px solid var(--line-soft);display:flex;gap:12px;align-items:flex-start}
+.dot{width:11px;height:11px;border-radius:50%;margin-top:5px;flex:none}
+.unit .nm{font-weight:600}
+.unit .meta{font-size:12.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.unit .meta a{color:inherit}
+.rowlab{padding:9px 18px;background:var(--panel-2);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600;border-top:1px solid var(--line-soft)}
+
+figure.map{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+svg.mapsvg{display:block;width:100%;height:min(68vh,620px);background:var(--map-ground);touch-action:pan-y;cursor:grab}
+svg.mapsvg.arrastando{cursor:grabbing}
+@media (max-width:880px){svg.mapsvg{height:min(56vh,460px)}}
+.area{cursor:pointer;transition:fill-opacity .15s}
+svg.mapsvg:focus,svg.mapsvg *:focus{outline:none}
+.area:focus-visible{stroke-width:3.4;stroke-dasharray:6 3}
+.area:hover{fill-opacity:.45}
+.area.sel{stroke-width:2.4}
+.area.sel:hover{fill-opacity:.22}
+.dim{opacity:.25}
+figcaption{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;padding:11px 14px;border-top:1px solid var(--line-soft);font-size:12.5px;color:var(--ink-2)}
+.key{display:flex;gap:6px;align-items:center}
+.key i{width:14px;height:10px;border-radius:2px;display:inline-block}
+.toggle{margin-left:auto;display:flex;gap:6px}
+.toggle button{font:600 12px Archivo,sans-serif;border:1px solid var(--line);background:var(--panel);color:var(--ink-2);border-radius:99px;padding:4px 11px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{text-align:left;font:600 11.5px Archivo,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);padding:9px 12px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel)}
+td{padding:8px 12px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.tablewrap{max-height:62vh;overflow:auto;border-radius:var(--r)}
+.note{font-size:13px;color:var(--ink-2);margin:0 0 14px;max-width:78ch}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 7px;border-radius:5px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.tools input{flex:1;min-width:180px;padding:9px 12px;font:inherit;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px}
+.btn{font:600 13px Archivo,sans-serif;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:9px 14px;cursor:pointer}
+.btn:hover{background:var(--panel-2)}
+.mapinfo{margin:0;padding:0 14px 12px;font-size:12.5px;color:var(--ink-2);min-height:1em}
+.mapinfo:empty{padding-bottom:0}
+.slot{min-width:0}
+.unit.clicavel{cursor:pointer;width:100%;text-align:left;background:none;font:inherit;color:inherit;border:0;border-top:1px solid var(--line-soft)}
+.unit.clicavel:hover,.unit.clicavel:focus-visible{background:var(--panel-2)}
+.unit.clicavel[aria-current="true"]{background:var(--panel-2);box-shadow:inset 3px 0 0 var(--ink)}
+.lista .rualink{display:block;width:100%;text-align:left;background:none;border:0;padding:3px 0;
+  font:inherit;color:var(--ink-2);cursor:pointer;break-inside:avoid}
+.lista .rualink .tagmini{margin-left:6px;padding:1px 5px;font-size:10px}
+.exemplo{background:none;border:0;padding:0;font:inherit;color:var(--esf-ink);text-decoration:underline;cursor:pointer}
+.exemplo:hover{color:var(--ink)}
+.lista .rualink:hover,.lista .rualink:focus-visible{color:var(--ink);text-decoration:underline}
+#ruasArea .lista{padding:12px 18px 16px;margin-top:0}
+#ruasArea .card{margin-top:14px}
+.lista{columns:2;column-gap:26px;font-size:13.5px;color:var(--ink-2);margin-top:10px}
+@media (max-width:620px){.lista{columns:1}}
+footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);max-width:80ch}
+footer a{color:var(--ink-2)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div>
+    <div class="eyebrow">Atenção primária · Município de Cachoeirinha/RS</div>
+    <h1>A rua pertence à área de ESF ou de UBS?</h1>
+    <p class="sub">Município de Cachoeirinha/RS. Digite o nome da rua para descobrir a unidade de referência do endereço. Quando a rua não fica em área de Estratégia de Saúde da Família, o resultado mostra a UBS mais próxima.</p>
+  </div>
+  <div class="counts">
+    <div class="count"><b>6</b><span>Áreas ESF</span></div>
+    <div class="count"><b>9</b><span>Áreas UBS</span></div>
+    <div class="count"><b id="cRuas">—</b><span>Ruas indexadas</span></div>
+    <div class="count"><b id="cProv">—</b><span>Ruas sugeridas</span></div>
+  </div>
+</header>
+
+<div class="tabs" role="tablist">
+  <button class="tab" role="tab" id="tab-busca" aria-selected="true" aria-controls="p-busca">Consulta por endereço</button>
+  <button class="tab" role="tab" id="tab-unid" aria-selected="false" aria-controls="p-unid">Unidades</button>
+</div>
+
+<section id="p-busca" role="tabpanel" aria-labelledby="tab-busca">
+  <div class="cols">
+    <div>
+      <div class="search">
+        <label class="eyebrow" for="q">Endereço ou nome da rua</label>
+        <input id="q" type="text" autocomplete="off" spellcheck="false" placeholder="ex.: Rua Dom Bosco, 240" aria-describedby="hint">
+        <div class="sugg" id="sugg" hidden></div>
+      </div>
+      <p class="hint" id="hint">O número da casa pode ser digitado: com ele, o mapa marca em vermelho só o lado de quadra daquela numeração, pelo CNEFE 2022 do IBGE. Acentos são opcionais. Vias marcadas como <strong>sugeridas</strong> não estão na lista oficial: o enquadramento vem do traçado da rua e precisa de confirmação na unidade. Elas aparecem junto das demais, na busca e na lista de ruas de cada área.</p>
+      <div id="result"></div>
+    </div>
+
+    <div class="slot" id="slot-busca"></div>
+    <figure class="map" id="figmap">
+      <svg class="mapsvg" id="map" role="img" aria-label="Mapa das áreas de abrangência das unidades de saúde de Cachoeirinha"></svg>
+      <figcaption>
+        <span class="key"><i style="background:var(--esf)"></i> Área ESF</span>
+        <span class="key"><i style="background:var(--ubs)"></i> Área UBS</span>
+        <span class="key"><i style="background:var(--via);height:4px;border-radius:2px"></i> Rua consultada</span>
+        <span class="toggle">
+          <button id="verTudo" hidden>Ver o município</button>
+          <button id="tESF" aria-pressed="true">ESF</button>
+          <button id="tUBS" aria-pressed="true">UBS</button>
+        </span>
+      </figcaption>
+      <p class="mapinfo" id="mapinfo" role="status"></p>
+    </figure>
+  </div>
+
+</section>
+
+<section id="p-unid" role="tabpanel" aria-labelledby="tab-unid" hidden>
+  <p class="note">Todas as unidades e serviços do mapeamento municipal. Clique em uma unidade com área definida para enquadrá-la no mapa e ver todas as ruas do território — as da lista oficial e as sugeridas, marcadas como tal.</p>
+  <div class="cols">
+    <div id="unidlist"></div>
+    <div class="slot" id="slot-unid"><div id="ruasArea"></div></div>
+  </div>
+</section>
+
+<footer>
+  <p>Município de Cachoeirinha/RS. Fonte dos polígonos, unidades e listas de ruas: mapa colaborativo <em>“Mapeamento unidades de saúde — Cachoeirinha”</em> (Google My Maps, camada pública). Malha viária de referência e coordenadas das vias: OpenStreetMap, contribuidores, sob ODbL. Numeração das casas e trechos de quadra: CNEFE 2022 do IBGE, município 4303103. As distâncias são em linha reta entre o centro aproximado da via e a unidade — não são distância de caminhada. Em caso de divergência, vale o cadastro da Secretaria Municipal de Saúde de Cachoeirinha.</p>
+</footer>
+</div>
+
+<script id="dados" type="application/json">__DATA__</script>
+<script>
+(function(){
+"use strict";
+var D=JSON.parse(document.getElementById('dados').textContent);
+var AREAS=D.areas, IDX=D.idx, UNI=D.unidades, FALT=D.faltantes, BOUND=D.bound, LINHAS=D.linhas, TRECHOS=D.trechos;
+
+/* ---------- normalização de nomes de via ---------- */
+var TIPOS={rua:1,r:1,avenida:1,av:1,travessa:1,trav:1,tv:1,beco:1,bc:1,estrada:1,est:1,praca:1,pc:1,alameda:1,al:1,rodovia:1,rod:1,largo:1,via:1,acesso:1,viela:1,passagem:1,linha:1,servidao:1,esquina:1};
+var ABREV={sto:'santo',sta:'santa',s:'sao',sao:'sao',dr:'doutor',dra:'doutora',prof:'professor',profa:'professora',pe:'padre',cel:'coronel',gal:'general',gen:'general',cap:'capitao',ten:'tenente',sgt:'sargento',mal:'marechal',maj:'major',eng:'engenheiro',pres:'presidente',vda:'viuva',d:'dom',pq:'parque',jd:'jardim',cj:'conjunto',vl:'vila'};
+var NUM={primeiro:'1',primeira:'1',segundo:'2',segunda:'2',terceiro:'3',terceira:'3',um:'1',uma:'1',dois:'2',duas:'2',tres:'3',quatro:'4',cinco:'5',seis:'6',sete:'7',oito:'8',nove:'9',dez:'10',onze:'11',doze:'12',treze:'13',quatorze:'14',catorze:'14',quinze:'15',dezesseis:'16',dezessete:'17',dezoito:'18',dezenove:'19',vinte:'20',trinta:'30',quarenta:'40',cinquenta:'50'};
+var STOP={de:1,da:1,do:1,das:1,dos:1,e:1,no:1,na:1};
+function norm(s){
+  s=String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  s=s.replace(/,.*$/,' ').replace(/\bn[º°ro]*\.?\s*\d+/g,' ').replace(/[^a-z0-9 ]/g,' ');
+  var t=s.split(/\s+/).filter(Boolean);
+  if(t.length&&TIPOS[t[0]])t=t.slice(1);
+  t=t.map(function(x){return ABREV[x]||x;}).filter(function(x){return !STOP[x];});
+  t=t.map(function(x){return /^\d+$/.test(x)?String(parseInt(x,10)):(NUM[x]||x);});
+  var o=[];
+  for(var i=0;i<t.length;i++){
+    var p=o[o.length-1];
+    if(p&&/^\d+$/.test(p)&&/^\d+$/.test(t[i])&&+p>=20&&+p%10===0&&+t[i]<10)o[o.length-1]=String(+p+ +t[i]);
+    else o.push(t[i]);
+  }
+  /* número de porta no fim da string vira ruído: mantém se a via é numerada e curta */
+  if(o.length>1&&/^\d+$/.test(o[o.length-1])&&o.length>2)o.pop();
+  return o.join(' ');
+}
+var MAP={}, LIST=[];
+IDX.forEach(function(e,i){
+  var o={k:e[0],label:e[1],areas:e[2],ll:(e[3]!=null)?[e[3],e[4]]:null,prov:e[5]||0,lines:e[6]||[],i:i};
+  MAP[e[0]]=o; LIST.push(o);
+});
+var PROV=LIST.filter(function(o){return o.prov;}).length;
+
+/* ---------- geografia ---------- */
+function km(a,b){
+  var la=(a[0]+b[0])/2*Math.PI/180;
+  var dx=(a[1]-b[1])*Math.cos(la), dy=a[0]-b[0];
+  return Math.sqrt(dx*dx+dy*dy)*111.32;
+}
+function dentro(lat,lon,poly){
+  var c=false;
+  for(var i=0,j=poly.length-1;i<poly.length;j=i++){
+    var xi=poly[i][0],yi=poly[i][1],xj=poly[j][0],yj=poly[j][1];
+    if((yi>lat)!==(yj>lat)&&lon<(xj-xi)*(lat-yi)/(yj-yi)+xi)c=!c;
+  }
+  return c;
+}
+function areaPorPonto(ll){
+  for(var i=0;i<AREAS.length;i++) if(dentro(ll[0],ll[1],AREAS[i].poly)) return i;
+  return -1;
+}
+function maisProximas(ll,filtro,n){
+  return UNI.filter(filtro).map(function(u){return {u:u,d:km(ll,u.ll)};})
+    .sort(function(a,b){return a.d-b.d;}).slice(0,n||1);
+}
+
+/* ---------- mapa svg ---------- */
+var SVG='http://www.w3.org/2000/svg';
+var all=[];
+AREAS.forEach(function(a){all=all.concat(a.poly);});
+BOUND.forEach(function(s){all=all.concat(s);});
+var minx=1e9,maxx=-1e9,miny=1e9,maxy=-1e9;
+all.forEach(function(p){minx=Math.min(minx,p[0]);maxx=Math.max(maxx,p[0]);miny=Math.min(miny,p[1]);maxy=Math.max(maxy,p[1]);});
+var latc=(miny+maxy)/2, kx=Math.cos(latc*Math.PI/180);
+var SC=9000;
+function X(lon){return (lon-minx)*kx*SC;}
+function Y(lat){return (maxy-lat)*SC;}
+var W=X(maxx), H=Y(miny), PAD=14;
+var svg=document.getElementById('map');
+svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+svg.setAttribute('viewBox',(-PAD)+' '+(-PAD)+' '+(W+PAD*2)+' '+(H+PAD*2));
+function el(n,at){var e=document.createElementNS(SVG,n);for(var k in at)e.setAttribute(k,at[k]);return e;}
+function d_(pts,close){
+  var s='';
+  for(var i=0;i<pts.length;i++)s+=(i?'L':'M')+X(pts[i][0]).toFixed(1)+' '+Y(pts[i][1]).toFixed(1);
+  return s+(close?'Z':'');
+}
+BOUND.forEach(function(s){
+  svg.appendChild(el('path',{d:d_(s,false),fill:'none',stroke:'var(--map-out)','stroke-width':1.6,'stroke-linecap':'round'}));
+});
+var gAreas=el('g',{}); svg.appendChild(gAreas);
+var paths=AREAS.map(function(a,i){
+  var col=a.t==='ESF'?'var(--esf)':'var(--ubs)';
+  var p=el('path',{d:d_(a.poly,true),fill:col,'fill-opacity':.28,stroke:col,'stroke-width':1.2,
+    'stroke-linejoin':'round',class:'area','data-i':i,tabindex:'0',role:'button'});
+  var t=el('title',{}); t.textContent=a.n+' — '+a.ruas.length+' ruas'; p.appendChild(t);
+  p.addEventListener('click',function(){selecionarArea(i);});
+  p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();selecionarArea(i);}});
+  gAreas.appendChild(p); return p;
+});
+/* malha viária: aparece conforme o zoom */
+var gRuas=el('g',{id:'gRuas',fill:'none',stroke:'var(--rua)','stroke-width':.9,
+  'stroke-linecap':'round','stroke-linejoin':'round',opacity:0}); svg.appendChild(gRuas);
+LINHAS.forEach(function(l){ gRuas.appendChild(el('path',{d:d_(l,false)})); });
+
+var gPts=el('g',{}); svg.appendChild(gPts);
+AREAS.forEach(function(a){
+  var col=a.t==='ESF'?'var(--esf)':'var(--ubs)';
+  gPts.appendChild(el('circle',{cx:X(a.ll[1]).toFixed(1),cy:Y(a.ll[0]).toFixed(1),r:3.4,
+    fill:'var(--via)',stroke:col,'stroke-width':2}));
+});
+var gAreaRuas=el('g',{fill:'none','stroke-width':2,'stroke-linecap':'round',
+  'stroke-linejoin':'round',opacity:0}); svg.appendChild(gAreaRuas);
+var gRuaBase=el('g',{fill:'none',stroke:'var(--map-ground)','stroke-width':6,
+  'stroke-linecap':'round','stroke-linejoin':'round',opacity:.9}); svg.appendChild(gRuaBase);
+var gRua=el('g',{fill:'none',stroke:'var(--via)','stroke-width':3.4,
+  'stroke-linecap':'round','stroke-linejoin':'round'}); svg.appendChild(gRua);
+var marca=el('g',{}); svg.appendChild(marca);
+
+var marcaLL=null;
+function marcar(ll){
+  marca.textContent=''; marcaLL=ll||null;
+  if(!ll)return;
+  var x=X(ll[1]),y=Y(ll[0]);
+  marca.appendChild(el('circle',{cx:x,cy:y,r:5,fill:'var(--via)','fill-opacity':.25,class:'halo'}));
+  marca.appendChild(el('circle',{cx:x,cy:y,r:2.6,fill:'var(--via)',stroke:'var(--panel)','stroke-width':1.2,class:'pino'}));
+  escalarCirculos();
+}
+/* círculos encolhem com o zoom, mas menos que o mapa: crescem um pouco na tela */
+function escalarCirculos(){
+  var z=Math.max(1,VB_TODO[2]/vb[2]), f=1/Math.pow(z,.7);
+  Array.prototype.forEach.call(gPts.children,function(c){
+    c.setAttribute('r',(3.4*f).toFixed(3));
+    c.setAttribute('stroke-width',(2*f).toFixed(3));
+  });
+  Array.prototype.forEach.call(marca.children,function(c){
+    var base=c.getAttribute('class')==='halo'?5:2.6;
+    c.setAttribute('r',(base*f).toFixed(3));
+    if(c.getAttribute('class')==='pino')c.setAttribute('stroke-width',(1.2*f).toFixed(3));
+  });
+}
+/* desenha a extensão da via consultada em vermelho e devolve o bbox dela */
+/* desenha polilinhas em vermelho e devolve o bbox delas */
+function tracarPolis(polis){
+  gRua.textContent=''; gRuaBase.textContent='';
+  if(!polis||!polis.length)return null;
+  var bb=[1e9,1e9,-1e9,-1e9];
+  polis.forEach(function(l){
+    if(!l||l.length<1)return;
+    var dd=l.length>1?d_(l,false):d_([l[0],l[0]],false);
+    gRuaBase.appendChild(el('path',{d:dd}));
+    gRua.appendChild(el('path',{d:dd}));
+    l.forEach(function(p){
+      bb[0]=Math.min(bb[0],p[0]);bb[1]=Math.min(bb[1],p[1]);
+      bb[2]=Math.max(bb[2],p[0]);bb[3]=Math.max(bb[3],p[1]);
+    });
+  });
+  return bb[0]<1e9?bb:null;
+}
+/* a via inteira, pelos ids das polilinhas do OSM */
+function tracar(ids){
+  if(!ids||!ids.length){tracarPolis(null);return null;}
+  return tracarPolis(ids.map(function(i){return LINHAS[i];}));
+}
+
+/* --- viewBox: zoom animado, escala de traço e visibilidade da malha --- */
+var VB_TODO=[-PAD,-PAD,W+PAD*2,H+PAD*2], vb=VB_TODO.slice(), anim=null;
+var reduz=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* impede que o mapa saia de vista ao arrastar ou afastar */
+function limitar(v){
+  var w=v[2],h=v[3],x=v[0],y=v[1];
+  if(w>=VB_TODO[2])x=VB_TODO[0]+(VB_TODO[2]-w)/2;
+  else x=Math.min(Math.max(x,VB_TODO[0]-w*.1),VB_TODO[0]+VB_TODO[2]-w*.9);
+  if(h>=VB_TODO[3])y=VB_TODO[1]+(VB_TODO[3]-h)/2;
+  else y=Math.min(Math.max(y,VB_TODO[1]-h*.1),VB_TODO[1]+VB_TODO[3]-h*.9);
+  return [x,y,w,h];
+}
+function aplicarVB(v){
+  v=limitar(v);
+  vb=v;
+  svg.setAttribute('viewBox',v[0].toFixed(1)+' '+v[1].toFixed(1)+' '+v[2].toFixed(1)+' '+v[3].toFixed(1));
+  var z=VB_TODO[2]/v[2];                       // 1 = município inteiro
+  gRuas.setAttribute('opacity',Math.max(0,Math.min(1,(z-1.2)/.9)).toFixed(2));
+  gRuas.setAttribute('stroke-width',(0.9/Math.sqrt(z)).toFixed(2));
+  gRua.setAttribute('stroke-width',(3.4/Math.sqrt(z)).toFixed(2));
+  gRuaBase.setAttribute('stroke-width',(6.4/Math.sqrt(z)).toFixed(2));
+  gAreaRuas.setAttribute('stroke-width',(2/Math.sqrt(z)).toFixed(2));
+  gAreas.setAttribute('stroke-width',(1/Math.sqrt(z)).toFixed(2));
+  svg.style.setProperty('--z',z.toFixed(2));
+  escalarCirculos();
+  botaoTodo.hidden=z<1.05;
+}
+function irPara(alvo,ms){
+  if(anim)cancelAnimationFrame(anim);
+  if(reduz||!ms){aplicarVB(alvo);return;}
+  var ini=vb.slice(), t0=performance.now();
+  (function passo(t){
+    var f=Math.min(1,(t-t0)/ms), e=f<.5?4*f*f*f:1-Math.pow(-2*f+2,3)/2;
+    aplicarVB(ini.map(function(v,i){return v+(alvo[i]-v)*e;}));
+    if(f<1)anim=requestAnimationFrame(passo);
+  })(performance.now());
+}
+/* enquadra um bbox geográfico [minlon,minlat,maxlon,maxlat], respeitando o aspecto do mapa */
+function enquadrar(bb,margem,ms){
+  var x1=X(bb[0]),x2=X(bb[2]),y1=Y(bb[3]),y2=Y(bb[1]);
+  var cx=(x1+x2)/2, cy=(y1+y2)/2, m=margem||1.25;
+  var w=Math.min(Math.max(x2-x1,40)*m,VB_TODO[2]);
+  var h=Math.min(Math.max(y2-y1,40)*m,VB_TODO[3]);
+  irPara([cx-w/2,cy-h/2,w,h],ms===undefined?520:ms);
+}
+var linhasDaArea=AREAS.map(function(){return null;});
+function ruasDaArea(i){
+  if(linhasDaArea[i])return linhasDaArea[i];
+  var ids=[],ruas=[];
+  LIST.forEach(function(o){
+    if(o.areas.indexOf(i)<0)return;
+    ruas.push(o);
+    o.lines.forEach(function(x){ids.push(x);});
+  });
+  ruas.sort(function(a,b){return a.label.localeCompare(b.label,'pt-BR');});
+  linhasDaArea[i]={ids:ids,ruas:ruas};
+  return linhasDaArea[i];
+}
+/* pinta na cor da unidade as vias que pertencem à área */
+function pintarRuasDaArea(i){
+  gAreaRuas.textContent='';
+  if(i===null||i<0){gAreaRuas.setAttribute('opacity',0);return null;}
+  var dados=ruasDaArea(i);
+  gAreaRuas.setAttribute('stroke',AREAS[i].t==='ESF'?'var(--esf)':'var(--ubs)');
+  gAreaRuas.setAttribute('opacity',.95);
+  dados.ids.forEach(function(x){
+    var l=LINHAS[x]; if(l)gAreaRuas.appendChild(el('path',{d:d_(l,false)}));
+  });
+  return dados;
+}
+function bboxArea(i){
+  var bb=[1e9,1e9,-1e9,-1e9];
+  AREAS[i].poly.forEach(function(p){
+    bb[0]=Math.min(bb[0],p[0]);bb[1]=Math.min(bb[1],p[1]);
+    bb[2]=Math.max(bb[2],p[0]);bb[3]=Math.max(bb[3],p[1]);
+  });
+  return bb;
+}
+function verTudo(){ tracar(null); marcar(null); legenda(''); irPara(VB_TODO.slice(),520); }
+/* roda do mouse: zoom in/out ancorado no ponteiro */
+function pontoNoMapa(ev){
+  var r=svg.getBoundingClientRect();
+  var escala=Math.max(vb[2]/r.width,vb[3]/r.height);     /* 'meet': a maior razão manda */
+  var cx=vb[0]+vb[2]/2, cy=vb[1]+vb[3]/2;
+  return [cx+(ev.clientX-(r.left+r.width/2))*escala,
+          cy+(ev.clientY-(r.top+r.height/2))*escala];
+}
+var ZMIN=1, ZMAX=40;
+svg.addEventListener('wheel',function(ev){
+  ev.preventDefault();
+  if(anim)cancelAnimationFrame(anim);
+  var f=Math.pow(1.0018,ev.deltaY);                       /* rolar para cima aproxima */
+  var w=vb[2]*f, h=vb[3]*f;
+  var zw=VB_TODO[2]/w;
+  if(zw<ZMIN){w=VB_TODO[2];h=VB_TODO[3];}
+  else if(zw>ZMAX){w=VB_TODO[2]/ZMAX;h=VB_TODO[3]/ZMAX;}
+  var p=pontoNoMapa(ev);
+  var kx2=(p[0]-vb[0])/vb[2], ky2=(p[1]-vb[1])/vb[3];
+  aplicarVB([p[0]-kx2*w,p[1]-ky2*h,w,h]);
+},{passive:false});
+
+/* arrastar com o mouse para deslocar */
+var arr=null;
+svg.addEventListener('pointerdown',function(ev){
+  if(ev.pointerType==='touch')return;
+  var r=svg.getBoundingClientRect();
+  arr={x0:ev.clientX,y0:ev.clientY,vb:vb.slice(),
+       escala:Math.max(vb[2]/r.width,vb[3]/r.height),moveu:false};
+  svg.classList.add('arrastando');
+});
+svg.addEventListener('pointermove',function(ev){
+  if(!arr)return;
+  var dx=ev.clientX-arr.x0, dy=ev.clientY-arr.y0;
+  if(!arr.moveu&&Math.abs(dx)+Math.abs(dy)<3)return;   /* clique não vira arrasto */
+  arr.moveu=true;
+  if(anim)cancelAnimationFrame(anim);
+  aplicarVB([arr.vb[0]-dx*arr.escala,arr.vb[1]-dy*arr.escala,arr.vb[2],arr.vb[3]]);
+});
+function soltar(){ if(arr){arr=null;svg.classList.remove('arrastando');} }
+svg.addEventListener('pointerup',soltar);
+svg.addEventListener('pointerleave',soltar);
+svg.addEventListener('pointercancel',soltar);
+
+var botaoTodo=document.getElementById('verTudo');
+botaoTodo.addEventListener('click',verTudo);
+aplicarVB(VB_TODO.slice());
+var mostrar={ESF:true,UBS:true};
+function aplicarFiltro(){
+  paths.forEach(function(p,i){p.style.display=mostrar[AREAS[i].t]?'':'none';});
+}
+function botao(id,tipo){
+  var b=document.getElementById(id);
+  b.addEventListener('click',function(){
+    mostrar[tipo]=!mostrar[tipo]; b.setAttribute('aria-pressed',mostrar[tipo]?'true':'false'); aplicarFiltro();
+  });
+}
+botao('tESF','ESF'); botao('tUBS','UBS');
+function realce(sel){
+  paths.forEach(function(p,i){
+    p.classList.toggle('sel',i===sel);
+    p.classList.toggle('dim',sel!==null&&sel>=0&&i!==sel);
+    p.setAttribute('fill-opacity',i===sel?.12:.28);
+  });
+}
+/* clique no mapa ou na lista de unidades: enquadra a área, sem abrir o resultado */
+function selecionarArea(i){
+  tracar(null); marcar(null);
+  realce(i);
+  var dados=pintarRuasDaArea(i);
+  enquadrar(bboxArea(i),1.06);
+  legenda(AREAS[i].n+' — '+dados.ruas.length+' vias na abrangência, '+
+          dados.ids.length+' com traçado no mapa');
+  listarRuas(i,dados);
+}
+/* lista das vias da área, na aba Unidades */
+function listarRuas(i,dados){
+  var alvo=document.getElementById('ruasArea');
+  if(!alvo)return;
+  var a=AREAS[i], sug=dados.ruas.filter(function(o){return o.prov;}).length;
+  function linhas(filtro){
+    var q=filtro?norm(filtro):'';
+    var f=q?dados.ruas.filter(function(o){return o.k.indexOf(q)>=0;}):dados.ruas;
+    return f.map(function(o){
+      return '<button type="button" class="rualink'+(o.prov?' prov':'')+'" data-k="'+esc(o.k)+'">'+esc(o.label)+
+        (o.prov?'<span class="tagmini t-NA">sugerida</span>':'')+'</button>';
+    }).join('')||'<span class="hint">Nenhuma via com esse nome nesta área.</span>';
+  }
+  alvo.innerHTML='<div class="card"><div class="rowlab" style="border-top:0">Ruas da área · '+esc(a.n)+
+    ' · '+dados.ruas.length+' vias'+(sug?' · '+sug+' sugeridas':'')+'</div>'+
+    '<div class="tools" style="padding:12px 18px 0;margin-bottom:0">'+
+      '<input id="fRua" type="text" placeholder="Filtrar ruas desta área" autocomplete="off">'+
+      '<button class="btn" id="copiarRuas">Copiar lista</button>'+
+      '<span class="hint" id="copst" role="status"></span></div>'+
+    '<div class="lista" id="listaRuas">'+linhas('')+'</div></div>';
+  var cont=document.getElementById('listaRuas');
+  function ligar(){
+    Array.prototype.forEach.call(cont.querySelectorAll('.rualink'),function(b){
+      b.addEventListener('click',function(){
+        document.getElementById('tab-busca').click();
+        escolher(b.getAttribute('data-k'));
+      });
+    });
+  }
+  ligar();
+  document.getElementById('fRua').addEventListener('input',function(e){
+    cont.innerHTML=linhas(e.target.value); ligar();
+  });
+  document.getElementById('copiarRuas').addEventListener('click',function(){
+    var txt=a.n+'\n'+dados.ruas.map(function(o){return o.label+(o.prov?'\t(sugerida)':'');}).join('\n');
+    var st=document.getElementById('copst');
+    try{
+      navigator.clipboard.writeText(txt).then(function(){st.textContent='Lista copiada ('+dados.ruas.length+' vias).';},
+        function(){st.textContent='O navegador bloqueou a cópia.';});
+    }catch(e){st.textContent='O navegador bloqueou a cópia.';}
+  });
+}
+function legenda(txt){
+  var e=document.getElementById('mapinfo');
+  if(e)e.textContent=txt||'';
+}
+
+/* ---------- resultado ---------- */
+var res=document.getElementById('result');
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+function infoHTML(txt){
+  if(!txt)return '';
+  return esc(txt).replace(/\n+/g,' · ').replace(/([\w.\-+]+@[\w.\-]+)/g,'<a href="mailto:$1">$1</a>');
+}
+function cardUnidade(u,dist,rot){
+  var col=u.c==='ESF'?'var(--esf)':u.c==='UBS'?'var(--ubs)':'var(--ink-3)';
+  return '<div class="unit"><span class="dot" style="background:'+col+'"></span><div>'+
+    '<div class="nm">'+esc(u.n)+'</div>'+
+    '<div class="meta">'+(dist!=null?dist.toFixed(1).replace('.',',')+' km em linha reta':'')+
+    (u.info?(dist!=null?' · ':'')+infoHTML(u.info):'')+'</div></div></div>';
+}
+function unidadeDaArea(i){
+  var a=AREAS[i];
+  for(var j=0;j<UNI.length;j++) if(UNI[j].n===a.n) return UNI[j];
+  return {n:a.n,c:a.t,ll:a.ll,info:a.info||''};
+}
+function mostrarArea(i,rua){
+  var a=AREAS[i], u=unidadeDaArea(i), ll=rua&&rua.ll?rua.ll:a.ll;
+  var html='';
+  if(a.t==='ESF'){
+    html+='<div class="card"><div class="verdict esf">'+
+      (rua?'<div class="rua">'+esc(rua.label)+'</div>':'')+
+      '<div class="head">Sim — área de ESF</div>'+
+      '<p>'+(rua?'Esta via consta':'Esta área consta')+' na abrangência da <strong>'+esc(a.n)+'</strong>, uma Estratégia de Saúde da Família: o cuidado é de uma equipe fixa, com agente comunitário e visita domiciliar.</p></div>'+
+      cardUnidade(u,rua&&rua.ll?km(rua.ll,u.ll):null)+'</div>';
+  }else{
+    var esf=maisProximas(ll,function(x){return x.c==='ESF';},2);
+    html+='<div class="card"><div class="verdict ubs">'+
+      (rua?'<div class="rua">'+esc(rua.label)+'</div>':'')+
+      '<div class="head">Não — área de UBS</div>'+
+      '<p>'+(rua?'Esta via está':'Esta área está')+' na abrangência da <strong>'+esc(a.n)+'</strong>, uma Unidade Básica de Saúde sem equipe de Saúde da Família vinculada ao endereço.</p></div>'+
+      '<div class="rowlab">Unidade de referência</div>'+cardUnidade(u,rua&&rua.ll?km(rua.ll,u.ll):null)+
+      '<div class="rowlab">ESF mais próxima'+(rua&&rua.ll?'':' do centro da área')+'</div>'+
+      esf.map(function(e){return cardUnidade(e.u,e.d);}).join('')+'</div>';
+  }
+  if(rua&&rua.trecho&&rua.trecho.semTrecho){
+    html+='<div class="card"><div class="verdict"><div class="head" style="font-size:16px">Número fora do cadastro</div>'+
+      '<p>O nº '+rua.num+' não aparece nesta via no CNEFE 2022 do IBGE'+
+      (TRECHOS[rua.k]?' — a numeração cadastrada vai de '+TRECHOS[rua.k][0][0]+' a '+
+        TRECHOS[rua.k][TRECHOS[rua.k].length-1][1]+'.':' (esta via não tem endereços cadastrados lá).')+
+      ' O mapa marca a via inteira; a resposta acima vale para a rua toda.</p></div></div>';
+  }
+  if(rua&&rua.trecho&&rua.trecho.t){
+    var tt=rua.trecho.t, pp=pontoNoTrecho(tt,rua.num), geo=areaPorPonto(pp);
+    html+='<div class="card"><div class="verdict"><div class="head" style="font-size:16px">Trecho do nº '+rua.num+'</div>'+
+      '<p>A marcação em vermelho cobre só o lado de quadra onde fica a numeração '+tt[0]+'–'+tt[1]+
+      ' ('+tt[3]+' endereços no CNEFE 2022 do IBGE), e não a rua inteira.'+
+      (!rua.trecho.exato?' O número '+rua.num+' não consta no cadastro; o trecho mostrado é o de numeração mais próxima.':'')+
+      (geo>=0&&geo!==i?' Atenção: pela posição, este trecho cai dentro do polígono da <strong>'+esc(AREAS[geo].n)+
+        '</strong>, diferente da lista de ruas da '+esc(a.n)+' — confirme na unidade.':'')+
+      (geo<0?' O trecho fica fora dos polígonos mapeados.':'')+
+      '</p></div></div>';
+  }
+  if(rua&&rua.prov===1){
+    html+='<div class="card"><div class="verdict na"><div class="head" style="font-size:16px">Enquadramento sugerido, ainda não oficial</div>'+
+      '<p>Esta via não consta na lista de ruas publicada pela Secretaria. O enquadramento acima vem do traçado da rua, que cai dentro do polígono da '+
+      '<strong>'+esc(a.n)+'</strong>. Confirme na unidade antes de se cadastrar.</p></div></div>';
+  }
+  res.innerHTML=html;
+  realce(i);
+  if(rua&&rua.trecho&&rua.trecho.t){          /* com número: só o trecho da quadra */
+    var t=rua.trecho.t;
+    var bbT=tracarPolis([t[2]]);
+    marcar(pontoNoTrecho(t,rua.num));
+    enquadrar(bbT,2.6);
+    legenda(rua.label+', '+rua.num+' · trecho '+t[0]+'–'+t[1]+' · '+a.n);
+  }else{
+    var bbRua=tracar(rua?rua.lines:null);
+    marcar(rua&&rua.ll&&!bbRua?rua.ll:null);
+    var bb=bboxArea(i);
+    if(bbRua){                                /* garante a via inteira dentro do enquadramento */
+      bb=[Math.min(bb[0],bbRua[0]),Math.min(bb[1],bbRua[1]),Math.max(bb[2],bbRua[2]),Math.max(bb[3],bbRua[3])];
+    }
+    enquadrar(bb,1.12);
+    legenda(rua?(rua.label+' · área da '+a.n):(a.n+' — '+a.ruas.length+' ruas na abrangência'));
+  }
+}
+function mostrarFora(f){
+  var html='<div class="card"><div class="verdict na"><div class="rua">'+esc(f.label)+'</div>'+
+    '<div class="head">Fora de todas as áreas mapeadas</div>'+
+    '<p>Esta via existe na malha viária do município, mas o traçado dela não cai dentro de nenhum polígono de abrangência — e ela também não consta em nenhuma lista de ruas da Secretaria. Procure a unidade mais próxima abaixo.</p></div>';
+  if(f.ll){
+    var perto=maisProximas(f.ll,function(x){return x.c==='ESF'||x.c==='UBS';},3);
+    html+='<div class="rowlab">Unidades mais próximas</div>'+perto.map(function(e){return cardUnidade(e.u,e.d);}).join('');
+  }
+  html+='</div>';
+  res.innerHTML=html;
+  realce(-1);
+  var bbRua=tracar(f.lines);
+  marcar(bbRua?null:f.ll);
+  if(bbRua)enquadrar([bbRua[0]-.004,bbRua[1]-.004,bbRua[2]+.004,bbRua[3]+.004],1.1);
+  else if(f.ll)enquadrar([f.ll[1]-.006,f.ll[0]-.006,f.ll[1]+.006,f.ll[0]+.006],1.1);
+  legenda(f.label+' · fora das áreas mapeadas');
+}
+function semResultado(termo,alts){
+  res.innerHTML='<div class="card"><div class="verdict na"><div class="rua">'+esc(termo)+'</div>'+
+    '<div class="head">Não encontramos essa via</div><p>Confira a grafia ou tente só o nome próprio, sem “Rua” ou “Avenida”. '+
+    (alts.length?'Talvez seja uma destas:':'A base cobre apenas vias de Cachoeirinha.')+'</p>'+
+    (alts.length?'<p>'+alts.map(function(a){return '<button class="btn" data-alt="'+esc(a.k)+'" style="margin:6px 6px 0 0">'+esc(a.label)+'</button>';}).join('')+'</p>':'')+
+    '</div></div>';
+  Array.prototype.forEach.call(res.querySelectorAll('[data-alt]'),function(b){
+    b.addEventListener('click',function(){escolher(b.getAttribute('data-alt'));});
+  });
+  realce(null); marcar(null);
+}
+
+/* ---------- busca ---------- */
+function ranquear(q,arr,lim){
+  var out=[];
+  for(var i=0;i<arr.length;i++){
+    var k=arr[i].k, s=-1;
+    if(k===q)s=100; else if(k.indexOf(q)===0)s=80-k.length*0.01;
+    else if(k.indexOf(q)>0)s=60-k.length*0.01;
+    else{
+      var ps=q.split(' ').filter(Boolean), ok=ps.length>0;
+      for(var j=0;j<ps.length;j++) if(k.indexOf(ps[j])<0){ok=false;break;}
+      if(ok)s=40;
+    }
+    if(s>0)out.push({o:arr[i],s:s});
+  }
+  out.sort(function(a,b){return b.s-a.s||a.o.label.localeCompare(b.o.label);});
+  return out.slice(0,lim).map(function(x){return x.o;});
+}
+var inp=document.getElementById('q'), box=document.getElementById('sugg'), cursor=-1, atual=[];
+function rotulo(o){
+  var t=AREAS[o.areas[0]].t;
+  if(o.prov)return '<span class="tagmini t-NA">'+t+' · sugerida</span>';
+  return '<span class="tagmini t-'+t+'">'+(o.areas.length>1?'divisa':t)+'</span>';
+}
+function render(list){
+  atual=list; cursor=-1;
+  if(!list.length){box.hidden=true;return;}
+  box.innerHTML=list.map(function(o,i){
+    return '<button type="button" data-k="'+esc(o.k)+'"><span>'+esc(o.label)+'</span>'+rotulo(o)+'</button>';
+  }).join('');
+  box.hidden=false;
+  Array.prototype.forEach.call(box.children,function(b){
+    b.addEventListener('mousedown',function(e){e.preventDefault();escolher(b.getAttribute('data-k'));});
+  });
+}
+function buscar(){
+  var q=norm(inp.value);
+  if(q.length<2){box.hidden=true;return;}
+  render(ranquear(q,LIST,9));
+}
+/* número da casa digitado depois do nome: "Rua Dom Bosco, 240" */
+function numeroDigitado(txt){
+  var m=String(txt||'').match(/(?:,|\s|n[º°o]\.?)\s*(\d{1,6})\s*$/i);
+  if(!m)return null;
+  var n=parseInt(m[1],10);
+  return n>0?n:null;
+}
+/* trecho de quadra (face do CNEFE) que contém aquele número */
+function acharTrecho(k,num){
+  var lista=TRECHOS[k];
+  if(!lista||!lista.length||!num)return null;
+  var par=num%2, dentro=[];
+  lista.forEach(function(t){ if(num>=t[0]&&num<=t[1])dentro.push(t); });
+  if(dentro.length>1){                                  /* um lado por paridade */
+    var mesmo=dentro.filter(function(t){return t[0]%2===par||t[1]%2===par;});
+    if(mesmo.length)dentro=mesmo;
+  }
+  if(dentro.length)return {t:dentro[0],exato:true};
+  var melhor=null,dist=1e12;                            /* fora das faixas: a mais perto */
+  lista.forEach(function(t){
+    var d=num<t[0]?t[0]-num:num-t[1];
+    if(d<dist){dist=d;melhor=t;}
+  });
+  return (melhor&&dist<=20)?{t:melhor,exato:false,dist:dist}:{t:null,exato:false,longe:true,dist:dist};
+}
+/* ponto aproximado do número dentro do trecho */
+function pontoNoTrecho(t,num){
+  var l=t[2];
+  if(l.length<2)return [l[0][1],l[0][0]];
+  var f=t[1]>t[0]?Math.min(1,Math.max(0,(num-t[0])/(t[1]-t[0]))):.5;
+  var i=Math.min(l.length-2,Math.floor(f*(l.length-1)));
+  var g=f*(l.length-1)-i;
+  return [l[i][1]+(l[i+1][1]-l[i][1])*g, l[i][0]+(l[i+1][0]-l[i][0])*g];
+}
+function escolher(k){
+  var o=MAP[k];
+  if(!o)return;
+  var num=numeroDigitado(inp.value);
+  var tr=num?acharTrecho(k,num):null;
+  if(tr&&!tr.t)tr={semTrecho:true,num:num};   /* número fora do cadastro: marca a via toda */
+  o=Object.assign({},o,{num:num,trecho:tr});
+  inp.value=o.label+(num?', '+num:''); box.hidden=true;
+  if(o.prov===2){mostrarFora(o);return;}
+  if(o.areas.length>1){
+    if(tr&&tr.t){                                       /* o número resolve a divisa */
+      var p=pontoNoTrecho(tr.t,num);
+      for(var q=0;q<o.areas.length;q++){
+        if(dentro(p[0],p[1],AREAS[o.areas[q]].poly)){mostrarArea(o.areas[q],o);return;}
+      }
+    }
+    var partes=o.areas.map(function(i){return AREAS[i];});
+    var temEsf=partes.filter(function(a){return a.t==='ESF';});
+    mostrarArea(o.areas[0],o);
+    var aviso='<div class="card"><div class="verdict"><div class="head" style="font-size:16px">Via de divisa</div>'+
+      '<p>Esta rua aparece na lista de mais de uma unidade: '+partes.map(function(a){return '<strong>'+esc(a.n)+'</strong>';}).join(' e ')+
+      '. O lado e a numeração definem a referência — confirme na unidade.'+
+      (temEsf.length?' Parte da via é área de ESF.':'')+'</p></div></div>';
+    res.insertAdjacentHTML('beforeend',aviso);
+    return;
+  }
+  mostrarArea(o.areas[0],o);
+}
+inp.addEventListener('input',buscar);
+inp.addEventListener('focus',buscar);
+inp.addEventListener('blur',function(){setTimeout(function(){box.hidden=true;},120);});
+inp.addEventListener('keydown',function(e){
+  if(box.hidden)return;
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+    e.preventDefault();
+    cursor+= e.key==='ArrowDown'?1:-1;
+    if(cursor<0)cursor=atual.length-1; if(cursor>=atual.length)cursor=0;
+    Array.prototype.forEach.call(box.children,function(b,i){b.classList.toggle('on',i===cursor);});
+  }else if(e.key==='Enter'){
+    e.preventDefault();
+    var alvo=cursor>=0?atual[cursor]:atual[0];
+    if(alvo)escolher(alvo.k); else semResultado(inp.value,ranquear(norm(inp.value).split(' ')[0]||'',LIST,4));
+  }else if(e.key==='Escape'){box.hidden=true;}
+});
+
+/* ---------- abas ---------- */
+var abas=[['tab-busca','p-busca','slot-busca'],['tab-unid','p-unid','slot-unid']];
+var figmap=document.getElementById('figmap');
+document.getElementById('slot-busca').appendChild(figmap);
+abas.forEach(function(p){
+  document.getElementById(p[0]).addEventListener('click',function(){
+    abas.forEach(function(q){
+      var on=q[0]===p[0];
+      document.getElementById(q[0]).setAttribute('aria-selected',on?'true':'false');
+      document.getElementById(q[1]).hidden=!on;
+    });
+    document.getElementById(p[2]).appendChild(figmap);
+  });
+});
+
+/* ---------- unidades ---------- */
+(function(){
+  var porCat={};
+  UNI.forEach(function(u){(porCat[u.c]=porCat[u.c]||[]).push(u);});
+  var ordem=['ESF','UBS','Pronto atendimento','Especialidades','Saúde Mental','Odontologia','Administração'];
+  var html='';
+  ordem.forEach(function(c){
+    if(!porCat[c])return;
+    html+='<div class="card"><div class="rowlab" style="border-top:0">'+esc(c)+'</div>';
+    html+=porCat[c].map(function(u){
+      var a=null;
+      for(var i=0;i<AREAS.length;i++) if(AREAS[i].n===u.n)a=AREAS[i];
+      var col=c==='ESF'?'var(--esf)':c==='UBS'?'var(--ubs)':'var(--ink-3)';
+      var ai=a?AREAS.indexOf(a):-1;
+      var tag=ai>=0?'button type="button" class="unit clicavel" data-a="'+ai+'"':'div class="unit"';
+      return '<'+tag+'><span class="dot" style="background:'+col+'"></span><div>'+
+        '<div class="nm">'+esc(u.n)+'</div><div class="meta">'+
+        (a?a.ruas.length+' ruas na abrangência · clique para ver no mapa':'sem área de abrangência definida')+
+        (u.info?' · '+infoHTML(u.info):'')+'</div></div></'+(ai>=0?'button':'div')+'>';
+    }).join('');
+    html+='</div>';
+  });
+  var lista=document.getElementById('unidlist');
+  lista.innerHTML=html;
+  Array.prototype.forEach.call(lista.querySelectorAll('[data-a]'),function(b){
+    b.addEventListener('click',function(){
+      Array.prototype.forEach.call(lista.querySelectorAll('[data-a]'),function(o){o.removeAttribute('aria-current');});
+      b.setAttribute('aria-current','true');
+      selecionarArea(+b.getAttribute('data-a'));
+    });
+  });
+})();
+
+document.getElementById('cRuas').textContent=LIST.length.toLocaleString('pt-BR');
+document.getElementById('cProv').textContent=PROV.toLocaleString('pt-BR');
+
+var exemplo1=MAP[norm('Rua Dom Bosco')]||LIST[0];
+var exemplo2=MAP[norm('Av. Panamericana')]||LIST[1];
+/* estado inicial: campo vazio, município inteiro à vista */
+(function(){
+  inp.value=''; box.hidden=true;
+  aplicarVB(VB_TODO.slice());
+  res.innerHTML='<div class="card"><div class="verdict"><div class="head" style="font-size:17px">Comece pelo endereço</div>'+
+    '<p>Digite o nome da rua no campo acima — por exemplo <button type="button" class="exemplo" data-k="'+
+    esc(exemplo1.k)+'">'+esc(exemplo1.label)+'</button> ou <button type="button" class="exemplo" data-k="'+
+    esc(exemplo2.k)+'">'+esc(exemplo2.label)+'</button>. Também dá para clicar numa área do mapa para ver o território, '+
+    'ou abrir a aba <strong>Unidades</strong> e percorrer as ruas de cada abrangência.</p></div></div>';
+  Array.prototype.forEach.call(res.querySelectorAll('.exemplo'),function(b){
+    b.addEventListener('click',function(){escolher(b.getAttribute('data-k'));});
+  });
+})();
+})();
+</script>
