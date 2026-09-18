@@ -1,0 +1,1640 @@
+{
+ "type": "FeatureCollection",
+ "name": "Áreas de ESF — Cachoeirinha/RS",
+ "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
+ "gerado_em": "2026-09-18",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da ESF Jardim Betânia",
+    "unidade": "ESF Jardim Betânia",
+    "tipo": "ESF",
+    "codigo": "ESF-JARDIM-BETANIA",
+    "descricao": "Território de abrangência da ESF Jardim Betânia, com 62 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 62,
+    "ruas": [
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "Albatroz",
+     "Aparício Borges",
+     "Areias Brancas",
+     "Armação",
+     "Arroio Teixeira",
+     "Atlântida (10-745)",
+     "Av. Atlântida (744-1530)",
+     "Beco da Sereia",
+     "Betânia",
+     "Camboriú",
+     "Capistranos (41-1355)",
+     "Capão da Canoa (10-185)",
+     "Capão da Canoa (215 a 376)",
+     "Cassino",
+     "Cidreira",
+     "Clara Nunes",
+     "Condomínio Maranhão (Ruas Imperatriz, Cuiabá, Palmas)",
+     "Condomínio Pará (Federação 685) – 8 torres",
+     "Curumim (até 49)",
+     "Frederico Ritter (7100 a 7235)",
+     "Imara",
+     "Imbé",
+     "Itapeva",
+     "Itapuã",
+     "Jardim do Éden",
+     "João Tavares",
+     "Lami",
+     "Laranjal",
+     "Libero Badaró",
+     "Magistério",
+     "Mariluz",
+     "Meu Rincão (fora de área)",
+     "Miramar",
+     "Noiva do Mar",
+     "Nova Albatroz",
+     "Nova Cidreira",
+     "Nova Imara",
+     "Nova Imbé",
+     "Nova Rondinha",
+     "Oásis",
+     "Pereira Pinto",
+     "Pinto da Rocha",
+     "Plácido Mottim",
+     "Quintão",
+     "RS 118, 12780 (serraria)",
+     "Rainha do Mar",
+     "Rondinha",
+     "Salinas",
+     "Sereia do Mar",
+     "Sítio Ipiranga (fora de área)",
+     "Tramandaí",
+     "Travessa da Sereia",
+     "Travessa da Torre",
+     "Tunel Verde (fora de área)",
+     "Verde Mar",
+     "Xangrilá",
+     "Área 1",
+     "Área 2"
+    ],
+    "email": "esf.jardimbetania@cachoeirinha.rs.gov.br",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.09099,
+       -29.89251
+      ],
+      [
+       -51.08992,
+       -29.89261
+      ],
+      [
+       -51.08947,
+       -29.89256
+      ],
+      [
+       -51.08541,
+       -29.89179
+      ],
+      [
+       -51.08491,
+       -29.89517
+      ],
+      [
+       -51.08372,
+       -29.8952
+      ],
+      [
+       -51.08403,
+       -29.89187
+      ],
+      [
+       -51.07455,
+       -29.8898
+      ],
+      [
+       -51.07436,
+       -29.88943
+      ],
+      [
+       -51.08063,
+       -29.89007
+      ],
+      [
+       -51.08131,
+       -29.88968
+      ],
+      [
+       -51.08301,
+       -29.88963
+      ],
+      [
+       -51.08262,
+       -29.88685
+      ],
+      [
+       -51.08374,
+       -29.88603
+      ],
+      [
+       -51.08269,
+       -29.88275
+      ],
+      [
+       -51.08322,
+       -29.88124
+      ],
+      [
+       -51.0839,
+       -29.88049
+      ],
+      [
+       -51.08495,
+       -29.87934
+      ],
+      [
+       -51.08453,
+       -29.87914
+      ],
+      [
+       -51.08459,
+       -29.87906
+      ],
+      [
+       -51.08504,
+       -29.87928
+      ],
+      [
+       -51.08657,
+       -29.87848
+      ],
+      [
+       -51.08684,
+       -29.87852
+      ],
+      [
+       -51.0876,
+       -29.87891
+      ],
+      [
+       -51.0878,
+       -29.87905
+      ],
+      [
+       -51.08966,
+       -29.87879
+      ],
+      [
+       -51.09009,
+       -29.87927
+      ],
+      [
+       -51.09068,
+       -29.87892
+      ],
+      [
+       -51.0909,
+       -29.87917
+      ],
+      [
+       -51.09115,
+       -29.87965
+      ],
+      [
+       -51.10388,
+       -29.87798
+      ],
+      [
+       -51.10339,
+       -29.87275
+      ],
+      [
+       -51.10823,
+       -29.8726
+      ],
+      [
+       -51.10839,
+       -29.87076
+      ],
+      [
+       -51.11399,
+       -29.87083
+      ],
+      [
+       -51.11401,
+       -29.8699
+      ],
+      [
+       -51.11617,
+       -29.86782
+      ],
+      [
+       -51.1177,
+       -29.86853
+      ],
+      [
+       -51.11921,
+       -29.86796
+      ],
+      [
+       -51.12081,
+       -29.86615
+      ],
+      [
+       -51.12166,
+       -29.86651
+      ],
+      [
+       -51.11676,
+       -29.87156
+      ],
+      [
+       -51.11686,
+       -29.87452
+      ],
+      [
+       -51.11758,
+       -29.87603
+      ],
+      [
+       -51.11426,
+       -29.88514
+      ],
+      [
+       -51.11209,
+       -29.88498
+      ],
+      [
+       -51.10523,
+       -29.8859
+      ],
+      [
+       -51.10395,
+       -29.87825
+      ],
+      [
+       -51.09119,
+       -29.87981
+      ],
+      [
+       -51.0918,
+       -29.88146
+      ],
+      [
+       -51.09193,
+       -29.88319
+      ],
+      [
+       -51.09195,
+       -29.88457
+      ],
+      [
+       -51.09162,
+       -29.88567
+      ],
+      [
+       -51.09129,
+       -29.88651
+      ],
+      [
+       -51.09095,
+       -29.88783
+      ],
+      [
+       -51.09088,
+       -29.88794
+      ],
+      [
+       -51.09082,
+       -29.88968
+      ],
+      [
+       -51.09062,
+       -29.89032
+      ],
+      [
+       -51.09053,
+       -29.89078
+      ],
+      [
+       -51.09054,
+       -29.89118
+      ],
+      [
+       -51.09058,
+       -29.89157
+      ],
+      [
+       -51.09073,
+       -29.8921
+      ],
+      [
+       -51.09099,
+       -29.89251
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da ESF Canarinho",
+    "unidade": "ESF Canarinho",
+    "tipo": "ESF",
+    "codigo": "ESF-CANARINHO",
+    "descricao": "Território de abrangência da ESF Canarinho, com 69 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 69,
+    "ruas": [
+     "- Antenas:",
+     "- Loteamento Chico Mendes:",
+     "- União:",
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "Araras",
+     "Austria (02 ao 300)",
+     "Beco da Pardal 1 (do n. 1 ao 50)",
+     "Beco da Pardal 2 (do n. 1 ao 8)",
+     "Bem-te-vi",
+     "Bulgária",
+     "Camélias (31 a 71)",
+     "Canadá (651 a 932)",
+     "Capistranos (1 ao 45 e 2010)",
+     "Equipe 01",
+     "Equipe 02",
+     "Escócia",
+     "Espanha (575 ao 921)",
+     "Espírito Santo (1457 ao 1731)",
+     "Estados Unidos (da rua Espírito Santo até a Holanda, lado ímpar)",
+     "Estados Unidos 3 a 165",
+     "Estrada dos Capistranos",
+     "Falcão",
+     "França (565 ao 840)",
+     "Gavião",
+     "Holanda (582 ao 803)",
+     "Israel",
+     "João de Barro",
+     "Malta",
+     "Manoel Inácio Nunes (1305 ao 1622)",
+     "Marechal Rondon (3756 a 4470)",
+     "Noruega",
+     "Pardal (5 ao 27)",
+     "Pardal (lado esquerdo)",
+     "Polônia (565 a 625)",
+     "Quero-quero",
+     "RS 118 (11438 a 11676)",
+     "Romênia (205 a 533)",
+     "Rua A",
+     "Rua A",
+     "Rua Aracuã",
+     "Rua Azulão",
+     "Rua B",
+     "Rua B",
+     "Rua C",
+     "Rua C",
+     "Rua Carruíra",
+     "Rua Chimango",
+     "Rua Coruja",
+     "Rua D",
+     "Rua D",
+     "Rua E",
+     "Rua G",
+     "Rua H",
+     "Rua Martim Pescador",
+     "Rua Maçanico",
+     "Rua Pintassilgo",
+     "Rua Saracura",
+     "Rua Tangará",
+     "Rua Tesourinha",
+     "Suíça (586 a 1004)",
+     "Travessa Maciel (35 a 80)",
+     "Travessa Monte Claro (30 a 50)",
+     "Travessa Santos (10 a 30)",
+     "Travessa Suiça A e B",
+     "Turquia",
+     "Águia"
+    ],
+    "email": "esf.canarinho@cachoeirinha.rs.gov.br",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.07293,
+       -29.90202
+      ],
+      [
+       -51.07082,
+       -29.90125
+      ],
+      [
+       -51.0687,
+       -29.90052
+      ],
+      [
+       -51.06553,
+       -29.89979
+      ],
+      [
+       -51.06565,
+       -29.89572
+      ],
+      [
+       -51.06613,
+       -29.89446
+      ],
+      [
+       -51.06594,
+       -29.89234
+      ],
+      [
+       -51.06596,
+       -29.89131
+      ],
+      [
+       -51.06737,
+       -29.89059
+      ],
+      [
+       -51.06841,
+       -29.89007
+      ],
+      [
+       -51.06959,
+       -29.88955
+      ],
+      [
+       -51.06981,
+       -29.88936
+      ],
+      [
+       -51.07339,
+       -29.88768
+      ],
+      [
+       -51.07455,
+       -29.8898
+      ],
+      [
+       -51.07432,
+       -29.8905
+      ],
+      [
+       -51.07421,
+       -29.89121
+      ],
+      [
+       -51.07397,
+       -29.89265
+      ],
+      [
+       -51.07385,
+       -29.89428
+      ],
+      [
+       -51.0736,
+       -29.89586
+      ],
+      [
+       -51.0719,
+       -29.89832
+      ],
+      [
+       -51.07413,
+       -29.89939
+      ],
+      [
+       -51.07293,
+       -29.90202
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da ESF José Ari da Silveira",
+    "unidade": "ESF José Ari da Silveira",
+    "tipo": "ESF",
+    "codigo": "ESF-JOSE-ARI-DA-SILVEIRA",
+    "descricao": "Território de abrangência da ESF José Ari da Silveira, com 45 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 45,
+    "ruas": [
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "Alameda Serafim",
+     "Av. José Brambila (1589-2689 lado impar)",
+     "Av. Marechal Rondon (922-1690 lado par)",
+     "Av. São João (5-370)",
+     "Rua Alagoas (119-369)",
+     "Rua Alagoas (389-558)",
+     "Rua Amazonas (331-497)",
+     "Rua Amazonas (45-314)",
+     "Rua Antonio Pereira Nunes",
+     "Rua Bahia (19-806)",
+     "Rua Brasília",
+     "Rua Campo Grande",
+     "Rua Ceará (5-280)",
+     "Rua Fernando de Noronha",
+     "Rua Goiás (16-797)",
+     "Rua Guarujá (253-343)",
+     "Rua Maranhão (29-261)",
+     "Rua Maranhão (45-650)",
+     "Rua Marte (48-179)",
+     "Rua Mato Grosso",
+     "Rua Orleans (272-336 toda a rua)",
+     "Rua Paraíba (20-472 toda a rua)",
+     "Rua Pará (15-216)",
+     "Rua Pará (238-380)",
+     "Rua Pernambuco (25-380)",
+     "Rua Piauí (5-549)",
+     "Rua Pindorama (10-210)",
+     "Rua Rio Grande do Norte (10-482 toda a rua)",
+     "Rua Rondônia (18-99)",
+     "Rua Sergipe (12-186)",
+     "Rua São João (382-686)",
+     "Rua São Salvador (23-196)",
+     "Rua São Salvador (308-586)",
+     "Tv. Acre (12-174)",
+     "Tv. Amizade",
+     "Tv. Goiás",
+     "Tv. Iraí (25-200)",
+     "Tv. Tubarão (21-133 toda a rua)",
+     "Tv. Vista Alegre",
+     "Área 1",
+     "Área 2"
+    ],
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.0705,
+       -29.9159
+      ],
+      [
+       -51.07047,
+       -29.91583
+      ],
+      [
+       -51.07179,
+       -29.91314
+      ],
+      [
+       -51.07306,
+       -29.91319
+      ],
+      [
+       -51.0735,
+       -29.91384
+      ],
+      [
+       -51.07777,
+       -29.91656
+      ],
+      [
+       -51.07875,
+       -29.91746
+      ],
+      [
+       -51.0792,
+       -29.91795
+      ],
+      [
+       -51.07953,
+       -29.91878
+      ],
+      [
+       -51.07931,
+       -29.91902
+      ],
+      [
+       -51.07718,
+       -29.92133
+      ],
+      [
+       -51.07865,
+       -29.92183
+      ],
+      [
+       -51.07806,
+       -29.92316
+      ],
+      [
+       -51.07772,
+       -29.9237
+      ],
+      [
+       -51.07685,
+       -29.92337
+      ],
+      [
+       -51.07648,
+       -29.92326
+      ],
+      [
+       -51.07473,
+       -29.92264
+      ],
+      [
+       -51.07469,
+       -29.9226
+      ],
+      [
+       -51.07397,
+       -29.92299
+      ],
+      [
+       -51.06925,
+       -29.91669
+      ],
+      [
+       -51.0705,
+       -29.9159
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da ESF Otacílio Silveira",
+    "unidade": "ESF Otacílio Silveira",
+    "tipo": "ESF",
+    "codigo": "ESF-OTACILIO-SILVEIRA",
+    "descricao": "Território de abrangência da ESF Otacílio Silveira, com 127 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 127,
+    "ruas": [
+     "13 de maio",
+     "24 de Agosto",
+     "24 de Agosto (625-655 lado impar)",
+     "24 de Outubro",
+     "25 de Dezembro",
+     "28 de Outubro (04-110 e 111-119 e 175-295)",
+     "28 de Outubro (170-390 e 325-385)",
+     "29 de Março (35-55 e 58-70)",
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "Agudo (15-165 ao 80-172)",
+     "Alagoas (685-665 e 598-698)",
+     "Amazonas (784-828 lado par)",
+     "Amazonas (828-583 e 829-715)",
+     "Amazonas 564-614)",
+     "Angico",
+     "Araçá (126-198)",
+     "Araçá (189-337)",
+     "Araçá (25-165)",
+     "Araçá (26-112)",
+     "Av. Amazonas (565-695 e 654-694)",
+     "Av. Curitiba (441-801 lado impar)",
+     "Av. Curitiba (63-425 lado impar)",
+     "Av. Curitiba (819-975 lado impar)",
+     "Av. José Brambila (1670-1754 lado par)",
+     "Av. José Brambila (2458-2522 lado par)",
+     "Av. José Brambila (2580-2532 e 2438-1754 lado par)",
+     "Barbacena (10-132)",
+     "Barbaena (172-373)",
+     "Beco União da Vitória",
+     "Beco do Olavo",
+     "Berlim",
+     "Bitencourt",
+     "Cabriúva",
+     "Cacequi",
+     "Cairu",
+     "Caiçara (140-350)",
+     "Caiçara (5-145)",
+     "Camaquã",
+     "Caxias",
+     "Cerro Largo",
+     "Criciumal (05-25 e 10-20)",
+     "Criciumal (135-207 e 136-232)",
+     "Curitiba (148-490)",
+     "Curitiba (176-193)",
+     "Curitiba (18-128)",
+     "Curitiba (410-470)",
+     "Curitiba (60-140)",
+     "Curitiba (610-660)",
+     "Curitiba (794-930)",
+     "Curitiba (940-980)",
+     "Equipe 1",
+     "Equipe 2",
+     "Equipe 3",
+     "Esperança",
+     "Esteio",
+     "Eucalipto",
+     "Guaíba (30-110 e 19-101)",
+     "Itajaí",
+     "Ivoti",
+     "José Brambila (1486-1580)",
+     "Mangueira",
+     "Maria Paim",
+     "Monte Negro",
+     "Palmeira das Missões (116-218 e 151-225)",
+     "Palmeira das Missões (23-139 e 130-200)",
+     "Palmeira das Missões (231-413)",
+     "Palmitos (233-123)",
+     "Palmitos (240-301)",
+     "Palmitos (53-13)",
+     "Paraiso (144-250)",
+     "Paranaguá (12-198 lado par)",
+     "Paraíso (10-50)",
+     "Paraíso (60-140)",
+     "Passo Fundo",
+     "Peru (735-745)",
+     "Peru (749-854)",
+     "Rolante (05-171 lado impar)",
+     "Rolante (10-172 lado par)",
+     "Rondonia (550-777)",
+     "Rondônia (136-156 lado par)",
+     "Rondônia (166-300 lado par)",
+     "Rondônia (235-489 e 314-486)",
+     "Rua G (05-255 e 10-280)",
+     "Santa Catarina (258-408 e 259-373)",
+     "Santa Catarina (5-65 lado impar)",
+     "Santa Catarina (60-230 e 211-231)",
+     "Santa Cruz (176-193)",
+     "Santa Cruz (184-224)",
+     "Santa Cruz (206,208,210)",
+     "Santa Rosa (06-11 Beco e 40-130 lado par)",
+     "Santa Rosa (160-520 lado par)",
+     "Santa Rosa (31-525 e 520-480)",
+     "Sapucaia",
+     "Setenta",
+     "Sombrio (110-382 lado par)",
+     "Sombrio (15-145 e 245-261 e 22-104)",
+     "Sombrio (155-175 lado impar)",
+     "Sombrio (418-520 e 275-535)",
+     "São Borja",
+     "São Gabriel",
+     "São Jerônimo (10-20 Beco e 11-221 lado impar)",
+     "São Jerônimo (50-636 e 271-625)",
+     "São Leopoldo",
+     "Tapes",
+     "Tv. 4",
+     "Tv. Chui (11-31 e 30)",
+     "Tv. Conrado (10)",
+     "Tv. I (01-105 e 06-120)",
+     "Tv. I (145-155 e 130)",
+     "Tv. Missões",
+     "Tv. Nossa Sra das Graças (5-25 lado impar)",
+     "Tv. Pinho",
+     "Tv. Santo Dias",
+     "Tv. União (26-58 lado par)",
+     "Tv. União (55-175)",
+     "Tv. da Ponte (225-499)",
+     "Tv. da Ponte (23-229)",
+     "Tv. Ávila",
+     "Vacaria",
+     "Vasconcelos",
+     "Viamão (142-152)",
+     "Viamão (2-65)"
+    ],
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.07976,
+       -29.90917
+      ],
+      [
+       -51.08313,
+       -29.91384
+      ],
+      [
+       -51.08239,
+       -29.91482
+      ],
+      [
+       -51.08201,
+       -29.91508
+      ],
+      [
+       -51.08135,
+       -29.91708
+      ],
+      [
+       -51.08007,
+       -29.91866
+      ],
+      [
+       -51.07971,
+       -29.91881
+      ],
+      [
+       -51.07928,
+       -29.91791
+      ],
+      [
+       -51.07893,
+       -29.91757
+      ],
+      [
+       -51.07773,
+       -29.9165
+      ],
+      [
+       -51.0735,
+       -29.91384
+      ],
+      [
+       -51.07306,
+       -29.91319
+      ],
+      [
+       -51.07308,
+       -29.91305
+      ],
+      [
+       -51.07298,
+       -29.91276
+      ],
+      [
+       -51.07289,
+       -29.91242
+      ],
+      [
+       -51.07283,
+       -29.91207
+      ],
+      [
+       -51.07285,
+       -29.91163
+      ],
+      [
+       -51.07307,
+       -29.91093
+      ],
+      [
+       -51.07312,
+       -29.91094
+      ],
+      [
+       -51.07404,
+       -29.90987
+      ],
+      [
+       -51.07462,
+       -29.91029
+      ],
+      [
+       -51.07528,
+       -29.90956
+      ],
+      [
+       -51.07591,
+       -29.90886
+      ],
+      [
+       -51.07687,
+       -29.90762
+      ],
+      [
+       -51.07694,
+       -29.90756
+      ],
+      [
+       -51.07705,
+       -29.90756
+      ],
+      [
+       -51.07715,
+       -29.90811
+      ],
+      [
+       -51.07758,
+       -29.90875
+      ],
+      [
+       -51.07727,
+       -29.90891
+      ],
+      [
+       -51.07737,
+       -29.90978
+      ],
+      [
+       -51.07777,
+       -29.91027
+      ],
+      [
+       -51.07976,
+       -29.90917
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da ESF José Ramos",
+    "unidade": "ESF José Ramos",
+    "tipo": "ESF",
+    "codigo": "ESF-JOSE-RAMOS",
+    "descricao": "Território de abrangência da ESF José Ramos, com 77 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 77,
+    "ruas": [
+     "12 de Outubro (15-25)",
+     "15 de Maio (15-100)",
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "Andorinha",
+     "Araponga",
+     "Araçá (373-656)",
+     "Artidor do Nascimento",
+     "Assis Brasil",
+     "Av. Cristovão Colombo (35-662)",
+     "Av. Fidel Zanchetta",
+     "Av. José Brambila (1346-1426 lado par)",
+     "Beco da Figueira (34-210)",
+     "Beco do Arroio (38-65)",
+     "Beco do João (31-73)",
+     "Beco do Luiz (21-129)",
+     "Beco do Pinnheiro",
+     "Beco do Silva (29-115)",
+     "Beco dos Gaúchos",
+     "Beija-Flor",
+     "Bosque",
+     "Cajueiro",
+     "Canela (14-181)",
+     "Caramuru",
+     "Catiguá",
+     "Cedro (13-140)",
+     "Cerejeira (797-953)",
+     "Colibri",
+     "Criciúma",
+     "Cristóvão Colombo (780-851)",
+     "Curió",
+     "Dom João VI",
+     "Estrela (15-209)",
+     "Estácio de Sá (237-523)",
+     "Figueira",
+     "Frei Caneca",
+     "Frei Mojica (89-393)",
+     "Guabijú",
+     "Guajuviras (240-892)",
+     "Ipanema",
+     "Jacarandá (31-259 e 297-491)",
+     "Jamelão (exceto invasão)",
+     "José de Anchieta",
+     "João Paulo II (30-194)",
+     "Laranjeiras",
+     "Lima e Silva (410-565)",
+     "Lingustro",
+     "Margarida",
+     "Mario Teixeira de Souza",
+     "Mario da Costa Pereira (3221-3404)",
+     "Medianeira",
+     "Murta",
+     "Nelson de Oliveira Lopes (741-987)",
+     "Nova Zelândia (272-695)",
+     "Peroba",
+     "Pinheiro",
+     "Pitangueira (31-215)",
+     "Quaraí (20-91)",
+     "Quaresmeira",
+     "Quiri",
+     "República Piratini",
+     "Rogério da Silva Oliveira",
+     "Rua dos Gaúchos",
+     "Sabiá",
+     "Tangará (5-110)",
+     "Timbaúva",
+     "Tuia",
+     "Tv. Ponte (32-438)",
+     "Uirapuru (5-97)",
+     "Uruguaiana (2-17)",
+     "Área 01",
+     "Área 02",
+     "Área 03"
+    ],
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.087,
+       -29.92011
+      ],
+      [
+       -51.08751,
+       -29.92474
+      ],
+      [
+       -51.08807,
+       -29.92524
+      ],
+      [
+       -51.08869,
+       -29.92565
+      ],
+      [
+       -51.08823,
+       -29.92617
+      ],
+      [
+       -51.08741,
+       -29.92559
+      ],
+      [
+       -51.08736,
+       -29.92563
+      ],
+      [
+       -51.08812,
+       -29.92624
+      ],
+      [
+       -51.08809,
+       -29.92649
+      ],
+      [
+       -51.0881,
+       -29.92673
+      ],
+      [
+       -51.0882,
+       -29.92695
+      ],
+      [
+       -51.08847,
+       -29.92728
+      ],
+      [
+       -51.08824,
+       -29.92754
+      ],
+      [
+       -51.0878,
+       -29.92756
+      ],
+      [
+       -51.08565,
+       -29.92821
+      ],
+      [
+       -51.08503,
+       -29.92855
+      ],
+      [
+       -51.08327,
+       -29.92791
+      ],
+      [
+       -51.0839,
+       -29.92749
+      ],
+      [
+       -51.08331,
+       -29.92684
+      ],
+      [
+       -51.08313,
+       -29.92669
+      ],
+      [
+       -51.08275,
+       -29.92649
+      ],
+      [
+       -51.08318,
+       -29.92607
+      ],
+      [
+       -51.08322,
+       -29.92428
+      ],
+      [
+       -51.08287,
+       -29.92396
+      ],
+      [
+       -51.08229,
+       -29.9248
+      ],
+      [
+       -51.08183,
+       -29.924
+      ],
+      [
+       -51.08143,
+       -29.92362
+      ],
+      [
+       -51.08136,
+       -29.92359
+      ],
+      [
+       -51.08018,
+       -29.91998
+      ],
+      [
+       -51.07971,
+       -29.91881
+      ],
+      [
+       -51.08007,
+       -29.91866
+      ],
+      [
+       -51.08031,
+       -29.91834
+      ],
+      [
+       -51.08135,
+       -29.91708
+      ],
+      [
+       -51.08201,
+       -29.91508
+      ],
+      [
+       -51.08242,
+       -29.9149
+      ],
+      [
+       -51.08289,
+       -29.91431
+      ],
+      [
+       -51.08325,
+       -29.91388
+      ],
+      [
+       -51.08374,
+       -29.91367
+      ],
+      [
+       -51.08405,
+       -29.91427
+      ],
+      [
+       -51.08429,
+       -29.91484
+      ],
+      [
+       -51.08455,
+       -29.91553
+      ],
+      [
+       -51.08463,
+       -29.91632
+      ],
+      [
+       -51.08553,
+       -29.91638
+      ],
+      [
+       -51.08548,
+       -29.91689
+      ],
+      [
+       -51.08529,
+       -29.91712
+      ],
+      [
+       -51.08452,
+       -29.91726
+      ],
+      [
+       -51.08433,
+       -29.91655
+      ],
+      [
+       -51.08383,
+       -29.91646
+      ],
+      [
+       -51.08422,
+       -29.91762
+      ],
+      [
+       -51.08485,
+       -29.91802
+      ],
+      [
+       -51.08525,
+       -29.91898
+      ],
+      [
+       -51.08546,
+       -29.91998
+      ],
+      [
+       -51.08555,
+       -29.92028
+      ],
+      [
+       -51.0863,
+       -29.92086
+      ],
+      [
+       -51.08671,
+       -29.92082
+      ],
+      [
+       -51.08669,
+       -29.92055
+      ],
+      [
+       -51.08694,
+       -29.92052
+      ],
+      [
+       -51.08695,
+       -29.92009
+      ],
+      [
+       -51.087,
+       -29.92011
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da ESF Carlos Wilkens",
+    "unidade": "ESF Carlos Wilkens",
+    "tipo": "ESF",
+    "codigo": "ESF-CARLOS-WILKENS",
+    "descricao": "Território de abrangência da ESF Carlos Wilkens, com 105 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 105,
+    "ruas": [
+     "1 -Área 1",
+     "1.1 – Adriana",
+     "1.2 – Cláudia",
+     "1.3 – Elias",
+     "1.4 – Júlio",
+     "1.5 – Rosilene",
+     "2.1 - Área descoberta",
+     "2.1 – Neidi",
+     "2.2 – Liriani",
+     "2.3 – Junior",
+     "2.4 – Área descoberta",
+     "3.1 - Maria",
+     "3.2 – Vera",
+     "3.3 – Área descoberta",
+     "3.4 – Valquiria",
+     "3.5 - Área descoberta",
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
+     "Av. Beira-Rio",
+     "Av. Brasil Aquino Pedroso",
+     "Av. Delfim Moreira",
+     "Av. Flores da Cunha (55-770)",
+     "Av. Frederico Ritter (41-263)",
+     "Av. Marinha",
+     "Beco do Sesi",
+     "CADOP",
+     "IRGA",
+     "Rua 12 de Outubro",
+     "Rua 19 de Julho",
+     "Rua 29 de Setembro",
+     "Rua 6 de Maio",
+     "Rua 9 de Outubro",
+     "Rua Ademar Moura",
+     "Rua Adil Soares",
+     "Rua Afonso Pena",
+     "Rua Alvício Silva",
+     "Rua Anita Garibaldi",
+     "Rua Antonio Bastos",
+     "Rua Antonio Dias",
+     "Rua Arnaldo Schuller",
+     "Rua Barão do Triunfo",
+     "Rua Bonifácio Carvalho Bernardes",
+     "Rua Campos Sales",
+     "Rua Carlos Fraga",
+     "Rua Chapadão",
+     "Rua Chile",
+     "Rua Edgar Bins – 38 à 553 e 580",
+     "Rua Edgar Bins – 572 à 822",
+     "Rua Emanuel Messias",
+     "Rua F - Leopoldo Nunes",
+     "Rua Fernando Ferrari – até 1596",
+     "Rua G - Adão Agedi Lopes Konig",
+     "Rua H – Ametista",
+     "Rua I - Cristal",
+     "Rua J - Lourival Martins Rocha",
+     "Rua José Rauil da Fonseca (Rua 2)",
+     "Rua José Stuart da Silva",
+     "Rua João Rodrigues",
+     "Rua Luis Antonio Dias",
+     "Rua Luis Henrique",
+     "Rua M - Valdomiro Correa Andrade",
+     "Rua Manoel Moura",
+     "Rua Modesto Lima",
+     "Rua Moisés Santos",
+     "Rua N - Alceu de Lima Finger",
+     "Rua Nilo Peçanha – até 175",
+     "Rua Nove",
+     "Rua Nércio Xavier",
+     "Rua Olavo de Freitas",
+     "Rua Osório Dhil",
+     "Rua Padre Réus",
+     "Rua Portugal",
+     "Rua Portugal - até 85",
+     "Rua Quatro (Elvira Langer) – 10 à 330",
+     "Rua Quatro (Elvira Langer) – 1195 à 2430",
+     "Rua Quatro (Elvira Langer) – 340 à 1195",
+     "Rua Querência do Norte",
+     "Rua Ruy Barbosa",
+     "Rua Santa Isabel",
+     "Rua Santa Maria",
+     "Rua Santo Angelo",
+     "Rua Seis",
+     "Rua Silvério Leopoldo",
+     "Rua Tom Jobim",
+     "Rua Vereador Rui Souza Feijó",
+     "Rua da Paz",
+     "Rua das Flores",
+     "TV. Mj. Antonio Silveira Lima",
+     "Tv Antenas",
+     "Tv Eucaliptos",
+     "Tv Helster",
+     "Tv Lucena Muller",
+     "Tv. B",
+     "Tv. C - Canaã",
+     "Tv. J - Antoninha da Costa Vinhas",
+     "Tv. L - Alcides Marino Santos",
+     "Tv. Ladislau de Oliveira Thedy",
+     "Tv. São Jorge",
+     "Tv. Vera Cruz",
+     "Área 2",
+     "Área 3"
+    ],
+    "telefone": "(51) 3041-7190",
+    "email": "esf.carloswilkens@cachoeirinha.rs.gov.br",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.11043,
+       -29.95931
+      ],
+      [
+       -51.11263,
+       -29.96188
+      ],
+      [
+       -51.10871,
+       -29.96109
+      ],
+      [
+       -51.10848,
+       -29.96048
+      ],
+      [
+       -51.1078,
+       -29.96035
+      ],
+      [
+       -51.10723,
+       -29.96019
+      ],
+      [
+       -51.10688,
+       -29.95927
+      ],
+      [
+       -51.1065,
+       -29.95798
+      ],
+      [
+       -51.10578,
+       -29.95865
+      ],
+      [
+       -51.10565,
+       -29.95842
+      ],
+      [
+       -51.10569,
+       -29.95741
+      ],
+      [
+       -51.10571,
+       -29.95673
+      ],
+      [
+       -51.10573,
+       -29.95612
+      ],
+      [
+       -51.10575,
+       -29.95549
+      ],
+      [
+       -51.10524,
+       -29.95442
+      ],
+      [
+       -51.10424,
+       -29.95377
+      ],
+      [
+       -51.10304,
+       -29.95296
+      ],
+      [
+       -51.10144,
+       -29.95158
+      ],
+      [
+       -51.10189,
+       -29.95151
+      ],
+      [
+       -51.10247,
+       -29.95127
+      ],
+      [
+       -51.10354,
+       -29.95025
+      ],
+      [
+       -51.10404,
+       -29.94999
+      ],
+      [
+       -51.10523,
+       -29.9499
+      ],
+      [
+       -51.10554,
+       -29.94986
+      ],
+      [
+       -51.1058,
+       -29.94979
+      ],
+      [
+       -51.10609,
+       -29.9497
+      ],
+      [
+       -51.10636,
+       -29.94953
+      ],
+      [
+       -51.10656,
+       -29.94929
+      ],
+      [
+       -51.10674,
+       -29.94904
+      ],
+      [
+       -51.10687,
+       -29.94866
+      ],
+      [
+       -51.10694,
+       -29.9482
+      ],
+      [
+       -51.10741,
+       -29.94851
+      ],
+      [
+       -51.10944,
+       -29.94609
+      ],
+      [
+       -51.10983,
+       -29.94527
+      ],
+      [
+       -51.11052,
+       -29.94515
+      ],
+      [
+       -51.11193,
+       -29.9451
+      ],
+      [
+       -51.1163,
+       -29.93956
+      ],
+      [
+       -51.11748,
+       -29.93798
+      ],
+      [
+       -51.11791,
+       -29.93804
+      ],
+      [
+       -51.11743,
+       -29.93969
+      ],
+      [
+       -51.11529,
+       -29.94202
+      ],
+      [
+       -51.11286,
+       -29.94525
+      ],
+      [
+       -51.11517,
+       -29.95288
+      ],
+      [
+       -51.11623,
+       -29.95218
+      ],
+      [
+       -51.1188,
+       -29.95088
+      ],
+      [
+       -51.12277,
+       -29.94906
+      ],
+      [
+       -51.12399,
+       -29.95067
+      ],
+      [
+       -51.12603,
+       -29.95403
+      ],
+      [
+       -51.1245,
+       -29.9544
+      ],
+      [
+       -51.12373,
+       -29.95518
+      ],
+      [
+       -51.1217,
+       -29.95626
+      ],
+      [
+       -51.12017,
+       -29.95773
+      ],
+      [
+       -51.11645,
+       -29.95831
+      ],
+      [
+       -51.1153,
+       -29.95809
+      ],
+      [
+       -51.11437,
+       -29.95742
+      ],
+      [
+       -51.11307,
+       -29.95753
+      ],
+      [
+       -51.11043,
+       -29.95931
+      ]
+     ]
+    ]
+   }
+  }
+ ],
+ "observacao": "Limites de trabalho digitalizados em mapa colaborativo. Devem ser substituídos pelos limites oficiais quando a Secretaria os publicar."
+}

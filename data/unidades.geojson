@@ -1,0 +1,469 @@
+{
+ "type": "FeatureCollection",
+ "name": "Unidades e serviços de saúde — Cachoeirinha/RS",
+ "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
+ "gerado_em": "2026-09-18",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Secretaria de Saúde",
+    "tipo": "Administração",
+    "codigo": "SECRETARIA-DE-SAUDE",
+    "tem_area": false,
+    "telefone": "3041-8673",
+    "email": "almoxarifado.saude@cachoeirinha.rs.gov.br",
+    "informacoes": "Horários: Todos os dias das 8h às 17h sem fechar às 12h.\nOBS: A farmácia fecha quarta às tarde\nTelefones:\n==========GERAL==========\n3041-8650\n=========SETORES==========\nALMOXARIFADO\nFone: 3041-8673\nEmail: almoxarifado.saude@cachoeirinha.rs.gov.br\nDAB - DEPARTAMENTO EM ATENÇÃO BÁSICA\nFone: 3041-8661\nEmail: atencaobasica@cachoeirinha.rs.gov.br\nDP - DEPARTAMENTO PESSOAL\nFone: 3041-8658\nEmail: rh.sms@cachoeirinha.rs.gov.br\nDPS (DAS) - DEPARTAMENTO DE POLÍTICAS EM SAÚDE\nFone: 3041-8671\nEmail: politicasemsaude.sms@cachoeirinha.rs.gov.br\ndpscachoeirinha@gmail.com\nmaternoinfantil.cacho@gmail.com\nFATURAMENTO/APOIO À GESTÃO:\nFone: 3041-8672\nEmail: producaoeinformacao.sms@cachoeirinha.rs.gov.br\nFARMÁCIA\nFone: 3041-8687\nEmail:\nGABINETE\nFone: 3041- 8663\nEmail: saude@cachoeirinha.rs.gov.br\nIMUNIZAÇÃO\nFone: 3041-8655\nEmail:\nJURÍDICO\nFone: 3041-8855\nEmail: juridico.saude@cachoeirinha.rs.gov.br\nREGULAÇÃO\nFone: 3041-8681\n3041-8682\n3041-8683\n3041-8692\n3041-8692\nEmail:\nVIGILANCIA EPIDEMIOLÓGICA\nFone: 3041-8654 ou 8655\nEmail: vigilanciaepidemiologica@cachoeirinha.rs.gov.br",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.07748,
+     -29.93145
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "UBS CAIC Granja",
+    "tipo": "UBS",
+    "codigo": "UBS-CAIC-GRANJA",
+    "tem_area": true,
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.0822,
+     -29.9058
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "UBS COHAB",
+    "tipo": "UBS",
+    "codigo": "UBS-COHAB",
+    "tem_area": true,
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.1014,
+     -29.94511
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "UBS Getúlio Vargas",
+    "tipo": "UBS",
+    "codigo": "UBS-GETULIO-VARGAS",
+    "tem_area": true,
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.08331,
+     -29.92466
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "UBS Jardim do Bosque",
+    "tipo": "UBS",
+    "codigo": "UBS-JARDIM-DO-BOSQUE",
+    "tem_area": true,
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.09087,
+     -29.92603
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "UBS Nova Cachoeirinha",
+    "tipo": "UBS",
+    "codigo": "UBS-NOVA-CACHOEIRINHA",
+    "tem_area": true,
+    "email": "ubs.novacachoeirinha@cachoeirinha.rs.gov.br",
+    "informacoes": "Email: ubs.novacachoeirinha@cachoeirinha.rs.gov.br",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.07141,
+     -29.90495
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "UBS Odil Silva de Oliveira",
+    "tipo": "UBS",
+    "codigo": "UBS-ODIL-SILVA-DE-OLIVEIRA",
+    "tem_area": true,
+    "telefone": "3438-3977",
+    "informacoes": "Atualizado em 12/04/2024\n1 - Horários\nSegunda à Sexta: 8h às 20h\n2 - Contato\nFone: 3438-3977 / 3438-3401\n3 - Serviços\n4 - Localização",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.07239,
+     -29.9119
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "UBS Parque da Matriz",
+    "tipo": "UBS",
+    "codigo": "UBS-PARQUE-DA-MATRIZ",
+    "tem_area": true,
+    "telefone": "3041-6273 3 -",
+    "informacoes": "Atualizado em 19/08/2025\n1 - Horários\n2 - Contato\nFone: 3041-6273\n3 - Serviços\n4 - Localização\nAtendido pela linha de ônibus Parque da Matriz",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.08021,
+     -29.94855
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "UBS Décio Martins Costa",
+    "tipo": "UBS",
+    "codigo": "UBS-DECIO-MARTINS-COSTA",
+    "tem_area": true,
+    "telefone": "(51) 3074-5539",
+    "informacoes": "1 - Horários\n2 - Contato\nFone: (51) 3074-5539\nFone: (51) 3074-5508\n3 - Serviços\n4 - Localização\nPróximo a escola Polivalente;\nAcesso pela \"rua do Calçadão\".",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.10254,
+     -29.95744
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "UBS Osvaldo Cruz",
+    "tipo": "UBS",
+    "codigo": "UBS-OSVALDO-CRUZ",
+    "tem_area": true,
+    "telefone": "(51) 3041-7194",
+    "informacoes": "1 - Horários\n2 - Contato\nFone: (51) 3041-7194\nFone: (51) 3041-6219\n3 - Serviços\n4 - Localização\nAo lado do SAE\nNa 'rua do valão'",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.09134,
+     -29.93838
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "ESF Canarinho",
+    "tipo": "ESF",
+    "codigo": "ESF-CANARINHO",
+    "tem_area": true,
+    "email": "esf.canarinho@cachoeirinha.rs.gov.br",
+    "informacoes": "Fecha terça às 15h para reunião.\nEmail: esf.canarinho@cachoeirinha.rs.gov.br",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.07112,
+     -29.89831
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "ESF Jardim Betânia",
+    "tipo": "ESF",
+    "codigo": "ESF-JARDIM-BETANIA",
+    "tem_area": true,
+    "email": "esf.jardimbetania@cachoeirinha.rs.gov.br",
+    "informacoes": "Fecha terça às 15h para reunião.\nEmail: esf.jardimbetania@cachoeirinha.rs.gov.br",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.08741,
+     -29.88744
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "ESF José Ramos",
+    "tipo": "ESF",
+    "codigo": "ESF-JOSE-RAMOS",
+    "tem_area": true,
+    "informacoes": "Fecha terça às 15h para reunião.",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.08396,
+     -29.92001
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "ESF José Ari da Silveira",
+    "tipo": "ESF",
+    "codigo": "ESF-JOSE-ARI-DA-SILVEIRA",
+    "tem_area": true,
+    "informacoes": "Fecha terça às 15h para reunião.",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.07522,
+     -29.9212
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "ESF Otacílio Silveira",
+    "tipo": "ESF",
+    "codigo": "ESF-OTACILIO-SILVEIRA",
+    "tem_area": true,
+    "informacoes": "Fecha terça às 15h para reunião.",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.0754,
+     -29.91282
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "ESF Carlos Wilkens",
+    "tipo": "ESF",
+    "codigo": "ESF-CARLOS-WILKENS",
+    "tem_area": true,
+    "telefone": "(51) 3041-7190",
+    "email": "esf.carloswilkens@cachoeirinha.rs.gov.br",
+    "informacoes": "Atualizado em 12/04/2024\n1 - Horários\nSegunda à Sexta:\nManhã: 8h às 12h - tarde: 13 às 17h.\nFecha quarta às 15h para reunião.\n2 - Contato\nFone: (51) 3041-7190\nEmail: esf.carloswilkens@cachoeirinha.rs.gov.br\n3 - Serviços\nÉ necessário ser cadastrado na ESF pelo agente de saúde e levar seu cartão família e cartão SUS para todos os atendimentos.\nNão é necessário ser cadastrado para vacinação, acolhimento odontológico, pesagem bolsa-família\n3.1 - Precisam de agendamento\nConsultas médicas\nConsultas odontológicas\nTeste rápido (HIV, hepatite e sífilis)\nExame CP (preventivo)\nVisitas domiciliares\n3.2 - Não precisam de agendamento\nTeste de gravidez\nAcolhimento odontológico (manhã: 8h - tarde 13h )\nAcolhimento médico (manhã: 8h - tarde 13h )\nPesagem bolsa-família\nAferição de pressão\nHGT\nCurativo\nVacina\n4 - Localização\nPróximo a 1ª delegacia de polícia.\nPróximo à ponte para Porto Alegre\nPróximo ao mercado Ki-carne",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.11003,
+     -29.95164
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Hospital Padre Jeremias",
+    "tipo": "Pronto atendimento",
+    "codigo": "HOSPITAL-PADRE-JEREMIAS",
+    "tem_area": false,
+    "informacoes": "Linhas de ônibus que passam na frente do Hospital: Parque da Matriz, Granja",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.08043,
+     -29.94043
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "UPA 24h Cachoeirinha",
+    "tipo": "Pronto atendimento",
+    "codigo": "UPA-24H-CACHOEIRINHA",
+    "tem_area": false,
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.09068,
+     -29.918
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "CEC - Centro de especialidades médicas",
+    "tipo": "Especialidades",
+    "codigo": "CEC-CENTRO-DE-ESPECIALIDADES-MEDICAS",
+    "tem_area": false,
+    "telefone": "3041-7195 3 -",
+    "informacoes": "Atualizado em 12/04/2024\n1 - Horários\n2 - Contato\nFone: 3041-7195\n3 - Serviços\n4 - Localização\nPróximo a Prefeitura de Cachoeirinha; antes do Mato do Júlio;\nParada 54;\nAntigo PAM.",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.09162,
+     -29.9469
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "SAE",
+    "tipo": "Especialidades",
+    "codigo": "SAE",
+    "tem_area": false,
+    "informacoes": "Ao lado do Posto Osvaldo Cruz.\nNa rua conhecida como \"rua do valão\"",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.09127,
+     -29.93803
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Centro de Saúde da Pessoa Idosa",
+    "tipo": "Especialidades",
+    "codigo": "CENTRO-DE-SAUDE-DA-PESSOA-IDOSA",
+    "tem_area": false,
+    "telefone": "(51) 3041-7194 3 -",
+    "informacoes": "1 - Horários\nSegunda à Sexta:\nManhã: 7h30 às 17h\n2 - Contato\nFone: (51) 3041-7194\n3 - Serviços\n4 - Localização",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.10168,
+     -29.94899
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "CAPS II - Centro de Atenção Psicossocial",
+    "tipo": "Saúde Mental",
+    "codigo": "CAPS-II-CENTRO-DE-ATENCAO-PSICOSSOCIAL",
+    "tem_area": false,
+    "informacoes": "Ao lado do CRAS Carlos Wilkens",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.10871,
+     -29.95321
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "CAPS AD - Centro de Atenção Psicossocial Álcool e outra Drogas",
+    "tipo": "Saúde Mental",
+    "codigo": "CAPS-AD-CENTRO-DE-ATENCAO-PSICOSSOCIAL-ALCOOL-E-OUTRA-DROGAS",
+    "tem_area": false,
+    "informacoes": "Ao lado do Shopping do Vale",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.07837,
+     -29.93601
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Unidade de Saúde Mental Infantil",
+    "tipo": "Saúde Mental",
+    "codigo": "UNIDADE-DE-SAUDE-MENTAL-INFANTIL",
+    "tem_area": false,
+    "telefone": "3074-5583",
+    "informacoes": "Fone: 3074-5583",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.09765,
+     -29.9487
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "CEO - Centro de Especialidades Odontológicas",
+    "tipo": "Odontologia",
+    "codigo": "CEO-CENTRO-DE-ESPECIALIDADES-ODONTOLOGICAS",
+    "tem_area": false,
+    "telefone": "3471-9605",
+    "informacoes": "Fone: 3471-9605\nAo lado da ESF Otacílio.",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.07516,
+     -29.91276
+    ]
+   }
+  }
+ ],
+ "observacao": "Endereço postal não consta na fonte; a posição vem do ponto marcado no mapa."
+}

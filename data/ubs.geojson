@@ -1,0 +1,2262 @@
+{
+ "type": "FeatureCollection",
+ "name": "Áreas de UBS — Cachoeirinha/RS",
+ "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
+ "gerado_em": "2026-09-18",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Parque da Matriz",
+    "unidade": "UBS Parque da Matriz",
+    "tipo": "UBS",
+    "codigo": "UBS-PARQUE-DA-MATRIZ",
+    "descricao": "Território de abrangência da UBS Parque da Matriz, com 104 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 104,
+    "ruas": [
+     "Av. Concordia",
+     "Av. Panamericana",
+     "R. Bonsucesso",
+     "Rua 8",
+     "Rua Adão Sos Santos",
+     "Rua Alagoinhas",
+     "Rua Aldoni Carvalho",
+     "Rua Alenir B. Cardoso",
+     "Rua Anapolis",
+     "Rua Aparicio S. da Silva",
+     "Rua Araçatuba",
+     "Rua Armindo S. Martins",
+     "Rua Arpuador",
+     "Rua Bandeirantes",
+     "Rua Bangu",
+     "Rua Barão de Cotegipe",
+     "Rua Bauru",
+     "Rua Bauru",
+     "Rua Belo Horizonte",
+     "Rua Bertoldo Creps",
+     "Rua Boa Vista",
+     "Rua Botafogo",
+     "Rua Botafogo",
+     "Rua Caboçu",
+     "Rua Candeias",
+     "Rua Carlos Schuller",
+     "Rua Cascavel",
+     "Rua Claudio Fagundes Santos",
+     "Rua Congonhas",
+     "Rua Copacabana",
+     "Rua Corcovado",
+     "Rua Cristino M. Dos Santos",
+     "Rua Delcio Jose Cordova",
+     "Rua Deolindo Selao",
+     "Rua Diadema",
+     "Rua Diamantina",
+     "Rua Domingos Dorivaldo Thiesen",
+     "Rua Eloi Teixeira",
+     "Rua Emilia Gauna Bochlhein",
+     "Rua Erico Verissimo",
+     "Rua Ernesto Che Guevara",
+     "Rua Euclides Da Cunha",
+     "Rua Eugenio J, Bisotto",
+     "Rua Flamengo",
+     "Rua Fraga",
+     "Rua Francisco Dimer Raupp",
+     "Rua Guaporé",
+     "Rua Henrique Duarte Monteiro",
+     "Rua Iguatemi",
+     "Rua Ijui",
+     "Rua Ilheus",
+     "Rua Itaberaba",
+     "Rua Itapema",
+     "Rua Itapetininga",
+     "Rua Itaqui",
+     "Rua Jacarepagua",
+     "Rua Jose R. de Souza",
+     "Rua Jose Raupp",
+     "Rua Jose Souza Jucowsi",
+     "Rua Juarez C. Evaldt",
+     "Rua Leblon",
+     "Rua Limoeiro",
+     "Rua Lindolfo Wagner",
+     "Rua Luiz D. Da Silva",
+     "Rua Luiz de Camões",
+     "Rua Madureira",
+     "Rua Manoel Vitorino Nunes",
+     "Rua Maracanã",
+     "Rua Marau",
+     "Rua Maringa",
+     "Rua Mogi Mirim",
+     "Rua Monteiro Lobato",
+     "Rua Morumbi",
+     "Rua Natalicio Alves",
+     "Rua Nero Caruso",
+     "Rua Nildo Delfino",
+     "Rua Nilton Teixeira",
+     "Rua Norberto Gomes Da Silva",
+     "Rua Odil S. de Oliveira",
+     "Rua Ouro Preto",
+     "Rua Pacaembu",
+     "Rua Panamericana",
+     "Rua Panorama",
+     "Rua Paquetá",
+     "Rua Paranavai",
+     "Rua Parati",
+     "Rua Petropolis",
+     "Rua Petrópolis",
+     "Rua Poços De Caldas",
+     "Rua Realengo",
+     "Rua Ribeirão Preto",
+     "Rua Rio Claro",
+     "Rua Roseli Nunes",
+     "Rua Salguero",
+     "Rua Santa Ines",
+     "Rua Sen. Luiz Preste",
+     "Rua Teresopolis",
+     "Rua Tijuca",
+     "Rua Valeça",
+     "Rua Ver. João M. Pereira",
+     "Rua Zulmira R. Da Silva",
+     "Rua das Oliveiras",
+     "Tv. Rio Grande",
+     "Tv. Santos"
+    ],
+    "telefone": "3041-6273",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.08391,
+       -29.93904
+      ],
+      [
+       -51.08333,
+       -29.93973
+      ],
+      [
+       -51.08235,
+       -29.94097
+      ],
+      [
+       -51.08426,
+       -29.94187
+      ],
+      [
+       -51.0843,
+       -29.94484
+      ],
+      [
+       -51.08329,
+       -29.957
+      ],
+      [
+       -51.07948,
+       -29.95589
+      ],
+      [
+       -51.07393,
+       -29.95493
+      ],
+      [
+       -51.06942,
+       -29.95454
+      ],
+      [
+       -51.06838,
+       -29.94582
+      ],
+      [
+       -51.07507,
+       -29.94286
+      ],
+      [
+       -51.07591,
+       -29.93193
+      ],
+      [
+       -51.07689,
+       -29.93202
+      ],
+      [
+       -51.07786,
+       -29.93258
+      ],
+      [
+       -51.07958,
+       -29.93542
+      ],
+      [
+       -51.08084,
+       -29.93695
+      ],
+      [
+       -51.08184,
+       -29.93798
+      ],
+      [
+       -51.08391,
+       -29.93904
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Décio Martins Costa",
+    "unidade": "UBS Décio Martins Costa",
+    "tipo": "UBS",
+    "codigo": "UBS-DECIO-MARTINS-COSTA",
+    "descricao": "Território de abrangência da UBS Décio Martins Costa, com 82 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 82,
+    "ruas": [
+     "Av Delfin Moreira",
+     "Av. Gal. Anapio Gomes",
+     "Beco Aboot",
+     "Beco Luiz Shergl",
+     "Rua 15 De Novembro",
+     "Rua 1º De Maio",
+     "Rua 21 De Abril",
+     "Rua 7 De Setembro",
+     "Rua Alzira Jung",
+     "Rua Arlindo F. Soares",
+     "Rua Artur Bernardes",
+     "Rua Café Filho",
+     "Rua Castro Alves",
+     "Rua Catão Rosco",
+     "Rua Cel. João B. S. Da S. E Souza",
+     "Rua Cilon Rosa",
+     "Rua Clóvis F. Velho",
+     "Rua Clóvis Pestana",
+     "Rua Colorado",
+     "Rua Dom Bosco",
+     "Rua Dom Sebastião",
+     "Rua Dona Otília",
+     "Rua Décio Costa",
+     "Rua Elias G. Dos Santos",
+     "Rua Emílio Dos Santos",
+     "Rua Epitácio Pessoa",
+     "Rua Ernesto Dorneles",
+     "Rua Eulina Martins",
+     "Rua Eurico G. Dutra",
+     "Rua Eurípedes Aurélio Da Silva",
+     "Rua Everaldo M. Da Silva",
+     "Rua Francisco Martins",
+     "Rua Gal. João Alfredo",
+     "Rua Gal. Vignole",
+     "Rua Gerdau",
+     "Rua Gravataí",
+     "Rua Guarani",
+     "Rua Heini Renner",
+     "Rua Imbui",
+     "Rua Independência",
+     "Rua José A. Becker",
+     "Rua José Medeiros",
+     "Rua João A. B. Filho",
+     "Rua João Dias",
+     "Rua João Paulo Alcântara",
+     "Rua João Pessoa",
+     "Rua Largo Dos Muller",
+     "Rua Lindolfo Collor",
+     "Rua Luiz Cardoso",
+     "Rua Lupicínio Rodrigues",
+     "Rua Mal. Hermes Da Fonseca",
+     "Rua Maria De O. Maciel",
+     "Rua Martinho Lutero",
+     "Rua Maurício L. Da Silva",
+     "Rua Mauá",
+     "Rua Men De Sá",
+     "Rua Nereu Ramos",
+     "Rua Nicolau Rosa",
+     "Rua Nilo Peçanha",
+     "Rua Ori Kinder",
+     "Rua Papa João Xxiii",
+     "Rua Pedro L. A. Marengo",
+     "Rua Piratini",
+     "Rua Pruclante De Moraes",
+     "Rua Ramos",
+     "Rua Rodrigues Alves",
+     "Rua Salvador Canelas",
+     "Rua Santa Clara",
+     "Rua São Francisco",
+     "Rua São José",
+     "Rua São Judas Tadeu",
+     "Rua São Vicente De Paula",
+     "Rua Tabajaras",
+     "Rua Tamoio",
+     "Rua Tapajós",
+     "Rua Teodomiro Porto",
+     "Rua Vitória",
+     "Rua Walter Jobim",
+     "Rua Washington Luiz",
+     "Tr. Araci",
+     "Tr. Do Carmo",
+     "Tv. São Roque"
+    ],
+    "telefone": "(51) 3074-5539",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.10539,
+       -29.95478
+      ],
+      [
+       -51.10575,
+       -29.95549
+      ],
+      [
+       -51.10563,
+       -29.95841
+      ],
+      [
+       -51.10578,
+       -29.95865
+      ],
+      [
+       -51.1065,
+       -29.95798
+      ],
+      [
+       -51.10723,
+       -29.96019
+      ],
+      [
+       -51.1078,
+       -29.96035
+      ],
+      [
+       -51.10848,
+       -29.96048
+      ],
+      [
+       -51.10769,
+       -29.96154
+      ],
+      [
+       -51.10764,
+       -29.96172
+      ],
+      [
+       -51.1063,
+       -29.96426
+      ],
+      [
+       -51.10515,
+       -29.96478
+      ],
+      [
+       -51.10142,
+       -29.96379
+      ],
+      [
+       -51.09864,
+       -29.96421
+      ],
+      [
+       -51.09387,
+       -29.96169
+      ],
+      [
+       -51.09029,
+       -29.95986
+      ],
+      [
+       -51.0913,
+       -29.94676
+      ],
+      [
+       -51.09573,
+       -29.94906
+      ],
+      [
+       -51.09706,
+       -29.94964
+      ],
+      [
+       -51.09803,
+       -29.94984
+      ],
+      [
+       -51.09904,
+       -29.95011
+      ],
+      [
+       -51.10013,
+       -29.9508
+      ],
+      [
+       -51.10133,
+       -29.95183
+      ],
+      [
+       -51.10338,
+       -29.95352
+      ],
+      [
+       -51.10539,
+       -29.95478
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS CAIC Granja",
+    "unidade": "UBS CAIC Granja",
+    "tipo": "UBS",
+    "codigo": "UBS-CAIC-GRANJA",
+    "descricao": "Território de abrangência da UBS CAIC Granja, com 123 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 123,
+    "ruas": [
+     "Av Getúlio Vargas",
+     "Av. Anildo Gomes Alano",
+     "Av. Frederico Augusto Ritter",
+     "Estrada dos Capistranos",
+     "Rua Adelaide Helegda Rolim De Moura",
+     "Rua Adriano dos Santos",
+     "Rua Adão José Hass",
+     "Rua Alfazema",
+     "Rua Alvicio De Souza",
+     "Rua Alzira C. Silveira",
+     "Rua Amadelino Vaz Garcia",
+     "Rua Amarilis",
+     "Rua Amor Perfeito",
+     "Rua André De Souza Dias",
+     "Rua Angelo Rocha",
+     "Rua Antônio S Bento",
+     "Rua Aparicio Borges",
+     "Rua Aristide Osório Francisco",
+     "Rua Açaí",
+     "Rua B",
+     "Rua Begônia",
+     "Rua Boca De Leão",
+     "Rua Brinco De Princesa",
+     "Rua Bromélia",
+     "Rua C",
+     "Rua Cacto",
+     "Rua Camilía",
+     "Rua Camomila",
+     "Rua Carlos Braz Da Silva",
+     "Rua Copo De Leite",
+     "Rua Coroa De Cristo",
+     "Rua Coroa Imperial",
+     "Rua Cravo",
+     "Rua Crisântemo Amarelo",
+     "Rua D",
+     "Rua Darci Michel",
+     "Rua Deli Silveira Nunes",
+     "Rua Dep. Dorival C. L. De Oliveira",
+     "Rua Dona Isaura",
+     "Rua Dona Palmira",
+     "Rua Dormideira",
+     "Rua Dália",
+     "Rua E",
+     "Rua Ema B Dos Santos",
+     "Rua Emilio A. Da Rosa",
+     "Rua Eugênio Monteiro",
+     "Rua F",
+     "Rua Fernando Pessoa",
+     "Rua Firmino J. Teixeira",
+     "Rua Flor De Laranjeira",
+     "Rua Flor De Liz",
+     "Rua Flor De Lótus",
+     "Rua Flor De Pessegueiro",
+     "Rua Flor De Seda",
+     "Rua Florentina S. Rodrigues",
+     "Rua Flores Do Campo",
+     "Rua G",
+     "Rua Gardênia",
+     "Rua Gota De Carvalho",
+     "Rua Guará",
+     "Rua H",
+     "Rua Hibisco",
+     "Rua I",
+     "Rua Itália Dallanova Rocha",
+     "Rua J",
+     "Rua Jade Vermelha",
+     "Rua Jasmim",
+     "Rua Jasmim Branco",
+     "Rua Javali",
+     "Rua Joao J. Scheffer",
+     "Rua José Alves Pereira",
+     "Rua José Amaro",
+     "Rua José Antônio Lutzemberg",
+     "Rua José De Alencar",
+     "Rua José F. Maia",
+     "Rua José Ferreira De Andrade",
+     "Rua José Manuel Roxo",
+     "Rua José Oledir Ramos",
+     "Rua José Ângelo Bernardo",
+     "Rua João Oscar De Oliveira",
+     "Rua Juan Albino Nunez Ayala",
+     "Rua Kaufmann",
+     "Rua Lavanda",
+     "Rua Leonel Mafassioli",
+     "Rua Lotario Orlando Maciel Martijosé",
+     "Rua Lourdes Helena Dias",
+     "Rua Luiz B Dimmer",
+     "Rua Lírio",
+     "Rua Magnólia",
+     "Rua Malva",
+     "Rua Manacá",
+     "Rua Manoel A. Idalino",
+     "Rua Manoel C Da Rosa",
+     "Rua Manoel Selau",
+     "Rua Maria A. Da Costa",
+     "Rua Mário Quintana",
+     "Rua Nildo Schutz",
+     "Rua Nils Taranger",
+     "Rua Nils Taranger",
+     "Rua Olavo Da Silva Ribeiro",
+     "Rua Orquídea",
+     "Rua Osmar Silva De Oliveira",
+     "Rua Oswaldino Olívio Selau",
+     "Rua Otto Espíndola",
+     "Rua Otávio S. Pereira",
+     "Rua Papiro",
+     "Rua Pedro G. De Freitas",
+     "Rua Petunia",
+     "Rua Pingo De Ouro",
+     "Rua Prímula",
+     "Rua Roque Pesenato",
+     "Rua Rosa Vermelha",
+     "Rua Sempre Viva",
+     "Rua Sálvia",
+     "Rua Tamanduá",
+     "Rua Teotônia Vilela",
+     "Rua Torênia",
+     "Rua Túnel verde",
+     "Rua Ver. Mario Rosa",
+     "Rua Violeta",
+     "Rua Vitória Régia",
+     "Rua Zínia",
+     "Rua Íris Azul"
+    ],
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.09668,
+       -29.90954
+      ],
+      [
+       -51.09074,
+       -29.9103
+      ],
+      [
+       -51.0904,
+       -29.91043
+      ],
+      [
+       -51.08766,
+       -29.91174
+      ],
+      [
+       -51.08717,
+       -29.91225
+      ],
+      [
+       -51.08669,
+       -29.91219
+      ],
+      [
+       -51.08587,
+       -29.91257
+      ],
+      [
+       -51.07654,
+       -29.89973
+      ],
+      [
+       -51.07939,
+       -29.89999
+      ],
+      [
+       -51.07985,
+       -29.90061
+      ],
+      [
+       -51.08151,
+       -29.89958
+      ],
+      [
+       -51.07791,
+       -29.89466
+      ],
+      [
+       -51.07832,
+       -29.89068
+      ],
+      [
+       -51.08401,
+       -29.89187
+      ],
+      [
+       -51.08372,
+       -29.8952
+      ],
+      [
+       -51.08492,
+       -29.89521
+      ],
+      [
+       -51.08541,
+       -29.89179
+      ],
+      [
+       -51.08947,
+       -29.89256
+      ],
+      [
+       -51.08989,
+       -29.89261
+      ],
+      [
+       -51.09099,
+       -29.89251
+      ],
+      [
+       -51.0921,
+       -29.894
+      ],
+      [
+       -51.09486,
+       -29.89177
+      ],
+      [
+       -51.09382,
+       -29.89084
+      ],
+      [
+       -51.0942,
+       -29.89046
+      ],
+      [
+       -51.09522,
+       -29.8885
+      ],
+      [
+       -51.09641,
+       -29.88765
+      ],
+      [
+       -51.09841,
+       -29.88916
+      ],
+      [
+       -51.09532,
+       -29.8918
+      ],
+      [
+       -51.09239,
+       -29.89434
+      ],
+      [
+       -51.09292,
+       -29.89502
+      ],
+      [
+       -51.09332,
+       -29.89576
+      ],
+      [
+       -51.09472,
+       -29.89949
+      ],
+      [
+       -51.09606,
+       -29.90309
+      ],
+      [
+       -51.09569,
+       -29.90505
+      ],
+      [
+       -51.09647,
+       -29.90734
+      ],
+      [
+       -51.09653,
+       -29.90854
+      ],
+      [
+       -51.09668,
+       -29.90954
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Osvaldo Cruz",
+    "unidade": "UBS Osvaldo Cruz",
+    "tipo": "UBS",
+    "codigo": "UBS-OSVALDO-CRUZ",
+    "descricao": "Território de abrangência da UBS Osvaldo Cruz, com 49 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 49,
+    "ruas": [
+     "Av. Maj. Alberto Bins",
+     "Av. Princesa Isabel",
+     "Av. Telmo Silveira Dorneles",
+     "Rua 16 de Fevereiro",
+     "Rua 31 de Outubro",
+     "Rua Bororo",
+     "Rua Cai",
+     "Rua Caiapó",
+     "Rua Cariri",
+     "Rua Charrua",
+     "Rua Clarissa B. Do Santos",
+     "Rua Coroados",
+     "Rua Daloira F. Da Silva",
+     "Rua Dom Feliciano",
+     "Rua Ernesto Frield",
+     "Rua Esperança",
+     "Rua Esperança",
+     "Rua Fermino Correa da Gama",
+     "Rua Flavio Jardim",
+     "Rua Flávio Catanhede",
+     "Rua Fundo Da Capela",
+     "Rua Goitacás",
+     "Rua Guaianá",
+     "Rua Iracema",
+     "Rua Irmãos Veiga",
+     "Rua Jacuí",
+     "Rua José Antônio Duarte",
+     "Rua João A. P. De Moraes",
+     "Rua João Francisco Silva",
+     "Rua João J. Nunes",
+     "Rua Manatá",
+     "Rua Missões",
+     "Rua Monte Carlo",
+     "Rua Osvaldo Cruz",
+     "Rua Osório Correa",
+     "Rua Pagé",
+     "Rua Silvério Manoel Da Silva",
+     "Rua São Cristóvão",
+     "Rua São Manoel",
+     "Rua São Tomé",
+     "Rua Taguarí",
+     "Rua Tupi",
+     "Rua Upamarati",
+     "Rua Ver. Nésio Cunha",
+     "Rua Xavantes",
+     "Rua do Abrigo",
+     "Rua do Parque",
+     "Tv. Felisberto M. Martins",
+     "Tv. da Faculdade"
+    ],
+    "telefone": "(51) 3041-7194",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.08452,
+       -29.92982
+      ],
+      [
+       -51.0851,
+       -29.93
+      ],
+      [
+       -51.08525,
+       -29.92995
+      ],
+      [
+       -51.0857,
+       -29.92965
+      ],
+      [
+       -51.08599,
+       -29.92968
+      ],
+      [
+       -51.0864,
+       -29.92999
+      ],
+      [
+       -51.09149,
+       -29.9336
+      ],
+      [
+       -51.09317,
+       -29.93528
+      ],
+      [
+       -51.09595,
+       -29.93572
+      ],
+      [
+       -51.096,
+       -29.93676
+      ],
+      [
+       -51.09565,
+       -29.93872
+      ],
+      [
+       -51.0943,
+       -29.93978
+      ],
+      [
+       -51.09431,
+       -29.94253
+      ],
+      [
+       -51.09378,
+       -29.94519
+      ],
+      [
+       -51.09368,
+       -29.94543
+      ],
+      [
+       -51.09328,
+       -29.94754
+      ],
+      [
+       -51.09225,
+       -29.947
+      ],
+      [
+       -51.0912,
+       -29.94648
+      ],
+      [
+       -51.09075,
+       -29.94619
+      ],
+      [
+       -51.09048,
+       -29.94595
+      ],
+      [
+       -51.09024,
+       -29.94565
+      ],
+      [
+       -51.08972,
+       -29.94475
+      ],
+      [
+       -51.08878,
+       -29.943
+      ],
+      [
+       -51.0879,
+       -29.94154
+      ],
+      [
+       -51.0867,
+       -29.9403
+      ],
+      [
+       -51.08377,
+       -29.93872
+      ],
+      [
+       -51.08203,
+       -29.93781
+      ],
+      [
+       -51.08148,
+       -29.93728
+      ],
+      [
+       -51.08105,
+       -29.93678
+      ],
+      [
+       -51.08009,
+       -29.93564
+      ],
+      [
+       -51.0793,
+       -29.93461
+      ],
+      [
+       -51.07879,
+       -29.93364
+      ],
+      [
+       -51.08452,
+       -29.92982
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS COHAB",
+    "unidade": "UBS COHAB",
+    "tipo": "UBS",
+    "codigo": "UBS-COHAB",
+    "descricao": "Território de abrangência da UBS COHAB, com 56 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 56,
+    "ruas": [
+     "Av. Mario T. Haussem",
+     "Beco Afonso Amaral",
+     "Rua A. J. Renner",
+     "Rua Almirante Barroso",
+     "Rua Alvarenga Peixoto",
+     "Rua Alzira Silveira",
+     "Rua Amapá",
+     "Rua Antonio G. Da Silva",
+     "Rua Arminda Lombardo",
+     "Rua Artur E. Ozzio",
+     "Rua Augusto C. De Freitas",
+     "Rua Bruno C. Muller",
+     "Rua Caí",
+     "Rua Cicero Marques",
+     "Rua Clemente Cifall",
+     "Rua Da Igueja",
+     "Rua Emília Martins",
+     "Rua Fernando Ferrari",
+     "Rua Flores Da Cunha",
+     "Rua Francisco A. V. Caldas Junior",
+     "Rua Francisco Brochado da Rocha",
+     "Rua Francisco Sobrinho",
+     "Rua Fritz Biser",
+     "Rua Geni C. Da Silva",
+     "Rua Honorio Lemos",
+     "Rua Humaita",
+     "Rua Iguassú",
+     "Rua Jacob Vontobel",
+     "Rua Jeronimo Da Silva",
+     "Rua Joana Ramos",
+     "Rua Joci N. Da Silva",
+     "Rua Jose Silveira",
+     "Rua José C. Da Silva",
+     "Rua Lidio Batista Soares",
+     "Rua Luiz Pasteur",
+     "Rua Maloha Haussem",
+     "Rua Manoel P. Pinto",
+     "Rua Novo Hamburgo",
+     "Rua Otalibio Silveira",
+     "Rua Pedro C. Pereira",
+     "Rua Pedro Ulmann",
+     "Rua Pio Xii",
+     "Rua Rio Branco",
+     "Rua Samuel M. Coelho",
+     "Rua Santa Rita De Cassia",
+     "Rua Santa Terezinha",
+     "Rua Santiago",
+     "Rua Santo Antonio",
+     "Rua Santos Dumont",
+     "Rua São Bernardo",
+     "Rua São Luiz",
+     "Rua Tomé De Souza",
+     "Rua Ver. Inocencio Telles Moreira",
+     "Rua Ver. Ivo Pereira Marques",
+     "Tv. Palmeira",
+     "Tv. Roma"
+    ],
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.09443,
+       -29.94244
+      ],
+      [
+       -51.09443,
+       -29.93974
+      ],
+      [
+       -51.09578,
+       -29.93868
+      ],
+      [
+       -51.09611,
+       -29.93669
+      ],
+      [
+       -51.09608,
+       -29.93568
+      ],
+      [
+       -51.09598,
+       -29.93375
+      ],
+      [
+       -51.09612,
+       -29.93103
+      ],
+      [
+       -51.09635,
+       -29.931
+      ],
+      [
+       -51.09632,
+       -29.93356
+      ],
+      [
+       -51.09888,
+       -29.93307
+      ],
+      [
+       -51.10223,
+       -29.9332
+      ],
+      [
+       -51.10251,
+       -29.93099
+      ],
+      [
+       -51.1018,
+       -29.92755
+      ],
+      [
+       -51.10222,
+       -29.92603
+      ],
+      [
+       -51.11931,
+       -29.92343
+      ],
+      [
+       -51.1194,
+       -29.92602
+      ],
+      [
+       -51.11686,
+       -29.92877
+      ],
+      [
+       -51.11717,
+       -29.93066
+      ],
+      [
+       -51.12092,
+       -29.93397
+      ],
+      [
+       -51.12321,
+       -29.93348
+      ],
+      [
+       -51.12488,
+       -29.93329
+      ],
+      [
+       -51.12604,
+       -29.93335
+      ],
+      [
+       -51.12509,
+       -29.94213
+      ],
+      [
+       -51.11514,
+       -29.94243
+      ],
+      [
+       -51.11754,
+       -29.93962
+      ],
+      [
+       -51.11803,
+       -29.93797
+      ],
+      [
+       -51.11759,
+       -29.93791
+      ],
+      [
+       -51.11205,
+       -29.94503
+      ],
+      [
+       -51.11063,
+       -29.94508
+      ],
+      [
+       -51.10994,
+       -29.9452
+      ],
+      [
+       -51.10955,
+       -29.94602
+      ],
+      [
+       -51.10752,
+       -29.94844
+      ],
+      [
+       -51.10705,
+       -29.94813
+      ],
+      [
+       -51.10699,
+       -29.94859
+      ],
+      [
+       -51.10647,
+       -29.94946
+      ],
+      [
+       -51.1062,
+       -29.94963
+      ],
+      [
+       -51.10534,
+       -29.94983
+      ],
+      [
+       -51.10415,
+       -29.94992
+      ],
+      [
+       -51.10365,
+       -29.95018
+      ],
+      [
+       -51.10258,
+       -29.9512
+      ],
+      [
+       -51.102,
+       -29.95144
+      ],
+      [
+       -51.10155,
+       -29.95151
+      ],
+      [
+       -51.09964,
+       -29.94999
+      ],
+      [
+       -51.09922,
+       -29.94981
+      ],
+      [
+       -51.09859,
+       -29.94963
+      ],
+      [
+       -51.09758,
+       -29.94943
+      ],
+      [
+       -51.09685,
+       -29.94924
+      ],
+      [
+       -51.09589,
+       -29.9488
+      ],
+      [
+       -51.09339,
+       -29.94747
+      ],
+      [
+       -51.0938,
+       -29.94536
+      ],
+      [
+       -51.09389,
+       -29.94513
+      ],
+      [
+       -51.09411,
+       -29.94408
+      ],
+      [
+       -51.09421,
+       -29.94354
+      ],
+      [
+       -51.09431,
+       -29.94304
+      ],
+      [
+       -51.09443,
+       -29.94244
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Odil Silva de Oliveira",
+    "unidade": "UBS Odil Silva de Oliveira",
+    "tipo": "UBS",
+    "codigo": "UBS-ODIL-SILVA-DE-OLIVEIRA",
+    "descricao": "Território de abrangência da UBS Odil Silva de Oliveira, com 64 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 64,
+    "ruas": [
+     "Av. Espírito Santo",
+     "Av. José Brambila",
+     "Av. Ver. Manoel G. Junior",
+     "Rua Ana Lui",
+     "Rua Anildo Pereira",
+     "Rua Antônio S. Bento",
+     "Rua Argentina",
+     "Rua Bahia",
+     "Rua Bernardino Freitas",
+     "Rua Bolivia",
+     "Rua Borges de Medeiros",
+     "Rua Canoas",
+     "Rua Caracas",
+     "Rua Carlos S. Feijó",
+     "Rua Colômbia",
+     "Rua Darci J. Pacheco",
+     "Rua Deoclécio Mora",
+     "Rua Dr. Mário da costa Pereira",
+     "Rua Equador",
+     "Rua Flamboyant",
+     "Rua Florencio V. de Aguiar",
+     "Rua Fortaleza",
+     "Rua Generino Manoel dos Santos",
+     "Rua Goiás",
+     "Rua Gravatal",
+     "Rua Guanabara",
+     "Rua Guatemala",
+     "Rua Hawai",
+     "Rua Honduras",
+     "Rua Ivan Paulo",
+     "Rua Japão",
+     "Rua José A. Rodrigues",
+     "Rua José Alves Pereira",
+     "Rua José Rodrigues",
+     "Rua Juscelino K. De Oliveira",
+     "Rua Lalau Miranda",
+     "Rua Minas Gerais",
+     "Rua Paraguai",
+     "Rua Pará",
+     "Rua Pedro S. Bernardes",
+     "Rua Peru",
+     "Rua Pinhal",
+     "Rua Porto Alegre",
+     "Rua Possidonio B. Dos Santos",
+     "Rua Rio De Janeiro",
+     "Rua Rio Grande Do Sul",
+     "Rua Santa Catarina",
+     "Rua Sapucaia",
+     "Rua Sebardo Bolzer",
+     "Rua Sebastião F. Da Silva",
+     "Rua São Salvador",
+     "Rua Uruguai",
+     "Rua Venezuela",
+     "Rua Vereador Mario Rosa",
+     "Rua Vereador Osvaldo Correa",
+     "Rua Áustria",
+     "Tv. Acre",
+     "Tv. Rio Grande Do Sul",
+     "Tv. São Paulo",
+     "Tv. da Fruteira",
+     "Tv. do Aquino",
+     "Tv. do Petri",
+     "Tv. do Povo",
+     "Tv.Parana"
+    ],
+    "telefone": "3438-3977",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.07178,
+       -29.90845
+      ],
+      [
+       -51.07226,
+       -29.90703
+      ],
+      [
+       -51.07266,
+       -29.9056
+      ],
+      [
+       -51.07385,
+       -29.90636
+      ],
+      [
+       -51.07488,
+       -29.90513
+      ],
+      [
+       -51.07546,
+       -29.90558
+      ],
+      [
+       -51.07594,
+       -29.90494
+      ],
+      [
+       -51.07661,
+       -29.90478
+      ],
+      [
+       -51.07587,
+       -29.89967
+      ],
+      [
+       -51.07654,
+       -29.89973
+      ],
+      [
+       -51.08587,
+       -29.91257
+      ],
+      [
+       -51.08669,
+       -29.91219
+      ],
+      [
+       -51.08694,
+       -29.91269
+      ],
+      [
+       -51.08389,
+       -29.91393
+      ],
+      [
+       -51.08374,
+       -29.91367
+      ],
+      [
+       -51.08318,
+       -29.9139
+      ],
+      [
+       -51.07976,
+       -29.90917
+      ],
+      [
+       -51.07777,
+       -29.91027
+      ],
+      [
+       -51.07737,
+       -29.90978
+      ],
+      [
+       -51.07727,
+       -29.90891
+      ],
+      [
+       -51.07758,
+       -29.90875
+      ],
+      [
+       -51.07715,
+       -29.90811
+      ],
+      [
+       -51.07705,
+       -29.90756
+      ],
+      [
+       -51.07694,
+       -29.90756
+      ],
+      [
+       -51.07687,
+       -29.90762
+      ],
+      [
+       -51.07592,
+       -29.90885
+      ],
+      [
+       -51.07462,
+       -29.91029
+      ],
+      [
+       -51.07404,
+       -29.90987
+      ],
+      [
+       -51.07351,
+       -29.91048
+      ],
+      [
+       -51.07312,
+       -29.91094
+      ],
+      [
+       -51.07307,
+       -29.91093
+      ],
+      [
+       -51.07296,
+       -29.91128
+      ],
+      [
+       -51.07285,
+       -29.91163
+      ],
+      [
+       -51.07283,
+       -29.91207
+      ],
+      [
+       -51.07289,
+       -29.91242
+      ],
+      [
+       -51.07298,
+       -29.91276
+      ],
+      [
+       -51.07308,
+       -29.91305
+      ],
+      [
+       -51.07306,
+       -29.91319
+      ],
+      [
+       -51.07179,
+       -29.91314
+      ],
+      [
+       -51.07047,
+       -29.91583
+      ],
+      [
+       -51.0705,
+       -29.9159
+      ],
+      [
+       -51.06921,
+       -29.91669
+      ],
+      [
+       -51.06822,
+       -29.91521
+      ],
+      [
+       -51.06804,
+       -29.91458
+      ],
+      [
+       -51.06806,
+       -29.91369
+      ],
+      [
+       -51.06764,
+       -29.91297
+      ],
+      [
+       -51.06602,
+       -29.91076
+      ],
+      [
+       -51.06631,
+       -29.91058
+      ],
+      [
+       -51.06666,
+       -29.91051
+      ],
+      [
+       -51.06808,
+       -29.91044
+      ],
+      [
+       -51.06929,
+       -29.90805
+      ],
+      [
+       -51.07101,
+       -29.9087
+      ],
+      [
+       -51.07115,
+       -29.9083
+      ],
+      [
+       -51.07178,
+       -29.90845
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Jardim do Bosque",
+    "unidade": "UBS Jardim do Bosque",
+    "tipo": "UBS",
+    "codigo": "UBS-JARDIM-DO-BOSQUE",
+    "descricao": "Território de abrangência da UBS Jardim do Bosque, com 98 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 98,
+    "ruas": [
+     "Av B",
+     "Av Frederico Augusto Ritter",
+     "Av Primavera",
+     "Av Wilma Ritter Beiser (AV. A)",
+     "Av. Capitão Garibaldi P. Dos Santos",
+     "Av. do Carvalho",
+     "Est. Manuel José do Nascimento",
+     "Rua 1",
+     "Rua 10",
+     "Rua 11",
+     "Rua 12",
+     "Rua 13",
+     "Rua 14",
+     "Rua 15",
+     "Rua 16",
+     "Rua 17",
+     "Rua 18",
+     "Rua 19",
+     "Rua 2",
+     "Rua 20",
+     "Rua 21",
+     "Rua 3",
+     "Rua 4",
+     "Rua 5",
+     "Rua 6",
+     "Rua 7",
+     "Rua 8",
+     "Rua 9",
+     "Rua Abacateiro",
+     "Rua Acácia",
+     "Rua Alamo",
+     "Rua Alcides Mendes",
+     "Rua Alecrim",
+     "Rua Amoreira",
+     "Rua Antonio José Do Nascimento",
+     "Rua Araticum",
+     "Rua Ari Rosa Dos Santos",
+     "Rua Aroeira",
+     "Rua Azaleia",
+     "Rua Bacopari",
+     "Rua Batinga",
+     "Rua Beno Niderauer",
+     "Rua Breno Rosa Dos Santos",
+     "Rua Cajueiro",
+     "Rua Camboata",
+     "Rua Cangerana",
+     "Rua Caqui",
+     "Rua Carobinha",
+     "Rua Casuarina",
+     "Rua Cerejeira",
+     "Rua Cipreste",
+     "Rua Clovis Tonolher",
+     "Rua Corticeira",
+     "Rua Cravina",
+     "Rua Cristiano J. Nascimento",
+     "Rua Estremosa",
+     "Rua Euclides G. De Oliveira",
+     "Rua Flor De Lis",
+     "Rua Fritz Beiser",
+     "Rua General Canabarro",
+     "Rua Gildo De Freitas",
+     "Rua Girassol",
+     "Rua Goiabeira",
+     "Rua Grandiuva",
+     "Rua Grapia",
+     "Rua Grevilha",
+     "Rua Guabirobeira",
+     "Rua Guamirim",
+     "Rua Guatambi",
+     "Rua Hortênsia",
+     "Rua Ignácio Thielle",
+     "Rua Inga",
+     "Rua Ipê",
+     "Rua Jambo",
+     "Rua José Da Fonseca",
+     "Rua José Do Patrocínio",
+     "Rua José Zingano",
+     "Rua Lenine Queiroz",
+     "Rua Macieira",
+     "Rua Maria de Medeiros",
+     "Rua Mario T. de Souza",
+     "Rua Nelida P. Dias",
+     "Rua Nogueira",
+     "Rua Obedy Cândido Vieira",
+     "Rua Oswaldo B. De Ávila",
+     "Rua Padre Geremias",
+     "Rua Palmira",
+     "Rua Pedro J. Becker",
+     "Rua Plátanos",
+     "Rua Salseiro",
+     "Rua Samambaia",
+     "Rua Sen. Nei Britto",
+     "Rua Stipe Borc",
+     "Rua Tarumã",
+     "Rua Timbó",
+     "Rua Tulipa",
+     "Rua Vereador Clóvis Eli Pestana",
+     "Rua do Bosque"
+    ],
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.0878,
+       -29.92756
+      ],
+      [
+       -51.08824,
+       -29.92754
+      ],
+      [
+       -51.08847,
+       -29.92728
+      ],
+      [
+       -51.0882,
+       -29.92695
+      ],
+      [
+       -51.0881,
+       -29.92673
+      ],
+      [
+       -51.08809,
+       -29.92649
+      ],
+      [
+       -51.08812,
+       -29.92624
+      ],
+      [
+       -51.08739,
+       -29.92564
+      ],
+      [
+       -51.08743,
+       -29.92561
+      ],
+      [
+       -51.08823,
+       -29.92617
+      ],
+      [
+       -51.08869,
+       -29.92565
+      ],
+      [
+       -51.08807,
+       -29.92524
+      ],
+      [
+       -51.08751,
+       -29.92474
+      ],
+      [
+       -51.08701,
+       -29.92004
+      ],
+      [
+       -51.08726,
+       -29.91998
+      ],
+      [
+       -51.08875,
+       -29.91846
+      ],
+      [
+       -51.08938,
+       -29.9181
+      ],
+      [
+       -51.09003,
+       -29.91784
+      ],
+      [
+       -51.0907,
+       -29.91775
+      ],
+      [
+       -51.09049,
+       -29.917
+      ],
+      [
+       -51.0897,
+       -29.91609
+      ],
+      [
+       -51.08929,
+       -29.9155
+      ],
+      [
+       -51.0891,
+       -29.91554
+      ],
+      [
+       -51.08841,
+       -29.91536
+      ],
+      [
+       -51.0859,
+       -29.91639
+      ],
+      [
+       -51.08463,
+       -29.91632
+      ],
+      [
+       -51.08455,
+       -29.91553
+      ],
+      [
+       -51.08406,
+       -29.91421
+      ],
+      [
+       -51.08393,
+       -29.91394
+      ],
+      [
+       -51.08694,
+       -29.91269
+      ],
+      [
+       -51.08693,
+       -29.91241
+      ],
+      [
+       -51.08717,
+       -29.91225
+      ],
+      [
+       -51.08766,
+       -29.91174
+      ],
+      [
+       -51.0904,
+       -29.91043
+      ],
+      [
+       -51.09074,
+       -29.9103
+      ],
+      [
+       -51.09668,
+       -29.90954
+      ],
+      [
+       -51.10075,
+       -29.91805
+      ],
+      [
+       -51.11259,
+       -29.91353
+      ],
+      [
+       -51.11354,
+       -29.91631
+      ],
+      [
+       -51.11462,
+       -29.91902
+      ],
+      [
+       -51.11931,
+       -29.9229
+      ],
+      [
+       -51.1196,
+       -29.92328
+      ],
+      [
+       -51.10211,
+       -29.9261
+      ],
+      [
+       -51.10165,
+       -29.92737
+      ],
+      [
+       -51.10229,
+       -29.93131
+      ],
+      [
+       -51.10212,
+       -29.93327
+      ],
+      [
+       -51.09878,
+       -29.9331
+      ],
+      [
+       -51.09626,
+       -29.93357
+      ],
+      [
+       -51.09631,
+       -29.93102
+      ],
+      [
+       -51.09597,
+       -29.93101
+      ],
+      [
+       -51.09585,
+       -29.93375
+      ],
+      [
+       -51.09316,
+       -29.93518
+      ],
+      [
+       -51.09147,
+       -29.93355
+      ],
+      [
+       -51.08972,
+       -29.93235
+      ],
+      [
+       -51.08599,
+       -29.92968
+      ],
+      [
+       -51.0857,
+       -29.92965
+      ],
+      [
+       -51.08525,
+       -29.92995
+      ],
+      [
+       -51.0851,
+       -29.93
+      ],
+      [
+       -51.08452,
+       -29.92982
+      ],
+      [
+       -51.08503,
+       -29.92855
+      ],
+      [
+       -51.08565,
+       -29.92821
+      ],
+      [
+       -51.0878,
+       -29.92756
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Nova Cachoeirinha",
+    "unidade": "UBS Nova Cachoeirinha",
+    "tipo": "UBS",
+    "codigo": "UBS-NOVA-CACHOEIRINHA",
+    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 31 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 31,
+    "ruas": [
+     "Av. Espirito Santo",
+     "Av. Estados Unidos",
+     "Av. Mal. Rondon",
+     "Av. Manoel Inacio Nunes",
+     "Beco da Servidão",
+     "Rua Canada",
+     "Rua Dinamarca",
+     "Rua Domingos Signore",
+     "Rua Duque De Caxias",
+     "Rua Eldorado",
+     "Rua Espanha",
+     "Rua França",
+     "Rua Grécia",
+     "Rua Holanda",
+     "Rua Hungria",
+     "Rua Irlanda",
+     "Rua Italia",
+     "Rua Iugoslavia",
+     "Rua Jamaica",
+     "Rua José Rodrigues",
+     "Rua Minas Gerais",
+     "Rua N. Belgica",
+     "Rua Polonia",
+     "Rua Porto Alegre",
+     "Rua Romenia",
+     "Rua Santa Catarina",
+     "Rua Sapucaia Do Sul",
+     "Rua Suiça",
+     "Tv. Rio Grande Do Sul",
+     "Tv. do Arvoredo",
+     "Tv. dos Tucanos"
+    ],
+    "email": "ubs.novacachoeirinha@cachoeirinha.rs.gov.br",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.07587,
+       -29.89967
+      ],
+      [
+       -51.07661,
+       -29.90478
+      ],
+      [
+       -51.07594,
+       -29.90494
+      ],
+      [
+       -51.07546,
+       -29.90558
+      ],
+      [
+       -51.07488,
+       -29.90513
+      ],
+      [
+       -51.07385,
+       -29.90636
+      ],
+      [
+       -51.07265,
+       -29.90558
+      ],
+      [
+       -51.07226,
+       -29.90703
+      ],
+      [
+       -51.07178,
+       -29.90845
+      ],
+      [
+       -51.07115,
+       -29.9083
+      ],
+      [
+       -51.07101,
+       -29.9087
+      ],
+      [
+       -51.06929,
+       -29.90805
+      ],
+      [
+       -51.06808,
+       -29.91044
+      ],
+      [
+       -51.06668,
+       -29.9105
+      ],
+      [
+       -51.06629,
+       -29.91057
+      ],
+      [
+       -51.06602,
+       -29.91076
+      ],
+      [
+       -51.06509,
+       -29.90945
+      ],
+      [
+       -51.06454,
+       -29.90865
+      ],
+      [
+       -51.06416,
+       -29.90764
+      ],
+      [
+       -51.06327,
+       -29.90642
+      ],
+      [
+       -51.06303,
+       -29.90573
+      ],
+      [
+       -51.06391,
+       -29.90447
+      ],
+      [
+       -51.06553,
+       -29.89979
+      ],
+      [
+       -51.0687,
+       -29.90052
+      ],
+      [
+       -51.07076,
+       -29.90123
+      ],
+      [
+       -51.07293,
+       -29.90202
+      ],
+      [
+       -51.07413,
+       -29.89939
+      ],
+      [
+       -51.07587,
+       -29.89967
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Getúlio Vargas",
+    "unidade": "UBS Getúlio Vargas",
+    "tipo": "UBS",
+    "codigo": "UBS-GETULIO-VARGAS",
+    "descricao": "Território de abrangência da UBS Getúlio Vargas, com 48 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 48,
+    "ruas": [
+     "Av. Jose Brambila",
+     "Av. Mal. Rondon",
+     "Av. Nova Zelandia",
+     "Rua Abrham Lincon",
+     "Rua Aimoré",
+     "Rua Alegrete",
+     "Rua Antonio Nunes",
+     "Rua Antônio Nunes",
+     "Rua Aparecida",
+     "Rua Ararangua",
+     "Rua Assunção",
+     "Rua Brasil",
+     "Rua Carlos Gomes",
+     "Rua Caruaru",
+     "Rua Costa Rica",
+     "Rua Criciuma",
+     "Rua Da Penha",
+     "Rua Duarte Da Costa",
+     "Rua Estácio De Sá",
+     "Rua Fernando Machado",
+     "Rua Florianopolis",
+     "Rua Frei Mojica",
+     "Rua Guarujá",
+     "Rua Henrique Dias",
+     "Rua Julio De Castilhos",
+     "Rua Laguna",
+     "Rua Laçador",
+     "Rua Lima E Silva",
+     "Rua Lindoia",
+     "Rua Lisboa",
+     "Rua Mantiqueira",
+     "Rua Manuel Rosa",
+     "Rua Marte",
+     "Rua Mexico",
+     "Rua Monte Castelo",
+     "Rua Nelson Oliveira Lopes",
+     "Rua Pindorama",
+     "Rua Planalto",
+     "Rua Redenção",
+     "Rua Rosario",
+     "Rua Samuara",
+     "Rua Sete Quedas",
+     "Rua São Pedro",
+     "Rua Torres",
+     "Tv. Lajes",
+     "Tv. Liberdade",
+     "Tv. Souza",
+     "Tv. São Pedro"
+    ],
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.08452,
+       -29.92982
+      ],
+      [
+       -51.07879,
+       -29.93364
+      ],
+      [
+       -51.07845,
+       -29.93301
+      ],
+      [
+       -51.07778,
+       -29.93233
+      ],
+      [
+       -51.07655,
+       -29.93171
+      ],
+      [
+       -51.07475,
+       -29.92787
+      ],
+      [
+       -51.07435,
+       -29.92608
+      ],
+      [
+       -51.07435,
+       -29.92548
+      ],
+      [
+       -51.07444,
+       -29.92487
+      ],
+      [
+       -51.07441,
+       -29.9241
+      ],
+      [
+       -51.07419,
+       -29.9234
+      ],
+      [
+       -51.07397,
+       -29.92299
+      ],
+      [
+       -51.07469,
+       -29.9226
+      ],
+      [
+       -51.07473,
+       -29.92264
+      ],
+      [
+       -51.07649,
+       -29.92327
+      ],
+      [
+       -51.07685,
+       -29.92337
+      ],
+      [
+       -51.07772,
+       -29.9237
+      ],
+      [
+       -51.07806,
+       -29.92316
+      ],
+      [
+       -51.07865,
+       -29.92183
+      ],
+      [
+       -51.07718,
+       -29.92133
+      ],
+      [
+       -51.07953,
+       -29.91878
+      ],
+      [
+       -51.0796,
+       -29.91877
+      ],
+      [
+       -51.08002,
+       -29.91982
+      ],
+      [
+       -51.08064,
+       -29.92163
+      ],
+      [
+       -51.08136,
+       -29.92359
+      ],
+      [
+       -51.08143,
+       -29.92362
+      ],
+      [
+       -51.08183,
+       -29.924
+      ],
+      [
+       -51.08229,
+       -29.9248
+      ],
+      [
+       -51.08287,
+       -29.92396
+      ],
+      [
+       -51.08322,
+       -29.92428
+      ],
+      [
+       -51.08319,
+       -29.92607
+      ],
+      [
+       -51.08275,
+       -29.92649
+      ],
+      [
+       -51.08313,
+       -29.92669
+      ],
+      [
+       -51.08331,
+       -29.92684
+      ],
+      [
+       -51.08347,
+       -29.927
+      ],
+      [
+       -51.0839,
+       -29.92749
+      ],
+      [
+       -51.08327,
+       -29.92791
+      ],
+      [
+       -51.08503,
+       -29.92855
+      ],
+      [
+       -51.08452,
+       -29.92982
+      ]
+     ]
+    ]
+   }
+  }
+ ],
+ "observacao": "Limites de trabalho digitalizados em mapa colaborativo. Devem ser substituídos pelos limites oficiais quando a Secretaria os publicar."
+}

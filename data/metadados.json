@@ -1,0 +1,16 @@
+{
+ "municipio": "Cachoeirinha/RS",
+ "codigo_ibge": "4303103",
+ "gerado_em": "2026-09-18",
+ "camadas": {
+  "esf.geojson": 6,
+  "ubs.geojson": 9,
+  "unidades.geojson": 25,
+  "limite.geojson": 1
+ },
+ "fontes": {
+  "areas_e_unidades": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
+  "limite_municipal": "OpenStreetMap, contribuidores (ODbL)"
+ },
+ "aviso": "Dados de trabalho. Os limites territoriais oficiais devem ser fornecidos pela Secretaria Municipal de Saúde de Cachoeirinha."
+}
