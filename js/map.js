@@ -40,6 +40,7 @@
   var CAMPOS = [
     ['unidade', 'Unidade de referência'],
     ['tipo', 'Tipo'],
+    ['endereco', 'Endereço'],
     ['telefone', 'Telefone'],
     ['email', 'E-mail']
   ];
@@ -137,6 +138,12 @@
     return getComputedStyle(document.documentElement).getPropertyValue('--painel').trim() || '#ffffff';
   }
 
+  /* Os marcadores ganham painel próprio, acima do painel dos polígonos. Sem
+     isso, um polígono trazido para a frente no hover cobria os círculos e
+     roubava o clique. */
+  mapa.createPane('pontos');
+  mapa.getPane('pontos').style.zIndex = 450;
+
   L.control.scale({ imperial: false, metric: true }).addTo(mapa);
 
   var camadas = {};      // id -> L.LayerGroup
@@ -188,6 +195,7 @@
   function marcadorPonto(feature, latlng) {
     var props = feature.properties || {};
     return L.circleMarker(latlng, {
+      pane: 'pontos',
       radius: 7,
       color: corDe(props.tipo),
       weight: 3,

@@ -1,0 +1,162 @@
+{
+ "Hospital Padre Jeremias": {
+  "endereco": "Rua Lindolfo Wagner, 185",
+  "bairro": "Parque da Matriz",
+  "cep": "94950585",
+  "estabelecimento": "HOSPITAL PADRE JEREMIAS",
+  "distancia_m": 77,
+  "por_nome": true
+ },
+ "ESF José Ramos": {
+  "endereco": "Rua Fidel Zanqueta, 655",
+  "bairro": "Jardins do Bosque",
+  "cep": "94960210",
+  "estabelecimento": "POSTO DE SAUDE JOSE RAMOS",
+  "distancia_m": 6,
+  "por_nome": true
+ },
+ "UBS COHAB": {
+  "endereco": "Rua Almirante Barroso, s/n",
+  "bairro": "Cohab",
+  "cep": "94935360",
+  "estabelecimento": "UBS COHAB",
+  "distancia_m": 9,
+  "por_nome": true
+ },
+ "ESF Carlos Wilkens": {
+  "endereco": "Travessa São Jorge, 81",
+  "bairro": "Vila da Paz",
+  "cep": "94930440",
+  "estabelecimento": "POSTO DE SAUDE CARLOS WILKENS",
+  "distancia_m": 13,
+  "por_nome": true
+ },
+ "UBS Osvaldo Cruz": {
+  "endereco": "Rua Osvaldo Cruz, 610",
+  "bairro": "Vila Silveira Martins",
+  "cep": "94940210",
+  "estabelecimento": "UNIDADE BASICA OSVALDO CRUZ",
+  "distancia_m": 37,
+  "por_nome": true
+ },
+ "UBS Parque da Matriz": {
+  "endereco": "Rua Itapema, 30",
+  "bairro": "Parque da Matriz",
+  "cep": "94950577",
+  "estabelecimento": "UNIDADE BASICA DE SAUDE PARQUE DA MATRIZ",
+  "distancia_m": 288,
+  "por_nome": true
+ },
+ "Centro de Saúde da Pessoa Idosa": {
+  "endereco": "Avenida General Flores da Cunha, 2385",
+  "bairro": "Centro",
+  "cep": "94910003",
+  "estabelecimento": "CENTRO DE SAUDE DE PESSOA IDOSA",
+  "distancia_m": 1028,
+  "por_nome": true
+ },
+ "UBS Jardim do Bosque": {
+  "endereco": "Avenida Capitão Garibaldi Pinto dos Santos, 407",
+  "bairro": "Jardim do Bosque",
+  "cep": "94960120",
+  "estabelecimento": "POSTO DE SAUDE JARDINS DO BOSQUE",
+  "distancia_m": 6,
+  "por_nome": true
+ },
+ "Secretaria de Saúde": {
+  "endereco": "Avenida José Brambila, 40",
+  "bairro": "Vila Vista Alegre",
+  "cep": "94945000",
+  "estabelecimento": "SECRETARIA MUNICIPAL DE SAUDE",
+  "distancia_m": 10,
+  "por_nome": true
+ },
+ "UPA 24h Cachoeirinha": {
+  "endereco": "Avenida Capitão Garibaldi Pinto dos Santos, 1301",
+  "bairro": "Jardins do Bosque",
+  "cep": "94960120",
+  "estabelecimento": "UPA UNIDADE DE PRONTO ATENDIMENTO",
+  "distancia_m": 11,
+  "por_nome": true
+ },
+ "CAPS AD - Centro de Atenção Psicossocial Álcool e outra Drogas": {
+  "endereco": "Rua Aparício Soares da Cunha, 128",
+  "bairro": "Bom Principio",
+  "cep": "94950020",
+  "estabelecimento": "CAPS AD2",
+  "distancia_m": 22,
+  "por_nome": true
+ },
+ "UBS CAIC Granja": {
+  "endereco": "Rua Jardim das Flores, s/n",
+  "bairro": "Morada do Bosque",
+  "cep": "94960055",
+  "estabelecimento": "UNIDADE BASICA DE SAUDE",
+  "distancia_m": 53,
+  "por_nome": false
+ },
+ "UBS Getúlio Vargas": {
+  "endereco": "Rua Dom João VI, 188",
+  "bairro": "Vista Alegre",
+  "cep": "94945160",
+  "estabelecimento": "POSTO MUNICIPAL DE SAUDE",
+  "distancia_m": 30,
+  "por_nome": false
+ },
+ "UBS Nova Cachoeirinha": {
+  "endereco": "Rua Eldorado, 260",
+  "bairro": "Nova Cachoeirinha",
+  "cep": "94965110",
+  "estabelecimento": "UNIDADE BASICA DESAUDE MUNICIPAL",
+  "distancia_m": 73,
+  "por_nome": false
+ },
+ "UBS Odil Silva de Oliveira": {
+  "endereco": "Rua Paranaguá, s/n",
+  "bairro": "Vista Alegre",
+  "cep": "94955280",
+  "estabelecimento": "POSTO DE SAUDE",
+  "distancia_m": 47,
+  "por_nome": false
+ },
+ "UBS Décio Martins Costa": {
+  "endereco": "Rua Doutor Décio Martins Costa, 464",
+  "bairro": "Vila Eunice Velha",
+  "cep": "94920170",
+  "estabelecimento": "POSTO DE SAUDE MUNICIPAL",
+  "distancia_m": 19,
+  "por_nome": false
+ },
+ "ESF Canarinho": {
+  "endereco": "Rua Espanha, 821",
+  "bairro": "Parque Marechal Rondon",
+  "cep": "94965130",
+  "estabelecimento": "POSTO DE SAUDE",
+  "distancia_m": 25,
+  "por_nome": false
+ },
+ "ESF Jardim Betânia": {
+  "endereco": "Rua Capão da Canoa, 185",
+  "bairro": "Jardim Betania",
+  "cep": "94970780",
+  "estabelecimento": "POSTO SAUDE",
+  "distancia_m": 10,
+  "por_nome": false
+ },
+ "ESF Otacílio Silveira": {
+  "endereco": "Avenida Amazonas, 583",
+  "bairro": "Vila Anair",
+  "cep": "94955030",
+  "estabelecimento": "HPOSTO DE SAUDE PUBLICO 24 HORAS",
+  "distancia_m": 3,
+  "por_nome": false
+ },
+ "SAE": {
+  "endereco": "Rua São Tomé, 590",
+  "bairro": "Vila Silveira Martins",
+  "cep": "94935660",
+  "estabelecimento": "POSTO DE SAUDE",
+  "distancia_m": 42,
+  "por_nome": false
+ }
+}

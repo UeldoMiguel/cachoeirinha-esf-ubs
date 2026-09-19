@@ -69,9 +69,21 @@ def telefone(txt):
     return fixo
 
 
+SETOR_INTERNO = re.compile(r'^(almoxarifado|rh|dp|licitac|compras|financeiro|frota|'
+                           r'protocolo|ouvidoria|ti|patrimonio)')
+
+
 def email(txt):
-    m = re.search(r'[\w.\-+]+@[\w.\-]+\.\w+', txt or '')
-    return m.group(0) if m else None
+    """E-mail de atendimento da unidade.
+
+    O texto da Secretaria lista um endereço por setor; os de apoio
+    administrativo ficam por último, para não passarem por contato da unidade.
+    """
+    achados = re.findall(r'[\w.\-+]+@[\w.\-]+\.\w+', txt or '')
+    if not achados:
+        return None
+    externos = [e for e in achados if not SETOR_INTERNO.match(e.lower())]
+    return (externos or achados)[0]
 
 
 def feature(geom, props):
@@ -104,6 +116,21 @@ def main():
     areas, unidades = d['areas'], d['unidades']
     por_nome = {u['n']: u for u in unidades}
 
+    # endereços casados com o CNEFE por scripts/enderecos.py (pode não existir)
+    caminho_end = os.path.join(RAIZ, 'dados', 'enderecos_unidades.json')
+    enderecos = {}
+    if os.path.exists(caminho_end):
+        enderecos = json.load(io.open(caminho_end, encoding='utf-8'))
+
+    def endereco_de(nome):
+        e = enderecos.get(nome)
+        if not e:
+            return None
+        partes = [e['endereco']]
+        if e.get('bairro'):
+            partes.append(e['bairro'])
+        return ' — '.join(partes)
+
     saidas = {}
     for tipo, arquivo in (('ESF', 'esf.geojson'), ('UBS', 'ubs.geojson')):
         feats = []
@@ -121,6 +148,7 @@ def main():
                                str(len(a['ruas'])) + ' vias na lista de ruas da fonte.'),
                  'ruas_cadastradas': len(a['ruas']),
                  'ruas': sorted(a['ruas']),
+                 'endereco': endereco_de(a['n']),
                  'telefone': telefone(u.get('info', '')),
                  'email': email(u.get('info', '')),
                  'fonte': FONTE_AREAS}))
@@ -138,13 +166,16 @@ def main():
              'tipo': u['c'],
              'codigo': codigo(u['n']),
              'tem_area': any(a['n'] == u['n'] for a in areas),
+             'endereco': endereco_de(u['n']),
              'telefone': telefone(info),
              'email': email(info),
              'informacoes': info,
              'fonte': FONTE_AREAS}))
     saidas['unidades.geojson'] = colecao(
         feats, 'Unidades e serviços de saúde — Cachoeirinha/RS', FONTE_AREAS,
-        'Endereço postal não consta na fonte; a posição vem do ponto marcado no mapa.')
+        'A posição vem do ponto marcado no mapa colaborativo. O endereço, quando '
+        'presente, vem do estabelecimento de saúde correspondente no CNEFE 2022 do '
+        'IBGE; unidade sem correspondência fica sem endereço.')
 
     bound = d.get('bound') or []
     saidas['limite.geojson'] = colecao(

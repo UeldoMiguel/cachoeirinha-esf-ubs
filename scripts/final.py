@@ -37,11 +37,44 @@ def tracado(k):
     if len(cands)==1 and len(por_tokens[cands[0]])==1:
         extra[1]+=1; return linn[por_tokens[cands[0]][0]]
     return []                                                     # ambíguo: não desenha nada
+# --- limite do município: recorta as áreas e descarta o que cai fora dele ----
+from shapely.geometry import Polygon, Point, shape
+from shapely.ops import linemerge, polygonize, unary_union
+
+def municipio():
+    segs=json.load(open('boundary.json'))
+    partes=list(polygonize(linemerge([[(x,y) for x,y in seg] for seg in segs])))
+    if not partes:
+        raise SystemExit('não foi possível fechar o limite municipal a partir de boundary.json')
+    return unary_union(partes)
+
+LIMITE=municipio()
+print('limite municipal: %.2f km2' % (LIMITE.area*111.32*111.32*0.87))
+
+def recorta(poly):
+    """Interseção da área com o município. Devolve o anel do maior pedaço."""
+    p=Polygon([(x,y) for x,y in poly])
+    if not p.is_valid:
+        p=p.buffer(0)
+    corte=p.intersection(LIMITE)
+    if corte.is_empty:
+        return None,0.0
+    if corte.geom_type=='MultiPolygon':
+        maior=max(corte.geoms,key=lambda g:g.area)
+    else:
+        maior=corte
+    perdido=1-(corte.area/p.area) if p.area else 0
+    return [[round(x,5),round(y,5)] for x,y in maior.exterior.coords], perdido
+
 areas=[]
 for a in d['areas']:
+    anel,perdido=recorta(a['poly'])
+    if anel is None:
+        print('  área fora do município, descartada:',a['unidade']); continue
+    if perdido>0.01:
+        print('  recortada no limite municipal: %-28s -%.1f%%' % (a['unidade'],perdido*100))
     areas.append({'n':' '.join(a['unidade'].split()),'t':a['tipo'],'ll':[round(a['ll'][0],5),round(a['ll'][1],5)],
-                  'info':a['info'],'ruas':a['ruas'],
-                  'poly':[[round(p[0],5),round(p[1],5)] for p in a['poly']]})
+                  'info':a['info'],'ruas':a['ruas'],'poly':anel})
 def entrada(k,label,areas,prov=0):
     g=geon.get(k)
     return [k,label,areas,
@@ -85,9 +118,45 @@ for nome,lista in tre.items():
     tren.setdefault(k,[]).extend(lista)
 for v in tren.values(): v.sort(key=lambda t:t[0])
 casados=sum(1 for e in idx if e[0] in tren)
+# --- a malha desenhada é recortada no limite: some o que passa da divisa -----
+from shapely.geometry import LineString
+linhas_orig=lin['linhas']
+linhas_novas=[]
+mapa_ids={}
+for i,l in enumerate(linhas_orig):
+    if len(l)<2:
+        continue
+    corte=LineString([(x,y) for x,y in l]).intersection(LIMITE)
+    if corte.is_empty:
+        continue
+    partes=list(corte.geoms) if corte.geom_type.startswith('Multi') or corte.geom_type=='GeometryCollection' else [corte]
+    novos=[]
+    for g in partes:
+        if g.geom_type!='LineString' or g.length==0:
+            continue
+        novos.append(len(linhas_novas))
+        linhas_novas.append([[round(x,5),round(y,5)] for x,y in g.coords])
+    if novos:
+        mapa_ids[i]=novos
+print('polilinhas: %d antes, %d depois do recorte (%d descartadas por ficarem fora)'
+      % (len(linhas_orig),len(linhas_novas),len(linhas_orig)-len(mapa_ids)))
+
+for e in idx:
+    e[6]=[n for i in e[6] for n in mapa_ids.get(i,[])]
+
+# rua só sai do índice quando nada dela sobra dentro do município
+def dentro_do_municipio(e):
+    if e[6]: return True
+    if e[3] is None: return True                      # sem traçado e sem ponto: não dá para testar
+    return LIMITE.covers(Point(e[4],e[3]))
+antes=len(idx)
+fora=[e[1] for e in idx if not dentro_do_municipio(e)]
+idx=[e for e in idx if dentro_do_municipio(e)]
+print('ruas fora do município removidas:',antes-len(idx), ('— ex.: '+', '.join(fora[:6])) if fora else '')
+
 print('logradouros CNEFE:',len(tren),'| ruas do índice com trechos numerados:',casados,'de',len(idx))
 out={'areas':areas,'idx':idx,'unidades':un,'faltantes':falt,'trechos':tren,
-     'bound':json.load(open('boundary.json')),'linhas':lin['linhas']}
+     'bound':json.load(open('boundary.json')),'linhas':linhas_novas}
 open('final.json','w',encoding='utf-8').write(json.dumps(out,ensure_ascii=False,separators=(',',':')))
 print('traçado casado por iniciais:',extra[0],'| por nome mais longo:',extra[1])
 print('bytes',len(json.dumps(out)),'| areas',len(areas),'| ruas',len(idx),

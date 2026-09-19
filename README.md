@@ -26,7 +26,8 @@ Dar a gestores, equipes e à população uma forma direta de responder a duas pe
 - **Consulta por endereço** na mesma caixa de busca: digitar "Rua Dom Bosco, 240" responde se o endereço é área de ESF ou de UBS, mostra a unidade de referência com telefone e desenha a via em vermelho sobre o mapa. Com o número da casa, o vermelho cobre **só o lado de quadra daquela numeração** (faces de quadra do CNEFE 2022). Em rua de divisa, o número decide a unidade.
 - A mesma caixa também acha **unidades e áreas pelo nome**.
 - **Modo escuro**, com botão no topo. Sem escolha manual a página acompanha o sistema; a escolha fica gravada no navegador. Os tiles do OSM são invertidos por CSS — nenhum serviço de base escura com chave de API foi introduzido.
-- **Popup e painel** mostram apenas: nome, unidade de referência, tipo, telefone e e-mail. Campo que a fonte não traz não aparece.
+- **Popup e painel** mostram apenas: nome, unidade de referência, tipo, endereço, telefone e e-mail. Campo que a fonte não traz não aparece.
+- **Áreas e ruas recortadas no limite municipal**: os polígonos do mapa colaborativo passavam da divisa (o da UBS Parque da Matriz avançava 26% para fora) e a malha viária também. Os dois são cortados pelo limite do OpenStreetMap na geração dos dados.
 
 ## 2. Tecnologias
 
@@ -151,7 +152,7 @@ Depois abra `http://localhost:8000/`. A página `consulta/index.html` é autocon
 Para regerar os dados (só é preciso quando as fontes mudam):
 
 ```bash
-cd dados && python ../scripts/fetch_osm.py && python ../scripts/cnefe.py && python ../scripts/parse.py && python ../scripts/lines_osm.py && python ../scripts/build.py && python ../scripts/final.py
+cd dados && python ../scripts/fetch_osm.py && python ../scripts/cnefe.py && python ../scripts/parse.py && python ../scripts/lines_osm.py && python ../scripts/build.py && python ../scripts/enderecos.py && python ../scripts/final.py
 ```
 
 e, da raiz:
@@ -170,6 +171,12 @@ python scripts/geojson.py && python scripts/consulta_dados.py && python scripts/
 4. Em um a dois minutos o site fica em `https://ueldomiguel.github.io/cachoeirinha-esf-ubs/`.
 
 O arquivo `.nojekyll` na raiz desliga o processamento Jekyll, que não é necessário aqui.
+
+## 8.1 Recorte no limite municipal e endereços
+
+`scripts/final.py` monta o polígono do município a partir do limite do OpenStreetMap (44,1 km², o mesmo valor do IBGE) e o usa para recortar as áreas de abrangência que passavam da divisa — a da UBS Parque da Matriz perdeu 26%, a da ESF Carlos Wilkens 2% — e a malha viária desenhada, que atravessava para Gravataí e Canoas. Cada rua do índice é conferida contra esse polígono: só sai quando nenhum pedaço dela cai dentro do município. Depende de [Shapely](https://shapely.readthedocs.io/) (`pip install shapely`), usado apenas na geração dos dados.
+
+`scripts/enderecos.py` casa cada unidade com o estabelecimento de saúde correspondente no CNEFE 2022 (espécie 5), primeiro por semelhança de nome, depois por proximidade de até 80 m de um equipamento público ainda não reivindicado. **20 das 25 unidades** ganharam endereço; as demais ficam sem, em vez de receber um endereço suposto. A grafia com acento vem dos nomes de via do OpenStreetMap, já que o CNEFE guarda tudo sem acento.
 
 ## 9. Dados territoriais oficiais
 
