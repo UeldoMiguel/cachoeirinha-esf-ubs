@@ -103,7 +103,13 @@
     maxBounds: LIMITES_MAPA,
     maxBoundsViscosity: .6,
     zoomControl: true,
-    scrollWheelZoom: true
+    scrollWheelZoom: true,
+    /* Zoom suave: a roda avança um quarto de nível por vez e precisa de mais
+       rolagem para completar um nível, em vez de pular de um em um. */
+    zoomSnap: .25,
+    zoomDelta: .5,
+    wheelPxPerZoomLevel: 220,
+    wheelDebounceTime: 60
   });
 
   /* Base única do OpenStreetMap. No tema escuro, a imagem dos tiles é
