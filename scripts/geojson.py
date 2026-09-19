@@ -16,6 +16,7 @@ Rode da raiz do projeto: python scripts/geojson.py
 """
 import datetime
 import io
+import math
 import json
 import os
 import re
@@ -177,10 +178,12 @@ def main():
         info = limpa(u.get('info', ''))
         o = oficiais.get(u['n']) or {}
         ll = [u['ll'][0], u['ll'][1]]
-        # ponto absurdamente longe do endereço oficial: vale o endereço
-        if o.get('ll') and (o.get('distancia_ponto_m') or 0) > LONGE_DEMAIS:
+        # ponto vai para o endereço oficial quando a lista pede, ou quando o
+        # alfinete do mapa colaborativo está longe demais para se sustentar
+        if o.get('ll') and (o.get('usar_coordenada_do_endereco')
+                            or (o.get('distancia_ponto_m') or 0) > LONGE_DEMAIS):
             print('ponto movido para o endereço oficial:', u['n'],
-                  '(%d m)' % o['distancia_ponto_m'])
+                  '(%d m)' % (o.get('distancia_ponto_m') or 0))
             ll = o['ll']
         feats.append(feature(
             {'type': 'Point', 'coordinates': [round(ll[1], 6), round(ll[0], 6)]},
@@ -215,6 +218,27 @@ def main():
         'A posição vem do ponto marcado no mapa colaborativo. O endereço, quando '
         'presente, vem do estabelecimento de saúde correspondente no CNEFE 2022 do '
         'IBGE; unidade sem correspondência fica sem endereço.')
+
+    # unidades no mesmo endereço ficariam empilhadas e só a de cima receberia o
+    # clique: abre-se um leque de 15 m em torno do ponto comum
+    grupos = {}
+    for f in feats:
+        chave = tuple(round(c, 5) for c in f['geometry']['coordinates'])
+        grupos.setdefault(chave, []).append(f)
+    for chave, juntas in grupos.items():
+        if len(juntas) < 2:
+            continue
+        lon0, lat0 = chave
+        raio = 15.0 / 111320.0
+        print('mesmo endereço, pontos afastados em leque:',
+              ', '.join(f['properties']['nome'] for f in juntas))
+        for i, f in enumerate(juntas):
+            ang = 2 * math.pi * i / len(juntas)
+            f['geometry']['coordinates'] = [
+                round(lon0 + raio * math.cos(ang) / math.cos(math.radians(lat0)), 6),
+                round(lat0 + raio * math.sin(ang), 6)]
+            f['properties']['posicao'] = (f['properties'].get('posicao') or
+                                          'coordenada do endereço') +                 ' · deslocada 15 m para não cobrir outra unidade no mesmo endereço'
 
     bound = d.get('bound') or []
     saidas['limite.geojson'] = colecao(

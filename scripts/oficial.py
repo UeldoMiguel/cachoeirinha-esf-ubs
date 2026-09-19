@@ -51,6 +51,16 @@ def numero(endereco):
     return int(m.group(1)) if m else None
 
 
+NUMERO_TEL = re.compile(r'(?<![\d)])(\d{4,5})[\s.-]?(\d{4})(?!\d)')
+
+
+def com_ddd(texto):
+    """Põe (51) em cada número da lista, preservando as observações de ramal."""
+    def troca(m):
+        return '(51) ' + m.group(1) + '-' + m.group(2)
+    return NUMERO_TEL.sub(troca, texto or '')
+
+
 def metros(a, b):
     return math.hypot((a[1] - b[1]) * math.cos(math.radians(a[0])) * 111320,
                       (a[0] - b[0]) * 111320)
@@ -127,7 +137,7 @@ def main():
         ll, como = geocodifica(item['endereco'], por_via)
         registro = {
             'nome_oficial': item['nome_oficial'],
-            'telefone': item['telefone'],
+            'telefone': com_ddd(item['telefone']),
             'endereco': item['endereco'],
             'geocodificacao': como,
             'll': ll,
@@ -138,6 +148,8 @@ def main():
             registro['distancia_ponto_m'] = round(metros((u['ll'][0], u['ll'][1]), (ll[0], ll[1])))
         if item.get('tipo'):
             registro['tipo'] = item['tipo']
+        if item.get('usar_coordenada_do_endereco'):
+            registro['usar_coordenada_do_endereco'] = True
         saida[alvo] = registro
 
     json.dump(saida, io.open('contatos_oficiais.json', 'w', encoding='utf-8'),
