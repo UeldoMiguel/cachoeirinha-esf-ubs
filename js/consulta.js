@@ -1,7 +1,7 @@
 /* Consulta por endereço dentro do mapa.
  *
  * Responde se uma rua (com ou sem número) é área de ESF ou de UBS, mostra a
- * unidade de referência e a ESF mais próxima, desenha a via em vermelho e —
+ * unidade de referência, desenha a via em vermelho e —
  * quando há número — só o trecho da quadra com aquela numeração.
  *
  * Dados: data/consulta.json, carregado sob demanda na primeira digitação.
@@ -168,12 +168,6 @@
     return { poligono: poligono, unidade: achada, props: poligono.feature.properties || {} };
   }
 
-  function maisProximas(latlng, tipo, quantas) {
-    return API.unidadesPorTipo(tipo).map(function (u) {
-      return { u: u, d: km(latlng, [u.latlng.lat, u.latlng.lng]) };
-    }).sort(function (a, b) { return a.d - b.d; }).slice(0, quantas || 1);
-  }
-
   function responder(rua, num) {
     var codigo = rua[2][0];
     var trecho = num ? acharTrecho(rua[0], num) : null;
@@ -210,14 +204,6 @@
     html += '<p class="rotulo-ref">Unidade de referência</p><ul class="refs">' +
       linhaUnidade(referencia, ponto && area.unidade
         ? km(ponto, [area.unidade.latlng.lat, area.unidade.latlng.lng]) : null) + '</ul>';
-
-    if (tipo !== 'ESF' && ponto) {
-      var esfs = maisProximas(ponto, 'ESF', 2);
-      if (esfs.length) {
-        html += '<p class="rotulo-ref">ESF mais próxima</p><ul class="refs">' +
-          esfs.map(function (e) { return linhaUnidade(e.u.props, e.d); }).join('') + '</ul>';
-      }
-    }
 
     if (num && trecho && trecho.t) {
       html += '<p class="nota">Em vermelho, só o lado de quadra da numeração ' + trecho.t[0] +

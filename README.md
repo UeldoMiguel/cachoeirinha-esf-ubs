@@ -23,7 +23,7 @@ Dar a gestores, equipes e à população uma forma direta de responder a duas pe
 ## 1.1 O que a página faz
 
 - **Camadas** de áreas de ESF, áreas de UBS, unidades e limite municipal, com liga/desliga e contagem.
-- **Consulta por endereço** na mesma caixa de busca: digitar "Rua Dom Bosco, 240" responde se o endereço é área de ESF ou de UBS, mostra a unidade de referência com telefone e a ESF mais próxima, e desenha a via em vermelho sobre o mapa. Com o número da casa, o vermelho cobre **só o lado de quadra daquela numeração** (faces de quadra do CNEFE 2022). Em rua de divisa, o número decide a unidade.
+- **Consulta por endereço** na mesma caixa de busca: digitar "Rua Dom Bosco, 240" responde se o endereço é área de ESF ou de UBS, mostra a unidade de referência com telefone e desenha a via em vermelho sobre o mapa. Com o número da casa, o vermelho cobre **só o lado de quadra daquela numeração** (faces de quadra do CNEFE 2022). Em rua de divisa, o número decide a unidade.
 - A mesma caixa também acha **unidades e áreas pelo nome**.
 - **Modo escuro**, com botão no topo. Sem escolha manual a página acompanha o sistema; a escolha fica gravada no navegador. Os tiles do OSM são invertidos por CSS — nenhum serviço de base escura com chave de API foi introduzido.
 - **Popup e painel** mostram apenas: nome, unidade de referência, tipo, telefone e e-mail. Campo que a fonte não traz não aparece.
