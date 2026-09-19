@@ -77,7 +77,8 @@
      "Área 1",
      "Área 2"
     ],
-    "endereco": "Rua Capão da Canoa, 185 — Jardim Betania",
+    "endereco": "Rua Capão da Canoa, 185",
+    "telefone": "3074-5516",
     "email": "esf.jardimbetania@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
@@ -537,7 +538,8 @@
      "Turquia",
      "Águia"
     ],
-    "endereco": "Rua Espanha, 821 — Parque Marechal Rondon",
+    "endereco": "Rua Espanha, 821",
+    "telefone": "3041-8660",
     "email": "esf.canarinho@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
@@ -693,6 +695,8 @@
      "Área 1",
      "Área 2"
     ],
+    "endereco": "Rua Orleans, 325",
+    "telefone": "3041-7193",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -925,7 +929,8 @@
      "Viamão (142-152)",
      "Viamão (2-65)"
     ],
-    "endereco": "Avenida Amazonas, 583 — Vila Anair",
+    "endereco": "Rua Amazonas, 583",
+    "telefone": "3074-5566",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -1152,7 +1157,8 @@
      "Área 02",
      "Área 03"
     ],
-    "endereco": "Rua Fidel Zanqueta, 655 — Jardins do Bosque",
+    "endereco": "Rua Fidel Zancheta, 655",
+    "telefone": "3041-6244",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -1515,8 +1521,8 @@
      "Área 2",
      "Área 3"
     ],
-    "endereco": "Travessa São Jorge, 81 — Vila da Paz",
-    "telefone": "(51) 3041-7190",
+    "endereco": "Travessa São Jorge, 81",
+    "telefone": "3041-7190",
     "email": "esf.carloswilkens@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },

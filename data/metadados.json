@@ -10,7 +10,8 @@
  },
  "fontes": {
   "areas_e_unidades": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
-  "limite_municipal": "OpenStreetMap, contribuidores (ODbL)"
+  "limite_municipal": "OpenStreetMap, contribuidores (ODbL)",
+  "contatos_das_unidades": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
  },
  "aviso": "Dados de trabalho. Os limites territoriais oficiais devem ser fornecidos pela Secretaria Municipal de Saúde de Cachoeirinha."
 }

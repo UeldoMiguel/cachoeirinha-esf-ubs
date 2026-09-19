@@ -26,6 +26,10 @@ FONTE_AREAS = ('Mapa colaborativo público "Mapeamento unidades de saúde — Ca
                '(Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria '
                'Municipal de Saúde.')
 FONTE_LIMITE = 'OpenStreetMap, contribuidores (ODbL)'
+FONTE_OFICIAL = ('Lista de contatos das unidades da Secretaria Municipal de Saúde de '
+                 'Cachoeirinha/RS')
+LONGE_DEMAIS = 1000    # metros: acima disso o ponto do mapa colaborativo não se sustenta
+                       # diante do endereço oficial, e o ponto passa a ser o do endereço
 
 
 def codigo(nome):
@@ -116,20 +120,31 @@ def main():
     areas, unidades = d['areas'], d['unidades']
     por_nome = {u['n']: u for u in unidades}
 
-    # endereços casados com o CNEFE por scripts/enderecos.py (pode não existir)
-    caminho_end = os.path.join(RAIZ, 'dados', 'enderecos_unidades.json')
-    enderecos = {}
-    if os.path.exists(caminho_end):
-        enderecos = json.load(io.open(caminho_end, encoding='utf-8'))
+    # contatos da lista da Secretaria (mandam) e endereços deduzidos do CNEFE
+    def carrega(nome_arquivo):
+        caminho = os.path.join(RAIZ, 'dados', nome_arquivo)
+        return json.load(io.open(caminho, encoding='utf-8')) if os.path.exists(caminho) else {}
+
+    oficiais = carrega('contatos_oficiais.json')
+    enderecos = carrega('enderecos_unidades.json')
 
     def endereco_de(nome):
+        o = oficiais.get(nome)
+        if o and o.get('endereco'):
+            return o['endereco']
         e = enderecos.get(nome)
         if not e:
             return None
-        partes = [e['endereco']]
-        if e.get('bairro'):
-            partes.append(e['bairro'])
-        return ' — '.join(partes)
+        return ' — '.join([e['endereco']] + ([e['bairro']] if e.get('bairro') else []))
+
+    def telefone_de(nome, texto):
+        o = oficiais.get(nome)
+        if o and o.get('telefone'):
+            return o['telefone']
+        return telefone(texto)
+
+    def fonte_contato(nome):
+        return FONTE_OFICIAL if nome in oficiais else FONTE_AREAS
 
     saidas = {}
     for tipo, arquivo in (('ESF', 'esf.geojson'), ('UBS', 'ubs.geojson')):
@@ -149,7 +164,7 @@ def main():
                  'ruas_cadastradas': len(a['ruas']),
                  'ruas': sorted(a['ruas']),
                  'endereco': endereco_de(a['n']),
-                 'telefone': telefone(u.get('info', '')),
+                 'telefone': telefone_de(a['n'], u.get('info', '')),
                  'email': email(u.get('info', '')),
                  'fonte': FONTE_AREAS}))
         saidas[arquivo] = colecao(
@@ -160,17 +175,41 @@ def main():
     feats = []
     for u in unidades:
         info = limpa(u.get('info', ''))
+        o = oficiais.get(u['n']) or {}
+        ll = [u['ll'][0], u['ll'][1]]
+        # ponto absurdamente longe do endereço oficial: vale o endereço
+        if o.get('ll') and (o.get('distancia_ponto_m') or 0) > LONGE_DEMAIS:
+            print('ponto movido para o endereço oficial:', u['n'],
+                  '(%d m)' % o['distancia_ponto_m'])
+            ll = o['ll']
         feats.append(feature(
-            {'type': 'Point', 'coordinates': [round(u['ll'][1], 6), round(u['ll'][0], 6)]},
+            {'type': 'Point', 'coordinates': [round(ll[1], 6), round(ll[0], 6)]},
             {'nome': u['n'],
              'tipo': u['c'],
              'codigo': codigo(u['n']),
              'tem_area': any(a['n'] == u['n'] for a in areas),
              'endereco': endereco_de(u['n']),
-             'telefone': telefone(info),
+             'telefone': telefone_de(u['n'], info),
              'email': email(info),
              'informacoes': info,
-             'fonte': FONTE_AREAS}))
+             'fonte': fonte_contato(u['n'])}))
+
+    # unidades que só existem na lista da Secretaria, posicionadas pelo endereço
+    nomes_mapa = {u['n'] for u in unidades}
+    for nome, o in oficiais.items():
+        if nome in nomes_mapa or not o.get('ll'):
+            continue
+        feats.append(feature(
+            {'type': 'Point', 'coordinates': [round(o['ll'][1], 6), round(o['ll'][0], 6)]},
+            {'nome': o.get('nome_oficial') or nome,
+             'tipo': o.get('tipo') or 'Especialidades',
+             'codigo': codigo(o.get('nome_oficial') or nome),
+             'tem_area': False,
+             'endereco': o['endereco'],
+             'telefone': o['telefone'],
+             'posicao': 'coordenada do endereço no CNEFE 2022 (' + o['geocodificacao'] + ')',
+             'fonte': FONTE_OFICIAL}))
+        print('unidade acrescentada da lista oficial:', nome)
     saidas['unidades.geojson'] = colecao(
         feats, 'Unidades e serviços de saúde — Cachoeirinha/RS', FONTE_AREAS,
         'A posição vem do ponto marcado no mapa colaborativo. O endereço, quando '
@@ -208,6 +247,7 @@ def main():
         'fontes': {
             'areas_e_unidades': FONTE_AREAS,
             'limite_municipal': FONTE_LIMITE,
+            'contatos_das_unidades': FONTE_OFICIAL,
         },
         'aviso': ('Dados de trabalho. Os limites territoriais oficiais devem ser '
                   'fornecidos pela Secretaria Municipal de Saúde de Cachoeirinha.'),

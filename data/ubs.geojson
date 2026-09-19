@@ -119,7 +119,7 @@
      "Tv. Rio Grande",
      "Tv. Santos"
     ],
-    "endereco": "Rua Itapema, 30 — Parque da Matriz",
+    "endereco": "Rua Panamericana, 460",
     "telefone": "3041-6273",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
@@ -340,8 +340,8 @@
      "Tr. Do Carmo",
      "Tv. São Roque"
     ],
-    "endereco": "Rua Doutor Décio Martins Costa, 464 — Vila Eunice Velha",
-    "telefone": "(51) 3074-5539",
+    "endereco": "Rua Décio Martins Costa, 464",
+    "telefone": "3074-5539 / 3074-5508",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -586,7 +586,8 @@
      "Rua Zínia",
      "Rua Íris Azul"
     ],
-    "endereco": "Rua Jardim das Flores, s/n — Morada do Bosque",
+    "endereco": "Rua Jardim das Flores, s/n",
+    "telefone": "3074-5572",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -805,8 +806,8 @@
      "Tv. Felisberto M. Martins",
      "Tv. da Faculdade"
     ],
-    "endereco": "Rua Osvaldo Cruz, 610 — Vila Silveira Martins",
-    "telefone": "(51) 3041-7194",
+    "endereco": "Rua Osvaldo Cruz, 590",
+    "telefone": "3041-7134 / 3041-6219",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -1016,7 +1017,8 @@
      "Tv. Palmeira",
      "Tv. Roma"
     ],
-    "endereco": "Rua Almirante Barroso, s/n — Cohab",
+    "endereco": "Rua Francisco Brochado da Rocha, 95",
+    "telefone": "3041-6227",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -1386,8 +1388,8 @@
      "Tv. do Povo",
      "Tv.Parana"
     ],
-    "endereco": "Rua Paranaguá, s/n — Vista Alegre",
-    "telefone": "3438-3977",
+    "endereco": "Rua Paranaguá, 105",
+    "telefone": "3438-8664 / 3074-5547",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -1723,7 +1725,8 @@
      "Rua Vereador Clóvis Eli Pestana",
      "Rua do Bosque"
     ],
-    "endereco": "Avenida Capitão Garibaldi Pinto dos Santos, 407 — Jardim do Bosque",
+    "endereco": "Rua Capitão Garibaldi Santos, 497",
+    "telefone": "3041-6211",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -2084,7 +2087,8 @@
      "Tv. do Arvoredo",
      "Tv. dos Tucanos"
     ],
-    "endereco": "Rua Eldorado, 260 — Nova Cachoeirinha",
+    "endereco": "Rua Eldorado, 260",
+    "telefone": "3041-6245",
     "email": "ubs.novacachoeirinha@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
@@ -2295,7 +2299,8 @@
      "Tv. Souza",
      "Tv. São Pedro"
     ],
-    "endereco": "Rua Dom João VI, 188 — Vista Alegre",
+    "endereco": "Rua Dom João VI, 188",
+    "telefone": "3471-7599 / 3074-5578",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {

@@ -152,7 +152,7 @@ Depois abra `http://localhost:8000/`. A página `consulta/index.html` é autocon
 Para regerar os dados (só é preciso quando as fontes mudam):
 
 ```bash
-cd dados && python ../scripts/fetch_osm.py && python ../scripts/cnefe.py && python ../scripts/parse.py && python ../scripts/lines_osm.py && python ../scripts/build.py && python ../scripts/enderecos.py && python ../scripts/final.py
+cd dados && python ../scripts/fetch_osm.py && python ../scripts/cnefe.py && python ../scripts/parse.py && python ../scripts/lines_osm.py && python ../scripts/build.py && python ../scripts/enderecos.py && python ../scripts/oficial.py && python ../scripts/final.py
 ```
 
 e, da raiz:
@@ -176,7 +176,9 @@ O arquivo `.nojekyll` na raiz desliga o processamento Jekyll, que não é necess
 
 `scripts/final.py` monta o polígono do município a partir do limite do OpenStreetMap (44,1 km², o mesmo valor do IBGE) e o usa para recortar as áreas de abrangência que passavam da divisa — a da UBS Parque da Matriz perdeu 26%, a da ESF Carlos Wilkens 2% — e a malha viária desenhada, que atravessava para Gravataí e Canoas. Cada rua do índice é conferida contra esse polígono: só sai quando nenhum pedaço dela cai dentro do município. Depende de [Shapely](https://shapely.readthedocs.io/) (`pip install shapely`), usado apenas na geração dos dados.
 
-`scripts/enderecos.py` casa cada unidade com o estabelecimento de saúde correspondente no CNEFE 2022 (espécie 5), primeiro por semelhança de nome, depois por proximidade de até 80 m de um equipamento público ainda não reivindicado. **20 das 25 unidades** ganharam endereço; as demais ficam sem, em vez de receber um endereço suposto. A grafia com acento vem dos nomes de via do OpenStreetMap, já que o CNEFE guarda tudo sem acento.
+**Telefone e endereço vêm da lista de contatos da Secretaria Municipal de Saúde**, transcrita em `dados/unidades_oficiais.json` — fonte oficial, com precedência sobre qualquer dado deduzido. `scripts/oficial.py` geocodifica cada endereço pelo CNEFE e compara com o ponto do mapa colaborativo; `scripts/geojson.py` grava esses contatos nas feições. Três unidades da lista não existiam no mapa — **eMulti, SAE - Tuberculose e SAM** — e entraram posicionadas pela coordenada do próprio endereço.
+
+`scripts/enderecos.py` atende às duas unidades fora da lista (Secretaria de Saúde e Hospital Padre Jeremias): casa a unidade com o estabelecimento de saúde correspondente no CNEFE 2022 (espécie 5), por nome ou por proximidade de até 80 m. A grafia com acento vem dos nomes de via do OpenStreetMap, já que o CNEFE guarda tudo sem acento.
 
 ## 9. Dados territoriais oficiais
 
@@ -186,7 +188,8 @@ Fontes usadas hoje:
 
 - Áreas, unidades e listas de ruas: mapa colaborativo "Mapeamento unidades de saúde — Cachoeirinha" (Google My Maps).
 - Malha viária e limite municipal: OpenStreetMap, contribuidores (ODbL).
-- Numeração de endereços e faces de quadra (página de consulta): CNEFE 2022, IBGE, município 4303103.
+- Telefone e endereço das unidades: lista de contatos da Secretaria Municipal de Saúde de Cachoeirinha/RS.
+- Numeração de endereços, faces de quadra e geocodificação: CNEFE 2022, IBGE, município 4303103.
 
 ## 10. Licença
 

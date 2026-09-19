@@ -105,7 +105,24 @@ for f in d['faltantes_det']:
     idx.append(entrada(k,f['rua'],[ai],2 if fora else 1))
     existentes.add(k); prov+=1
 print('sugeridas adicionadas ao indice:',prov)
-un=[{'n':' '.join(u['nome'].split()),'c':u['cat'],'ll':[round(u['ll'][0],5),round(u['ll'][1],5)],'info':u['info']} for u in d['unidades']]
+# contatos da lista da Secretaria substituem o texto livre do KML
+try:
+    oficiais=json.load(open('contatos_oficiais.json',encoding='utf-8'))
+except (IOError,OSError,ValueError):
+    oficiais={}
+import re as _re
+def contato(nome,info):
+    o=oficiais.get(nome)
+    linhas=[]
+    if o:
+        linhas.append('Telefone: '+o['telefone'])
+        linhas.append('Endereço: '+o['endereco'])
+    m=_re.search(r'[\w.\-+]+@[\w.\-]+\.\w+',info or '')
+    if m: linhas.append('E-mail: '+m.group(0))
+    return chr(10).join(linhas) if linhas else info
+un=[{'n':' '.join(u['nome'].split()),'c':u['cat'],'ll':[round(u['ll'][0],5),round(u['ll'][1],5)],
+     'info':contato(' '.join(u['nome'].split()),u['info'])} for u in d['unidades']]
+print('unidades com contato oficial:',sum(1 for u in un if u['n'] in oficiais),'de',len(un))
 falt=[]
 for f in d['faltantes_det']:
     if not f['via_publica']: continue

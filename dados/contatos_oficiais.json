@@ -1,0 +1,310 @@
+{
+ "ESF Canarinho": {
+  "nome_oficial": "ESF Canarinho",
+  "telefone": "3041-8660",
+  "endereco": "Rua Espanha, 821",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.898536,
+   -51.071145
+  ],
+  "novo": false,
+  "distancia_ponto_m": 25
+ },
+ "ESF Carlos Wilkens": {
+  "nome_oficial": "ESF Carlos Wilkens",
+  "telefone": "3041-7190",
+  "endereco": "Travessa São Jorge, 81",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.951746,
+   -51.109974
+  ],
+  "novo": false,
+  "distancia_ponto_m": 13
+ },
+ "ESF Jardim Betânia": {
+  "nome_oficial": "ESF Jardim Betânia",
+  "telefone": "3074-5516",
+  "endereco": "Rua Capão da Canoa, 185",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.887464,
+   -51.087306
+  ],
+  "novo": false,
+  "distancia_ponto_m": 10
+ },
+ "ESF Otacílio Silveira": {
+  "nome_oficial": "ESF Otacílio Silveira",
+  "telefone": "3074-5566",
+  "endereco": "Rua Amazonas, 583",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.912796,
+   -51.075418
+  ],
+  "novo": false,
+  "distancia_ponto_m": 3
+ },
+ "ESF José Ari da Silveira": {
+  "nome_oficial": "ESF José Ari",
+  "telefone": "3041-7193",
+  "endereco": "Rua Orleans, 325",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.921118,
+   -51.075394
+  ],
+  "novo": false,
+  "distancia_ponto_m": 19
+ },
+ "ESF José Ramos": {
+  "nome_oficial": "ESF José Ramos",
+  "telefone": "3041-6244",
+  "endereco": "Rua Fidel Zancheta, 655",
+  "geocodificacao": "via não encontrada no CNEFE",
+  "ll": null,
+  "novo": false
+ },
+ "UBS CAIC Granja": {
+  "nome_oficial": "UBS CAIC Granja",
+  "telefone": "3074-5572",
+  "endereco": "Rua Jardim das Flores, s/n",
+  "geocodificacao": "via inteira, endereço sem número",
+  "ll": [
+   -29.905283,
+   -51.082581
+  ],
+  "novo": false,
+  "distancia_ponto_m": 68
+ },
+ "UBS COHAB": {
+  "nome_oficial": "UBS COHAB",
+  "telefone": "3041-6227",
+  "endereco": "Rua Francisco Brochado da Rocha, 95",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.948759,
+   -51.097772
+  ],
+  "novo": false,
+  "distancia_ponto_m": 536
+ },
+ "UBS Décio Martins Costa": {
+  "nome_oficial": "UBS Décio Martins Costa",
+  "telefone": "3074-5539 / 3074-5508",
+  "endereco": "Rua Décio Martins Costa, 464",
+  "geocodificacao": "número exato · via aproximada (Doutor Decio Martins Costa)",
+  "ll": [
+   -29.957445,
+   -51.102738
+  ],
+  "novo": false,
+  "distancia_ponto_m": 19
+ },
+ "UBS Getúlio Vargas": {
+  "nome_oficial": "UBS Getúlio Vargas",
+  "telefone": "3471-7599 / 3074-5578",
+  "endereco": "Rua Dom João VI, 188",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.924394,
+   -51.08332
+  ],
+  "novo": false,
+  "distancia_ponto_m": 30
+ },
+ "UBS Jardim do Bosque": {
+  "nome_oficial": "UBS Jardim do Bosque",
+  "telefone": "3041-6211",
+  "endereco": "Rua Capitão Garibaldi Santos, 497",
+  "geocodificacao": "número mais próximo (493) · via aproximada (Capitao Garibaldi Pinto Santos)",
+  "ll": [
+   -29.925318,
+   -51.091278
+  ],
+  "novo": false,
+  "distancia_ponto_m": 88
+ },
+ "UBS Nova Cachoeirinha": {
+  "nome_oficial": "UBS Nova Cachoeirinha",
+  "telefone": "3041-6245",
+  "endereco": "Rua Eldorado, 260",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.904424,
+   -51.071862
+  ],
+  "novo": false,
+  "distancia_ponto_m": 73
+ },
+ "UBS Odil Silva de Oliveira": {
+  "nome_oficial": "UBS Odil",
+  "telefone": "3438-8664 / 3074-5547",
+  "endereco": "Rua Paranaguá, 105",
+  "geocodificacao": "número mais próximo (98)",
+  "ll": [
+   -29.912026,
+   -51.072852
+  ],
+  "novo": false,
+  "distancia_ponto_m": 47
+ },
+ "UBS Osvaldo Cruz": {
+  "nome_oficial": "UBS Osvaldo Cruz",
+  "telefone": "3041-7134 / 3041-6219",
+  "endereco": "Rua Osvaldo Cruz, 590",
+  "geocodificacao": "número mais próximo (589)",
+  "ll": [
+   -29.938231,
+   -51.091113
+  ],
+  "novo": false,
+  "distancia_ponto_m": 27
+ },
+ "UBS Parque da Matriz": {
+  "nome_oficial": "UBS Parque da Matriz",
+  "telefone": "3041-6273",
+  "endereco": "Rua Panamericana, 460",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.9486,
+   -51.080366
+  ],
+  "novo": false,
+  "distancia_ponto_m": 16
+ },
+ "CAPS AD - Centro de Atenção Psicossocial Álcool e outra Drogas": {
+  "nome_oficial": "CAPS AD",
+  "telefone": "3074-5569",
+  "endereco": "Rua Aparício Soares da Cunha, 128",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.935816,
+   -51.078373
+  ],
+  "novo": false,
+  "distancia_ponto_m": 22
+ },
+ "CAPS II - Centro de Atenção Psicossocial": {
+  "nome_oficial": "CAPS II",
+  "telefone": "3041-6247",
+  "endereco": "Rua Anita Garibaldi, 275",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.953333,
+   -51.108763
+  ],
+  "novo": false,
+  "distancia_ponto_m": 15
+ },
+ "Unidade de Saúde Mental Infantil": {
+  "nome_oficial": "CAPS IJ",
+  "telefone": "3074-5549",
+  "endereco": "Rua Francisco Brochado da Rocha, 54",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.949219,
+   -51.097844
+  ],
+  "novo": false,
+  "distancia_ponto_m": 61
+ },
+ "Centro de Saúde da Pessoa Idosa": {
+  "nome_oficial": "Centro de Saúde da Pessoa Idosa",
+  "telefone": "3041-7194",
+  "endereco": "Rua Mário Tavares Haussem, 140",
+  "geocodificacao": "número exato · via aproximada (Mario Tavares Haussen)",
+  "ll": [
+   -29.949021,
+   -51.101532
+  ],
+  "novo": false,
+  "distancia_ponto_m": 15
+ },
+ "CEC - Centro de especialidades médicas": {
+  "nome_oficial": "CEC",
+  "telefone": "3041-7195 / 3041-6248",
+  "endereco": "Avenida General Flores da Cunha, 2385",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.947016,
+   -51.09127
+  ],
+  "novo": false,
+  "distancia_ponto_m": 36
+ },
+ "CEO - Centro de Especialidades Odontológicas": {
+  "nome_oficial": "CEO",
+  "telefone": "3074-5590",
+  "endereco": "Rua Vitino Zucatti, 255",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.949409,
+   -51.101082
+  ],
+  "novo": false,
+  "distancia_ponto_m": 4785
+ },
+ "eMulti": {
+  "nome_oficial": "eMulti",
+  "telefone": "3041-7184 / 3041-2582 (ramal)",
+  "endereco": "Avenida General Flores da Cunha, 2385",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.947016,
+   -51.09127
+  ],
+  "novo": true,
+  "tipo": "Especialidades"
+ },
+ "SAE": {
+  "nome_oficial": "SAE",
+  "telefone": "3074-5511 / 3041-6269",
+  "endereco": "Rua Osvaldo Cruz, 616",
+  "geocodificacao": "número mais próximo (617)",
+  "ll": [
+   -29.937976,
+   -51.091228
+  ],
+  "novo": false,
+  "distancia_ponto_m": 7
+ },
+ "SAE - Tuberculose": {
+  "nome_oficial": "SAE - Tuberculose",
+  "telefone": "3074-5582",
+  "endereco": "Rua Osvaldo Cruz, 616",
+  "geocodificacao": "número mais próximo (617)",
+  "ll": [
+   -29.937976,
+   -51.091228
+  ],
+  "novo": true,
+  "tipo": "Especialidades"
+ },
+ "SAM": {
+  "nome_oficial": "SAM",
+  "telefone": "3041-8652 (ramal) / 9110-4725",
+  "endereco": "Rua Paranaguá, 105",
+  "geocodificacao": "número mais próximo (98)",
+  "ll": [
+   -29.912026,
+   -51.072852
+  ],
+  "novo": true,
+  "tipo": "Especialidades"
+ },
+ "UPA 24h Cachoeirinha": {
+  "nome_oficial": "UPA",
+  "telefone": "3074-5690 / 3074-5691",
+  "endereco": "Rua Capitão Garibaldi Pinto dos Santos, 1301",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.918091,
+   -51.090733
+  ],
+  "novo": false,
+  "distancia_ponto_m": 11
+ }
+}
