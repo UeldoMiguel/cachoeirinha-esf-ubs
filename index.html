@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="css/style.css">
+<script src="js/tema.js"></script>
 </head>
 <body>
 
@@ -19,21 +20,27 @@
     <h1>Mapa Territorial da Saúde — Cachoeirinha/RS</h1>
     <p class="sub">Áreas de ESF e UBS</p>
   </div>
-  <nav class="links" aria-label="Outras ferramentas">
-    <a href="consulta/">Consulta por endereço</a>
-  </nav>
+  <div class="links">
+    <button type="button" id="tema" aria-pressed="false">
+      <span aria-hidden="true" id="tema-icone">◐</span><span id="tema-texto">Modo escuro</span>
+    </button>
+  </div>
 </header>
 
 <main class="corpo">
   <aside class="painel" aria-label="Controles e legenda">
 
     <section class="bloco">
-      <h2 id="rot-busca">Buscar</h2>
-      <label class="rotulo" for="busca">Unidade ou área</label>
-      <input id="busca" type="search" autocomplete="off" placeholder="ex.: Canarinho"
+      <h2 id="rot-busca">Consulta</h2>
+      <label class="rotulo" for="busca">Endereço, unidade ou área</label>
+      <input id="busca" type="search" autocomplete="off" spellcheck="false"
+             placeholder="ex.: Rua Dom Bosco, 240"
              aria-describedby="busca-dica" aria-controls="resultados">
-      <p class="dica" id="busca-dica">Digite parte do nome. O mapa vai até o resultado escolhido.</p>
+      <p class="dica" id="busca-dica">Digite o nome da rua para saber se o endereço é área de ESF
+        ou de UBS. Com o número da casa, o mapa marca em vermelho só o trecho da quadra. Também
+        encontra unidades e áreas pelo nome.</p>
       <ul id="resultados" class="resultados" role="listbox" aria-labelledby="rot-busca"></ul>
+      <div id="resposta" class="resposta" role="status" aria-live="polite"></div>
     </section>
 
     <section class="bloco">
@@ -63,6 +70,10 @@
     <section class="bloco">
       <h2>Procedência</h2>
       <p class="proc" id="procedencia">Carregando metadados…</p>
+      <p class="proc" style="margin-top:8px">
+        Versão só da consulta por endereço, em página própria:
+        <a href="consulta/">abrir consulta</a>.
+      </p>
     </section>
   </aside>
 
@@ -78,5 +89,6 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/map.js"></script>
+<script src="js/consulta.js"></script>
 </body>
 </html>

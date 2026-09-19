@@ -8,8 +8,8 @@ Duas páginas compõem o projeto:
 
 | Página | Para quê |
 |---|---|
-| [`index.html`](index.html) | Mapa interativo com camadas, legenda, busca, popups e painel de detalhes. Lê os GeoJSON de `data/`. |
-| [`consulta/index.html`](consulta/index.html) | Consulta por endereço: digita-se a rua (com número, se houver) e a página responde se o endereço é área de ESF ou de UBS, com a unidade de referência e a ESF mais próxima. Arquivo único, com os dados embutidos. |
+| [`index.html`](index.html) | Aplicação principal: mapa com camadas, legenda, popups, **consulta por endereço** e **modo escuro**. Lê os GeoJSON de `data/`. |
+| [`consulta/index.html`](consulta/index.html) | A mesma consulta por endereço em página própria, arquivo único com os dados embutidos. Fica de pé para quem precisa do arquivo offline ou de um link direto só da consulta. |
 
 > **Aviso sobre os dados.** Os limites territoriais aqui publicados foram digitalizados de mapa colaborativo público e servem como dado de trabalho. **Não substituem o cadastro oficial** da Secretaria Municipal de Saúde de Cachoeirinha. Os limites oficiais devem ser fornecidos pela fonte responsável e substituídos nos arquivos de `data/` (veja abaixo) — a aplicação não precisa de nenhuma alteração para passar a usá-los.
 
@@ -19,6 +19,14 @@ Dar a gestores, equipes e à população uma forma direta de responder a duas pe
 
 1. **Qual é o território de cada unidade?** — polígonos de ESF e UBS desenhados sobre o mapa, com legenda e controle de camadas.
 2. **Qual unidade atende este endereço?** — busca por nome de unidade/área no mapa, e busca por rua e número na página de consulta.
+
+## 1.1 O que a página faz
+
+- **Camadas** de áreas de ESF, áreas de UBS, unidades e limite municipal, com liga/desliga e contagem.
+- **Consulta por endereço** na mesma caixa de busca: digitar "Rua Dom Bosco, 240" responde se o endereço é área de ESF ou de UBS, mostra a unidade de referência com telefone e a ESF mais próxima, e desenha a via em vermelho sobre o mapa. Com o número da casa, o vermelho cobre **só o lado de quadra daquela numeração** (faces de quadra do CNEFE 2022). Em rua de divisa, o número decide a unidade.
+- A mesma caixa também acha **unidades e áreas pelo nome**.
+- **Modo escuro**, com botão no topo. Sem escolha manual a página acompanha o sistema; a escolha fica gravada no navegador. Os tiles do OSM são invertidos por CSS — nenhum serviço de base escura com chave de API foi introduzido.
+- **Popup e painel** mostram apenas: nome, unidade de referência, tipo, telefone e e-mail. Campo que a fonte não traz não aparece.
 
 ## 2. Tecnologias
 
@@ -35,11 +43,14 @@ cachoeirinha-esf-ubs/
 ├── index.html              aplicação do mapa
 ├── css/style.css           estilos (tokens de cor no :root)
 ├── js/map.js               carga dos GeoJSON, camadas, popups, busca
+├── js/consulta.js          consulta por endereço (rua, número, trecho de quadra)
+├── js/tema.js              modo claro/escuro
 ├── data/                   dados publicados, consumidos pelo navegador
 │   ├── esf.geojson         polígonos das áreas de ESF
 │   ├── ubs.geojson         polígonos das áreas de UBS
 │   ├── unidades.geojson    pontos das unidades e serviços
 │   ├── limite.geojson      contorno do município (OpenStreetMap)
+│   ├── consulta.json       índice de ruas, traçados e numeração (consulta)
 │   └── metadados.json      procedência, data de geração e contagens
 ├── assets/favicon.svg
 ├── consulta/index.html     página de consulta por endereço (arquivo único)
@@ -102,8 +113,8 @@ Propriedades genéricas; **o que não existir é simplesmente omitido** — a ap
 ```
 
 - `tipo` controla a cor: `ESF` (verde), `UBS` (azul), qualquer outro valor cai na cor de "outros serviços".
-- `ruas` (lista) aparece no painel lateral como as vias da abrangência.
-- Qualquer propriedade extra é exibida no popup com o nome do campo — não é preciso declará-la em lugar nenhum.
+- A caixa de informações mostra **apenas** `nome`, `unidade`, `tipo`, `telefone` e `email`. As demais propriedades ficam no arquivo (e servem ao processamento), mas fora da interface. Para exibir outra, acrescente uma linha ao array `CAMPOS` no topo de [`js/map.js`](js/map.js).
+- `codigo` é a chave que liga uma rua ao polígono na consulta por endereço: ao trocar os GeoJSON, mantenha os mesmos códigos ou regenere `data/consulta.json`.
 
 ## 6. Como adicionar novas unidades
 
@@ -146,10 +157,10 @@ cd dados && python ../scripts/fetch_osm.py && python ../scripts/cnefe.py && pyth
 e, da raiz:
 
 ```bash
-python scripts/geojson.py && python scripts/build_html.py
+python scripts/geojson.py && python scripts/consulta_dados.py && python scripts/build_html.py
 ```
 
-`scripts/geojson.py` gera os arquivos de `data/`; `scripts/build_html.py` gera `consulta/index.html`.
+`scripts/geojson.py` gera os GeoJSON de `data/`; `scripts/consulta_dados.py` gera `data/consulta.json`; `scripts/build_html.py` gera `consulta/index.html`.
 
 ## 8. Como publicar no GitHub Pages
 

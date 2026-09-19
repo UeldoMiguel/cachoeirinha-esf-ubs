@@ -35,22 +35,14 @@
     { id: 'limite', arquivo: 'data/limite.geojson', rotulo: 'Limite do município', especie: 'limite' }
   ];
 
-  /* Rótulos amigáveis das propriedades, na ordem em que aparecem no popup */
+  /* O que a caixa mostra, nesta ordem. Só isto: o resto das propriedades do
+     GeoJSON fica fora da interface para a leitura ser rápida em campo. */
   var CAMPOS = [
     ['unidade', 'Unidade de referência'],
     ['tipo', 'Tipo'],
-    ['codigo', 'Código'],
-    ['descricao', 'Descrição'],
-    ['equipe', 'Equipe'],
-    ['territorio', 'Território'],
-    ['endereco', 'Endereço'],
     ['telefone', 'Telefone'],
-    ['email', 'E-mail'],
-    ['ruas_cadastradas', 'Vias cadastradas'],
-    ['informacoes', 'Informações'],
-    ['fonte', 'Fonte']
+    ['email', 'E-mail']
   ];
-  var OCULTOS = ['nome', 'ruas', 'tem_area'];
 
   /* Utilidades ------------------------------------------------------------ */
 
@@ -61,28 +53,20 @@
   }
 
   function semAcento(s) {
-    return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   }
 
-  function rotuloDe(chave) {
-    for (var i = 0; i < CAMPOS.length; i++) if (CAMPOS[i][0] === chave) return CAMPOS[i][1];
-    return chave.charAt(0).toUpperCase() + chave.slice(1).replace(/_/g, ' ');
-  }
-
-  /* Monta <dl> com o que a feição realmente tem — nada é preenchido por suposição */
+  /* Monta <dl> com o que a feição realmente tem — campo ausente não aparece,
+     e nada é preenchido por suposição. */
   function listaDeDados(props) {
-    var usados = {}, html = '';
+    var html = '';
     CAMPOS.forEach(function (par) {
       var v = props[par[0]];
       if (v === undefined || v === null || v === '') return;
-      usados[par[0]] = true;
-      html += '<dt>' + esc(par[1]) + '</dt><dd>' + esc(v) + '</dd>';
-    });
-    Object.keys(props).forEach(function (k) {
-      if (usados[k] || OCULTOS.indexOf(k) >= 0) return;
-      var v = props[k];
-      if (v === undefined || v === null || v === '' || typeof v === 'object') return;
-      html += '<dt>' + esc(rotuloDe(k)) + '</dt><dd>' + esc(v) + '</dd>';
+      var valor = par[0] === 'email'
+        ? '<a href="mailto:' + esc(v) + '">' + esc(v) + '</a>'
+        : esc(v);
+      html += '<dt>' + esc(par[1]) + '</dt><dd>' + valor + '</dd>';
     });
     return html ? '<dl>' + html + '</dl>' : '';
   }
@@ -91,8 +75,12 @@
     return tipo === 'ESF' || tipo === 'UBS' ? 'marca-' + tipo : 'marca-outro';
   }
 
+  var TOKEN = { ESF: '--esf', UBS: '--ubs', outro: '--outro', limite: '--limite' };
+
   function corDe(tipo) {
-    return CORES[tipo] || CORES.outro;
+    var nome = TOKEN[tipo] || TOKEN.outro;
+    var v = getComputedStyle(document.documentElement).getPropertyValue(nome).trim();
+    return v || CORES[tipo] || CORES.outro;
   }
 
   function conteudoPopup(props) {
@@ -117,15 +105,46 @@
     scrollWheelZoom: true
   });
 
+  /* Base única do OpenStreetMap. No tema escuro, a imagem dos tiles é
+     invertida por CSS — os serviços de base escura prontos (CARTO, Stadia)
+     exigem chave de API, e o filtro mantém a página sem dependência nova. */
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(mapa);
 
+  function aplicarTemaMapa(escuro) {
+    mapa.getContainer().classList.toggle('mapa-escuro', !!escuro);
+    /* os tokens de cor mudaram: repinta polígonos e marcadores */
+    ['esf', 'ubs'].forEach(function (id) {
+      var c = camadas[id];
+      if (!c) return;
+      c.eachLayer(function (l) {
+        var t = ((l.feature || {}).properties || {}).tipo;
+        l.setStyle(estiloArea(t));
+      });
+    });
+    if (camadas.unidades) {
+      camadas.unidades.eachLayer(function (l) {
+        var p = (l.feature || {}).properties || {};
+        if (l.setStyle) l.setStyle({ color: corDe(p.tipo), fillColor: corFundoMarcador() });
+      });
+    }
+    if (camadas.limite) camadas.limite.setStyle({ color: corDe('limite') });
+  }
+
+  function corFundoMarcador() {
+    return getComputedStyle(document.documentElement).getPropertyValue('--painel').trim() || '#ffffff';
+  }
+
   L.control.scale({ imperial: false, metric: true }).addTo(mapa);
 
   var camadas = {};      // id -> L.LayerGroup
   var itensBusca = [];   // {nome, tipo, camada, alvo}
+
+  aplicarTemaMapa(document.documentElement.getAttribute('data-tema') === 'escuro' ||
+    (!document.documentElement.getAttribute('data-tema') &&
+      window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches));
 
   /* Estilos e comportamento por espécie de camada ------------------------- */
 
@@ -172,7 +191,7 @@
       radius: 7,
       color: corDe(props.tipo),
       weight: 3,
-      fillColor: '#ffffff',
+      fillColor: corFundoMarcador(),
       fillOpacity: 1
     });
   }
@@ -190,13 +209,6 @@
 
   function mostrarDetalhe(props, layer) {
     var dados = listaDeDados(props);
-    var ruas = Array.isArray(props.ruas) && props.ruas.length
-      ? '<dt>Vias na abrangência (' + props.ruas.length + ')</dt>' +
-        '<dd class="ruas">' + esc(props.ruas.join(' · ')) + '</dd>'
-      : '';
-    if (ruas) {
-      dados = dados ? dados.replace('</dl>', ruas + '</dl>') : '<dl>' + ruas + '</dl>';
-    }
     elDetalhe.innerHTML =
       '<h3>' + esc(props.nome || props.unidade || 'Seleção') + '</h3>' +
       (dados || '<p class="vazio">Esta feição não traz atributos.</p>');
@@ -236,13 +248,42 @@
   var elBusca = document.getElementById('busca');
   var elResultados = document.getElementById('resultados');
 
+  /* Outros módulos (a consulta por endereço) registram provedores aqui:
+     função que recebe o termo já normalizado e devolve
+     [{ nome, tipo, marca?, escolher: function () {} }]. */
+  var provedores = [];
+
+  function itensDoMapa(q) {
+    return itensBusca.filter(function (it) {
+      return semAcento(it.nome).indexOf(q) >= 0;
+    }).slice(0, 8).map(function (it) {
+      return {
+        nome: it.nome,
+        tipo: it.tipo,
+        escolher: function () {
+          if (!mapa.hasLayer(it.grupo)) {
+            it.grupo.addTo(mapa);
+            var cx = document.getElementById('cam-' + it.fonteId);
+            if (cx) cx.checked = true;
+          }
+          it.alvo.openPopup();
+          mostrarDetalhe(it.props, it.alvo);
+        }
+      };
+    });
+  }
+
   function pintaResultados(termo) {
     var q = semAcento(termo).trim();
     elResultados.innerHTML = '';
     if (q.length < 2) return;
-    var achados = itensBusca.filter(function (it) {
-      return semAcento(it.nome).indexOf(q) >= 0;
-    }).slice(0, 12);
+
+    var achados = itensDoMapa(q);
+    provedores.forEach(function (p) {
+      try { achados = achados.concat(p(q, termo) || []); } catch (e) { /* provedor falho não derruba a busca */ }
+    });
+    achados = achados.slice(0, 12);
+
     if (!achados.length) {
       elResultados.innerHTML = '<li class="dica">Nada encontrado com esse nome.</li>';
       return;
@@ -251,15 +292,11 @@
       var li = document.createElement('li');
       li.setAttribute('role', 'option');
       li.innerHTML = '<button type="button"><span>' + esc(it.nome) + '</span>' +
-        '<span class="marca ' + classeMarca(it.tipo) + '">' + esc(it.tipo || 'serviço') + '</span></button>';
+        '<span class="marca ' + classeMarca(it.tipo) + '">' +
+        esc(it.marca || it.tipo || 'serviço') + '</span></button>';
       li.querySelector('button').addEventListener('click', function () {
-        if (!mapa.hasLayer(it.grupo)) {
-          it.grupo.addTo(mapa);
-          var cx = document.getElementById('cam-' + it.fonteId);
-          if (cx) cx.checked = true;
-        }
-        it.alvo.openPopup();
-        mostrarDetalhe(it.props, it.alvo);
+        elResultados.innerHTML = '';
+        it.escolher();
       });
       elResultados.appendChild(li);
     });
@@ -342,6 +379,53 @@
     if (caixa) mapa.fitBounds(caixa, { padding: [20, 20] });
     itensBusca.sort(function (a, b) { return a.nome.localeCompare(b.nome, 'pt-BR'); });
   });
+
+  /* API para os outros módulos da página ---------------------------------- */
+
+  window.MapaSaude = {
+    mapa: mapa,
+    aplicarTemaMapa: aplicarTemaMapa,
+    cores: CORES,
+    esc: esc,
+    semAcento: semAcento,
+    classeMarca: classeMarca,
+    mostrarDetalhe: mostrarDetalhe,
+    /* registra um provedor de resultados na caixa de busca */
+    registrarBusca: function (fn) { provedores.push(fn); },
+    /* devolve a camada do polígono cujo properties.codigo bate, ou null */
+    poligonoPorCodigo: function (codigo) {
+      var achou = null;
+      ['esf', 'ubs'].forEach(function (id) {
+        var c = camadas[id];
+        if (!c || achou) return;
+        c.eachLayer(function (l) {
+          var p = (l.feature && l.feature.properties) || {};
+          if (!achou && p.codigo === codigo) achou = l;
+        });
+      });
+      return achou;
+    },
+    /* unidades de um tipo ('ESF', 'UBS'…) como [{props, latlng}] */
+    unidadesPorTipo: function (tipo) {
+      var saida = [];
+      var c = camadas.unidades;
+      if (!c) return saida;
+      c.eachLayer(function (l) {
+        var p = (l.feature && l.feature.properties) || {};
+        if (!tipo || p.tipo === tipo) saida.push({ props: p, latlng: l.getLatLng(), camada: l });
+      });
+      return saida;
+    },
+    /* garante que a camada esteja visível e sincroniza a caixinha */
+    mostrarCamada: function (id) {
+      var c = camadas[id];
+      if (c && !mapa.hasLayer(c)) {
+        c.addTo(mapa);
+        var cx = document.getElementById('cam-' + id);
+        if (cx) cx.checked = true;
+      }
+    }
+  };
 
   /* Procedência ----------------------------------------------------------- */
 

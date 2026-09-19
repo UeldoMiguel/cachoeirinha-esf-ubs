@@ -49,9 +49,24 @@ def limpa(txt):
     return '\n'.join(linhas)
 
 
+TELEFONE = re.compile(r'(?<![\d/])(\(?\d{2}\)?[\s.-]*)?(\d{4,5})[\s.-]?(\d{4})(?![\d/])')
+
+
 def telefone(txt):
-    m = re.search(r'(?:fone|telefone|tel)\.?:?\s*([()\d\s.-]{8,20})', txt or '', re.I)
-    return ' '.join(m.group(1).split()) if m else None
+    """Primeiro telefone que aparece no texto livre da fonte.
+
+    O texto do KML lista vários setores; o primeiro é o contato principal.
+    Datas (12/04/2024) e horários (8h às 17h) não casam com o padrão.
+    """
+    m = TELEFONE.search(txt or '')
+    if not m:
+        return None
+    ddd = (m.group(1) or '').strip(' .-')
+    fixo = m.group(2) + '-' + m.group(3)
+    if ddd:
+        ddd = ddd.strip('()')
+        return '(' + ddd + ') ' + fixo
+    return fixo
 
 
 def email(txt):
