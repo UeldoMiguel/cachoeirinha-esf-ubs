@@ -33,7 +33,7 @@
     "tem_area": true,
     "endereco": "Rua Jardim das Flores, s/n",
     "telefone": "(51) 3074-5572",
-    "informacoes": "Telefone: 3074-5572\nEndereço: Rua Jardim das Flores, s/n",
+    "informacoes": "Telefone: (51) 3074-5572\nEndereço: Rua Jardim das Flores, s/n",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -53,7 +53,7 @@
     "tem_area": true,
     "endereco": "Rua Francisco Brochado da Rocha, 95",
     "telefone": "(51) 3041-6227",
-    "informacoes": "Telefone: 3041-6227\nEndereço: Rua Francisco Brochado da Rocha, 95",
+    "informacoes": "Telefone: (51) 3041-6227\nEndereço: Rua Francisco Brochado da Rocha, 95",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -73,7 +73,7 @@
     "tem_area": true,
     "endereco": "Rua Dom João VI, 188",
     "telefone": "(51) 3471-7599 / (51) 3074-5578",
-    "informacoes": "Telefone: 3471-7599 / 3074-5578\nEndereço: Rua Dom João VI, 188",
+    "informacoes": "Telefone: (51) 3471-7599 / (51) 3074-5578\nEndereço: Rua Dom João VI, 188",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -93,7 +93,7 @@
     "tem_area": true,
     "endereco": "Rua Capitão Garibaldi Santos, 497",
     "telefone": "(51) 3041-6211",
-    "informacoes": "Telefone: 3041-6211\nEndereço: Rua Capitão Garibaldi Santos, 497",
+    "informacoes": "Telefone: (51) 3041-6211\nEndereço: Rua Capitão Garibaldi Santos, 497",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -114,7 +114,7 @@
     "endereco": "Rua Eldorado, 260",
     "telefone": "(51) 3041-6245",
     "email": "ubs.novacachoeirinha@cachoeirinha.rs.gov.br",
-    "informacoes": "Telefone: 3041-6245\nEndereço: Rua Eldorado, 260\nE-mail: ubs.novacachoeirinha@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3041-6245\nEndereço: Rua Eldorado, 260\nE-mail: ubs.novacachoeirinha@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -134,7 +134,7 @@
     "tem_area": true,
     "endereco": "Rua Paranaguá, 105",
     "telefone": "(51) 3438-8664 / (51) 3074-5547",
-    "informacoes": "Telefone: 3438-8664 / 3074-5547\nEndereço: Rua Paranaguá, 105",
+    "informacoes": "Telefone: (51) 3438-8664 / (51) 3074-5547\nEndereço: Rua Paranaguá, 105",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -154,7 +154,7 @@
     "tem_area": true,
     "endereco": "Rua Panamericana, 460",
     "telefone": "(51) 3041-6273",
-    "informacoes": "Telefone: 3041-6273\nEndereço: Rua Panamericana, 460",
+    "informacoes": "Telefone: (51) 3041-6273\nEndereço: Rua Panamericana, 460",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -174,7 +174,7 @@
     "tem_area": true,
     "endereco": "Rua Décio Martins Costa, 464",
     "telefone": "(51) 3074-5539 / (51) 3074-5508",
-    "informacoes": "Telefone: 3074-5539 / 3074-5508\nEndereço: Rua Décio Martins Costa, 464",
+    "informacoes": "Telefone: (51) 3074-5539 / (51) 3074-5508\nEndereço: Rua Décio Martins Costa, 464",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -194,7 +194,7 @@
     "tem_area": true,
     "endereco": "Rua Osvaldo Cruz, 590",
     "telefone": "(51) 3041-7134 / (51) 3041-6219",
-    "informacoes": "Telefone: 3041-7134 / 3041-6219\nEndereço: Rua Osvaldo Cruz, 590",
+    "informacoes": "Telefone: (51) 3041-7134 / (51) 3041-6219\nEndereço: Rua Osvaldo Cruz, 590",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -215,7 +215,7 @@
     "endereco": "Rua Espanha, 821",
     "telefone": "(51) 3041-8660",
     "email": "esf.canarinho@cachoeirinha.rs.gov.br",
-    "informacoes": "Telefone: 3041-8660\nEndereço: Rua Espanha, 821\nE-mail: esf.canarinho@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3041-8660\nEndereço: Rua Espanha, 821\nE-mail: esf.canarinho@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -236,7 +236,7 @@
     "endereco": "Rua Capão da Canoa, 185",
     "telefone": "(51) 3074-5516",
     "email": "esf.jardimbetania@cachoeirinha.rs.gov.br",
-    "informacoes": "Telefone: 3074-5516\nEndereço: Rua Capão da Canoa, 185\nE-mail: esf.jardimbetania@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3074-5516\nEndereço: Rua Capão da Canoa, 185\nE-mail: esf.jardimbetania@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -256,7 +256,7 @@
     "tem_area": true,
     "endereco": "Rua Fidel Zancheta, 655",
     "telefone": "(51) 3041-6244",
-    "informacoes": "Telefone: 3041-6244\nEndereço: Rua Fidel Zancheta, 655",
+    "informacoes": "Telefone: (51) 3041-6244\nEndereço: Rua Fidel Zancheta, 655",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -276,7 +276,7 @@
     "tem_area": true,
     "endereco": "Rua Orleans, 325",
     "telefone": "(51) 3041-7193",
-    "informacoes": "Telefone: 3041-7193\nEndereço: Rua Orleans, 325",
+    "informacoes": "Telefone: (51) 3041-7193\nEndereço: Rua Orleans, 325",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -296,7 +296,7 @@
     "tem_area": true,
     "endereco": "Rua Amazonas, 583",
     "telefone": "(51) 3074-5566",
-    "informacoes": "Telefone: 3074-5566\nEndereço: Rua Amazonas, 583",
+    "informacoes": "Telefone: (51) 3074-5566\nEndereço: Rua Amazonas, 583",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -317,7 +317,7 @@
     "endereco": "Travessa São Jorge, 81",
     "telefone": "(51) 3041-7190",
     "email": "esf.carloswilkens@cachoeirinha.rs.gov.br",
-    "informacoes": "Telefone: 3041-7190\nEndereço: Travessa São Jorge, 81\nE-mail: esf.carloswilkens@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3041-7190\nEndereço: Travessa São Jorge, 81\nE-mail: esf.carloswilkens@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -356,7 +356,7 @@
     "tem_area": false,
     "endereco": "Rua Capitão Garibaldi Pinto dos Santos, 1301",
     "telefone": "(51) 3074-5690 / (51) 3074-5691",
-    "informacoes": "Telefone: 3074-5690 / 3074-5691\nEndereço: Rua Capitão Garibaldi Pinto dos Santos, 1301",
+    "informacoes": "Telefone: (51) 3074-5690 / (51) 3074-5691\nEndereço: Rua Capitão Garibaldi Pinto dos Santos, 1301",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -376,7 +376,7 @@
     "tem_area": false,
     "endereco": "Avenida General Flores da Cunha, 2385",
     "telefone": "(51) 3041-7195 / (51) 3041-6248",
-    "informacoes": "Telefone: 3041-7195 / 3041-6248\nEndereço: Avenida General Flores da Cunha, 2385",
+    "informacoes": "Telefone: (51) 3041-7195 / (51) 3041-6248\nEndereço: Avenida General Flores da Cunha, 2385",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -396,7 +396,7 @@
     "tem_area": false,
     "endereco": "Rua Osvaldo Cruz, 616",
     "telefone": "(51) 3074-5511 / (51) 3041-6269",
-    "informacoes": "Telefone: 3074-5511 / 3041-6269\nEndereço: Rua Osvaldo Cruz, 616",
+    "informacoes": "Telefone: (51) 3074-5511 / (51) 3041-6269\nEndereço: Rua Osvaldo Cruz, 616",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -416,7 +416,7 @@
     "tem_area": false,
     "endereco": "Rua Mário Tavares Haussem, 140",
     "telefone": "(51) 3041-7194",
-    "informacoes": "Telefone: 3041-7194\nEndereço: Rua Mário Tavares Haussem, 140",
+    "informacoes": "Telefone: (51) 3041-7194\nEndereço: Rua Mário Tavares Haussem, 140",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -436,7 +436,7 @@
     "tem_area": false,
     "endereco": "Rua Anita Garibaldi, 275",
     "telefone": "(51) 3041-6247",
-    "informacoes": "Telefone: 3041-6247\nEndereço: Rua Anita Garibaldi, 275",
+    "informacoes": "Telefone: (51) 3041-6247\nEndereço: Rua Anita Garibaldi, 275",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -456,7 +456,7 @@
     "tem_area": false,
     "endereco": "Rua Aparício Soares da Cunha, 128",
     "telefone": "(51) 3074-5569",
-    "informacoes": "Telefone: 3074-5569\nEndereço: Rua Aparício Soares da Cunha, 128",
+    "informacoes": "Telefone: (51) 3074-5569\nEndereço: Rua Aparício Soares da Cunha, 128",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -470,13 +470,13 @@
   {
    "type": "Feature",
    "properties": {
-    "nome": "Unidade de Saúde Mental Infantil",
+    "nome": "CAPS IJ - Unidade de Saúde Mental Infanto Juvenil",
     "tipo": "Saúde Mental",
-    "codigo": "UNIDADE-DE-SAUDE-MENTAL-INFANTIL",
+    "codigo": "CAPS-IJ-UNIDADE-DE-SAUDE-MENTAL-INFANTO-JUVENIL",
     "tem_area": false,
     "endereco": "Rua Francisco Brochado da Rocha, 54",
     "telefone": "(51) 3074-5549",
-    "informacoes": "Telefone: 3074-5549\nEndereço: Rua Francisco Brochado da Rocha, 54",
+    "informacoes": "Telefone: (51) 3074-5549\nEndereço: Rua Francisco Brochado da Rocha, 54",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -496,7 +496,7 @@
     "tem_area": false,
     "endereco": "Avenida General Flores da Cunha, 2385",
     "telefone": "(51) 3074-5590",
-    "informacoes": "Telefone: 3074-5590\nEndereço: Rua Vitino Zucatti, 255",
+    "informacoes": "Telefone: (51) 3074-5590\nEndereço: Avenida General Flores da Cunha, 2385",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS",
     "posicao": "coordenada do endereço · deslocada 15 m para não cobrir outra unidade no mesmo endereço"
    },

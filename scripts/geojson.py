@@ -128,6 +128,10 @@ def main():
 
     oficiais = carrega('contatos_oficiais.json')
     enderecos = carrega('enderecos_unidades.json')
+    # final.json já traz o nome renomeado; a busca aceita os dois
+    for chave, reg in list(oficiais.items()):
+        if reg.get('renomear'):
+            oficiais.setdefault(reg['renomear'], reg)
 
     def endereco_de(nome):
         o = oficiais.get(nome)
@@ -146,6 +150,11 @@ def main():
 
     def fonte_contato(nome):
         return FONTE_OFICIAL if nome in oficiais else FONTE_AREAS
+
+    def nome_de(nome):
+        """Nome de exibição: a lista da Secretaria pode renomear o que veio do mapa."""
+        o = oficiais.get(nome) or {}
+        return o.get('renomear') or nome
 
     saidas = {}
     for tipo, arquivo in (('ESF', 'esf.geojson'), ('UBS', 'ubs.geojson')):
@@ -187,9 +196,9 @@ def main():
             ll = o['ll']
         feats.append(feature(
             {'type': 'Point', 'coordinates': [round(ll[1], 6), round(ll[0], 6)]},
-            {'nome': u['n'],
+            {'nome': nome_de(u['n']),
              'tipo': u['c'],
-             'codigo': codigo(u['n']),
+             'codigo': codigo(nome_de(u['n'])),
              'tem_area': any(a['n'] == u['n'] for a in areas),
              'endereco': endereco_de(u['n']),
              'telefone': telefone_de(u['n'], info),
@@ -199,9 +208,13 @@ def main():
 
     # unidades que só existem na lista da Secretaria, posicionadas pelo endereço
     nomes_mapa = {u['n'] for u in unidades}
+    ja_vistos = set()
     for nome, o in oficiais.items():
-        if nome in nomes_mapa or not o.get('ll'):
+        renomeado = o.get('renomear')
+        if (nome in nomes_mapa or (renomeado and renomeado in nomes_mapa)
+                or id(o) in ja_vistos or not o.get('ll')):
             continue
+        ja_vistos.add(id(o))
         feats.append(feature(
             {'type': 'Point', 'coordinates': [round(o['ll'][1], 6), round(o['ll'][0], 6)]},
             {'nome': o.get('nome_oficial') or nome,

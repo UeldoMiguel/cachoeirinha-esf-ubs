@@ -37,6 +37,8 @@
   {"nome_oficial": "CAPS II", "alias": "CAPS II - Centro de Atenção Psicossocial",
    "telefone": "3041-6247", "endereco": "Rua Anita Garibaldi, 275"},
   {"nome_oficial": "CAPS IJ", "alias": "Unidade de Saúde Mental Infantil",
+   "renomear": "CAPS IJ - Unidade de Saúde Mental Infanto Juvenil",
+   "_nota": "Confirmado pela Secretaria: a Unidade de Saúde Mental Infantil do mapa é o CAPS IJ.",
    "telefone": "3074-5549", "endereco": "Rua Francisco Brochado da Rocha, 54"},
   {"nome_oficial": "Centro de Saúde da Pessoa Idosa", "alias": "Centro de Saúde da Pessoa Idosa",
    "telefone": "3041-7194", "endereco": "Rua Mário Tavares Haussem, 140"},

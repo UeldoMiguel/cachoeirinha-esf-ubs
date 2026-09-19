@@ -150,6 +150,8 @@ def main():
             registro['tipo'] = item['tipo']
         if item.get('usar_coordenada_do_endereco'):
             registro['usar_coordenada_do_endereco'] = True
+        if item.get('renomear'):
+            registro['renomear'] = item['renomear']
         saida[alvo] = registro
 
     json.dump(saida, io.open('contatos_oficiais.json', 'w', encoding='utf-8'),

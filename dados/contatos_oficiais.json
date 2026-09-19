@@ -210,7 +210,8 @@
    -51.097844
   ],
   "novo": false,
-  "distancia_ponto_m": 61
+  "distancia_ponto_m": 61,
+  "renomear": "CAPS IJ - Unidade de Saúde Mental Infanto Juvenil"
  },
  "Centro de Saúde da Pessoa Idosa": {
   "nome_oficial": "Centro de Saúde da Pessoa Idosa",

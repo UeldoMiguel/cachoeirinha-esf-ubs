@@ -120,7 +120,11 @@ def contato(nome,info):
     m=_re.search(r'[\w.\-+]+@[\w.\-]+\.\w+',info or '')
     if m: linhas.append('E-mail: '+m.group(0))
     return chr(10).join(linhas) if linhas else info
-un=[{'n':' '.join(u['nome'].split()),'c':u['cat'],'ll':[round(u['ll'][0],5),round(u['ll'][1],5)],
+def nome_exibido(nome):
+    o=oficiais.get(nome) or {}
+    return o.get('renomear') or nome
+un=[{'n':nome_exibido(' '.join(u['nome'].split())),'c':u['cat'],
+     'll':[round(u['ll'][0],5),round(u['ll'][1],5)],
      'info':contato(' '.join(u['nome'].split()),u['info'])} for u in d['unidades']]
 print('unidades com contato oficial:',sum(1 for u in un if u['n'] in oficiais),'de',len(un))
 falt=[]
