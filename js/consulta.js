@@ -219,10 +219,6 @@
       }
     }
 
-    if (rua[5]) {
-      html += '<p class="nota">Esta via não consta na lista de ruas da fonte. O enquadramento vem ' +
-        'do traçado da rua, que cai dentro deste território — confirme na unidade.</p>';
-    }
     if (num && trecho && trecho.t) {
       html += '<p class="nota">Em vermelho, só o lado de quadra da numeração ' + trecho.t[0] +
         '–' + trecho.t[1] + ' (' + trecho.t[3] + ' endereços no CNEFE 2022 do IBGE).' +
