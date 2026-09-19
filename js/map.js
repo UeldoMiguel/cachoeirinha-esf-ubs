@@ -435,15 +435,6 @@
     }
   };
 
-  /* Procedência ----------------------------------------------------------- */
-
-  fetch('data/metadados.json')
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (m) {
-      var el = document.getElementById('procedencia');
-      if (!m) { el.textContent = 'Metadados não encontrados em data/metadados.json.'; return; }
-      el.textContent = m.aviso + ' Áreas e unidades: ' + m.fontes.areas_e_unidades +
-        ' Limite municipal: ' + m.fontes.limite_municipal + ' Geração dos arquivos: ' + m.gerado_em + '.';
-    })
-    .catch(function () {});
+  /* A procedência não fica mais na tela; segue registrada em
+     data/metadados.json, em cada coleção GeoJSON e no README. */
 })();
