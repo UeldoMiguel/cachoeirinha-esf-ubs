@@ -186,7 +186,9 @@ def main():
         if len(membros) < 2:
             return None
         juntas = unary_union([Polygon(anel_fechado(a['poly'])).buffer(0) for a in membros])
-        juntas = juntas.buffer(6 / 111320.0).buffer(-6 / 111320.0)   # fecha frestas de digitalização
+        # as áreas vizinhas foram digitalizadas com folga de 12 a 31 m entre si;
+        # fechar 25 m dissolve a divisa interna sem inchar o território (+0,4%)
+        juntas = juntas.buffer(25 / 111320.0).buffer(-25 / 111320.0)
         juntas = juntas.simplify(3 / 111320.0)                       # tira vértices do arredondamento
         nomes = [a['n'] for a in membros]
         rotulo = (', '.join(nomes[:-1]) + ' e ' + nomes[-1]) if len(nomes) > 1 else nomes[0]

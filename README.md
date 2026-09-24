@@ -23,7 +23,7 @@ Dar a gestores, equipes e à população uma forma direta de responder a duas pe
 ## 1.1 O que a página faz
 
 - **Camadas** de áreas de ESF, áreas de UBS, unidades e limite municipal, com liga/desliga e contagem.
-- **Médico/Enfermeiro × Dentista**: dois botões de escolha única trocam o desenho das áreas de UBS. No odontológico, unidades que dividem território aparecem como uma área só, com o contato de cada uma no popup. As áreas de ESF são as mesmas nos dois. Os agrupamentos ficam em `dados/agrupamentos_ubs.json`.
+- **Médico/Enfermeiro × Dentista**: dois botões de escolha única trocam o desenho das áreas de UBS. No odontológico, unidades que dividem território aparecem como uma área só — sem divisa interna, porque a união fecha as folgas de digitalização —, com o contato de cada uma no popup. As áreas de ESF são as mesmas nos dois. Os agrupamentos ficam em `dados/agrupamentos_ubs.json`.
 - **Consulta por endereço** na mesma caixa de busca: digitar "Rua Dom Bosco, 240" responde se o endereço é área de ESF ou de UBS, mostra a unidade de referência com telefone e desenha a via em vermelho sobre o mapa. Com o número da casa, o vermelho cobre **só o lado de quadra daquela numeração** (faces de quadra do CNEFE 2022). Em rua de divisa, o número decide a unidade.
 - A mesma caixa também acha **unidades e áreas pelo nome**.
 - **Modo escuro**, com botão no topo. Sem escolha manual a página acompanha o sistema; a escolha fica gravada no navegador. Os tiles do OSM são invertidos por CSS — nenhum serviço de base escura com chave de API foi introduzido.
@@ -202,6 +202,12 @@ Recorte em vigor: a **ESF Jardim Betânia** perdeu o setor a oeste da Souza Cruz
 ```
 
 `scripts/geojson.py` funde os polígonos de cada lista (união geométrica, com fechamento de frestas de digitalização) e gera `data/ubs.geojson` e `data/ubs_odonto.geojson`. A feição resultante guarda `codigos` com o código de cada unidade do grupo, e `unidades` com nome, endereço e telefone de cada uma — é o que a caixa de informações e a consulta por endereço exibem. Mudar um agrupamento é editar esse arquivo e rodar `python scripts/geojson.py`.
+
+## 8.4 Unidades desativadas
+
+`dados/unidades_inativas.json` registra unidade que deixou de existir e quem herdou o território. `scripts/final.py` funde a área na sucessora, transfere as ruas da abrangência, remove o ponto do mapa e remapeia os índices do índice de ruas.
+
+Em vigor: **UBS Getúlio Vargas** foi desativada e sua área e suas 48 ruas passaram para a **UBS Osvaldo Cruz**.
 
 ## 9. Dados territoriais oficiais
 

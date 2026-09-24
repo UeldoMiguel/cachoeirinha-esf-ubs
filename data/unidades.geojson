@@ -67,26 +67,6 @@
   {
    "type": "Feature",
    "properties": {
-    "nome": "UBS Getúlio Vargas",
-    "tipo": "UBS",
-    "codigo": "UBS-GETULIO-VARGAS",
-    "tem_area": true,
-    "endereco": "Rua Dom João VI, 188",
-    "telefone": "(51) 3471-7599 / (51) 3074-5578",
-    "informacoes": "Telefone: (51) 3471-7599 / (51) 3074-5578\nEndereço: Rua Dom João VI, 188",
-    "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -51.08331,
-     -29.92466
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
     "nome": "UBS Jardim do Bosque",
     "tipo": "UBS",
     "codigo": "UBS-JARDIM-DO-BOSQUE",

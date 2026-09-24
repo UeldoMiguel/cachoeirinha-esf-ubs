@@ -104,18 +104,6 @@
   "novo": false,
   "distancia_ponto_m": 19
  },
- "UBS Getúlio Vargas": {
-  "nome_oficial": "UBS Getúlio Vargas",
-  "telefone": "(51) 3471-7599 / (51) 3074-5578",
-  "endereco": "Rua Dom João VI, 188",
-  "geocodificacao": "número exato",
-  "ll": [
-   -29.924394,
-   -51.08332
-  ],
-  "novo": false,
-  "distancia_ponto_m": 30
- },
  "UBS Jardim do Bosque": {
   "nome_oficial": "UBS Jardim do Bosque",
   "telefone": "(51) 3041-6211",
@@ -209,8 +197,7 @@
    -29.949219,
    -51.097844
   ],
-  "novo": false,
-  "distancia_ponto_m": 61,
+  "novo": true,
   "renomear": "CAPS IJ - Unidade de Saúde Mental Infanto Juvenil"
  },
  "Centro de Saúde da Pessoa Idosa": {

@@ -66,6 +66,12 @@ def recorta(poly):
     perdido=1-(corte.area/p.area) if p.area else 0
     return [[round(x,5),round(y,5)] for x,y in maior.exterior.coords], perdido
 
+# unidades desativadas: a área e as ruas passam para quem absorveu
+try:
+    INATIVAS={i['unidade']:i for i in json.load(open('unidades_inativas.json',encoding='utf-8'))['inativas']}
+except (IOError,OSError,ValueError):
+    INATIVAS={}
+
 # recortes manuais pedidos pela Secretaria (dados/recortes_areas.json)
 from shapely.geometry import box as _box
 try:
@@ -103,7 +109,7 @@ def limpa_finos(anel,metros=15):
     return [[round(x,5),round(y,5)] for x,y in q.exterior.coords]
 
 areas=[]
-for a in d['areas']:
+for _i,a in enumerate(d['areas']):
     anel,perdido=recorta(a['poly'])
     if anel is None:
         print('  área fora do município, descartada:',a['unidade']); continue
@@ -120,15 +126,57 @@ for a in d['areas']:
                   % (nome_unidade,len(anel),len(limpo)))
         anel=limpo
     areas.append({'n':nome_unidade,'t':a['tipo'],'ll':[round(a['ll'][0],5),round(a['ll'][1],5)],
-                  'info':a['info'],'ruas':a['ruas'],'poly':anel})
-def entrada(k,label,areas,prov=0):
+                  'info':a['info'],'ruas':a['ruas'],'poly':anel,'_orig':_i})
+mortas=[]
+if INATIVAS:
+    from shapely.ops import unary_union as _uniao
+    por_nome_area={a['n']:a for a in areas}
+    for nome,info in INATIVAS.items():
+        morta=por_nome_area.get(nome)
+        viva=por_nome_area.get(info['area_absorvida_por'])
+        if not morta:
+            continue
+        if viva:
+            juntas=_uniao([Polygon([(x,y) for x,y in morta['poly']]).buffer(0),
+                           Polygon([(x,y) for x,y in viva['poly']]).buffer(0)])
+            e=25/111320.0
+            juntas=juntas.buffer(e).buffer(-e)          # fecha a folga entre os dois desenhos
+            if juntas.geom_type=='MultiPolygon':
+                juntas=max(juntas.geoms,key=lambda g:g.area)
+            viva['poly']=[[round(x,5),round(y,5)] for x,y in juntas.simplify(3/111320.0).exterior.coords]
+            viva['ruas']=sorted(set(viva['ruas'])|set(morta['ruas']))
+            print('unidade desativada: %s -> área e %d ruas para %s'
+                  % (nome,len(morta['ruas']),info['area_absorvida_por']))
+        else:
+            print('unidade desativada: %s (sem sucessora indicada, área removida)' % nome)
+        morta['_sucessora']=viva['_orig'] if viva else None
+        areas.remove(morta)
+        mortas.append(morta)
+    # o ponto da unidade some do mapa
+    d['unidades']=[u for u in d['unidades'] if ' '.join(u['nome'].split()) not in INATIVAS]
+
+# de índice antigo (posição em d['areas']) para índice novo; área desativada
+# cai na sucessora, área descartada some
+REMAP={a['_orig']:i for i,a in enumerate(areas)}
+for m in mortas:
+    if m.get('_sucessora') is not None and m['_sucessora'] in REMAP:
+        REMAP[m['_orig']]=REMAP[m['_sucessora']]
+
+def entrada(k,label,indices,prov=0,traduzir=True):
     g=geon.get(k)
-    return [k,label,areas,
+    if traduzir:
+        vistos=[]
+        for i in indices:
+            novo=REMAP.get(i)
+            if novo is not None and novo not in vistos: vistos.append(novo)
+        indices=vistos
+    return [k,label,indices,
             round(g['lat'],5) if g else None, round(g['lon'],5) if g else None,
             prov, tracado(k)]
 idx=[]
 for k,v in d['indice'].items():
-    idx.append(entrada(k,v['label'],v['areas']))
+    e=entrada(k,v['label'],v['areas'])
+    if e[2]: idx.append(e)                  # sem área nenhuma, a rua não entra
 # --- 292 vias ausentes entram no indice como sugestao (prov=1 dentro do poligono, 2 = fora)
 nomes={a['n']:i for i,a in enumerate(areas)}
 def acha(base):
@@ -148,7 +196,7 @@ for f in d['faltantes_det']:
     fora='mais pr' in (f['sugestao'] or '')
     ai=acha((f['sugestao'] or '').split(' (')[0])
     if ai is None: continue
-    idx.append(entrada(k,f['rua'],[ai],2 if fora else 1))
+    idx.append(entrada(k,f['rua'],[ai],2 if fora else 1,traduzir=False))
     existentes.add(k); prov+=1
 print('sugeridas adicionadas ao indice:',prov)
 # contatos da lista da Secretaria substituem o texto livre do KML
@@ -256,6 +304,7 @@ if RECORTES:
         a['ruas']=[r for r in a['ruas'] if norm(r) in chaves]
 
 print('logradouros CNEFE:',len(tren),'| ruas do índice com trechos numerados:',casados,'de',len(idx))
+for a in areas: a.pop('_orig',None)
 out={'areas':areas,'idx':idx,'unidades':un,'faltantes':falt,'trechos':tren,
      'bound':json.load(open('boundary.json')),'linhas':linhas_novas}
 open('final.json','w',encoding='utf-8').write(json.dumps(out,ensure_ascii=False,separators=(',',':')))

@@ -1,0 +1,11 @@
+{
+ "_fonte": "Desativações informadas pela Secretaria Municipal de Saúde de Cachoeirinha/RS.",
+ "_como_funciona": "A unidade some do mapa e das listas. O território dela passa para a unidade indicada em 'area_absorvida_por', junto com as ruas da abrangência.",
+ "inativas": [
+  {
+   "unidade": "UBS Getúlio Vargas",
+   "area_absorvida_por": "UBS Osvaldo Cruz",
+   "motivo": "Secretaria (2026-09-24): unidade desativada."
+  }
+ ]
+}

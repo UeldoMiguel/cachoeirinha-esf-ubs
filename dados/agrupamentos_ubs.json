@@ -1,11 +1,9 @@
 {
  "_fonte": "Agrupamentos de abrangência definidos pela Secretaria Municipal de Saúde de Cachoeirinha/RS (2026-09-24).",
  "_como_funciona": "Cada lista junta as áreas das UBS citadas numa única área. 'medico' vale para a consulta médica e de enfermagem; 'dentista' vale para o atendimento odontológico. As áreas de ESF não são agrupadas em nenhum dos dois modos.",
- "medico": [
-  ["UBS Osvaldo Cruz", "UBS Getúlio Vargas"]
- ],
+ "medico": [],
  "dentista": [
-  ["UBS Osvaldo Cruz", "UBS Getúlio Vargas", "UBS Parque da Matriz"],
+  ["UBS Osvaldo Cruz", "UBS Parque da Matriz"],
   ["UBS COHAB", "UBS Décio Martins Costa"],
   ["UBS Jardim do Bosque", "UBS CAIC Granja"]
  ]

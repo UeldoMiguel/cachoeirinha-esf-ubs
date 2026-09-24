@@ -7,383 +7,6 @@
   {
    "type": "Feature",
    "properties": {
-    "nome": "Área da UBS Osvaldo Cruz e UBS Getúlio Vargas",
-    "unidade": "UBS Osvaldo Cruz e UBS Getúlio Vargas",
-    "tipo": "UBS",
-    "codigo": "UBS-OSVALDO-CRUZ-E-UBS-GETULIO-VARGAS",
-    "codigos": [
-     "UBS-OSVALDO-CRUZ",
-     "UBS-GETULIO-VARGAS"
-    ],
-    "descricao": "Território atendido em conjunto por UBS Osvaldo Cruz e UBS Getúlio Vargas.",
-    "ruas_cadastradas": 96,
-    "ruas": [
-     "Av. Jose Brambila",
-     "Av. Maj. Alberto Bins",
-     "Av. Mal. Rondon",
-     "Av. Nova Zelandia",
-     "Av. Princesa Isabel",
-     "Av. Telmo Silveira Dorneles",
-     "Rua 16 de Fevereiro",
-     "Rua 31 de Outubro",
-     "Rua Abrham Lincon",
-     "Rua Aimoré",
-     "Rua Alegrete",
-     "Rua Antonio Nunes",
-     "Rua Antônio Nunes",
-     "Rua Aparecida",
-     "Rua Ararangua",
-     "Rua Assunção",
-     "Rua Bororo",
-     "Rua Brasil",
-     "Rua Cai",
-     "Rua Caiapó",
-     "Rua Cariri",
-     "Rua Carlos Gomes",
-     "Rua Caruaru",
-     "Rua Charrua",
-     "Rua Clarissa B. Do Santos",
-     "Rua Coroados",
-     "Rua Costa Rica",
-     "Rua Criciuma",
-     "Rua Da Penha",
-     "Rua Daloira F. Da Silva",
-     "Rua Dom Feliciano",
-     "Rua Duarte Da Costa",
-     "Rua Ernesto Frield",
-     "Rua Esperança",
-     "Rua Estácio De Sá",
-     "Rua Fermino Correa da Gama",
-     "Rua Fernando Machado",
-     "Rua Flavio Jardim",
-     "Rua Florianopolis",
-     "Rua Flávio Catanhede",
-     "Rua Frei Mojica",
-     "Rua Fundo Da Capela",
-     "Rua Goitacás",
-     "Rua Guaianá",
-     "Rua Guarujá",
-     "Rua Henrique Dias",
-     "Rua Iracema",
-     "Rua Irmãos Veiga",
-     "Rua Jacuí",
-     "Rua José Antônio Duarte",
-     "Rua João A. P. De Moraes",
-     "Rua João Francisco Silva",
-     "Rua João J. Nunes",
-     "Rua Julio De Castilhos",
-     "Rua Laguna",
-     "Rua Laçador",
-     "Rua Lima E Silva",
-     "Rua Lindoia",
-     "Rua Lisboa",
-     "Rua Manatá",
-     "Rua Mantiqueira",
-     "Rua Manuel Rosa",
-     "Rua Marte",
-     "Rua Mexico",
-     "Rua Missões",
-     "Rua Monte Carlo",
-     "Rua Monte Castelo",
-     "Rua Nelson Oliveira Lopes",
-     "Rua Osvaldo Cruz",
-     "Rua Osório Correa",
-     "Rua Pagé",
-     "Rua Pindorama",
-     "Rua Planalto",
-     "Rua Redenção",
-     "Rua Rosario",
-     "Rua Samuara",
-     "Rua Sete Quedas",
-     "Rua Silvério Manoel Da Silva",
-     "Rua São Cristóvão",
-     "Rua São Manoel",
-     "Rua São Pedro",
-     "Rua São Tomé",
-     "Rua Taguarí",
-     "Rua Torres",
-     "Rua Tupi",
-     "Rua Upamarati",
-     "Rua Ver. Nésio Cunha",
-     "Rua Xavantes",
-     "Rua do Abrigo",
-     "Rua do Parque",
-     "Tv. Felisberto M. Martins",
-     "Tv. Lajes",
-     "Tv. Liberdade",
-     "Tv. Souza",
-     "Tv. São Pedro",
-     "Tv. da Faculdade"
-    ],
-    "unidades": [
-     {
-      "nome": "UBS Osvaldo Cruz",
-      "endereco": "Rua Osvaldo Cruz, 590",
-      "telefone": "(51) 3041-7134 / (51) 3041-6219"
-     },
-     {
-      "nome": "UBS Getúlio Vargas",
-      "endereco": "Rua Dom João VI, 188",
-      "telefone": "(51) 3471-7599 / (51) 3074-5578"
-     }
-    ],
-    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
-   },
-   "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-     [
-      [
-       -51.09594994075003,
-       -29.935720053123422
-      ],
-      [
-       -51.09317125957307,
-       -29.935277527617576
-      ],
-      [
-       -51.09148996912673,
-       -29.933600036568752
-      ],
-      [
-       -51.08598997914854,
-       -29.92968005293591
-      ],
-      [
-       -51.08570001648075,
-       -29.929650066635705
-      ],
-      [
-       -51.08525191314883,
-       -29.929948469616406
-      ],
-      [
-       -51.08510555181358,
-       -29.92999693000835
-      ],
-      [
-       -51.08455363441958,
-       -29.929823908730125
-      ],
-      [
-       -51.08454178065242,
-       -29.929765761904747
-      ],
-      [
-       -51.08502991539125,
-       -29.928550037792167
-      ],
-      [
-       -51.08335181219633,
-       -29.927935203021192
-      ],
-      [
-       -51.08335430317412,
-       -29.927854122922938
-      ],
-      [
-       -51.08389990365993,
-       -29.927489987281238
-      ],
-      [
-       -51.08330906137104,
-       -29.9268392178092
-      ],
-      [
-       -51.0827885049498,
-       -29.926487332363443
-      ],
-      [
-       -51.08318993572117,
-       -29.926069971855537
-      ],
-      [
-       -51.08321994109422,
-       -29.924280025371022
-      ],
-      [
-       -51.08287001102408,
-       -29.92396009721249
-      ],
-      [
-       -51.08233851561679,
-       -29.924729736003275
-      ],
-      [
-       -51.08227431346141,
-       -29.924749221953086
-      ],
-      [
-       -51.08182995056701,
-       -29.92400003887735
-      ],
-      [
-       -51.08135678905419,
-       -29.9235780347603
-      ],
-      [
-       -51.080020220486155,
-       -29.919820643677326
-      ],
-      [
-       -51.07959996253027,
-       -29.918770064809998
-      ],
-      [
-       -51.07952910715711,
-       -29.918780968829523
-      ],
-      [
-       -51.07718010992315,
-       -29.921329972029678
-      ],
-      [
-       -51.078628822720226,
-       -29.921847862233435
-      ],
-      [
-       -51.07806158069291,
-       -29.923156436743092
-      ],
-      [
-       -51.077729071774314,
-       -29.92367792509803
-      ],
-      [
-       -51.07648815212676,
-       -29.92326933854537
-      ],
-      [
-       -51.074689988639804,
-       -29.92260007807604
-      ],
-      [
-       -51.07397008337969,
-       -29.922990024967294
-      ],
-      [
-       -51.07418977978213,
-       -29.923400092717063
-      ],
-      [
-       -51.074409883881664,
-       -29.924102440602837
-      ],
-      [
-       -51.07443976785624,
-       -29.92486998750526
-      ],
-      [
-       -51.07435028823018,
-       -29.92547804643992
-      ],
-      [
-       -51.07435008102245,
-       -29.9260799910575
-      ],
-      [
-       -51.074750076182674,
-       -29.92786997398263
-      ],
-      [
-       -51.076550045509585,
-       -29.93170995577185
-      ],
-      [
-       -51.07777716218612,
-       -29.932328925384756
-      ],
-      [
-       -51.078444609219964,
-       -29.933004528760563
-      ],
-      [
-       -51.07930069811345,
-       -29.934610910198543
-      ],
-      [
-       -51.080090395858186,
-       -29.935640470081598
-      ],
-      [
-       -51.08105009118273,
-       -29.936780106026436
-      ],
-      [
-       -51.081480908771724,
-       -29.937280875725484
-      ],
-      [
-       -51.08203003570323,
-       -29.93780995044896
-      ],
-      [
-       -51.08670580372507,
-       -29.940305997182566
-      ],
-      [
-       -51.087903165611976,
-       -29.941545252038058
-      ],
-      [
-       -51.08878063153907,
-       -29.94300117573764
-      ],
-      [
-       -51.09023949159001,
-       -29.945649120059635
-      ],
-      [
-       -51.09048085321472,
-       -29.945950758413083
-      ],
-      [
-       -51.09075002423258,
-       -29.946189968093847
-      ],
-      [
-       -51.091198723980185,
-       -29.94647917767612
-      ],
-      [
-       -51.09327995538608,
-       -29.947539907709345
-      ],
-      [
-       -51.0936789550047,
-       -29.94543551235021
-      ],
-      [
-       -51.09378026088098,
-       -29.945188690672804
-      ],
-      [
-       -51.09430993266261,
-       -29.942529993480473
-      ],
-      [
-       -51.09430115182382,
-       -29.939795513561865
-      ],
-      [
-       -51.095649934294464,
-       -29.938719960530907
-      ],
-      [
-       -51.0959999149851,
-       -29.93675999452302
-      ],
-      [
-       -51.09594994075003,
-       -29.935720053123422
-      ]
-     ]
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
     "nome": "Área da UBS Parque da Matriz",
     "unidade": "UBS Parque da Matriz",
     "tipo": "UBS",
@@ -1103,6 +726,408 @@
       [
        -51.09653,
        -29.90854
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Osvaldo Cruz",
+    "unidade": "UBS Osvaldo Cruz",
+    "tipo": "UBS",
+    "codigo": "UBS-OSVALDO-CRUZ",
+    "codigos": [
+     "UBS-OSVALDO-CRUZ"
+    ],
+    "descricao": "Território de abrangência da UBS Osvaldo Cruz, com 96 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 96,
+    "ruas": [
+     "Av. Jose Brambila",
+     "Av. Maj. Alberto Bins",
+     "Av. Mal. Rondon",
+     "Av. Nova Zelandia",
+     "Av. Princesa Isabel",
+     "Av. Telmo Silveira Dorneles",
+     "Rua 16 de Fevereiro",
+     "Rua 31 de Outubro",
+     "Rua Abrham Lincon",
+     "Rua Aimoré",
+     "Rua Alegrete",
+     "Rua Antonio Nunes",
+     "Rua Antônio Nunes",
+     "Rua Aparecida",
+     "Rua Ararangua",
+     "Rua Assunção",
+     "Rua Bororo",
+     "Rua Brasil",
+     "Rua Cai",
+     "Rua Caiapó",
+     "Rua Cariri",
+     "Rua Carlos Gomes",
+     "Rua Caruaru",
+     "Rua Charrua",
+     "Rua Clarissa B. Do Santos",
+     "Rua Coroados",
+     "Rua Costa Rica",
+     "Rua Criciuma",
+     "Rua Da Penha",
+     "Rua Daloira F. Da Silva",
+     "Rua Dom Feliciano",
+     "Rua Duarte Da Costa",
+     "Rua Ernesto Frield",
+     "Rua Esperança",
+     "Rua Estácio De Sá",
+     "Rua Fermino Correa da Gama",
+     "Rua Fernando Machado",
+     "Rua Flavio Jardim",
+     "Rua Florianopolis",
+     "Rua Flávio Catanhede",
+     "Rua Frei Mojica",
+     "Rua Fundo Da Capela",
+     "Rua Goitacás",
+     "Rua Guaianá",
+     "Rua Guarujá",
+     "Rua Henrique Dias",
+     "Rua Iracema",
+     "Rua Irmãos Veiga",
+     "Rua Jacuí",
+     "Rua José Antônio Duarte",
+     "Rua João A. P. De Moraes",
+     "Rua João Francisco Silva",
+     "Rua João J. Nunes",
+     "Rua Julio De Castilhos",
+     "Rua Laguna",
+     "Rua Laçador",
+     "Rua Lima E Silva",
+     "Rua Lindoia",
+     "Rua Lisboa",
+     "Rua Manatá",
+     "Rua Mantiqueira",
+     "Rua Manuel Rosa",
+     "Rua Marte",
+     "Rua Mexico",
+     "Rua Missões",
+     "Rua Monte Carlo",
+     "Rua Monte Castelo",
+     "Rua Nelson Oliveira Lopes",
+     "Rua Osvaldo Cruz",
+     "Rua Osório Correa",
+     "Rua Pagé",
+     "Rua Pindorama",
+     "Rua Planalto",
+     "Rua Redenção",
+     "Rua Rosario",
+     "Rua Samuara",
+     "Rua Sete Quedas",
+     "Rua Silvério Manoel Da Silva",
+     "Rua São Cristóvão",
+     "Rua São Manoel",
+     "Rua São Pedro",
+     "Rua São Tomé",
+     "Rua Taguarí",
+     "Rua Torres",
+     "Rua Tupi",
+     "Rua Upamarati",
+     "Rua Ver. Nésio Cunha",
+     "Rua Xavantes",
+     "Rua do Abrigo",
+     "Rua do Parque",
+     "Tv. Felisberto M. Martins",
+     "Tv. Lajes",
+     "Tv. Liberdade",
+     "Tv. Souza",
+     "Tv. São Pedro",
+     "Tv. da Faculdade"
+    ],
+    "endereco": "Rua Osvaldo Cruz, 590",
+    "telefone": "(51) 3041-7134 / (51) 3041-6219",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.09595,
+       -29.93572
+      ],
+      [
+       -51.09318,
+       -29.93527
+      ],
+      [
+       -51.09149,
+       -29.9336
+      ],
+      [
+       -51.08599,
+       -29.92968
+      ],
+      [
+       -51.0857,
+       -29.92965
+      ],
+      [
+       -51.08526,
+       -29.92994
+      ],
+      [
+       -51.08512,
+       -29.92999
+      ],
+      [
+       -51.08466,
+       -29.92984
+      ],
+      [
+       -51.0846,
+       -29.92972
+      ],
+      [
+       -51.0846,
+       -29.92961
+      ],
+      [
+       -51.08503,
+       -29.92855
+      ],
+      [
+       -51.08361,
+       -29.92802
+      ],
+      [
+       -51.08354,
+       -29.9279
+      ],
+      [
+       -51.08356,
+       -29.92775
+      ],
+      [
+       -51.0839,
+       -29.92749
+      ],
+      [
+       -51.08347,
+       -29.927
+      ],
+      [
+       -51.08299,
+       -29.92661
+      ],
+      [
+       -51.08292,
+       -29.9265
+      ],
+      [
+       -51.08295,
+       -29.92631
+      ],
+      [
+       -51.08319,
+       -29.92607
+      ],
+      [
+       -51.08322,
+       -29.92428
+      ],
+      [
+       -51.08287,
+       -29.92396
+      ],
+      [
+       -51.08246,
+       -29.92454
+      ],
+      [
+       -51.08235,
+       -29.9246
+      ],
+      [
+       -51.08222,
+       -29.92459
+      ],
+      [
+       -51.08212,
+       -29.92451
+      ],
+      [
+       -51.08183,
+       -29.924
+      ],
+      [
+       -51.08135,
+       -29.92354
+      ],
+      [
+       -51.08002,
+       -29.91982
+      ],
+      [
+       -51.0796,
+       -29.91877
+      ],
+      [
+       -51.07953,
+       -29.91878
+      ],
+      [
+       -51.07718,
+       -29.92133
+      ],
+      [
+       -51.07844,
+       -29.92176
+      ],
+      [
+       -51.07856,
+       -29.9219
+      ],
+      [
+       -51.07855,
+       -29.92205
+      ],
+      [
+       -51.07807,
+       -29.92315
+      ],
+      [
+       -51.07776,
+       -29.92361
+      ],
+      [
+       -51.07755,
+       -29.92363
+      ],
+      [
+       -51.07469,
+       -29.9226
+      ],
+      [
+       -51.07397,
+       -29.92299
+      ],
+      [
+       -51.07419,
+       -29.9234
+      ],
+      [
+       -51.07441,
+       -29.92411
+      ],
+      [
+       -51.07444,
+       -29.92487
+      ],
+      [
+       -51.07435,
+       -29.92549
+      ],
+      [
+       -51.07435,
+       -29.92608
+      ],
+      [
+       -51.07475,
+       -29.92787
+      ],
+      [
+       -51.07655,
+       -29.93171
+      ],
+      [
+       -51.07777,
+       -29.93233
+      ],
+      [
+       -51.07843,
+       -29.93299
+      ],
+      [
+       -51.0793,
+       -29.93461
+      ],
+      [
+       -51.08009,
+       -29.93564
+      ],
+      [
+       -51.08105,
+       -29.93678
+      ],
+      [
+       -51.08148,
+       -29.93728
+      ],
+      [
+       -51.08203,
+       -29.93781
+      ],
+      [
+       -51.08672,
+       -29.94032
+      ],
+      [
+       -51.08791,
+       -29.94156
+      ],
+      [
+       -51.08878,
+       -29.943
+      ],
+      [
+       -51.09024,
+       -29.94565
+      ],
+      [
+       -51.09048,
+       -29.94595
+      ],
+      [
+       -51.09075,
+       -29.94619
+      ],
+      [
+       -51.09121,
+       -29.94648
+      ],
+      [
+       -51.09328,
+       -29.94754
+      ],
+      [
+       -51.09368,
+       -29.94545
+      ],
+      [
+       -51.09378,
+       -29.94518
+      ],
+      [
+       -51.09431,
+       -29.94253
+      ],
+      [
+       -51.0943,
+       -29.93984
+      ],
+      [
+       -51.09439,
+       -29.93971
+      ],
+      [
+       -51.09565,
+       -29.93872
+      ],
+      [
+       -51.096,
+       -29.93676
+      ],
+      [
+       -51.09595,
+       -29.93572
       ]
      ]
     ]
