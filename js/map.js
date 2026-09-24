@@ -214,13 +214,13 @@
     var props = feature.properties || {};
     var marcador = L.circleMarker(latlng, {
       pane: 'pontos',
-      radius: props.destaque ? 8 : 7,
+      radius: 7,
       color: corDe(props.tipo),
       weight: 3,
       fillColor: corFundoMarcador(),
       fillOpacity: 1,
-      /* serviços sinalizados piscam na cor pedida; a cor vem do CSS */
-      className: props.destaque ? 'sinal sinal-' + props.destaque : ''
+      /* serviços sinalizados trocam só a cor do anel; a cor vem do CSS */
+      className: props.destaque ? 'sinal-' + props.destaque : ''
     });
     return marcador;
   }

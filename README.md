@@ -28,7 +28,7 @@ Dar a gestores, equipes e à população uma forma direta de responder a duas pe
 - A mesma caixa também acha **unidades e áreas pelo nome**.
 - **Modo escuro**, com botão no topo. Sem escolha manual a página acompanha o sistema; a escolha fica gravada no navegador. Os tiles do OSM são invertidos por CSS — nenhum serviço de base escura com chave de API foi introduzido.
 - **Popup e painel** mostram apenas: nome, unidade de referência, tipo, endereço, telefone e e-mail. Campo que a fonte não traz não aparece.
-- **Serviços sinalizados**: urgência (UPA, hospital, SAM) em vermelho, saúde mental e eMulti (CAPS II, AD e IJ) em amarelo, especialidades (CEC, CEO, SAE e Centro de Saúde da Pessoa Idosa) em azul — piscando devagar, e parados para quem pede menos movimento no sistema. As cores ficam em `dados/destaques.json`.
+- **Serviços sinalizados por cor**: urgência (UPA, hospital, SAM) em vermelho, saúde mental e eMulti (CAPS II, AD e IJ) em amarelo, especialidades (CEC, CEO, SAE e Centro de Saúde da Pessoa Idosa) em azul. Muda só a cor do anel do círculo, sem animação. As listas ficam em `dados/destaques.json`.
 - **Áreas e ruas recortadas no limite municipal**: os polígonos do mapa colaborativo passavam da divisa (o da UBS Parque da Matriz avançava 26% para fora) e a malha viária também. Os dois são cortados pelo limite do OpenStreetMap na geração dos dados.
 
 ## 2. Tecnologias
