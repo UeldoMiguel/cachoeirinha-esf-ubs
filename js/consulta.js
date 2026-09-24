@@ -69,10 +69,12 @@
     return n > 0 ? n : null;
   }
 
+  /* Distância de Manhattan: soma dos deslocamentos em latitude e longitude,
+     que se aproxima do caminho por quadras — o percurso real de quem anda. */
   function km(a, b) {
     var lat = (a[0] + b[0]) / 2 * Math.PI / 180;
-    var dx = (a[1] - b[1]) * Math.cos(lat), dy = a[0] - b[0];
-    return Math.sqrt(dx * dx + dy * dy) * 111.32;
+    var dx = Math.abs(a[1] - b[1]) * Math.cos(lat), dy = Math.abs(a[0] - b[0]);
+    return (dx + dy) * 111.32;
   }
 
   /* Camada do desenho em vermelho ----------------------------------------- */
@@ -160,7 +162,7 @@
     return '<li><span class="bolinha" style="background:' + cor + '"></span><span>' +
       '<span class="nm">' + esc(props.nome) + '</span>' +
       (distancia != null ? '<br><span class="dist">' + distancia.toFixed(1).replace('.', ',') +
-        ' km em linha reta</span>' : '') +
+        ' km pelas quadras</span>' : '') +
       (props.telefone ? '<br><span class="dist">' + esc(props.telefone) + '</span>' : '') +
       '</span></li>';
   }

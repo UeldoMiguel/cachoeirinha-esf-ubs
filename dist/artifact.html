@@ -190,7 +190,7 @@ footer a{color:var(--ink-2)}
 </section>
 
 <footer>
-  <p>Município de Cachoeirinha/RS. Fonte dos polígonos, unidades e listas de ruas: mapa colaborativo <em>“Mapeamento unidades de saúde — Cachoeirinha”</em> (Google My Maps, camada pública). Malha viária de referência e coordenadas das vias: OpenStreetMap, contribuidores, sob ODbL. Numeração das casas e trechos de quadra: CNEFE 2022 do IBGE, município 4303103. As distâncias são em linha reta entre o centro aproximado da via e a unidade — não são distância de caminhada. Em caso de divergência, vale o cadastro da Secretaria Municipal de Saúde de Cachoeirinha.</p>
+  <p>Município de Cachoeirinha/RS. Fonte dos polígonos, unidades e listas de ruas: mapa colaborativo <em>“Mapeamento unidades de saúde — Cachoeirinha”</em> (Google My Maps, camada pública). Malha viária de referência e coordenadas das vias: OpenStreetMap, contribuidores, sob ODbL. Numeração das casas e trechos de quadra: CNEFE 2022 do IBGE, município 4303103. As distâncias são de Manhattan — a soma dos deslocamentos norte-sul e leste-oeste entre o centro aproximado da via e a unidade —, o que se aproxima do caminho por quadras sem ser o trajeto exato. Em caso de divergência, vale o cadastro da Secretaria Municipal de Saúde de Cachoeirinha.</p>
 </footer>
 </div>
 
@@ -231,10 +231,12 @@ IDX.forEach(function(e,i){
 var PROV=LIST.filter(function(o){return o.prov;}).length;
 
 /* ---------- geografia ---------- */
+/* Distância de Manhattan: soma dos deslocamentos em latitude e longitude,
+   que se aproxima do caminho por quadras. */
 function km(a,b){
   var la=(a[0]+b[0])/2*Math.PI/180;
-  var dx=(a[1]-b[1])*Math.cos(la), dy=a[0]-b[0];
-  return Math.sqrt(dx*dx+dy*dy)*111.32;
+  var dx=Math.abs(a[1]-b[1])*Math.cos(la), dy=Math.abs(a[0]-b[0]);
+  return (dx+dy)*111.32;
 }
 function dentro(lat,lon,poly){
   var c=false;
@@ -564,7 +566,7 @@ function cardUnidade(u,dist,rot){
   var col=u.c==='ESF'?'var(--esf)':u.c==='UBS'?'var(--ubs)':'var(--ink-3)';
   return '<div class="unit"><span class="dot" style="background:'+col+'"></span><div>'+
     '<div class="nm">'+esc(u.n)+'</div>'+
-    '<div class="meta">'+(dist!=null?dist.toFixed(1).replace('.',',')+' km em linha reta':'')+
+    '<div class="meta">'+(dist!=null?dist.toFixed(1).replace('.',',')+' km pelas quadras':'')+
     (u.info?(dist!=null?' · ':'')+infoHTML(u.info):'')+'</div></div></div>';
 }
 function unidadeDaArea(i){
