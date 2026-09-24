@@ -8,8 +8,8 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<link rel="stylesheet" href="css/style.css">
-<script src="js/tema.js"></script>
+<link rel="stylesheet" href="css/style.css?v=20260924-0948">
+<script src="js/tema.js?v=20260924-0948"></script>
 </head>
 <body>
 
@@ -41,6 +41,15 @@
         encontra unidades e áreas pelo nome.</p>
       <ul id="resultados" class="resultados" role="listbox" aria-labelledby="rot-busca"></ul>
       <div id="resposta" class="resposta" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="bloco">
+      <h2 id="rot-atendimento">Atendimento</h2>
+      <div class="opcoes" role="radiogroup" aria-labelledby="rot-atendimento">
+        <button type="button" id="modo-medico" class="opcao" role="radio" aria-checked="true">Médico/Enfermeiro</button>
+        <button type="button" id="modo-dentista" class="opcao" role="radio" aria-checked="false">Dentista</button>
+      </div>
+      <p class="dica" id="modo-dica">As áreas de ESF são as mesmas nos dois. As de UBS mudam: no atendimento odontológico, algumas unidades dividem o mesmo território.</p>
     </section>
 
     <section class="bloco">
@@ -76,7 +85,7 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="js/map.js"></script>
-<script src="js/consulta.js"></script>
+<script src="js/map.js?v=20260924-0948"></script>
+<script src="js/consulta.js?v=20260924-0948"></script>
 </body>
 </html>

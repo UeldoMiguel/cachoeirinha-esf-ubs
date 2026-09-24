@@ -132,15 +132,23 @@
     return [l[i][1] + (l[i + 1][1] - l[i][1]) * g, l[i][0] + (l[i + 1][0] - l[i][0]) * g];
   }
 
-  function dentroDoPoligono(latlng, camada) {
-    /* teste ponto-em-polígono no anel externo da feição */
-    var anel = ((camada.feature.geometry.coordinates || [])[0]) || [];
+  function noAnel(latlng, anel) {
     var x = latlng[1], y = latlng[0], dentro = false;
     for (var i = 0, j = anel.length - 1; i < anel.length; j = i++) {
       var xi = anel[i][0], yi = anel[i][1], xj = anel[j][0], yj = anel[j][1];
       if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) dentro = !dentro;
     }
     return dentro;
+  }
+
+  /* Vale para Polygon e para MultiPolygon (área de UBS unida a outra). */
+  function dentroDoPoligono(latlng, camada) {
+    var g = camada.feature.geometry;
+    var partes = g.type === 'MultiPolygon' ? g.coordinates : [g.coordinates];
+    for (var i = 0; i < partes.length; i++) {
+      if (noAnel(latlng, (partes[i] || [])[0] || [])) return true;
+    }
+    return false;
   }
 
   /* Resposta -------------------------------------------------------------- */
@@ -168,7 +176,10 @@
     return { poligono: poligono, unidade: achada, props: poligono.feature.properties || {} };
   }
 
+  var ultima = null;
+
   function responder(rua, num) {
+    ultima = { rua: rua, num: num };
     var codigo = rua[2][0];
     var trecho = num ? acharTrecho(rua[0], num) : null;
     var alvo = null;
@@ -197,13 +208,25 @@
       '<p>' + (tipo === 'ESF'
         ? 'Este endereço está na abrangência da <strong>' + esc(referencia.nome) +
           '</strong>, uma Estratégia Saúde da Família: equipe fixa, agente comunitário e visita domiciliar.'
-        : 'Este endereço está na abrangência da <strong>' + esc(referencia.nome) +
-          '</strong>, uma Unidade Básica de Saúde sem equipe de Saúde da Família vinculada.') +
+        : (Array.isArray(area.props.unidades) && area.props.unidades.length > 1
+          ? 'Este endereço é atendido em conjunto por <strong>' + esc(area.props.unidade) +
+            '</strong>, Unidades Básicas de Saúde sem equipe de Saúde da Família vinculada.'
+          : 'Este endereço está na abrangência da <strong>' + esc(referencia.nome) +
+            '</strong>, uma Unidade Básica de Saúde sem equipe de Saúde da Família vinculada.')) +
       '</p></div>';
 
-    html += '<p class="rotulo-ref">Unidade de referência</p><ul class="refs">' +
-      linhaUnidade(referencia, ponto && area.unidade
-        ? km(ponto, [area.unidade.latlng.lat, area.unidade.latlng.lng]) : null) + '</ul>';
+    var grupo = area.props.unidades;
+    if (Array.isArray(grupo) && grupo.length) {
+      html += '<p class="rotulo-ref">Unidades de referência</p><ul class="refs">' +
+        grupo.map(function (g) {
+          return linhaUnidade({ nome: g.nome, tipo: tipo, telefone: g.telefone }, null) +
+            (g.endereco ? '<li class="dist" style="margin:-4px 0 0 19px">' + esc(g.endereco) + '</li>' : '');
+        }).join('') + '</ul>';
+    } else {
+      html += '<p class="rotulo-ref">Unidade de referência</p><ul class="refs">' +
+        linhaUnidade(referencia, ponto && area.unidade
+          ? km(ponto, [area.unidade.latlng.lat, area.unidade.latlng.lng]) : null) + '</ul>';
+    }
 
     if (num && trecho && trecho.t) {
       html += '<p class="nota">Em vermelho, só o lado de quadra da numeração ' + trecho.t[0] +
@@ -306,6 +329,13 @@
     }
     if (!elBusca.value.trim()) { elResposta.innerHTML = ''; limparDesenho(); }
   });
+
+  /* Trocar entre médico/enfermeiro e dentista refaz a resposta, porque o
+     território de UBS pode ser outro. */
+  API.aoTrocarModo = function () {
+    if (!ultima || !dados) return;
+    responder(ultima.rua, ultima.num);
+  };
 
   /* O vermelho tem tom diferente em cada tema: redesenha ao trocar */
   if (window.MutationObserver) {

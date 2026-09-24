@@ -23,6 +23,7 @@ Dar a gestores, equipes e à população uma forma direta de responder a duas pe
 ## 1.1 O que a página faz
 
 - **Camadas** de áreas de ESF, áreas de UBS, unidades e limite municipal, com liga/desliga e contagem.
+- **Médico/Enfermeiro × Dentista**: dois botões de escolha única trocam o desenho das áreas de UBS. No odontológico, unidades que dividem território aparecem como uma área só, com o contato de cada uma no popup. As áreas de ESF são as mesmas nos dois. Os agrupamentos ficam em `dados/agrupamentos_ubs.json`.
 - **Consulta por endereço** na mesma caixa de busca: digitar "Rua Dom Bosco, 240" responde se o endereço é área de ESF ou de UBS, mostra a unidade de referência com telefone e desenha a via em vermelho sobre o mapa. Com o número da casa, o vermelho cobre **só o lado de quadra daquela numeração** (faces de quadra do CNEFE 2022). Em rua de divisa, o número decide a unidade.
 - A mesma caixa também acha **unidades e áreas pelo nome**.
 - **Modo escuro**, com botão no topo. Sem escolha manual a página acompanha o sistema; a escolha fica gravada no navegador. Os tiles do OSM são invertidos por CSS — nenhum serviço de base escura com chave de API foi introduzido.
@@ -48,7 +49,8 @@ cachoeirinha-esf-ubs/
 ├── js/tema.js              modo claro/escuro
 ├── data/                   dados publicados, consumidos pelo navegador
 │   ├── esf.geojson         polígonos das áreas de ESF
-│   ├── ubs.geojson         polígonos das áreas de UBS
+│   ├── ubs.geojson         áreas de UBS no atendimento médico/enfermagem
+│   ├── ubs_odonto.geojson  áreas de UBS no atendimento odontológico
 │   ├── unidades.geojson    pontos das unidades e serviços
 │   ├── limite.geojson      contorno do município (OpenStreetMap)
 │   ├── consulta.json       índice de ruas, traçados e numeração (consulta)
@@ -158,10 +160,10 @@ cd dados && python ../scripts/fetch_osm.py && python ../scripts/cnefe.py && pyth
 e, da raiz:
 
 ```bash
-python scripts/geojson.py && python scripts/consulta_dados.py && python scripts/build_html.py
+python scripts/geojson.py && python scripts/consulta_dados.py && python scripts/build_html.py && python scripts/versao.py
 ```
 
-`scripts/geojson.py` gera os GeoJSON de `data/`; `scripts/consulta_dados.py` gera `data/consulta.json`; `scripts/build_html.py` gera `consulta/index.html`.
+`scripts/geojson.py` gera os GeoJSON de `data/`; `scripts/consulta_dados.py` gera `data/consulta.json`; `scripts/build_html.py` gera `consulta/index.html`; `scripts/versao.py` carimba a versão nos links de CSS e JS do `index.html`, para o navegador não servir arquivo antigo depois de publicar.
 
 ## 8. Como publicar no GitHub Pages
 
@@ -185,6 +187,21 @@ O arquivo `.nojekyll` na raiz desliga o processamento Jekyll, que não é necess
 Ajustes que a Secretaria determina sobre os polígonos ficam em `dados/recortes_areas.json`, com o motivo registrado. Cada recorte descreve a parte a remover por longitude ou latitude (`remover_oeste_de`, `remover_leste_de`, `remover_norte_de`, `remover_sul_de`); `scripts/final.py` aplica o corte e, junto, tira da lista de abrangência da unidade as ruas que ficaram só na parte removida.
 
 Recorte em vigor: a **ESF Jardim Betânia** perdeu o setor a oeste da Souza Cruz — Parque do Sabiá, Meu Rincão, Residencial Caetanos I e II e Sítio Ipiranga —, 60% da área original. As 66 vias daquele setor saíram da abrangência da unidade e, sem outra unidade indicada, deixaram de responder na consulta.
+
+## 8.3 Agrupamentos por tipo de atendimento
+
+`dados/agrupamentos_ubs.json` lista, para cada modo, quais UBS dividem território:
+
+```json
+{
+  "medico":   [["UBS Osvaldo Cruz", "UBS Getúlio Vargas"]],
+  "dentista": [["UBS Osvaldo Cruz", "UBS Getúlio Vargas", "UBS Parque da Matriz"],
+               ["UBS COHAB", "UBS Décio Martins Costa"],
+               ["UBS Jardim do Bosque", "UBS CAIC Granja"]]
+}
+```
+
+`scripts/geojson.py` funde os polígonos de cada lista (união geométrica, com fechamento de frestas de digitalização) e gera `data/ubs.geojson` e `data/ubs_odonto.geojson`. A feição resultante guarda `codigos` com o código de cada unidade do grupo, e `unidades` com nome, endereço e telefone de cada uma — é o que a caixa de informações e a consulta por endereço exibem. Mudar um agrupamento é editar esse arquivo e rodar `python scripts/geojson.py`.
 
 ## 9. Dados territoriais oficiais
 

@@ -16,11 +16,20 @@ Rode da raiz do projeto: python scripts/geojson.py
 """
 import datetime
 import io
+import json as _json
 import math
 import json
 import os
 import re
 import unicodedata
+
+from shapely.geometry import Polygon, mapping
+from shapely.ops import unary_union
+
+
+def shapely_json(geom):
+    return _json.dumps(mapping(geom))
+
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONTE_AREAS = ('Mapa colaborativo público "Mapeamento unidades de saúde — Cachoeirinha" '
@@ -156,31 +165,70 @@ def main():
         o = oficiais.get(nome) or {}
         return o.get('renomear') or nome
 
-    saidas = {}
-    for tipo, arquivo in (('ESF', 'esf.geojson'), ('UBS', 'ubs.geojson')):
-        feats = []
-        for a in areas:
-            if a['t'] != tipo:
+    def props_area(a, u):
+        return {'nome': 'Área da ' + a['n'],
+             'unidade': a['n'],
+             'tipo': a['t'],
+             'codigo': codigo(a['n']),
+             'codigos': [codigo(a['n'])],
+             'descricao': ('Território de abrangência da ' + a['n'] + ', com ' +
+                           str(len(a['ruas'])) + ' vias na lista de ruas da fonte.'),
+             'ruas_cadastradas': len(a['ruas']),
+             'ruas': sorted(a['ruas']),
+             'endereco': endereco_de(a['n']),
+             'telefone': telefone_de(a['n'], u.get('info', '')),
+             'email': email(u.get('info', '')),
+             'fonte': FONTE_AREAS}
+
+    def area_unida(grupo):
+        """Funde as áreas de um grupo de UBS numa feição só."""
+        membros = [a for a in areas if a['n'] in grupo]
+        if len(membros) < 2:
+            return None
+        juntas = unary_union([Polygon(anel_fechado(a['poly'])).buffer(0) for a in membros])
+        juntas = juntas.buffer(6 / 111320.0).buffer(-6 / 111320.0)   # fecha frestas de digitalização
+        juntas = juntas.simplify(3 / 111320.0)                       # tira vértices do arredondamento
+        nomes = [a['n'] for a in membros]
+        rotulo = (', '.join(nomes[:-1]) + ' e ' + nomes[-1]) if len(nomes) > 1 else nomes[0]
+        ruas = sorted({r for a in membros for r in a['ruas']})
+        return feature(json.loads(shapely_json(juntas)), {
+            'nome': 'Área da ' + rotulo,
+            'unidade': rotulo,
+            'tipo': 'UBS',
+            'codigo': codigo(rotulo),
+            'codigos': [codigo(n) for n in nomes],
+            'descricao': 'Território atendido em conjunto por ' + rotulo + '.',
+            'ruas_cadastradas': len(ruas),
+            'ruas': ruas,
+            'unidades': [{'nome': n,
+                          'endereco': endereco_de(n),
+                          'telefone': telefone_de(n, (por_nome.get(n) or {}).get('info', ''))}
+                         for n in nomes],
+            'fonte': FONTE_AREAS})
+
+    def colecao_areas(tipo, grupos, titulo):
+        feats, agrupadas = [], set()
+        for grupo in grupos:
+            f = area_unida(grupo)
+            if not f:
                 continue
-            u = por_nome.get(a['n'], {})
-            feats.append(feature(
-                {'type': 'Polygon', 'coordinates': [anel_fechado(a['poly'])]},
-                {'nome': 'Área da ' + a['n'],
-                 'unidade': a['n'],
-                 'tipo': tipo,
-                 'codigo': codigo(a['n']),
-                 'descricao': ('Território de abrangência da ' + a['n'] + ', com ' +
-                               str(len(a['ruas'])) + ' vias na lista de ruas da fonte.'),
-                 'ruas_cadastradas': len(a['ruas']),
-                 'ruas': sorted(a['ruas']),
-                 'endereco': endereco_de(a['n']),
-                 'telefone': telefone_de(a['n'], u.get('info', '')),
-                 'email': email(u.get('info', '')),
-                 'fonte': FONTE_AREAS}))
-        saidas[arquivo] = colecao(
-            feats, 'Áreas de ' + tipo + ' — Cachoeirinha/RS', FONTE_AREAS,
-            'Limites de trabalho digitalizados em mapa colaborativo. Devem ser '
-            'substituídos pelos limites oficiais quando a Secretaria os publicar.')
+            feats.append(f)
+            agrupadas.update(grupo)
+            print('áreas unidas (%s): %s' % (titulo, ' + '.join(grupo)))
+        for a in areas:
+            if a['t'] != tipo or a['n'] in agrupadas:
+                continue
+            feats.append(feature({'type': 'Polygon', 'coordinates': [anel_fechado(a['poly'])]},
+                                 props_area(a, por_nome.get(a['n'], {}))))
+        return colecao(feats, 'Áreas de ' + tipo + ' — Cachoeirinha/RS', FONTE_AREAS,
+                       'Limites de trabalho digitalizados em mapa colaborativo. Devem ser '
+                       'substituídos pelos limites oficiais quando a Secretaria os publicar.')
+
+    saidas = {}
+    grupos = carrega('agrupamentos_ubs.json')
+    saidas['esf.geojson'] = colecao_areas('ESF', [], 'ESF')
+    saidas['ubs.geojson'] = colecao_areas('UBS', grupos.get('medico', []), 'médico/enfermeiro')
+    saidas['ubs_odonto.geojson'] = colecao_areas('UBS', grupos.get('dentista', []), 'dentista')
 
     feats = []
     for u in unidades:

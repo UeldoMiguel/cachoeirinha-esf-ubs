@@ -1,0 +1,2386 @@
+{
+ "type": "FeatureCollection",
+ "name": "Áreas de UBS — Cachoeirinha/RS",
+ "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
+ "gerado_em": "2026-09-24",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Parque da Matriz, UBS Osvaldo Cruz e UBS Getúlio Vargas",
+    "unidade": "UBS Parque da Matriz, UBS Osvaldo Cruz e UBS Getúlio Vargas",
+    "tipo": "UBS",
+    "codigo": "UBS-PARQUE-DA-MATRIZ-UBS-OSVALDO-CRUZ-E-UBS-GETULIO-VARGAS",
+    "codigos": [
+     "UBS-PARQUE-DA-MATRIZ",
+     "UBS-OSVALDO-CRUZ",
+     "UBS-GETULIO-VARGAS"
+    ],
+    "descricao": "Território atendido em conjunto por UBS Parque da Matriz, UBS Osvaldo Cruz e UBS Getúlio Vargas.",
+    "ruas_cadastradas": 198,
+    "ruas": [
+     "Av. Concordia",
+     "Av. Jose Brambila",
+     "Av. Maj. Alberto Bins",
+     "Av. Mal. Rondon",
+     "Av. Nova Zelandia",
+     "Av. Panamericana",
+     "Av. Princesa Isabel",
+     "Av. Telmo Silveira Dorneles",
+     "R. Bonsucesso",
+     "Rua 16 de Fevereiro",
+     "Rua 31 de Outubro",
+     "Rua 8",
+     "Rua Abrham Lincon",
+     "Rua Adão Sos Santos",
+     "Rua Aimoré",
+     "Rua Alagoinhas",
+     "Rua Aldoni Carvalho",
+     "Rua Alegrete",
+     "Rua Alenir B. Cardoso",
+     "Rua Anapolis",
+     "Rua Antonio Nunes",
+     "Rua Antônio Nunes",
+     "Rua Aparecida",
+     "Rua Aparicio S. da Silva",
+     "Rua Ararangua",
+     "Rua Araçatuba",
+     "Rua Armindo S. Martins",
+     "Rua Arpuador",
+     "Rua Assunção",
+     "Rua Bandeirantes",
+     "Rua Bangu",
+     "Rua Barão de Cotegipe",
+     "Rua Bauru",
+     "Rua Belo Horizonte",
+     "Rua Bertoldo Creps",
+     "Rua Boa Vista",
+     "Rua Bororo",
+     "Rua Botafogo",
+     "Rua Brasil",
+     "Rua Caboçu",
+     "Rua Cai",
+     "Rua Caiapó",
+     "Rua Candeias",
+     "Rua Cariri",
+     "Rua Carlos Gomes",
+     "Rua Carlos Schuller",
+     "Rua Caruaru",
+     "Rua Cascavel",
+     "Rua Charrua",
+     "Rua Clarissa B. Do Santos",
+     "Rua Claudio Fagundes Santos",
+     "Rua Congonhas",
+     "Rua Copacabana",
+     "Rua Corcovado",
+     "Rua Coroados",
+     "Rua Costa Rica",
+     "Rua Criciuma",
+     "Rua Cristino M. Dos Santos",
+     "Rua Da Penha",
+     "Rua Daloira F. Da Silva",
+     "Rua Delcio Jose Cordova",
+     "Rua Deolindo Selao",
+     "Rua Diadema",
+     "Rua Diamantina",
+     "Rua Dom Feliciano",
+     "Rua Domingos Dorivaldo Thiesen",
+     "Rua Duarte Da Costa",
+     "Rua Eloi Teixeira",
+     "Rua Emilia Gauna Bochlhein",
+     "Rua Erico Verissimo",
+     "Rua Ernesto Che Guevara",
+     "Rua Ernesto Frield",
+     "Rua Esperança",
+     "Rua Estácio De Sá",
+     "Rua Euclides Da Cunha",
+     "Rua Eugenio J, Bisotto",
+     "Rua Fermino Correa da Gama",
+     "Rua Fernando Machado",
+     "Rua Flamengo",
+     "Rua Flavio Jardim",
+     "Rua Florianopolis",
+     "Rua Flávio Catanhede",
+     "Rua Fraga",
+     "Rua Francisco Dimer Raupp",
+     "Rua Frei Mojica",
+     "Rua Fundo Da Capela",
+     "Rua Goitacás",
+     "Rua Guaianá",
+     "Rua Guaporé",
+     "Rua Guarujá",
+     "Rua Henrique Dias",
+     "Rua Henrique Duarte Monteiro",
+     "Rua Iguatemi",
+     "Rua Ijui",
+     "Rua Ilheus",
+     "Rua Iracema",
+     "Rua Irmãos Veiga",
+     "Rua Itaberaba",
+     "Rua Itapema",
+     "Rua Itapetininga",
+     "Rua Itaqui",
+     "Rua Jacarepagua",
+     "Rua Jacuí",
+     "Rua Jose R. de Souza",
+     "Rua Jose Raupp",
+     "Rua Jose Souza Jucowsi",
+     "Rua José Antônio Duarte",
+     "Rua João A. P. De Moraes",
+     "Rua João Francisco Silva",
+     "Rua João J. Nunes",
+     "Rua Juarez C. Evaldt",
+     "Rua Julio De Castilhos",
+     "Rua Laguna",
+     "Rua Laçador",
+     "Rua Leblon",
+     "Rua Lima E Silva",
+     "Rua Limoeiro",
+     "Rua Lindoia",
+     "Rua Lindolfo Wagner",
+     "Rua Lisboa",
+     "Rua Luiz D. Da Silva",
+     "Rua Luiz de Camões",
+     "Rua Madureira",
+     "Rua Manatá",
+     "Rua Manoel Vitorino Nunes",
+     "Rua Mantiqueira",
+     "Rua Manuel Rosa",
+     "Rua Maracanã",
+     "Rua Marau",
+     "Rua Maringa",
+     "Rua Marte",
+     "Rua Mexico",
+     "Rua Missões",
+     "Rua Mogi Mirim",
+     "Rua Monte Carlo",
+     "Rua Monte Castelo",
+     "Rua Monteiro Lobato",
+     "Rua Morumbi",
+     "Rua Natalicio Alves",
+     "Rua Nelson Oliveira Lopes",
+     "Rua Nero Caruso",
+     "Rua Nildo Delfino",
+     "Rua Nilton Teixeira",
+     "Rua Norberto Gomes Da Silva",
+     "Rua Odil S. de Oliveira",
+     "Rua Osvaldo Cruz",
+     "Rua Osório Correa",
+     "Rua Ouro Preto",
+     "Rua Pacaembu",
+     "Rua Pagé",
+     "Rua Panamericana",
+     "Rua Panorama",
+     "Rua Paquetá",
+     "Rua Paranavai",
+     "Rua Parati",
+     "Rua Petropolis",
+     "Rua Petrópolis",
+     "Rua Pindorama",
+     "Rua Planalto",
+     "Rua Poços De Caldas",
+     "Rua Realengo",
+     "Rua Redenção",
+     "Rua Ribeirão Preto",
+     "Rua Rio Claro",
+     "Rua Rosario",
+     "Rua Roseli Nunes",
+     "Rua Salguero",
+     "Rua Samuara",
+     "Rua Santa Ines",
+     "Rua Sen. Luiz Preste",
+     "Rua Sete Quedas",
+     "Rua Silvério Manoel Da Silva",
+     "Rua São Cristóvão",
+     "Rua São Manoel",
+     "Rua São Pedro",
+     "Rua São Tomé",
+     "Rua Taguarí",
+     "Rua Teresopolis",
+     "Rua Tijuca",
+     "Rua Torres",
+     "Rua Tupi",
+     "Rua Upamarati",
+     "Rua Valeça",
+     "Rua Ver. João M. Pereira",
+     "Rua Ver. Nésio Cunha",
+     "Rua Xavantes",
+     "Rua Zulmira R. Da Silva",
+     "Rua das Oliveiras",
+     "Rua do Abrigo",
+     "Rua do Parque",
+     "Tv. Felisberto M. Martins",
+     "Tv. Lajes",
+     "Tv. Liberdade",
+     "Tv. Rio Grande",
+     "Tv. Santos",
+     "Tv. Souza",
+     "Tv. São Pedro",
+     "Tv. da Faculdade"
+    ],
+    "unidades": [
+     {
+      "nome": "UBS Parque da Matriz",
+      "endereco": "Rua Panamericana, 460",
+      "telefone": "(51) 3041-6273"
+     },
+     {
+      "nome": "UBS Osvaldo Cruz",
+      "endereco": "Rua Osvaldo Cruz, 590",
+      "telefone": "(51) 3041-7134 / (51) 3041-6219"
+     },
+     {
+      "nome": "UBS Getúlio Vargas",
+      "endereco": "Rua Dom João VI, 188",
+      "telefone": "(51) 3471-7599 / (51) 3074-5578"
+     }
+    ],
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -51.09594994075003,
+        -29.935720053123422
+       ],
+       [
+        -51.09317125957307,
+        -29.935277527617576
+       ],
+       [
+        -51.09148996912673,
+        -29.933600036568752
+       ],
+       [
+        -51.08598997914854,
+        -29.92968005293591
+       ],
+       [
+        -51.08570001648075,
+        -29.929650066635705
+       ],
+       [
+        -51.08525191314883,
+        -29.929948469616406
+       ],
+       [
+        -51.08510555181358,
+        -29.92999693000835
+       ],
+       [
+        -51.08455363441958,
+        -29.929823908730125
+       ],
+       [
+        -51.08454178065242,
+        -29.929765761904747
+       ],
+       [
+        -51.08502991539125,
+        -29.928550037792167
+       ],
+       [
+        -51.08335181219633,
+        -29.927935203021192
+       ],
+       [
+        -51.08335430317412,
+        -29.927854122922938
+       ],
+       [
+        -51.08389990365993,
+        -29.927489987281238
+       ],
+       [
+        -51.08330906137104,
+        -29.9268392178092
+       ],
+       [
+        -51.0827885049498,
+        -29.926487332363443
+       ],
+       [
+        -51.08318993572117,
+        -29.926069971855537
+       ],
+       [
+        -51.08321994109422,
+        -29.924280025371022
+       ],
+       [
+        -51.08287001102408,
+        -29.92396009721249
+       ],
+       [
+        -51.08233851561679,
+        -29.924729736003275
+       ],
+       [
+        -51.08227431346141,
+        -29.924749221953086
+       ],
+       [
+        -51.08182995056701,
+        -29.92400003887735
+       ],
+       [
+        -51.08135678905419,
+        -29.9235780347603
+       ],
+       [
+        -51.080020220486155,
+        -29.919820643677326
+       ],
+       [
+        -51.07959996253027,
+        -29.918770064809998
+       ],
+       [
+        -51.07952910715711,
+        -29.918780968829523
+       ],
+       [
+        -51.07718010992315,
+        -29.921329972029678
+       ],
+       [
+        -51.078628822720226,
+        -29.921847862233435
+       ],
+       [
+        -51.07806158069291,
+        -29.923156436743092
+       ],
+       [
+        -51.077729071774314,
+        -29.92367792509803
+       ],
+       [
+        -51.07648815212676,
+        -29.92326933854537
+       ],
+       [
+        -51.074689988639804,
+        -29.92260007807604
+       ],
+       [
+        -51.07397008337969,
+        -29.922990024967294
+       ],
+       [
+        -51.07418977978213,
+        -29.923400092717063
+       ],
+       [
+        -51.074409883881664,
+        -29.924102440602837
+       ],
+       [
+        -51.07443976785624,
+        -29.92486998750526
+       ],
+       [
+        -51.07435028823018,
+        -29.92547804643992
+       ],
+       [
+        -51.07435008102245,
+        -29.9260799910575
+       ],
+       [
+        -51.074750076182674,
+        -29.92786997398263
+       ],
+       [
+        -51.076550045509585,
+        -29.93170995577185
+       ],
+       [
+        -51.07777716218612,
+        -29.932328925384756
+       ],
+       [
+        -51.078444609219964,
+        -29.933004528760563
+       ],
+       [
+        -51.07930069811345,
+        -29.934610910198543
+       ],
+       [
+        -51.080090395858186,
+        -29.935640470081598
+       ],
+       [
+        -51.08105009118273,
+        -29.936780106026436
+       ],
+       [
+        -51.081480908771724,
+        -29.937280875725484
+       ],
+       [
+        -51.08203003570323,
+        -29.93780995044896
+       ],
+       [
+        -51.08670580372507,
+        -29.940305997182566
+       ],
+       [
+        -51.087903165611976,
+        -29.941545252038058
+       ],
+       [
+        -51.08878063153907,
+        -29.94300117573764
+       ],
+       [
+        -51.09023949159001,
+        -29.945649120059635
+       ],
+       [
+        -51.09048085321472,
+        -29.945950758413083
+       ],
+       [
+        -51.09075002423258,
+        -29.946189968093847
+       ],
+       [
+        -51.091198723980185,
+        -29.94647917767612
+       ],
+       [
+        -51.09327995538608,
+        -29.947539907709345
+       ],
+       [
+        -51.0936789550047,
+        -29.94543551235021
+       ],
+       [
+        -51.09378026088098,
+        -29.945188690672804
+       ],
+       [
+        -51.09430993266261,
+        -29.942529993480473
+       ],
+       [
+        -51.09430115182382,
+        -29.939795513561865
+       ],
+       [
+        -51.095649934294464,
+        -29.938719960530907
+       ],
+       [
+        -51.0959999149851,
+        -29.93675999452302
+       ],
+       [
+        -51.09594994075003,
+        -29.935720053123422
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -51.08426993934998,
+        -29.94195001882088
+       ],
+       [
+        -51.084189962985185,
+        -29.94183004297229
+       ],
+       [
+        -51.08239137244864,
+        -29.940957174441984
+       ],
+       [
+        -51.08380918696747,
+        -29.939161014888878
+       ],
+       [
+        -51.08380993582035,
+        -29.939000038866673
+       ],
+       [
+        -51.08184275121821,
+        -29.937971095861208
+       ],
+       [
+        -51.08085151866611,
+        -29.936951564686293
+       ],
+       [
+        -51.0795779713721,
+        -29.935406650405106
+       ],
+       [
+        -51.077859950042075,
+        -29.9325700514149
+       ],
+       [
+        -51.07688998261287,
+        -29.932020054301272
+       ],
+       [
+        -51.076040048465345,
+        -29.931970070308626
+       ],
+       [
+        -51.07587007800535,
+        -29.932510015521007
+       ],
+       [
+        -51.07572997479642,
+        -29.934100489297176
+       ],
+       [
+        -51.07544001666984,
+        -29.93972967637526
+       ],
+       [
+        -51.07528970779819,
+        -29.945202447619902
+       ],
+       [
+        -51.0744399663921,
+        -29.952321233890164
+       ],
+       [
+        -51.07437003373221,
+        -29.954888761546197
+       ],
+       [
+        -51.07443004220548,
+        -29.955019945124825
+       ],
+       [
+        -51.07946710226199,
+        -29.955899494045745
+       ],
+       [
+        -51.0831287563074,
+        -29.956959639804875
+       ],
+       [
+        -51.08329993851429,
+        -29.956889954986888
+       ],
+       [
+        -51.08430989017366,
+        -29.944851309217057
+       ],
+       [
+        -51.08426993934998,
+        -29.94195001882088
+       ]
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Décio Martins Costa e UBS COHAB",
+    "unidade": "UBS Décio Martins Costa e UBS COHAB",
+    "tipo": "UBS",
+    "codigo": "UBS-DECIO-MARTINS-COSTA-E-UBS-COHAB",
+    "codigos": [
+     "UBS-DECIO-MARTINS-COSTA",
+     "UBS-COHAB"
+    ],
+    "descricao": "Território atendido em conjunto por UBS Décio Martins Costa e UBS COHAB.",
+    "ruas_cadastradas": 138,
+    "ruas": [
+     "Av Delfin Moreira",
+     "Av. Gal. Anapio Gomes",
+     "Av. Mario T. Haussem",
+     "Beco Aboot",
+     "Beco Afonso Amaral",
+     "Beco Luiz Shergl",
+     "Rua 15 De Novembro",
+     "Rua 1º De Maio",
+     "Rua 21 De Abril",
+     "Rua 7 De Setembro",
+     "Rua A. J. Renner",
+     "Rua Almirante Barroso",
+     "Rua Alvarenga Peixoto",
+     "Rua Alzira Jung",
+     "Rua Alzira Silveira",
+     "Rua Amapá",
+     "Rua Antonio G. Da Silva",
+     "Rua Arlindo F. Soares",
+     "Rua Arminda Lombardo",
+     "Rua Artur Bernardes",
+     "Rua Artur E. Ozzio",
+     "Rua Augusto C. De Freitas",
+     "Rua Bruno C. Muller",
+     "Rua Café Filho",
+     "Rua Castro Alves",
+     "Rua Catão Rosco",
+     "Rua Caí",
+     "Rua Cel. João B. S. Da S. E Souza",
+     "Rua Cicero Marques",
+     "Rua Cilon Rosa",
+     "Rua Clemente Cifall",
+     "Rua Clóvis F. Velho",
+     "Rua Clóvis Pestana",
+     "Rua Colorado",
+     "Rua Da Igueja",
+     "Rua Dom Bosco",
+     "Rua Dom Sebastião",
+     "Rua Dona Otília",
+     "Rua Décio Costa",
+     "Rua Elias G. Dos Santos",
+     "Rua Emília Martins",
+     "Rua Emílio Dos Santos",
+     "Rua Epitácio Pessoa",
+     "Rua Ernesto Dorneles",
+     "Rua Eulina Martins",
+     "Rua Eurico G. Dutra",
+     "Rua Eurípedes Aurélio Da Silva",
+     "Rua Everaldo M. Da Silva",
+     "Rua Fernando Ferrari",
+     "Rua Flores Da Cunha",
+     "Rua Francisco A. V. Caldas Junior",
+     "Rua Francisco Brochado da Rocha",
+     "Rua Francisco Martins",
+     "Rua Francisco Sobrinho",
+     "Rua Fritz Biser",
+     "Rua Gal. João Alfredo",
+     "Rua Gal. Vignole",
+     "Rua Geni C. Da Silva",
+     "Rua Gerdau",
+     "Rua Gravataí",
+     "Rua Guarani",
+     "Rua Heini Renner",
+     "Rua Honorio Lemos",
+     "Rua Humaita",
+     "Rua Iguassú",
+     "Rua Imbui",
+     "Rua Independência",
+     "Rua Jacob Vontobel",
+     "Rua Jeronimo Da Silva",
+     "Rua Joana Ramos",
+     "Rua Joci N. Da Silva",
+     "Rua Jose Silveira",
+     "Rua José A. Becker",
+     "Rua José C. Da Silva",
+     "Rua José Medeiros",
+     "Rua João A. B. Filho",
+     "Rua João Dias",
+     "Rua João Paulo Alcântara",
+     "Rua João Pessoa",
+     "Rua Largo Dos Muller",
+     "Rua Lidio Batista Soares",
+     "Rua Lindolfo Collor",
+     "Rua Luiz Cardoso",
+     "Rua Luiz Pasteur",
+     "Rua Lupicínio Rodrigues",
+     "Rua Mal. Hermes Da Fonseca",
+     "Rua Maloha Haussem",
+     "Rua Manoel P. Pinto",
+     "Rua Maria De O. Maciel",
+     "Rua Martinho Lutero",
+     "Rua Maurício L. Da Silva",
+     "Rua Mauá",
+     "Rua Men De Sá",
+     "Rua Nereu Ramos",
+     "Rua Nicolau Rosa",
+     "Rua Nilo Peçanha",
+     "Rua Novo Hamburgo",
+     "Rua Ori Kinder",
+     "Rua Otalibio Silveira",
+     "Rua Papa João Xxiii",
+     "Rua Pedro C. Pereira",
+     "Rua Pedro L. A. Marengo",
+     "Rua Pedro Ulmann",
+     "Rua Pio Xii",
+     "Rua Piratini",
+     "Rua Pruclante De Moraes",
+     "Rua Ramos",
+     "Rua Rio Branco",
+     "Rua Rodrigues Alves",
+     "Rua Salvador Canelas",
+     "Rua Samuel M. Coelho",
+     "Rua Santa Clara",
+     "Rua Santa Rita De Cassia",
+     "Rua Santa Terezinha",
+     "Rua Santiago",
+     "Rua Santo Antonio",
+     "Rua Santos Dumont",
+     "Rua São Bernardo",
+     "Rua São Francisco",
+     "Rua São José",
+     "Rua São Judas Tadeu",
+     "Rua São Luiz",
+     "Rua São Vicente De Paula",
+     "Rua Tabajaras",
+     "Rua Tamoio",
+     "Rua Tapajós",
+     "Rua Teodomiro Porto",
+     "Rua Tomé De Souza",
+     "Rua Ver. Inocencio Telles Moreira",
+     "Rua Ver. Ivo Pereira Marques",
+     "Rua Vitória",
+     "Rua Walter Jobim",
+     "Rua Washington Luiz",
+     "Tr. Araci",
+     "Tr. Do Carmo",
+     "Tv. Palmeira",
+     "Tv. Roma",
+     "Tv. São Roque"
+    ],
+    "unidades": [
+     {
+      "nome": "UBS Décio Martins Costa",
+      "endereco": "Rua Décio Martins Costa, 464",
+      "telefone": "(51) 3074-5539 / (51) 3074-5508"
+     },
+     {
+      "nome": "UBS COHAB",
+      "endereco": "Rua Francisco Brochado da Rocha, 95",
+      "telefone": "(51) 3041-6227"
+     }
+    ],
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        -51.10847989802876,
+        -29.96048003963442
+       ],
+       [
+        -51.10779779940085,
+        -29.960349382287955
+       ],
+       [
+        -51.107231317370506,
+        -29.96018100303347
+       ],
+       [
+        -51.106499971162485,
+        -29.95798011239267
+       ],
+       [
+        -51.10581481958356,
+        -29.958614447753547
+       ],
+       [
+        -51.10575181534203,
+        -29.95860296261065
+       ],
+       [
+        -51.105636209220016,
+        -29.958419427251275
+       ],
+       [
+        -51.10574992997517,
+        -29.955490015225408
+       ],
+       [
+        -51.105389958417014,
+        -29.954780037973634
+       ],
+       [
+        -51.10337730343478,
+        -29.953517776977943
+       ],
+       [
+        -51.100131482834335,
+        -29.950801272766135
+       ],
+       [
+        -51.099041150656134,
+        -29.950110728396997
+       ],
+       [
+        -51.098030753540534,
+        -29.94984020144153
+       ],
+       [
+        -51.09705484598898,
+        -29.94963775238617
+       ],
+       [
+        -51.09572838127123,
+        -29.949059159576482
+       ],
+       [
+        -51.091300053783215,
+        -29.94676009672173
+       ],
+       [
+        -51.09029006565891,
+        -29.959859963216932
+       ],
+       [
+        -51.0938703213498,
+        -29.961690169769703
+       ],
+       [
+        -51.098640013115116,
+        -29.964209922689978
+       ],
+       [
+        -51.10141993712071,
+        -29.96379114745
+       ],
+       [
+        -51.10514999445463,
+        -29.964779933028098
+       ],
+       [
+        -51.10629995717251,
+        -29.96425995448654
+       ],
+       [
+        -51.107639325503975,
+        -29.96172127852233
+       ],
+       [
+        -51.10769323266855,
+        -29.961536047106197
+       ],
+       [
+        -51.10847989802876,
+        -29.96048003963442
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -51.12602993183247,
+        -29.93349001339608
+       ],
+       [
+        -51.125959959029,
+        -29.933360063167456
+       ],
+       [
+        -51.124878742029104,
+        -29.93328014398462
+       ],
+       [
+        -51.12321873532789,
+        -29.933470269430146
+       ],
+       [
+        -51.12091683861004,
+        -29.93395226388645
+       ],
+       [
+        -51.1171872347706,
+        -29.930665010380547
+       ],
+       [
+        -51.11687859735495,
+        -29.928764137011136
+       ],
+       [
+        -51.119399937225424,
+        -29.92598997699109
+       ],
+       [
+        -51.119339936454445,
+        -29.924310041980686
+       ],
+       [
+        -51.11885074502198,
+        -29.924079021017754
+       ],
+       [
+        -51.11842997322713,
+        -29.923590071909548
+       ],
+       [
+        -51.102280035337834,
+        -29.926020070022616
+       ],
+       [
+        -51.102189634078115,
+        -29.926111360478803
+       ],
+       [
+        -51.101800058718396,
+        -29.92756000315348
+       ],
+       [
+        -51.10249907748735,
+        -29.930987088248063
+       ],
+       [
+        -51.10220958723672,
+        -29.93317358232158
+       ],
+       [
+        -51.098880006654085,
+        -29.933060088000836
+       ],
+       [
+        -51.0963734652929,
+        -29.933537470056045
+       ],
+       [
+        -51.09633042645095,
+        -29.933484326554613
+       ],
+       [
+        -51.09633994291752,
+        -29.932010024889806
+       ],
+       [
+        -51.09621999156402,
+        -29.931900075413026
+       ],
+       [
+        -51.096080062103994,
+        -29.931980038649836
+       ],
+       [
+        -51.09597006336,
+        -29.933761428036927
+       ],
+       [
+        -51.09609970581977,
+        -29.936689982328833
+       ],
+       [
+        -51.09577335974508,
+        -29.93865973971905
+       ],
+       [
+        -51.09443006413209,
+        -29.939760030827486
+       ],
+       [
+        -51.09441974573653,
+        -29.94243997425206
+       ],
+       [
+        -51.093880853994044,
+        -29.945125745844468
+       ],
+       [
+        -51.09378978435255,
+        -29.945371180386008
+       ],
+       [
+        -51.09341006723581,
+        -29.94744996793917
+       ],
+       [
+        -51.09587916710011,
+        -29.948799544771312
+       ],
+       [
+        -51.09683874385388,
+        -29.949239424266363
+       ],
+       [
+        -51.09858737270441,
+        -29.94963939947529
+       ],
+       [
+        -51.09962538298841,
+        -29.949988662284838
+       ],
+       [
+        -51.10151001883164,
+        -29.951489936397028
+       ],
+       [
+        -51.102021268373846,
+        -29.95143945641121
+       ],
+       [
+        -51.10257997118412,
+        -29.951199956087134
+       ],
+       [
+        -51.10364830772918,
+        -29.950191913189588
+       ],
+       [
+        -51.104145249490266,
+        -29.949932768296524
+       ],
+       [
+        -51.10535183159214,
+        -29.949829585711303
+       ],
+       [
+        -51.10618997282962,
+        -29.94963993171686
+       ],
+       [
+        -51.10645995280083,
+        -29.949479952462923
+       ],
+       [
+        -51.106989938783684,
+        -29.948599977893192
+       ],
+       [
+        -51.10705777241508,
+        -29.94819856919169
+       ],
+       [
+        -51.10712560965178,
+        -29.948183487104494
+       ],
+       [
+        -51.10744001295917,
+        -29.948389933426284
+       ],
+       [
+        -51.10758996681372,
+        -29.948359943929
+       ],
+       [
+        -51.10954996005925,
+        -29.94602997183265
+       ],
+       [
+        -51.10994837309656,
+        -29.945212523164926
+       ],
+       [
+        -51.11064289040858,
+        -29.945089819349466
+       ],
+       [
+        -51.1120799700349,
+        -29.94499994326762
+       ],
+       [
+        -51.11760549779289,
+        -29.93792437068283
+       ],
+       [
+        -51.117962904204354,
+        -29.937972282130467
+       ],
+       [
+        -51.11800428758198,
+        -29.938024883161464
+       ],
+       [
+        -51.117528949116554,
+        -29.93961942704362
+       ],
+       [
+        -51.11533005138406,
+        -29.942190028029124
+       ],
+       [
+        -51.115300064485425,
+        -29.942309988074072
+       ],
+       [
+        -51.11537003281197,
+        -29.94240993460717
+       ],
+       [
+        -51.125049964495965,
+        -29.94211994218226
+       ],
+       [
+        -51.12511013817763,
+        -29.942008674750884
+       ],
+       [
+        -51.12532993283768,
+        -29.939900023814797
+       ],
+       [
+        -51.125219972869075,
+        -29.93979005230254
+       ],
+       [
+        -51.124654826152415,
+        -29.93970248495123
+       ],
+       [
+        -51.12451256666342,
+        -29.939536055135758
+       ],
+       [
+        -51.12451028393746,
+        -29.93922472649134
+       ],
+       [
+        -51.12471992573553,
+        -29.938969976766536
+       ],
+       [
+        -51.124650187074074,
+        -29.93834999453346
+       ],
+       [
+        -51.12467160933002,
+        -29.93798930585366
+       ],
+       [
+        -51.12496995263326,
+        -29.93773996308091
+       ],
+       [
+        -51.12543992911578,
+        -29.936709991156537
+       ],
+       [
+        -51.125419947779164,
+        -29.936600025540347
+       ],
+       [
+        -51.12509165211214,
+        -29.93620241109518
+       ],
+       [
+        -51.12536897631544,
+        -29.935652619896064
+       ],
+       [
+        -51.12580995768354,
+        -29.935199971025224
+       ],
+       [
+        -51.12585992527741,
+        -29.935089979622084
+       ],
+       [
+        -51.12602993183247,
+        -29.93349001339608
+       ]
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS CAIC Granja e UBS Jardim do Bosque",
+    "unidade": "UBS CAIC Granja e UBS Jardim do Bosque",
+    "tipo": "UBS",
+    "codigo": "UBS-CAIC-GRANJA-E-UBS-JARDIM-DO-BOSQUE",
+    "codigos": [
+     "UBS-CAIC-GRANJA",
+     "UBS-JARDIM-DO-BOSQUE"
+    ],
+    "descricao": "Território atendido em conjunto por UBS CAIC Granja e UBS Jardim do Bosque.",
+    "ruas_cadastradas": 220,
+    "ruas": [
+     "Av B",
+     "Av Frederico Augusto Ritter",
+     "Av Getúlio Vargas",
+     "Av Primavera",
+     "Av Wilma Ritter Beiser (AV. A)",
+     "Av. Anildo Gomes Alano",
+     "Av. Capitão Garibaldi P. Dos Santos",
+     "Av. Frederico Augusto Ritter",
+     "Av. do Carvalho",
+     "Est. Manuel José do Nascimento",
+     "Estrada dos Capistranos",
+     "Rua 1",
+     "Rua 10",
+     "Rua 11",
+     "Rua 12",
+     "Rua 13",
+     "Rua 14",
+     "Rua 15",
+     "Rua 16",
+     "Rua 17",
+     "Rua 18",
+     "Rua 19",
+     "Rua 2",
+     "Rua 20",
+     "Rua 21",
+     "Rua 3",
+     "Rua 4",
+     "Rua 5",
+     "Rua 6",
+     "Rua 7",
+     "Rua 8",
+     "Rua 9",
+     "Rua Abacateiro",
+     "Rua Acácia",
+     "Rua Adelaide Helegda Rolim De Moura",
+     "Rua Adriano dos Santos",
+     "Rua Adão José Hass",
+     "Rua Alamo",
+     "Rua Alcides Mendes",
+     "Rua Alecrim",
+     "Rua Alfazema",
+     "Rua Alvicio De Souza",
+     "Rua Alzira C. Silveira",
+     "Rua Amadelino Vaz Garcia",
+     "Rua Amarilis",
+     "Rua Amor Perfeito",
+     "Rua Amoreira",
+     "Rua André De Souza Dias",
+     "Rua Angelo Rocha",
+     "Rua Antonio José Do Nascimento",
+     "Rua Antônio S Bento",
+     "Rua Aparicio Borges",
+     "Rua Araticum",
+     "Rua Ari Rosa Dos Santos",
+     "Rua Aristide Osório Francisco",
+     "Rua Aroeira",
+     "Rua Azaleia",
+     "Rua Açaí",
+     "Rua B",
+     "Rua Bacopari",
+     "Rua Batinga",
+     "Rua Begônia",
+     "Rua Beno Niderauer",
+     "Rua Boca De Leão",
+     "Rua Breno Rosa Dos Santos",
+     "Rua Brinco De Princesa",
+     "Rua Bromélia",
+     "Rua C",
+     "Rua Cacto",
+     "Rua Cajueiro",
+     "Rua Camboata",
+     "Rua Camilía",
+     "Rua Camomila",
+     "Rua Cangerana",
+     "Rua Caqui",
+     "Rua Carlos Braz Da Silva",
+     "Rua Carobinha",
+     "Rua Casuarina",
+     "Rua Cerejeira",
+     "Rua Cipreste",
+     "Rua Clovis Tonolher",
+     "Rua Copo De Leite",
+     "Rua Coroa De Cristo",
+     "Rua Coroa Imperial",
+     "Rua Corticeira",
+     "Rua Cravina",
+     "Rua Cravo",
+     "Rua Cristiano J. Nascimento",
+     "Rua Crisântemo Amarelo",
+     "Rua D",
+     "Rua Darci Michel",
+     "Rua Deli Silveira Nunes",
+     "Rua Dep. Dorival C. L. De Oliveira",
+     "Rua Dona Isaura",
+     "Rua Dona Palmira",
+     "Rua Dormideira",
+     "Rua Dália",
+     "Rua E",
+     "Rua Ema B Dos Santos",
+     "Rua Emilio A. Da Rosa",
+     "Rua Estremosa",
+     "Rua Euclides G. De Oliveira",
+     "Rua Eugênio Monteiro",
+     "Rua F",
+     "Rua Fernando Pessoa",
+     "Rua Firmino J. Teixeira",
+     "Rua Flor De Laranjeira",
+     "Rua Flor De Lis",
+     "Rua Flor De Liz",
+     "Rua Flor De Lótus",
+     "Rua Flor De Pessegueiro",
+     "Rua Flor De Seda",
+     "Rua Florentina S. Rodrigues",
+     "Rua Flores Do Campo",
+     "Rua Fritz Beiser",
+     "Rua G",
+     "Rua Gardênia",
+     "Rua General Canabarro",
+     "Rua Gildo De Freitas",
+     "Rua Girassol",
+     "Rua Goiabeira",
+     "Rua Gota De Carvalho",
+     "Rua Grandiuva",
+     "Rua Grapia",
+     "Rua Grevilha",
+     "Rua Guabirobeira",
+     "Rua Guamirim",
+     "Rua Guará",
+     "Rua Guatambi",
+     "Rua H",
+     "Rua Hibisco",
+     "Rua Hortênsia",
+     "Rua I",
+     "Rua Ignácio Thielle",
+     "Rua Inga",
+     "Rua Ipê",
+     "Rua Itália Dallanova Rocha",
+     "Rua J",
+     "Rua Jade Vermelha",
+     "Rua Jambo",
+     "Rua Jasmim",
+     "Rua Jasmim Branco",
+     "Rua Javali",
+     "Rua Joao J. Scheffer",
+     "Rua José Alves Pereira",
+     "Rua José Amaro",
+     "Rua José Antônio Lutzemberg",
+     "Rua José Da Fonseca",
+     "Rua José De Alencar",
+     "Rua José Do Patrocínio",
+     "Rua José F. Maia",
+     "Rua José Ferreira De Andrade",
+     "Rua José Manuel Roxo",
+     "Rua José Oledir Ramos",
+     "Rua José Zingano",
+     "Rua José Ângelo Bernardo",
+     "Rua João Oscar De Oliveira",
+     "Rua Juan Albino Nunez Ayala",
+     "Rua Kaufmann",
+     "Rua Lavanda",
+     "Rua Lenine Queiroz",
+     "Rua Leonel Mafassioli",
+     "Rua Lotario Orlando Maciel Martijosé",
+     "Rua Lourdes Helena Dias",
+     "Rua Luiz B Dimmer",
+     "Rua Lírio",
+     "Rua Macieira",
+     "Rua Magnólia",
+     "Rua Malva",
+     "Rua Manacá",
+     "Rua Manoel A. Idalino",
+     "Rua Manoel C Da Rosa",
+     "Rua Manoel Selau",
+     "Rua Maria A. Da Costa",
+     "Rua Maria de Medeiros",
+     "Rua Mario T. de Souza",
+     "Rua Mário Quintana",
+     "Rua Nelida P. Dias",
+     "Rua Nildo Schutz",
+     "Rua Nils Taranger",
+     "Rua Nogueira",
+     "Rua Obedy Cândido Vieira",
+     "Rua Olavo Da Silva Ribeiro",
+     "Rua Orquídea",
+     "Rua Osmar Silva De Oliveira",
+     "Rua Oswaldino Olívio Selau",
+     "Rua Oswaldo B. De Ávila",
+     "Rua Otto Espíndola",
+     "Rua Otávio S. Pereira",
+     "Rua Padre Geremias",
+     "Rua Palmira",
+     "Rua Papiro",
+     "Rua Pedro G. De Freitas",
+     "Rua Pedro J. Becker",
+     "Rua Petunia",
+     "Rua Pingo De Ouro",
+     "Rua Plátanos",
+     "Rua Prímula",
+     "Rua Roque Pesenato",
+     "Rua Rosa Vermelha",
+     "Rua Salseiro",
+     "Rua Samambaia",
+     "Rua Sempre Viva",
+     "Rua Sen. Nei Britto",
+     "Rua Stipe Borc",
+     "Rua Sálvia",
+     "Rua Tamanduá",
+     "Rua Tarumã",
+     "Rua Teotônia Vilela",
+     "Rua Timbó",
+     "Rua Torênia",
+     "Rua Tulipa",
+     "Rua Túnel verde",
+     "Rua Ver. Mario Rosa",
+     "Rua Vereador Clóvis Eli Pestana",
+     "Rua Violeta",
+     "Rua Vitória Régia",
+     "Rua Zínia",
+     "Rua do Bosque",
+     "Rua Íris Azul"
+    ],
+    "unidades": [
+     {
+      "nome": "UBS CAIC Granja",
+      "endereco": "Rua Jardim das Flores, s/n",
+      "telefone": "(51) 3074-5572"
+     },
+     {
+      "nome": "UBS Jardim do Bosque",
+      "endereco": "Rua Capitão Garibaldi Santos, 497",
+      "telefone": "(51) 3041-6211"
+     }
+    ],
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.11835993242736,
+       -29.92280000299854
+      ],
+      [
+       -51.1181919591307,
+       -29.922324818607606
+      ],
+      [
+       -51.11819993301698,
+       -29.922040014555467
+      ],
+      [
+       -51.118139937973496,
+       -29.921920050143196
+      ],
+      [
+       -51.11778997414658,
+       -29.92164005500462
+      ],
+      [
+       -51.11721862904272,
+       -29.921520760890644
+      ],
+      [
+       -51.11701996313913,
+       -29.921290055467924
+      ],
+      [
+       -51.11628976882941,
+       -29.92106596351413
+      ],
+      [
+       -51.11584996121227,
+       -29.920450041835014
+      ],
+      [
+       -51.11560764139423,
+       -29.920311508553603
+      ],
+      [
+       -51.115436906413414,
+       -29.919896159512497
+      ],
+      [
+       -51.11546992758014,
+       -29.919789995403608
+      ],
+      [
+       -51.115439944376725,
+       -29.91969003688821
+      ],
+      [
+       -51.114629867781126,
+       -29.91901676057736
+      ],
+      [
+       -51.11355048351029,
+       -29.916311213252683
+      ],
+      [
+       -51.11264044402941,
+       -29.913661293052687
+      ],
+      [
+       -51.112539986004634,
+       -29.913570074698008
+      ],
+      [
+       -51.10079637752023,
+       -29.91802241666536
+      ],
+      [
+       -51.10073116892549,
+       -29.91799994298035
+      ],
+      [
+       -51.096680756374646,
+       -29.90956952647522
+      ],
+      [
+       -51.09652986675064,
+       -29.908537335012884
+      ],
+      [
+       -51.09646994254736,
+       -29.90734000825655
+      ],
+      [
+       -51.09569209967089,
+       -29.905052631793986
+      ],
+      [
+       -51.09605994360848,
+       -29.90309000479785
+      ],
+      [
+       -51.09332064651437,
+       -29.895761722499273
+      ],
+      [
+       -51.092919960879684,
+       -29.895020025563607
+      ],
+      [
+       -51.092410142152964,
+       -29.894350157715504
+      ],
+      [
+       -51.09840893163784,
+       -29.88915919338657
+      ],
+      [
+       -51.09640999898557,
+       -29.887650076718753
+      ],
+      [
+       -51.09522103242962,
+       -29.88849926255027
+      ],
+      [
+       -51.09420105358077,
+       -29.890457370389075
+      ],
+      [
+       -51.09382008548862,
+       -29.89083999761512
+      ],
+      [
+       -51.09481274240653,
+       -29.891727740805845
+      ],
+      [
+       -51.094823952767186,
+       -29.89179405337668
+      ],
+      [
+       -51.092119191779375,
+       -29.893975905676932
+      ],
+      [
+       -51.092066508867134,
+       -29.893955043434254
+      ],
+      [
+       -51.09098996804731,
+       -29.89251007156396
+      ],
+      [
+       -51.08989000411962,
+       -29.892609703964126
+      ],
+      [
+       -51.08947184556849,
+       -29.892560219710536
+      ],
+      [
+       -51.08541005498386,
+       -29.891790076931695
+      ],
+      [
+       -51.08492668308445,
+       -29.895163354798306
+      ],
+      [
+       -51.084878036952766,
+       -29.89520940321797
+      ],
+      [
+       -51.083778304934384,
+       -29.89520048587445
+      ],
+      [
+       -51.083727282018245,
+       -29.895162579513702
+      ],
+      [
+       -51.084009935020404,
+       -29.89187004826719
+      ],
+      [
+       -51.07832005465041,
+       -29.890680074799118
+      ],
+      [
+       -51.077910075247026,
+       -29.89465997961814
+      ],
+      [
+       -51.08148449641328,
+       -29.89957770430986
+      ],
+      [
+       -51.07986693051742,
+       -29.900591852845505
+      ],
+      [
+       -51.079389969021726,
+       -29.899990055158028
+      ],
+      [
+       -51.076540126839305,
+       -29.89973007206803
+      ],
+      [
+       -51.08587002039937,
+       -29.912569921496974
+      ],
+      [
+       -51.08668542237545,
+       -29.912193147094072
+      ],
+      [
+       -51.087044649177926,
+       -29.91225867429365
+      ],
+      [
+       -51.08696006742689,
+       -29.912390033471546
+      ],
+      [
+       -51.08690499331025,
+       -29.91270008862752
+      ],
+      [
+       -51.08406125243761,
+       -29.9138794806966
+      ],
+      [
+       -51.08398007736425,
+       -29.91398001280445
+      ],
+      [
+       -51.08453906753252,
+       -29.91552795029424
+      ],
+      [
+       -51.08461005597455,
+       -29.916219977573355
+      ],
+      [
+       -51.08467922332805,
+       -29.91630900142178
+      ],
+      [
+       -51.08590999227301,
+       -29.916389944706587
+      ],
+      [
+       -51.08839896951304,
+       -29.915374827036377
+      ],
+      [
+       -51.089080003454775,
+       -29.915539935237984
+      ],
+      [
+       -51.08927857042538,
+       -29.91551597233833
+      ],
+      [
+       -51.089700942602676,
+       -29.916101087618472
+      ],
+      [
+       -51.09047576159113,
+       -29.91699560146373
+      ],
+      [
+       -51.090674438706635,
+       -29.917686152791195
+      ],
+      [
+       -51.09063450717908,
+       -29.91774788812861
+      ],
+      [
+       -51.09000850230052,
+       -29.917840608440414
+      ],
+      [
+       -51.0893684970917,
+       -29.91810084841598
+      ],
+      [
+       -51.088750036257274,
+       -29.918450047237346
+      ],
+      [
+       -51.08726982152346,
+       -29.919959980727743
+      ],
+      [
+       -51.08709003801789,
+       -29.920020052909894
+      ],
+      [
+       -51.08702007129333,
+       -29.92012001846087
+      ],
+      [
+       -51.087500066611575,
+       -29.924719966731907
+      ],
+      [
+       -51.08806002805724,
+       -29.92523996431687
+      ],
+      [
+       -51.088651386808344,
+       -29.925650985893636
+      ],
+      [
+       -51.08811006667331,
+       -29.92629002623783
+      ],
+      [
+       -51.08810005407464,
+       -29.92673999015994
+      ],
+      [
+       -51.08820004270054,
+       -29.926959976010814
+      ],
+      [
+       -51.08843862173494,
+       -29.927300628972915
+      ],
+      [
+       -51.08823320089725,
+       -29.927528125748587
+      ],
+      [
+       -51.087778528640534,
+       -29.92756044418399
+      ],
+      [
+       -51.08566135255858,
+       -29.92819959168043
+      ],
+      [
+       -51.08506004700183,
+       -29.92853004251967
+      ],
+      [
+       -51.08457006769261,
+       -29.92968001382033
+      ],
+      [
+       -51.08457006977756,
+       -29.929789973782114
+      ],
+      [
+       -51.08464003474546,
+       -29.929869944691735
+      ],
+      [
+       -51.08510999113146,
+       -29.92999993025054
+      ],
+      [
+       -51.08569514520915,
+       -29.929664146532016
+      ],
+      [
+       -51.08599685749031,
+       -29.929695188159148
+      ],
+      [
+       -51.091466780646314,
+       -29.933557726478327
+      ],
+      [
+       -51.0931390765016,
+       -29.935149120741045
+      ],
+      [
+       -51.093249980011706,
+       -29.935139933603864
+      ],
+      [
+       -51.09582993375925,
+       -29.933749957937234
+      ],
+      [
+       -51.09597711211391,
+       -29.93107255952684
+      ],
+      [
+       -51.09601713321354,
+       -29.931023413498114
+      ],
+      [
+       -51.09625212025942,
+       -29.931028758698204
+      ],
+      [
+       -51.09629826255332,
+       -29.931072686568992
+      ],
+      [
+       -51.0962600222966,
+       -29.93339867892666
+      ],
+      [
+       -51.09635003011279,
+       -29.933539931123537
+      ],
+      [
+       -51.098780021463725,
+       -29.93311034204329
+      ],
+      [
+       -51.10198865872421,
+       -29.933269933145134
+      ],
+      [
+       -51.102099937110985,
+       -29.933229950924762
+      ],
+      [
+       -51.10229994751592,
+       -29.93129999921124
+      ],
+      [
+       -51.101661575751194,
+       -29.927372872508386
+      ],
+      [
+       -51.10212653467783,
+       -29.9261096259957
+      ],
+      [
+       -51.11819861362372,
+       -29.923510224026
+      ],
+      [
+       -51.118319929770635,
+       -29.923389979042554
+      ],
+      [
+       -51.11827155180557,
+       -29.92314757249504
+      ],
+      [
+       -51.11835993242736,
+       -29.92280000299854
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Odil Silva de Oliveira",
+    "unidade": "UBS Odil Silva de Oliveira",
+    "tipo": "UBS",
+    "codigo": "UBS-ODIL-SILVA-DE-OLIVEIRA",
+    "codigos": [
+     "UBS-ODIL-SILVA-DE-OLIVEIRA"
+    ],
+    "descricao": "Território de abrangência da UBS Odil Silva de Oliveira, com 64 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 64,
+    "ruas": [
+     "Av. Espírito Santo",
+     "Av. José Brambila",
+     "Av. Ver. Manoel G. Junior",
+     "Rua Ana Lui",
+     "Rua Anildo Pereira",
+     "Rua Antônio S. Bento",
+     "Rua Argentina",
+     "Rua Bahia",
+     "Rua Bernardino Freitas",
+     "Rua Bolivia",
+     "Rua Borges de Medeiros",
+     "Rua Canoas",
+     "Rua Caracas",
+     "Rua Carlos S. Feijó",
+     "Rua Colômbia",
+     "Rua Darci J. Pacheco",
+     "Rua Deoclécio Mora",
+     "Rua Dr. Mário da costa Pereira",
+     "Rua Equador",
+     "Rua Flamboyant",
+     "Rua Florencio V. de Aguiar",
+     "Rua Fortaleza",
+     "Rua Generino Manoel dos Santos",
+     "Rua Goiás",
+     "Rua Gravatal",
+     "Rua Guanabara",
+     "Rua Guatemala",
+     "Rua Hawai",
+     "Rua Honduras",
+     "Rua Ivan Paulo",
+     "Rua Japão",
+     "Rua José A. Rodrigues",
+     "Rua José Alves Pereira",
+     "Rua José Rodrigues",
+     "Rua Juscelino K. De Oliveira",
+     "Rua Lalau Miranda",
+     "Rua Minas Gerais",
+     "Rua Paraguai",
+     "Rua Pará",
+     "Rua Pedro S. Bernardes",
+     "Rua Peru",
+     "Rua Pinhal",
+     "Rua Porto Alegre",
+     "Rua Possidonio B. Dos Santos",
+     "Rua Rio De Janeiro",
+     "Rua Rio Grande Do Sul",
+     "Rua Santa Catarina",
+     "Rua Sapucaia",
+     "Rua Sebardo Bolzer",
+     "Rua Sebastião F. Da Silva",
+     "Rua São Salvador",
+     "Rua Uruguai",
+     "Rua Venezuela",
+     "Rua Vereador Mario Rosa",
+     "Rua Vereador Osvaldo Correa",
+     "Rua Áustria",
+     "Tv. Acre",
+     "Tv. Rio Grande Do Sul",
+     "Tv. São Paulo",
+     "Tv. da Fruteira",
+     "Tv. do Aquino",
+     "Tv. do Petri",
+     "Tv. do Povo",
+     "Tv.Parana"
+    ],
+    "endereco": "Rua Paranaguá, 105",
+    "telefone": "(51) 3438-8664 / (51) 3074-5547",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.07115,
+       -29.9083
+      ],
+      [
+       -51.07101,
+       -29.9087
+      ],
+      [
+       -51.06929,
+       -29.90805
+      ],
+      [
+       -51.06808,
+       -29.91044
+      ],
+      [
+       -51.06666,
+       -29.91051
+      ],
+      [
+       -51.06631,
+       -29.91058
+      ],
+      [
+       -51.06602,
+       -29.91076
+      ],
+      [
+       -51.06764,
+       -29.91297
+      ],
+      [
+       -51.06806,
+       -29.91369
+      ],
+      [
+       -51.06804,
+       -29.91458
+      ],
+      [
+       -51.06822,
+       -29.91521
+      ],
+      [
+       -51.06921,
+       -29.91669
+      ],
+      [
+       -51.0705,
+       -29.9159
+      ],
+      [
+       -51.07047,
+       -29.91583
+      ],
+      [
+       -51.07179,
+       -29.91314
+      ],
+      [
+       -51.07306,
+       -29.91319
+      ],
+      [
+       -51.07308,
+       -29.91305
+      ],
+      [
+       -51.07298,
+       -29.91276
+      ],
+      [
+       -51.07289,
+       -29.91242
+      ],
+      [
+       -51.07283,
+       -29.91207
+      ],
+      [
+       -51.07285,
+       -29.91163
+      ],
+      [
+       -51.07296,
+       -29.91128
+      ],
+      [
+       -51.07307,
+       -29.91093
+      ],
+      [
+       -51.07312,
+       -29.91094
+      ],
+      [
+       -51.07351,
+       -29.91048
+      ],
+      [
+       -51.07404,
+       -29.90987
+      ],
+      [
+       -51.07462,
+       -29.91029
+      ],
+      [
+       -51.07592,
+       -29.90885
+      ],
+      [
+       -51.07687,
+       -29.90762
+      ],
+      [
+       -51.07694,
+       -29.90756
+      ],
+      [
+       -51.07705,
+       -29.90756
+      ],
+      [
+       -51.07715,
+       -29.90811
+      ],
+      [
+       -51.07758,
+       -29.90875
+      ],
+      [
+       -51.07727,
+       -29.90891
+      ],
+      [
+       -51.07737,
+       -29.90978
+      ],
+      [
+       -51.07777,
+       -29.91027
+      ],
+      [
+       -51.07976,
+       -29.90917
+      ],
+      [
+       -51.08318,
+       -29.9139
+      ],
+      [
+       -51.08374,
+       -29.91367
+      ],
+      [
+       -51.08389,
+       -29.91393
+      ],
+      [
+       -51.08694,
+       -29.91269
+      ],
+      [
+       -51.08669,
+       -29.91219
+      ],
+      [
+       -51.08587,
+       -29.91257
+      ],
+      [
+       -51.07654,
+       -29.89973
+      ],
+      [
+       -51.07587,
+       -29.89967
+      ],
+      [
+       -51.07661,
+       -29.90478
+      ],
+      [
+       -51.07594,
+       -29.90494
+      ],
+      [
+       -51.07546,
+       -29.90558
+      ],
+      [
+       -51.07488,
+       -29.90513
+      ],
+      [
+       -51.07385,
+       -29.90636
+      ],
+      [
+       -51.07266,
+       -29.9056
+      ],
+      [
+       -51.07226,
+       -29.90703
+      ],
+      [
+       -51.07178,
+       -29.90845
+      ],
+      [
+       -51.07115,
+       -29.9083
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "Área da UBS Nova Cachoeirinha",
+    "unidade": "UBS Nova Cachoeirinha",
+    "tipo": "UBS",
+    "codigo": "UBS-NOVA-CACHOEIRINHA",
+    "codigos": [
+     "UBS-NOVA-CACHOEIRINHA"
+    ],
+    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 31 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 31,
+    "ruas": [
+     "Av. Espirito Santo",
+     "Av. Estados Unidos",
+     "Av. Mal. Rondon",
+     "Av. Manoel Inacio Nunes",
+     "Beco da Servidão",
+     "Rua Canada",
+     "Rua Dinamarca",
+     "Rua Domingos Signore",
+     "Rua Duque De Caxias",
+     "Rua Eldorado",
+     "Rua Espanha",
+     "Rua França",
+     "Rua Grécia",
+     "Rua Holanda",
+     "Rua Hungria",
+     "Rua Irlanda",
+     "Rua Italia",
+     "Rua Iugoslavia",
+     "Rua Jamaica",
+     "Rua José Rodrigues",
+     "Rua Minas Gerais",
+     "Rua N. Belgica",
+     "Rua Polonia",
+     "Rua Porto Alegre",
+     "Rua Romenia",
+     "Rua Santa Catarina",
+     "Rua Sapucaia Do Sul",
+     "Rua Suiça",
+     "Tv. Rio Grande Do Sul",
+     "Tv. do Arvoredo",
+     "Tv. dos Tucanos"
+    ],
+    "endereco": "Rua Eldorado, 260",
+    "telefone": "(51) 3041-6245",
+    "email": "ubs.novacachoeirinha@cachoeirinha.rs.gov.br",
+    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       -51.06391,
+       -29.90447
+      ],
+      [
+       -51.06303,
+       -29.90573
+      ],
+      [
+       -51.06327,
+       -29.90642
+      ],
+      [
+       -51.06416,
+       -29.90764
+      ],
+      [
+       -51.06454,
+       -29.90865
+      ],
+      [
+       -51.06509,
+       -29.90945
+      ],
+      [
+       -51.06602,
+       -29.91076
+      ],
+      [
+       -51.06629,
+       -29.91057
+      ],
+      [
+       -51.06668,
+       -29.9105
+      ],
+      [
+       -51.06808,
+       -29.91044
+      ],
+      [
+       -51.06929,
+       -29.90805
+      ],
+      [
+       -51.07101,
+       -29.9087
+      ],
+      [
+       -51.07115,
+       -29.9083
+      ],
+      [
+       -51.07178,
+       -29.90845
+      ],
+      [
+       -51.07226,
+       -29.90703
+      ],
+      [
+       -51.07265,
+       -29.90558
+      ],
+      [
+       -51.07385,
+       -29.90636
+      ],
+      [
+       -51.07488,
+       -29.90513
+      ],
+      [
+       -51.07546,
+       -29.90558
+      ],
+      [
+       -51.07594,
+       -29.90494
+      ],
+      [
+       -51.07661,
+       -29.90478
+      ],
+      [
+       -51.07587,
+       -29.89967
+      ],
+      [
+       -51.07413,
+       -29.89939
+      ],
+      [
+       -51.07293,
+       -29.90202
+      ],
+      [
+       -51.07076,
+       -29.90123
+      ],
+      [
+       -51.0687,
+       -29.90052
+      ],
+      [
+       -51.06553,
+       -29.89979
+      ],
+      [
+       -51.0654,
+       -29.90015
+      ],
+      [
+       -51.06534,
+       -29.90042
+      ],
+      [
+       -51.06525,
+       -29.9007
+      ],
+      [
+       -51.06515,
+       -29.90096
+      ],
+      [
+       -51.06505,
+       -29.90125
+      ],
+      [
+       -51.06487,
+       -29.90172
+      ],
+      [
+       -51.06483,
+       -29.90181
+      ],
+      [
+       -51.06391,
+       -29.90447
+      ]
+     ]
+    ]
+   }
+  }
+ ],
+ "observacao": "Limites de trabalho digitalizados em mapa colaborativo. Devem ser substituídos pelos limites oficiais quando a Secretaria os publicar."
+}

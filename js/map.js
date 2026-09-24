@@ -30,7 +30,10 @@
   /* Arquivos de dados. Acrescentar uma camada é acrescentar uma linha aqui. */
   var FONTES = [
     { id: 'esf', arquivo: 'data/esf.geojson', rotulo: 'Áreas de ESF', especie: 'area', tipo: 'ESF' },
-    { id: 'ubs', arquivo: 'data/ubs.geojson', rotulo: 'Áreas de UBS', especie: 'area', tipo: 'UBS' },
+    { id: 'ubs', arquivo: 'data/ubs.geojson', rotulo: 'Áreas de UBS', especie: 'area', tipo: 'UBS',
+      /* No atendimento odontológico algumas UBS dividem território: o mapa
+         troca o arquivo da camada em vez de recalcular no navegador. */
+      porModo: { medico: 'data/ubs.geojson', dentista: 'data/ubs_odonto.geojson' } },
     { id: 'unidades', arquivo: 'data/unidades.geojson', rotulo: 'Unidades de saúde', especie: 'ponto' },
     { id: 'limite', arquivo: 'data/limite.geojson', rotulo: 'Limite do município', especie: 'limite' }
   ];
@@ -60,6 +63,13 @@
   /* Monta <dl> com o que a feição realmente tem — campo ausente não aparece,
      e nada é preenchido por suposição. */
   function listaDeDados(props) {
+    if (Array.isArray(props.unidades) && props.unidades.length) {
+      return '<dl>' + props.unidades.map(function (u) {
+        return '<dt>' + esc(u.nome) + '</dt><dd>' +
+          (u.endereco ? esc(u.endereco) : '') +
+          (u.telefone ? (u.endereco ? '<br>' : '') + esc(u.telefone) : '') + '</dd>';
+      }).join('') + '</dl>';
+    }
     var html = '';
     CAMPOS.forEach(function (par) {
       var v = props[par[0]];
@@ -327,7 +337,7 @@
 
   /* Carregamento ---------------------------------------------------------- */
 
-  function carrega(fonte) {
+  function carrega(fonte, silencioso) {
     return fetch(fonte.arquivo)
       .then(function (r) {
         if (!r.ok) throw new Error(fonte.arquivo + ': HTTP ' + r.status);
@@ -351,6 +361,7 @@
             interactive: false
           });
         }
+        if (silencioso) return camada;      /* a troca de modo cuida do resto */
         camada.addTo(mapa);
         if (fonte.especie === 'area') acessibilidade(camada);
         camadas[fonte.id] = camada;
@@ -382,7 +393,9 @@
       });
   }
 
-  Promise.all(FONTES.map(carrega)).then(function (feitas) {
+  /* map() passa o índice como 2º argumento; sem o wrapper, ele viraria o
+     'silencioso' de carrega() e as camadas não entrariam no mapa. */
+  Promise.all(FONTES.map(function (f) { return carrega(f); })).then(function (feitas) {
     var validas = feitas.filter(Boolean);
     if (!validas.length) return;
     var caixa = null;
@@ -392,12 +405,78 @@
     });
     if (caixa) mapa.fitBounds(caixa, { padding: [20, 20] });
     itensBusca.sort(function (a, b) { return a.nome.localeCompare(b.nome, 'pt-BR'); });
+    /* a camada inicial já é a do modo médico: entra no cache para a volta ser instantânea */
+    FONTES.forEach(function (f) {
+      if (f.porModo && camadas[f.id]) cacheModo[f.porModo.medico] = camadas[f.id];
+    });
   });
+
+  /* Médico/enfermeiro × dentista ------------------------------------------ */
+
+  var modo = 'medico';
+  var cacheModo = {};          // arquivo -> camada já carregada
+
+  function trocarModo(novo) {
+    if (novo === modo) return;
+    modo = novo;
+    document.getElementById('modo-medico').setAttribute('aria-checked', String(novo === 'medico'));
+    document.getElementById('modo-dentista').setAttribute('aria-checked', String(novo === 'dentista'));
+
+    var fonte = FONTES.filter(function (f) { return f.porModo; })[0];
+    if (!fonte) return;
+    var arquivo = fonte.porModo[novo];
+    var atual = camadas[fonte.id];
+    var visivel = atual ? mapa.hasLayer(atual) : true;
+    if (atual) mapa.removeLayer(atual);
+
+    var aplicar = function (camada) {
+      camadas[fonte.id] = camada;
+      if (visivel) {
+        camada.addTo(mapa);
+        acessibilidade(camada);
+      }
+      trocarItensBusca(fonte.id, camada);
+      atualizaContagem(fonte, camada);
+      /* a resposta em tela pode ser de outro agrupamento: limpa para não mentir */
+      if (window.MapaSaude.aoTrocarModo) window.MapaSaude.aoTrocarModo(novo);
+    };
+
+    if (cacheModo[arquivo]) { aplicar(cacheModo[arquivo]); return; }
+    carrega(Object.assign({}, fonte, { arquivo: arquivo }), true).then(function (camada) {
+      if (!camada) return;
+      cacheModo[arquivo] = camada;
+      if (modo !== novo) return;      /* o usuário já trocou de novo: descarta */
+      aplicar(camada);
+    });
+  }
+
+  function trocarItensBusca(id, camada) {
+    itensBusca = itensBusca.filter(function (it) { return it.fonteId !== id; });
+    camada.eachLayer(function (l) {
+      var p = (l.feature && l.feature.properties) || {};
+      itensBusca.push({ nome: p.nome || p.unidade || '', tipo: p.tipo || '',
+                        grupo: camada, fonteId: id, alvo: l, props: p });
+    });
+    itensBusca.sort(function (a, b) { return a.nome.localeCompare(b.nome, 'pt-BR'); });
+  }
+
+  function atualizaContagem(fonte, camada) {
+    var li = linhasCamada[fonte.id];
+    if (!li) return;
+    var n = 0;
+    camada.eachLayer(function () { n++; });
+    var span = li.querySelector('.contagem');
+    if (span) span.textContent = '(' + n + ')';
+  }
+
+  document.getElementById('modo-medico').addEventListener('click', function () { trocarModo('medico'); });
+  document.getElementById('modo-dentista').addEventListener('click', function () { trocarModo('dentista'); });
 
   /* API para os outros módulos da página ---------------------------------- */
 
   window.MapaSaude = {
     mapa: mapa,
+    modo: function () { return modo; },
     aplicarTemaMapa: aplicarTemaMapa,
     cores: CORES,
     esc: esc,
@@ -414,7 +493,8 @@
         if (!c || achou) return;
         c.eachLayer(function (l) {
           var p = (l.feature && l.feature.properties) || {};
-          if (!achou && p.codigo === codigo) achou = l;
+          var codigos = p.codigos || [p.codigo];
+          if (!achou && codigos.indexOf(codigo) >= 0) achou = l;
         });
       });
       return achou;

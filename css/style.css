@@ -249,6 +249,33 @@ body {
 .marca-UBS { background: var(--ubs-claro); color: var(--ubs); }
 .marca-outro { background: color-mix(in srgb, var(--outro) 16%, transparent); color: var(--outro); }
 
+.opcoes {
+  display: flex;
+  gap: 6px;
+  background: var(--linha-suave);
+  border-radius: 99px;
+  padding: 4px;
+}
+
+.opcao {
+  flex: 1;
+  border: 0;
+  border-radius: 99px;
+  padding: 8px 10px;
+  font: 600 13px inherit;
+  color: var(--tinta-2);
+  background: none;
+  cursor: pointer;
+}
+
+.opcao[aria-checked="true"] {
+  background: var(--painel);
+  color: var(--tinta);
+  box-shadow: var(--sombra);
+}
+
+.opcao:hover { color: var(--tinta); }
+
 .camadas,
 .legenda {
   list-style: none;

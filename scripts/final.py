@@ -91,6 +91,17 @@ def aplica_recortes(nome,anel):
     if p.is_empty: return None
     return [[round(x,5),round(y,5)] for x,y in p.exterior.coords]
 
+def limpa_finos(anel,metros=15):
+    """Some com as tiras finas que sobram de um corte: erode, dilata de volta
+    e simplifica. O miolo da área não se mexe."""
+    p=Polygon([(x,y) for x,y in anel])
+    e=metros/111320.0
+    q=p.buffer(-e).buffer(e*1.05)
+    if q.is_empty: return anel
+    if q.geom_type=='MultiPolygon': q=max(q.geoms,key=lambda g:g.area)
+    q=q.simplify(4/111320.0)
+    return [[round(x,5),round(y,5)] for x,y in q.exterior.coords]
+
 areas=[]
 for a in d['areas']:
     anel,perdido=recorta(a['poly'])
@@ -102,6 +113,12 @@ for a in d['areas']:
     anel=aplica_recortes(nome_unidade,anel)
     if anel is None:
         print('  área vazia depois do recorte, descartada:',nome_unidade); continue
+    if perdido > 0.001 or nome_unidade in {r['unidade'] for r in RECORTES}:
+        limpo=limpa_finos(anel)
+        if len(limpo)!=len(anel):
+            print('  tiras finas removidas da borda: %-24s %d -> %d vértices'
+                  % (nome_unidade,len(anel),len(limpo)))
+        anel=limpo
     areas.append({'n':nome_unidade,'t':a['tipo'],'ll':[round(a['ll'][0],5),round(a['ll'][1],5)],
                   'info':a['info'],'ruas':a['ruas'],'poly':anel})
 def entrada(k,label,areas,prov=0):
