@@ -191,11 +191,18 @@ def main():
         membros = [a for a in areas if a['n'] in grupo]
         if len(membros) < 2:
             return None
-        juntas = unary_union([Polygon(anel_fechado(a['poly'])).buffer(0) for a in membros])
+        pecas = [Polygon(anel_fechado(a['poly'])).buffer(0) for a in membros]
+        soltas = [Polygon(anel_fechado(r)).buffer(0)
+                  for a in membros for r in a.get('poly_extra') or []]
+        juntas = unary_union(pecas)
         # as áreas vizinhas foram digitalizadas com folga de 12 a 31 m entre si;
         # fechar 25 m dissolve a divisa interna sem inchar o território (+0,4%)
         juntas = juntas.buffer(25 / 111320.0).buffer(-25 / 111320.0)
         juntas = juntas.simplify(3 / 111320.0)                       # tira vértices do arredondamento
+        if soltas:
+            # o território herdado de outra unidade não encosta no resto: entra
+            # como parte separada do mesmo desenho, sem ser unido a ele
+            juntas = unary_union([juntas] + soltas)
         nomes = [a['n'] for a in membros]
         rotulo = (', '.join(nomes[:-1]) + ' e ' + nomes[-1]) if len(nomes) > 1 else nomes[0]
         ruas = sorted({r for a in membros for r in a['ruas']})
@@ -226,8 +233,16 @@ def main():
         for a in areas:
             if a['t'] != tipo or a['n'] in agrupadas:
                 continue
-            feats.append(feature({'type': 'Polygon', 'coordinates': [anel_fechado(a['poly'])]},
-                                 props_area(a, por_nome.get(a['n'], {}))))
+            extras = a.get('poly_extra') or []
+            if extras:
+                # um território que a unidade herdou, longe da área principal:
+                # MultiPolygon mantém as partes separadas, cada uma no seu lugar
+                geom = {'type': 'MultiPolygon',
+                        'coordinates': [[anel_fechado(a['poly'])]] +
+                                       [[anel_fechado(r)] for r in extras]}
+            else:
+                geom = {'type': 'Polygon', 'coordinates': [anel_fechado(a['poly'])]}
+            feats.append(feature(geom, props_area(a, por_nome.get(a['n'], {}))))
         return colecao(feats, 'Áreas de ' + tipo + ' — Cachoeirinha/RS', FONTE_AREAS,
                        'Limites de trabalho digitalizados em mapa colaborativo. Devem ser '
                        'substituídos pelos limites oficiais quando a Secretaria os publicar.')

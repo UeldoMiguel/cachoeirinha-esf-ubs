@@ -188,7 +188,7 @@ O arquivo `.nojekyll` na raiz desliga o processamento Jekyll, que não é necess
 
 Ajustes que a Secretaria determina sobre os polígonos ficam em `dados/recortes_areas.json`, com o motivo registrado. Cada recorte descreve a parte a remover por longitude ou latitude (`remover_oeste_de`, `remover_leste_de`, `remover_norte_de`, `remover_sul_de`); `scripts/final.py` aplica o corte e, junto, tira da lista de abrangência da unidade as ruas que ficaram só na parte removida. Com `transferir_orfas_para`, essas ruas passam para a unidade indicada em vez de ficarem sem referência.
 
-Recorte em vigor: a **ESF Jardim Betânia** perdeu o setor a oeste da Souza Cruz — Parque do Sabiá, Meu Rincão, Residencial Caetanos I e II e Sítio Ipiranga —, 60% da área original. As 66 vias daquele setor passaram para a **UBS CAIC Granja**, que é a unidade de referência que a consulta informa para esses endereços. A transferência muda a lista de abrangência e a resposta da consulta; o polígono da UBS CAIC Granja não foi esticado até lá, porque o setor fica longe do território desenhado da unidade e a extensão passaria por cima de áreas vizinhas.
+Recorte em vigor: a **ESF Jardim Betânia** perdeu o setor a oeste da Souza Cruz — Parque do Sabiá, Meu Rincão, Residencial Caetanos I e II e Sítio Ipiranga —, 60% da área original. As 66 vias daquele setor passaram para a **UBS CAIC Granja**, que é a unidade de referência que a consulta informa para esses endereços. O pedaço recortado vira um **polígono à parte da UBS CAIC Granja** (2,2 km²): a feição da área é um `MultiPolygon` com os dois territórios separados, sem união nem ponte entre eles — a área principal da unidade fica como estava.
 
 ## 8.3 Agrupamentos por tipo de atendimento
 

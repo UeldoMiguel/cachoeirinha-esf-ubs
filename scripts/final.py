@@ -84,6 +84,7 @@ try:
     RECORTES=json.load(open('recortes_areas.json',encoding='utf-8'))['recortes']
 except (IOError,OSError,ValueError):
     RECORTES=[]
+RECORTADO={}                       # unidade -> pedaço que saiu dela, para quem herdar
 def aplica_recortes(nome,anel):
     """Devolve o anel já sem as partes que a Secretaria excluiu da unidade."""
     p=Polygon([(x,y) for x,y in anel])
@@ -95,6 +96,9 @@ def aplica_recortes(nome,anel):
         elif 'remover_sul_de' in r: fora=_box(-180,-90,180,r['remover_sul_de'])
         else: continue
         antes=p.area
+        saiu=p.intersection(fora)
+        if not saiu.is_empty and r.get('transferir_orfas_para'):
+            RECORTADO.setdefault(r['transferir_orfas_para'],[]).append(saiu)
         p=p.difference(fora)
         if p.geom_type=='MultiPolygon':
             p=max(p.geoms,key=lambda g:g.area)
@@ -163,6 +167,24 @@ if INATIVAS:
 
 # de índice antigo (posição em d['areas']) para índice novo; área desativada
 # cai na sucessora, área descartada some
+# o pedaço que saiu de uma unidade vira um polígono à parte da unidade que
+# herdou as ruas: os dois territórios ficam no mesmo desenho, sem se tocarem
+if RECORTADO:
+    from shapely.ops import unary_union as _u3
+    por_nome_area={a['n']:a for a in areas}
+    for nome,pedacos in RECORTADO.items():
+        alvo=por_nome_area.get(nome)
+        if not alvo:
+            print('pedaço recortado sem unidade para herdar:',nome); continue
+        g=_u3([q.buffer(0) for q in pedacos])
+        e=15/111320.0
+        g=g.buffer(-e).buffer(e*1.05)                 # tira as tiras finas da borda do corte
+        partes=list(g.geoms) if g.geom_type=='MultiPolygon' else ([g] if not g.is_empty else [])
+        partes=[q.simplify(4/111320.0) for q in partes if q.area>2e-7]   # ~2.500 m2
+        alvo['poly_extra']=[[[round(x,5),round(y,5)] for x,y in q.exterior.coords] for q in partes]
+        print('polígono separado anexado a %s: %d parte(s), %.2f km2'
+              % (nome,len(partes),sum(q.area for q in partes)*111.32**2))
+
 REMAP={a['_orig']:i for i,a in enumerate(areas)}
 for m in mortas:
     if m.get('_sucessora') is not None and m['_sucessora'] in REMAP:

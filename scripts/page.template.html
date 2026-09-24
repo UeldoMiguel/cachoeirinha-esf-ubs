@@ -138,8 +138,8 @@ footer a{color:var(--ink-2)}
     <p class="sub">Município de Cachoeirinha/RS. Digite o nome da rua para descobrir a unidade de referência do endereço. Quando a rua não fica em área de Estratégia de Saúde da Família, o resultado mostra a UBS de referência.</p>
   </div>
   <div class="counts">
-    <div class="count"><b>6</b><span>Áreas ESF</span></div>
-    <div class="count"><b>9</b><span>Áreas UBS</span></div>
+    <div class="count"><b id="cESF">—</b><span>Áreas ESF</span></div>
+    <div class="count"><b id="cUBS">—</b><span>Áreas UBS</span></div>
     <div class="count"><b id="cRuas">—</b><span>Ruas indexadas</span></div>
     <div class="count"><b id="cProv">—</b><span>Ruas sugeridas</span></div>
   </div>
@@ -246,8 +246,16 @@ function dentro(lat,lon,poly){
   }
   return c;
 }
+/* uma área pode ter mais de um pedaço: o principal e o que ela herdou de
+   outra unidade, que fica separado dele no mapa */
+function aneis(a){ return [a.poly].concat(a.poly_extra||[]); }
+function dentroDaArea(lat,lon,a){
+  var r=aneis(a);
+  for(var i=0;i<r.length;i++) if(dentro(lat,lon,r[i])) return true;
+  return false;
+}
 function areaPorPonto(ll){
-  for(var i=0;i<AREAS.length;i++) if(dentro(ll[0],ll[1],AREAS[i].poly)) return i;
+  for(var i=0;i<AREAS.length;i++) if(dentroDaArea(ll[0],ll[1],AREAS[i])) return i;
   return -1;
 }
 function maisProximas(ll,filtro,n){
@@ -258,7 +266,7 @@ function maisProximas(ll,filtro,n){
 /* ---------- mapa svg ---------- */
 var SVG='http://www.w3.org/2000/svg';
 var all=[];
-AREAS.forEach(function(a){all=all.concat(a.poly);});
+AREAS.forEach(function(a){aneis(a).forEach(function(r){all=all.concat(r);});});
 BOUND.forEach(function(s){all=all.concat(s);});
 var minx=1e9,maxx=-1e9,miny=1e9,maxy=-1e9;
 all.forEach(function(p){minx=Math.min(minx,p[0]);maxx=Math.max(maxx,p[0]);miny=Math.min(miny,p[1]);maxy=Math.max(maxy,p[1]);});
@@ -282,7 +290,7 @@ BOUND.forEach(function(s){
 var gAreas=el('g',{}); svg.appendChild(gAreas);
 var paths=AREAS.map(function(a,i){
   var col=a.t==='ESF'?'var(--esf)':'var(--ubs)';
-  var p=el('path',{d:d_(a.poly,true),fill:col,'fill-opacity':.28,stroke:col,'stroke-width':1.2,
+  var p=el('path',{d:aneis(a).map(function(r){return d_(r,true);}).join(''),fill:col,'fill-opacity':.28,stroke:col,'stroke-width':1.2,
     'stroke-linejoin':'round',class:'area','data-i':i,tabindex:'0',role:'button'});
   var t=el('title',{}); t.textContent=a.n+' — '+a.ruas.length+' ruas'; p.appendChild(t);
   p.addEventListener('click',function(){selecionarArea(i);});
@@ -426,10 +434,10 @@ function pintarRuasDaArea(i){
 }
 function bboxArea(i){
   var bb=[1e9,1e9,-1e9,-1e9];
-  AREAS[i].poly.forEach(function(p){
+  aneis(AREAS[i]).forEach(function(r){ r.forEach(function(p){
     bb[0]=Math.min(bb[0],p[0]);bb[1]=Math.min(bb[1],p[1]);
     bb[2]=Math.max(bb[2],p[0]);bb[3]=Math.max(bb[3],p[1]);
-  });
+  }); });
   return bb;
 }
 function verTudo(){ tracar(null); marcar(null); legenda(''); irPara(VB_TODO.slice(),520); }
@@ -752,7 +760,7 @@ function escolher(k){
     if(tr&&tr.t){                                       /* o número resolve a divisa */
       var p=pontoNoTrecho(tr.t,num);
       for(var q=0;q<o.areas.length;q++){
-        if(dentro(p[0],p[1],AREAS[o.areas[q]].poly)){mostrarArea(o.areas[q],o);return;}
+        if(dentroDaArea(p[0],p[1],AREAS[o.areas[q]])){mostrarArea(o.areas[q],o);return;}
       }
     }
     var partes=o.areas.map(function(i){return AREAS[i];});
@@ -832,6 +840,9 @@ abas.forEach(function(p){
   });
 })();
 
+/* as contagens saem dos dados: unidade retirada some da conta sozinha */
+document.getElementById('cESF').textContent=AREAS.filter(function(a){return a.t==='ESF';}).length;
+document.getElementById('cUBS').textContent=AREAS.filter(function(a){return a.t==='UBS';}).length;
 document.getElementById('cRuas').textContent=LIST.length.toLocaleString('pt-BR');
 document.getElementById('cProv').textContent=PROV.toLocaleString('pt-BR');
 
