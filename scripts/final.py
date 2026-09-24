@@ -66,6 +66,31 @@ def recorta(poly):
     perdido=1-(corte.area/p.area) if p.area else 0
     return [[round(x,5),round(y,5)] for x,y in maior.exterior.coords], perdido
 
+# recortes manuais pedidos pela Secretaria (dados/recortes_areas.json)
+from shapely.geometry import box as _box
+try:
+    RECORTES=json.load(open('recortes_areas.json',encoding='utf-8'))['recortes']
+except (IOError,OSError,ValueError):
+    RECORTES=[]
+def aplica_recortes(nome,anel):
+    """Devolve o anel já sem as partes que a Secretaria excluiu da unidade."""
+    p=Polygon([(x,y) for x,y in anel])
+    for r in RECORTES:
+        if r['unidade']!=nome: continue
+        if 'remover_oeste_de' in r: fora=_box(-180,-90,r['remover_oeste_de'],90)
+        elif 'remover_leste_de' in r: fora=_box(r['remover_leste_de'],-90,180,90)
+        elif 'remover_norte_de' in r: fora=_box(-180,r['remover_norte_de'],180,90)
+        elif 'remover_sul_de' in r: fora=_box(-180,-90,180,r['remover_sul_de'])
+        else: continue
+        antes=p.area
+        p=p.difference(fora)
+        if p.geom_type=='MultiPolygon':
+            p=max(p.geoms,key=lambda g:g.area)
+        print('  recorte pedido pela Secretaria: %-24s -%.0f%% (%s)'
+              % (nome,(1-p.area/antes)*100,r.get('motivo','')[:60]))
+    if p.is_empty: return None
+    return [[round(x,5),round(y,5)] for x,y in p.exterior.coords]
+
 areas=[]
 for a in d['areas']:
     anel,perdido=recorta(a['poly'])
@@ -73,7 +98,11 @@ for a in d['areas']:
         print('  área fora do município, descartada:',a['unidade']); continue
     if perdido>0.01:
         print('  recortada no limite municipal: %-28s -%.1f%%' % (a['unidade'],perdido*100))
-    areas.append({'n':' '.join(a['unidade'].split()),'t':a['tipo'],'ll':[round(a['ll'][0],5),round(a['ll'][1],5)],
+    nome_unidade=' '.join(a['unidade'].split())
+    anel=aplica_recortes(nome_unidade,anel)
+    if anel is None:
+        print('  área vazia depois do recorte, descartada:',nome_unidade); continue
+    areas.append({'n':nome_unidade,'t':a['tipo'],'ll':[round(a['ll'][0],5),round(a['ll'][1],5)],
                   'info':a['info'],'ruas':a['ruas'],'poly':anel})
 def entrada(k,label,areas,prov=0):
     g=geon.get(k)
@@ -174,6 +203,40 @@ antes=len(idx)
 fora=[e[1] for e in idx if not dentro_do_municipio(e)]
 idx=[e for e in idx if dentro_do_municipio(e)]
 print('ruas fora do município removidas:',antes-len(idx), ('— ex.: '+', '.join(fora[:6])) if fora else '')
+
+# ruas que sobraram fora da área recortada deixam de pertencer àquela unidade
+if RECORTES:
+    from shapely.geometry import LineString as _LS
+    nomes_recortados={r['unidade'] for r in RECORTES}
+    poligonos={a['n']:Polygon([(x,y) for x,y in a['poly']]) for a in areas if a['n'] in nomes_recortados}
+    indice_area={a['n']:i for i,a in enumerate(areas)}
+    def rua_na_area(e,poly):
+        for i in e[6]:
+            l=linhas_novas[i] if 'linhas_novas' in dir() else lin['linhas'][i]
+            if len(l)>1 and poly.intersects(_LS([(x,y) for x,y in l])): return True
+        if e[6]: return False
+        if e[3] is None: return True
+        return poly.covers(Point(e[4],e[3]))
+    podadas=0; orfas=[]
+    for e in idx:
+        novas=[]
+        for ai in e[2]:
+            nome=areas[ai]['n'] if ai<len(areas) else None
+            if nome in poligonos and not rua_na_area(e,poligonos[nome]):
+                podadas+=1; continue
+            novas.append(ai)
+        if not novas: orfas.append(e[1])
+        e[2]=novas
+    antes_idx=len(idx)
+    idx=[e for e in idx if e[2]]
+    print('ruas retiradas da abrangência por recorte:',podadas,
+          '| ruas que ficaram sem unidade:',len(orfas),
+          ('— ex.: '+', '.join(orfas[:8])) if orfas else '')
+    for a in areas:
+        if a['n'] not in poligonos: continue
+        poly=poligonos[a['n']]
+        chaves={e[0] for e in idx if indice_area[a['n']] in e[2]}
+        a['ruas']=[r for r in a['ruas'] if norm(r) in chaves]
 
 print('logradouros CNEFE:',len(tren),'| ruas do índice com trechos numerados:',casados,'de',len(idx))
 out={'areas':areas,'idx':idx,'unidades':un,'faltantes':falt,'trechos':tren,

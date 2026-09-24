@@ -180,6 +180,12 @@ O arquivo `.nojekyll` na raiz desliga o processamento Jekyll, que não é necess
 
 `scripts/enderecos.py` atende às duas unidades fora da lista (Secretaria de Saúde e Hospital Padre Jeremias): casa a unidade com o estabelecimento de saúde correspondente no CNEFE 2022 (espécie 5), por nome ou por proximidade de até 80 m. A grafia com acento vem dos nomes de via do OpenStreetMap, já que o CNEFE guarda tudo sem acento.
 
+## 8.2 Correções de abrangência
+
+Ajustes que a Secretaria determina sobre os polígonos ficam em `dados/recortes_areas.json`, com o motivo registrado. Cada recorte descreve a parte a remover por longitude ou latitude (`remover_oeste_de`, `remover_leste_de`, `remover_norte_de`, `remover_sul_de`); `scripts/final.py` aplica o corte e, junto, tira da lista de abrangência da unidade as ruas que ficaram só na parte removida.
+
+Recorte em vigor: a **ESF Jardim Betânia** perdeu o setor a oeste da Souza Cruz — Parque do Sabiá, Meu Rincão, Residencial Caetanos I e II e Sítio Ipiranga —, 60% da área original. As 66 vias daquele setor saíram da abrangência da unidade e, sem outra unidade indicada, deixaram de responder na consulta.
+
 ## 9. Dados territoriais oficiais
 
 Os polígonos e as listas de ruas atualmente publicados vêm de mapa colaborativo público e são **dados de trabalho**. Os limites oficiais das áreas de abrangência, a lotação das equipes e o cadastro das unidades devem ser fornecidos pela **Secretaria Municipal de Saúde de Cachoeirinha**. Quando forem disponibilizados, substitua os arquivos de `data/` conforme a seção 4 — a aplicação passa a exibi-los sem nenhuma alteração de código.
