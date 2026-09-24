@@ -300,6 +300,18 @@ un=[{'n':nome_exibido(' '.join(u['nome'].split())),'c':u['cat'],
      'nowa':sem_wa(nome_exibido(' '.join(u['nome'].split()))),
      'info':contato(' '.join(u['nome'].split()),u['info'])} for u in d['unidades']]
 un=[{k:v for k,v in u.items() if v is not None} for u in un]
+# serviços que só constam da lista da Secretaria, sem alfinete no mapa
+# colaborativo: entram pela coordenada do próprio endereço, para não faltarem
+nomes_un={u['n'] for u in un}
+for nome,o in sorted(oficiais.items()):
+    exibido=o.get('renomear') or nome
+    if exibido in nomes_un or not o.get('ll'): continue
+    nomes_un.add(exibido)
+    novo={'n':exibido,'c':o.get('tipo') or 'Especialidades',
+          'll':[round(o['ll'][0],5),round(o['ll'][1],5)],
+          'nowa':sem_wa(exibido),'info':contato(nome,'')}
+    un.append({k:v for k,v in novo.items() if v is not None})
+    print('serviço acrescentado da lista oficial:',exibido)
 print('unidades com contato oficial:',sum(1 for u in un if u['n'] in oficiais),'de',len(un))
 falt=[]
 for f in d['faltantes_det']:

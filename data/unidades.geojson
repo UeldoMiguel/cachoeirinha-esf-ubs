@@ -518,14 +518,14 @@
     "endereco": "Rua Osvaldo Cruz, 616",
     "telefone": "(51) 3074-5582",
     "destaque": "azul",
-    "posicao": "coordenada do endereço no CNEFE 2022 (número mais próximo (617))",
+    "informacoes": "Telefone: (51) 3074-5582\nEndereço: Rua Osvaldo Cruz, 616",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -51.091228,
-     -29.937976
+     -51.09123,
+     -29.93798
     ]
    }
   },
@@ -542,14 +542,14 @@
      "3041-8652"
     ],
     "destaque": "vermelho",
-    "posicao": "coordenada do endereço no CNEFE 2022 (número mais próximo (98))",
+    "informacoes": "Telefone: (51) 3041-8652 (ramal) / (51) 9110-4725\nEndereço: Rua Paranaguá, 105",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -51.072852,
-     -29.912026
+     -51.07285,
+     -29.91203
     ]
    }
   },
@@ -563,8 +563,9 @@
     "endereco": "Avenida General Flores da Cunha, 2385",
     "telefone": "(51) 3041-7184 / (51) 3041-2582 (ramal)",
     "destaque": "amarelo",
-    "posicao": "coordenada do endereço no CNEFE 2022 (número exato) · deslocada 15 m para não cobrir outra unidade no mesmo endereço",
-    "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
+    "informacoes": "Telefone: (51) 3041-7184 / (51) 3041-2582 (ramal)\nEndereço: Avenida General Flores da Cunha, 2385",
+    "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS",
+    "posicao": "coordenada do endereço · deslocada 15 m para não cobrir outra unidade no mesmo endereço"
    },
    "geometry": {
     "type": "Point",
