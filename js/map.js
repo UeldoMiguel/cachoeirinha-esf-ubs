@@ -67,7 +67,7 @@
       return '<dl>' + props.unidades.map(function (u) {
         return '<dt>' + esc(u.nome) + '</dt><dd>' +
           (u.endereco ? esc(u.endereco) : '') +
-          (u.telefone ? (u.endereco ? '<br>' : '') + linkTelefone(u.telefone) : '') + '</dd>';
+          (u.telefone ? (u.endereco ? '<br>' : '') + linkTelefone(u.telefone, u.sem_whatsapp) : '') + '</dd>';
       }).join('') + '</dl>';
     }
     var html = '';
@@ -76,7 +76,7 @@
       if (v === undefined || v === null || v === '') return;
       var valor = par[0] === 'email'
         ? '<a href="mailto:' + esc(v) + '">' + esc(v) + '</a>'
-        : par[0] === 'telefone' ? linkTelefone(v) : esc(v);
+        : par[0] === 'telefone' ? linkTelefone(v, props.sem_whatsapp) : esc(v);
       html += '<dt>' + esc(par[1]) + '</dt><dd>' + valor + '</dd>';
     });
     return html ? '<dl>' + html + '</dl>' : '';
@@ -84,11 +84,18 @@
 
   /* Cada telefone vira um link de WhatsApp: wa.me/55 + DDD + número, sem
      traço nem parênteses. O texto mostrado não muda, e o que não é número
-     (um "(ramal)", a barra entre dois contatos) fica como está. Se a linha
-     não tiver WhatsApp, o próprio aplicativo avisa ao abrir. */
-  function linkTelefone(txt) {
+     (um "(ramal)", a barra entre dois contatos) fica como está.
+
+     `sem` diz quais linhas não atendem por WhatsApp (dados/whatsapp.json):
+     true tira o link da unidade inteira, uma lista tira só dos números
+     citados. Sem link, o número continua à vista, apenas não é clicável. */
+  function linkTelefone(txt, sem) {
+    if (sem === true) return esc(txt);
+    var fora = (sem || []).map(function (n) { return String(n).replace(/\D/g, ''); });
     return esc(txt).replace(/\((\d{2})\)\s*(\d{4,5})-(\d{4})/g, function (todo, ddd, a, b) {
-      return '<a href="https://wa.me/55' + ddd + a + b + '" target="_blank" rel="noopener"' +
+      var digitos = ddd + a + b;
+      if (fora.indexOf(digitos) >= 0 || fora.indexOf(a + b) >= 0) return todo;
+      return '<a href="https://wa.me/55' + digitos + '" target="_blank" rel="noopener"' +
         ' title="Abrir conversa no WhatsApp">' + todo + '</a>';
     });
   }

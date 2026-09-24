@@ -76,6 +76,7 @@
     ],
     "endereco": "Rua Capão da Canoa, 185",
     "telefone": "(51) 3074-5516",
+    "sem_whatsapp": true,
     "email": "esf.jardimbetania@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
@@ -356,6 +357,7 @@
     ],
     "endereco": "Rua Espanha, 821",
     "telefone": "(51) 3041-8660",
+    "sem_whatsapp": true,
     "email": "esf.canarinho@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
@@ -753,6 +755,7 @@
     ],
     "endereco": "Rua Amazonas, 583",
     "telefone": "(51) 3074-5566",
+    "sem_whatsapp": true,
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -1351,6 +1354,7 @@
     ],
     "endereco": "Travessa São Jorge, 81",
     "telefone": "(51) 3041-7190",
+    "sem_whatsapp": true,
     "email": "esf.carloswilkens@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },

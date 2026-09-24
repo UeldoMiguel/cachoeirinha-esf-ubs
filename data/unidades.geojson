@@ -11,10 +11,12 @@
     "tipo": "Administração",
     "codigo": "SECRETARIA-DE-SAUDE",
     "tem_area": false,
-    "endereco": "Avenida José Brambila, 40 — Vila Vista Alegre",
+    "endereco": "Avenida José Brambila, 40",
+    "telefone": "(51) 3041-8650",
+    "sem_whatsapp": true,
     "email": "almoxarifado.saude@cachoeirinha.rs.gov.br",
-    "informacoes": "E-mail: almoxarifado.saude@cachoeirinha.rs.gov.br",
-    "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
+    "informacoes": "Telefone: (51) 3041-8650\nEndereço: Avenida José Brambila, 40\nE-mail: almoxarifado.saude@cachoeirinha.rs.gov.br",
+    "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
     "type": "Point",
@@ -53,6 +55,7 @@
     "tem_area": true,
     "endereco": "Rua Francisco Brochado da Rocha, 95",
     "telefone": "(51) 3041-6227",
+    "sem_whatsapp": true,
     "informacoes": "Telefone: (51) 3041-6227\nEndereço: Rua Francisco Brochado da Rocha, 95",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
@@ -114,6 +117,7 @@
     "tem_area": true,
     "endereco": "Rua Paranaguá, 105",
     "telefone": "(51) 3438-8664 / (51) 3074-5547",
+    "sem_whatsapp": true,
     "informacoes": "Telefone: (51) 3438-8664 / (51) 3074-5547\nEndereço: Rua Paranaguá, 105",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
@@ -194,6 +198,7 @@
     "tem_area": true,
     "endereco": "Rua Espanha, 821",
     "telefone": "(51) 3041-8660",
+    "sem_whatsapp": true,
     "email": "esf.canarinho@cachoeirinha.rs.gov.br",
     "informacoes": "Telefone: (51) 3041-8660\nEndereço: Rua Espanha, 821\nE-mail: esf.canarinho@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
@@ -215,6 +220,7 @@
     "tem_area": true,
     "endereco": "Rua Capão da Canoa, 185",
     "telefone": "(51) 3074-5516",
+    "sem_whatsapp": true,
     "email": "esf.jardimbetania@cachoeirinha.rs.gov.br",
     "informacoes": "Telefone: (51) 3074-5516\nEndereço: Rua Capão da Canoa, 185\nE-mail: esf.jardimbetania@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
@@ -276,6 +282,7 @@
     "tem_area": true,
     "endereco": "Rua Amazonas, 583",
     "telefone": "(51) 3074-5566",
+    "sem_whatsapp": true,
     "informacoes": "Telefone: (51) 3074-5566\nEndereço: Rua Amazonas, 583",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
@@ -296,6 +303,7 @@
     "tem_area": true,
     "endereco": "Travessa São Jorge, 81",
     "telefone": "(51) 3041-7190",
+    "sem_whatsapp": true,
     "email": "esf.carloswilkens@cachoeirinha.rs.gov.br",
     "informacoes": "Telefone: (51) 3041-7190\nEndereço: Travessa São Jorge, 81\nE-mail: esf.carloswilkens@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
@@ -337,6 +345,7 @@
     "tem_area": false,
     "endereco": "Rua Capitão Garibaldi Pinto dos Santos, 1301",
     "telefone": "(51) 3074-5690 / (51) 3074-5691",
+    "sem_whatsapp": true,
     "destaque": "vermelho",
     "informacoes": "Telefone: (51) 3074-5690 / (51) 3074-5691\nEndereço: Rua Capitão Garibaldi Pinto dos Santos, 1301",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
@@ -379,6 +388,7 @@
     "tem_area": false,
     "endereco": "Rua Osvaldo Cruz, 616",
     "telefone": "(51) 3074-5511 / (51) 3041-6269",
+    "sem_whatsapp": true,
     "destaque": "azul",
     "informacoes": "Telefone: (51) 3074-5511 / (51) 3041-6269\nEndereço: Rua Osvaldo Cruz, 616",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
@@ -400,6 +410,7 @@
     "tem_area": false,
     "endereco": "Rua Mário Tavares Haussem, 140",
     "telefone": "(51) 3041-7194",
+    "sem_whatsapp": true,
     "destaque": "azul",
     "informacoes": "Telefone: (51) 3041-7194\nEndereço: Rua Mário Tavares Haussem, 140",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
@@ -500,27 +511,6 @@
   {
    "type": "Feature",
    "properties": {
-    "nome": "eMulti",
-    "tipo": "Especialidades",
-    "codigo": "EMULTI",
-    "tem_area": false,
-    "endereco": "Avenida General Flores da Cunha, 2385",
-    "telefone": "(51) 3041-7184 / (51) 3041-2582 (ramal)",
-    "destaque": "amarelo",
-    "posicao": "coordenada do endereço no CNEFE 2022 (número exato) · deslocada 15 m para não cobrir outra unidade no mesmo endereço",
-    "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
-   },
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -51.091426,
-     -29.94702
-    ]
-   }
-  },
-  {
-   "type": "Feature",
-   "properties": {
     "nome": "SAE - Tuberculose",
     "tipo": "Especialidades",
     "codigo": "SAE-TUBERCULOSE",
@@ -548,6 +538,9 @@
     "tem_area": false,
     "endereco": "Rua Paranaguá, 105",
     "telefone": "(51) 3041-8652 (ramal) / (51) 9110-4725",
+    "sem_whatsapp": [
+     "3041-8652"
+    ],
     "destaque": "vermelho",
     "posicao": "coordenada do endereço no CNEFE 2022 (número mais próximo (98))",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
@@ -557,6 +550,27 @@
     "coordinates": [
      -51.072852,
      -29.912026
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "nome": "eMulti",
+    "tipo": "Especialidades",
+    "codigo": "EMULTI",
+    "tem_area": false,
+    "endereco": "Avenida General Flores da Cunha, 2385",
+    "telefone": "(51) 3041-7184 / (51) 3041-2582 (ramal)",
+    "destaque": "amarelo",
+    "posicao": "coordenada do endereço no CNEFE 2022 (número exato) · deslocada 15 m para não cobrir outra unidade no mesmo endereço",
+    "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -51.091426,
+     -29.94702
     ]
    }
   }

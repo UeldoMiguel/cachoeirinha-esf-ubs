@@ -135,6 +135,15 @@ def main():
         caminho = os.path.join(RAIZ, 'dados', nome_arquivo)
         return json.load(io.open(caminho, encoding='utf-8')) if os.path.exists(caminho) else {}
 
+    # linhas sem WhatsApp: o número aparece igual, só não vira link
+    sem_link = (carrega('whatsapp.json') or {}).get('sem_link', {})
+
+    def sem_whatsapp(nome):
+        v = sem_link.get(nome)
+        if v is None:
+            return None
+        return True if v == 'todos' else list(v)
+
     destaques = carrega('destaques.json')
     cor_destaque = {}
     for cor in ('vermelho', 'amarelo', 'azul'):
@@ -183,6 +192,7 @@ def main():
              'ruas': sorted(a['ruas']),
              'endereco': endereco_de(a['n']),
              'telefone': telefone_de(a['n'], u.get('info', '')),
+             'sem_whatsapp': sem_whatsapp(a['n']),
              'email': email(u.get('info', '')),
              'fonte': FONTE_AREAS}
 
@@ -217,7 +227,8 @@ def main():
             'ruas': ruas,
             'unidades': [{'nome': n,
                           'endereco': endereco_de(n),
-                          'telefone': telefone_de(n, (por_nome.get(n) or {}).get('info', ''))}
+                          'telefone': telefone_de(n, (por_nome.get(n) or {}).get('info', '')),
+                          'sem_whatsapp': sem_whatsapp(n)}
                          for n in nomes],
             'fonte': FONTE_AREAS})
 
@@ -273,6 +284,7 @@ def main():
              'tem_area': any(a['n'] == u['n'] for a in areas),
              'endereco': endereco_de(u['n']),
              'telefone': telefone_de(u['n'], info),
+             'sem_whatsapp': sem_whatsapp(nome_de(u['n'])) or sem_whatsapp(u['n']),
              'email': email(info),
              'destaque': cor_destaque.get(nome_de(u['n'])) or cor_destaque.get(u['n']),
              'informacoes': info,
@@ -295,6 +307,7 @@ def main():
              'tem_area': False,
              'endereco': o['endereco'],
              'telefone': o['telefone'],
+             'sem_whatsapp': sem_whatsapp(o.get('nome_oficial') or nome),
              'destaque': cor_destaque.get(o.get('nome_oficial') or nome),
              'posicao': 'coordenada do endereço no CNEFE 2022 (' + o['geocodificacao'] + ')',
              'fonte': FONTE_OFICIAL}))

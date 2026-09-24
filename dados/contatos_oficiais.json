@@ -1,4 +1,76 @@
 {
+ "CAPS AD - Centro de Atenção Psicossocial Álcool e outra Drogas": {
+  "nome_oficial": "CAPS AD",
+  "telefone": "(51) 3074-5569",
+  "endereco": "Rua Aparício Soares da Cunha, 128",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.935816,
+   -51.078373
+  ],
+  "novo": false,
+  "distancia_ponto_m": 22
+ },
+ "CAPS II - Centro de Atenção Psicossocial": {
+  "nome_oficial": "CAPS II",
+  "telefone": "(51) 3041-6247",
+  "endereco": "Rua Anita Garibaldi, 275",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.953333,
+   -51.108763
+  ],
+  "novo": false,
+  "distancia_ponto_m": 15
+ },
+ "Unidade de Saúde Mental Infantil": {
+  "nome_oficial": "CAPS IJ",
+  "telefone": "(51) 3074-5549",
+  "endereco": "Rua Francisco Brochado da Rocha, 54",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.949219,
+   -51.097844
+  ],
+  "novo": true,
+  "renomear": "CAPS IJ - Unidade de Saúde Mental Infanto Juvenil"
+ },
+ "CEC - Centro de especialidades médicas": {
+  "nome_oficial": "CEC",
+  "telefone": "(51) 3041-7195 / (51) 3041-6248",
+  "endereco": "Avenida General Flores da Cunha, 2385",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.947016,
+   -51.09127
+  ],
+  "novo": false,
+  "distancia_ponto_m": 36
+ },
+ "CEO - Centro de Especialidades Odontológicas": {
+  "nome_oficial": "CEO",
+  "telefone": "(51) 3074-5590",
+  "endereco": "Avenida General Flores da Cunha, 2385",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.947016,
+   -51.09127
+  ],
+  "novo": false,
+  "distancia_ponto_m": 4118
+ },
+ "Centro de Saúde da Pessoa Idosa": {
+  "nome_oficial": "Centro de Saúde da Pessoa Idosa",
+  "telefone": "(51) 3041-7194",
+  "endereco": "Rua Mário Tavares Haussem, 140",
+  "geocodificacao": "número exato · via aproximada (Mario Tavares Haussen)",
+  "ll": [
+   -29.949021,
+   -51.101532
+  ],
+  "novo": false,
+  "distancia_ponto_m": 15
+ },
  "ESF Canarinho": {
   "nome_oficial": "ESF Canarinho",
   "telefone": "(51) 3041-8660",
@@ -35,18 +107,6 @@
   "novo": false,
   "distancia_ponto_m": 10
  },
- "ESF Otacílio Silveira": {
-  "nome_oficial": "ESF Otacílio Silveira",
-  "telefone": "(51) 3074-5566",
-  "endereco": "Rua Amazonas, 583",
-  "geocodificacao": "número exato",
-  "ll": [
-   -29.912796,
-   -51.075418
-  ],
-  "novo": false,
-  "distancia_ponto_m": 3
- },
  "ESF José Ari da Silveira": {
   "nome_oficial": "ESF José Ari",
   "telefone": "(51) 3041-7193",
@@ -66,6 +126,66 @@
   "geocodificacao": "via não encontrada no CNEFE",
   "ll": null,
   "novo": false
+ },
+ "ESF Otacílio Silveira": {
+  "nome_oficial": "ESF Otacílio Silveira",
+  "telefone": "(51) 3074-5566",
+  "endereco": "Rua Amazonas, 583",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.912796,
+   -51.075418
+  ],
+  "novo": false,
+  "distancia_ponto_m": 3
+ },
+ "SAE": {
+  "nome_oficial": "SAE",
+  "telefone": "(51) 3074-5511 / (51) 3041-6269",
+  "endereco": "Rua Osvaldo Cruz, 616",
+  "geocodificacao": "número mais próximo (617)",
+  "ll": [
+   -29.937976,
+   -51.091228
+  ],
+  "novo": false,
+  "distancia_ponto_m": 7
+ },
+ "SAE - Tuberculose": {
+  "nome_oficial": "SAE - Tuberculose",
+  "telefone": "(51) 3074-5582",
+  "endereco": "Rua Osvaldo Cruz, 616",
+  "geocodificacao": "número mais próximo (617)",
+  "ll": [
+   -29.937976,
+   -51.091228
+  ],
+  "novo": true,
+  "tipo": "Especialidades"
+ },
+ "SAM": {
+  "nome_oficial": "SAM",
+  "telefone": "(51) 3041-8652 (ramal) / (51) 9110-4725",
+  "endereco": "Rua Paranaguá, 105",
+  "geocodificacao": "número mais próximo (98)",
+  "ll": [
+   -29.912026,
+   -51.072852
+  ],
+  "novo": true,
+  "tipo": "Especialidades"
+ },
+ "Secretaria de Saúde": {
+  "nome_oficial": "Secretaria de Saúde",
+  "telefone": "(51) 3041-8650",
+  "endereco": "Avenida José Brambila, 40",
+  "geocodificacao": "número exato",
+  "ll": [
+   -29.931371,
+   -51.077421
+  ],
+  "novo": false,
+  "distancia_ponto_m": 10
  },
  "UBS CAIC Granja": {
   "nome_oficial": "UBS CAIC Granja",
@@ -164,77 +284,17 @@
   "novo": false,
   "distancia_ponto_m": 16
  },
- "CAPS AD - Centro de Atenção Psicossocial Álcool e outra Drogas": {
-  "nome_oficial": "CAPS AD",
-  "telefone": "(51) 3074-5569",
-  "endereco": "Rua Aparício Soares da Cunha, 128",
+ "UPA 24h Cachoeirinha": {
+  "nome_oficial": "UPA",
+  "telefone": "(51) 3074-5690 / (51) 3074-5691",
+  "endereco": "Rua Capitão Garibaldi Pinto dos Santos, 1301",
   "geocodificacao": "número exato",
   "ll": [
-   -29.935816,
-   -51.078373
+   -29.918091,
+   -51.090733
   ],
   "novo": false,
-  "distancia_ponto_m": 22
- },
- "CAPS II - Centro de Atenção Psicossocial": {
-  "nome_oficial": "CAPS II",
-  "telefone": "(51) 3041-6247",
-  "endereco": "Rua Anita Garibaldi, 275",
-  "geocodificacao": "número exato",
-  "ll": [
-   -29.953333,
-   -51.108763
-  ],
-  "novo": false,
-  "distancia_ponto_m": 15
- },
- "Unidade de Saúde Mental Infantil": {
-  "nome_oficial": "CAPS IJ",
-  "telefone": "(51) 3074-5549",
-  "endereco": "Rua Francisco Brochado da Rocha, 54",
-  "geocodificacao": "número exato",
-  "ll": [
-   -29.949219,
-   -51.097844
-  ],
-  "novo": true,
-  "renomear": "CAPS IJ - Unidade de Saúde Mental Infanto Juvenil"
- },
- "Centro de Saúde da Pessoa Idosa": {
-  "nome_oficial": "Centro de Saúde da Pessoa Idosa",
-  "telefone": "(51) 3041-7194",
-  "endereco": "Rua Mário Tavares Haussem, 140",
-  "geocodificacao": "número exato · via aproximada (Mario Tavares Haussen)",
-  "ll": [
-   -29.949021,
-   -51.101532
-  ],
-  "novo": false,
-  "distancia_ponto_m": 15
- },
- "CEC - Centro de especialidades médicas": {
-  "nome_oficial": "CEC",
-  "telefone": "(51) 3041-7195 / (51) 3041-6248",
-  "endereco": "Avenida General Flores da Cunha, 2385",
-  "geocodificacao": "número exato",
-  "ll": [
-   -29.947016,
-   -51.09127
-  ],
-  "novo": false,
-  "distancia_ponto_m": 36
- },
- "CEO - Centro de Especialidades Odontológicas": {
-  "nome_oficial": "CEO",
-  "telefone": "(51) 3074-5590",
-  "endereco": "Avenida General Flores da Cunha, 2385",
-  "geocodificacao": "número exato",
-  "ll": [
-   -29.947016,
-   -51.09127
-  ],
-  "novo": false,
-  "distancia_ponto_m": 4118
+  "distancia_ponto_m": 11
  },
  "eMulti": {
   "nome_oficial": "eMulti",
@@ -247,53 +307,5 @@
   ],
   "novo": true,
   "tipo": "Especialidades"
- },
- "SAE": {
-  "nome_oficial": "SAE",
-  "telefone": "(51) 3074-5511 / (51) 3041-6269",
-  "endereco": "Rua Osvaldo Cruz, 616",
-  "geocodificacao": "número mais próximo (617)",
-  "ll": [
-   -29.937976,
-   -51.091228
-  ],
-  "novo": false,
-  "distancia_ponto_m": 7
- },
- "SAE - Tuberculose": {
-  "nome_oficial": "SAE - Tuberculose",
-  "telefone": "(51) 3074-5582",
-  "endereco": "Rua Osvaldo Cruz, 616",
-  "geocodificacao": "número mais próximo (617)",
-  "ll": [
-   -29.937976,
-   -51.091228
-  ],
-  "novo": true,
-  "tipo": "Especialidades"
- },
- "SAM": {
-  "nome_oficial": "SAM",
-  "telefone": "(51) 3041-8652 (ramal) / (51) 9110-4725",
-  "endereco": "Rua Paranaguá, 105",
-  "geocodificacao": "número mais próximo (98)",
-  "ll": [
-   -29.912026,
-   -51.072852
-  ],
-  "novo": true,
-  "tipo": "Especialidades"
- },
- "UPA 24h Cachoeirinha": {
-  "nome_oficial": "UPA",
-  "telefone": "(51) 3074-5690 / (51) 3074-5691",
-  "endereco": "Rua Capitão Garibaldi Pinto dos Santos, 1301",
-  "geocodificacao": "número exato",
-  "ll": [
-   -29.918091,
-   -51.090733
-  ],
-  "novo": false,
-  "distancia_ponto_m": 11
  }
 }

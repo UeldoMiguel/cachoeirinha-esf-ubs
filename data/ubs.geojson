@@ -1497,6 +1497,7 @@
     ],
     "endereco": "Rua Francisco Brochado da Rocha, 95",
     "telefone": "(51) 3041-6227",
+    "sem_whatsapp": true,
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -1879,6 +1880,7 @@
     ],
     "endereco": "Rua Paranaguá, 105",
     "telefone": "(51) 3438-8664 / (51) 3074-5547",
+    "sem_whatsapp": true,
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {

@@ -566,18 +566,24 @@ function legenda(txt){
 /* ---------- resultado ---------- */
 var res=document.getElementById('result');
 function esc(s){return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
-function infoHTML(txt){
+function infoHTML(txt,nowa){
   if(!txt)return '';
+  /* nowa: true tira o link de WhatsApp de todos os números da unidade;
+     uma lista tira só dos números citados (dados/whatsapp.json) */
+  var fora=nowa===true?null:(nowa||[]).map(function(n){return String(n).replace(/\D/g,'');});
   return esc(txt).replace(/\n+/g,' \u00b7 ')
     .replace(/([\w.\-+]+@[\w.\-]+)/g,'<a href="mailto:$1">$1</a>')
-    .replace(/\((\d{2})\)\s*(\d{4,5})-(\d{4})/g,'<a href="https://wa.me/55$1$2$3" target="_blank" rel="noopener" title="Abrir conversa no WhatsApp">($1)&nbsp;$2-$3</a>');
+    .replace(/\((\d{2})\)\s*(\d{4,5})-(\d{4})/g,function(todo,ddd,a,b){
+      if(!fora||fora.indexOf(ddd+a+b)>=0||fora.indexOf(a+b)>=0)return todo;
+      return '<a href="https://wa.me/55'+ddd+a+b+'" target="_blank" rel="noopener" title="Abrir conversa no WhatsApp">'+todo+'</a>';
+    });
 }
 function cardUnidade(u,dist,rot){
   var col=u.c==='ESF'?'var(--esf)':u.c==='UBS'?'var(--ubs)':'var(--ink-3)';
   return '<div class="unit"><span class="dot" style="background:'+col+'"></span><div>'+
     '<div class="nm">'+esc(u.n)+'</div>'+
     '<div class="meta">'+(dist!=null?dist.toFixed(1).replace('.',',')+' km pelas quadras':'')+
-    (u.info?(dist!=null?' · ':'')+infoHTML(u.info):'')+'</div></div></div>';
+    (u.info?(dist!=null?' · ':'')+infoHTML(u.info,u.nowa):'')+'</div></div></div>';
 }
 function unidadeDaArea(i){
   var a=AREAS[i];
@@ -825,7 +831,7 @@ abas.forEach(function(p){
       return '<'+tag+'><span class="dot" style="background:'+col+'"></span><div>'+
         '<div class="nm">'+esc(u.n)+'</div><div class="meta">'+
         (a?a.ruas.length+' ruas na abrangência · clique para ver no mapa':'sem área de abrangência definida')+
-        (u.info?' · '+infoHTML(u.info):'')+'</div></div></'+(ai>=0?'button':'div')+'>';
+        (u.info?' · '+infoHTML(u.info,u.nowa):'')+'</div></div></'+(ai>=0?'button':'div')+'>';
     }).join('');
     html+='</div>';
   });

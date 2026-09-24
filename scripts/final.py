@@ -286,9 +286,20 @@ def contato(nome,info):
 def nome_exibido(nome):
     o=oficiais.get(nome) or {}
     return o.get('renomear') or nome
+# linhas que não atendem por WhatsApp (dados/whatsapp.json): o número aparece
+# igual na página, só não vira link
+try:
+    SEM_WA=json.load(open('whatsapp.json',encoding='utf-8'))['sem_link']
+except (IOError,OSError,ValueError,KeyError):
+    SEM_WA={}
+def sem_wa(nome):
+    v=SEM_WA.get(nome)
+    return True if v=='todos' else (list(v) if v else None)
 un=[{'n':nome_exibido(' '.join(u['nome'].split())),'c':u['cat'],
      'll':[round(u['ll'][0],5),round(u['ll'][1],5)],
+     'nowa':sem_wa(nome_exibido(' '.join(u['nome'].split()))),
      'info':contato(' '.join(u['nome'].split()),u['info'])} for u in d['unidades']]
+un=[{k:v for k,v in u.items() if v is not None} for u in un]
 print('unidades com contato oficial:',sum(1 for u in un if u['n'] in oficiais),'de',len(un))
 falt=[]
 for f in d['faltantes_det']:

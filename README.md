@@ -28,7 +28,7 @@ Dar a gestores, equipes e à população uma forma direta de responder a duas pe
 - A mesma caixa também acha **unidades e áreas pelo nome**.
 - **Modo escuro**, com botão no topo. Sem escolha manual a página acompanha o sistema; a escolha fica gravada no navegador. Os tiles do OSM são invertidos por CSS — nenhum serviço de base escura com chave de API foi introduzido.
 - **Popup e painel** mostram apenas: nome, unidade de referência, tipo, endereço, telefone e e-mail. Campo que a fonte não traz não aparece.
-- **Telefone com um toque**: cada número exibido é um link para o WhatsApp (`wa.me/55` + DDD + número), no popup, no painel e na resposta da consulta. A maioria das linhas da rede é fixa; se aquele número não tiver WhatsApp, o próprio aplicativo avisa ao abrir.
+- **Telefone com um toque**: cada número exibido é um link para o WhatsApp (`wa.me/55` + DDD + número), no popup, no painel e na resposta da consulta. As linhas que não atendem por WhatsApp ficam listadas em `dados/whatsapp.json` e aparecem sem link — `"todos"` desliga a unidade inteira, uma lista desliga só os números citados (é o caso do ramal 3041-8652 do SAM, enquanto o 9110-4725 segue clicável).
 - **Serviços sinalizados por cor**: urgência (UPA, hospital, SAM) em vermelho, saúde mental e eMulti (CAPS II, AD e IJ) em amarelo, especialidades (CEC, CEO, SAE e Centro de Saúde da Pessoa Idosa) em azul. Muda só a cor do anel do círculo, sem animação. As listas ficam em `dados/destaques.json`.
 - **Áreas e ruas recortadas no limite municipal**: os polígonos do mapa colaborativo passavam da divisa (o da UBS Parque da Matriz avançava 26% para fora) e a malha viária também. Os dois são cortados pelo limite do OpenStreetMap na geração dos dados.
 

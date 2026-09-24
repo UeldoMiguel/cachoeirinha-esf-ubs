@@ -221,12 +221,14 @@
      {
       "nome": "UBS Parque da Matriz",
       "endereco": "Rua Panamericana, 460",
-      "telefone": "(51) 3041-6273"
+      "telefone": "(51) 3041-6273",
+      "sem_whatsapp": null
      },
      {
       "nome": "UBS Osvaldo Cruz",
       "endereco": "Rua Osvaldo Cruz, 590",
-      "telefone": "(51) 3041-7134 / (51) 3041-6219"
+      "telefone": "(51) 3041-7134 / (51) 3041-6219",
+      "sem_whatsapp": null
      }
     ],
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
@@ -744,12 +746,14 @@
      {
       "nome": "UBS Décio Martins Costa",
       "endereco": "Rua Décio Martins Costa, 464",
-      "telefone": "(51) 3074-5539 / (51) 3074-5508"
+      "telefone": "(51) 3074-5539 / (51) 3074-5508",
+      "sem_whatsapp": null
      },
      {
       "nome": "UBS COHAB",
       "endereco": "Rua Francisco Brochado da Rocha, 95",
-      "telefone": "(51) 3041-6227"
+      "telefone": "(51) 3041-6227",
+      "sem_whatsapp": true
      }
     ],
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
@@ -1512,12 +1516,14 @@
      {
       "nome": "UBS CAIC Granja",
       "endereco": "Rua Jardim das Flores, s/n",
-      "telefone": "(51) 3074-5572"
+      "telefone": "(51) 3074-5572",
+      "sem_whatsapp": null
      },
      {
       "nome": "UBS Jardim do Bosque",
       "endereco": "Rua Capitão Garibaldi Santos, 497",
-      "telefone": "(51) 3041-6211"
+      "telefone": "(51) 3041-6211",
+      "sem_whatsapp": null
      }
     ],
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
@@ -2336,6 +2342,7 @@
     ],
     "endereco": "Rua Paranaguá, 105",
     "telefone": "(51) 3438-8664 / (51) 3074-5547",
+    "sem_whatsapp": true,
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {

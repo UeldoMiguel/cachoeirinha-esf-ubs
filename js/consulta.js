@@ -163,7 +163,7 @@
       '<span class="nm">' + esc(props.nome) + '</span>' +
       (distancia != null ? '<br><span class="dist">' + distancia.toFixed(1).replace('.', ',') +
         ' km pelas quadras</span>' : '') +
-      (props.telefone ? '<br><span class="dist">' + API.linkTelefone(props.telefone) + '</span>' : '') +
+      (props.telefone ? '<br><span class="dist">' + API.linkTelefone(props.telefone, props.sem_whatsapp) + '</span>' : '') +
       '</span></li>';
   }
 
@@ -221,7 +221,7 @@
     if (Array.isArray(grupo) && grupo.length) {
       html += '<p class="rotulo-ref">Unidades de referência</p><ul class="refs">' +
         grupo.map(function (g) {
-          return linhaUnidade({ nome: g.nome, tipo: tipo, telefone: g.telefone }, null) +
+          return linhaUnidade({ nome: g.nome, tipo: tipo, telefone: g.telefone, sem_whatsapp: g.sem_whatsapp }, null) +
             (g.endereco ? '<li class="dist" style="margin:-4px 0 0 19px">' + esc(g.endereco) + '</li>' : '');
         }).join('') + '</ul>';
     } else {

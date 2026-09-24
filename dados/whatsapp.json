@@ -1,0 +1,19 @@
+{
+ "_fonte": "Secretaria Municipal de Saúde de Cachoeirinha/RS (2026-09-24): linhas que não atendem por WhatsApp.",
+ "_como_funciona": "O telefone continua aparecendo igual na caixa e na consulta; só deixa de ser link. \"todos\" tira o link de todos os números daquela unidade; uma lista tira o link só dos números citados, e os demais da mesma unidade seguem clicáveis.",
+ "sem_link": {
+  "ESF Jardim Betânia": "todos",
+  "ESF Canarinho": "todos",
+  "ESF Otacílio Silveira": "todos",
+  "ESF Carlos Wilkens": "todos",
+  "UBS Odil Silva de Oliveira": "todos",
+  "UBS COHAB": "todos",
+  "UPA 24h Cachoeirinha": "todos",
+  "SAE": "todos",
+  "Centro de Saúde da Pessoa Idosa": "todos",
+  "Secretaria de Saúde": "todos",
+  "SAM": [
+   "3041-8652"
+  ]
+ }
+}
