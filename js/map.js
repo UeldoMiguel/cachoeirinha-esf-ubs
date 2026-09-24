@@ -144,7 +144,9 @@
     if (camadas.unidades) {
       camadas.unidades.eachLayer(function (l) {
         var p = (l.feature || {}).properties || {};
-        if (l.setStyle) l.setStyle({ color: corDe(p.tipo), fillColor: corFundoMarcador() });
+        if (!l.setStyle) return;
+        if (p.destaque) { l.setStyle({ fillColor: corFundoMarcador() }); return; }
+        l.setStyle({ color: corDe(p.tipo), fillColor: corFundoMarcador() });
       });
     }
     if (camadas.limite) camadas.limite.setStyle({ color: corDe('limite') });
@@ -210,14 +212,17 @@
 
   function marcadorPonto(feature, latlng) {
     var props = feature.properties || {};
-    return L.circleMarker(latlng, {
+    var marcador = L.circleMarker(latlng, {
       pane: 'pontos',
-      radius: 7,
+      radius: props.destaque ? 8 : 7,
       color: corDe(props.tipo),
       weight: 3,
       fillColor: corFundoMarcador(),
-      fillOpacity: 1
+      fillOpacity: 1,
+      /* serviços sinalizados piscam na cor pedida; a cor vem do CSS */
+      className: props.destaque ? 'sinal sinal-' + props.destaque : ''
     });
+    return marcador;
   }
 
   function ligaPonto(feature, layer) {

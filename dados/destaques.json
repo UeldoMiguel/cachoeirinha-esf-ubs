@@ -1,0 +1,14 @@
+{
+ "_fonte": "Sinalização pedida pela Secretaria Municipal de Saúde de Cachoeirinha/RS (2026-09-24).",
+ "_como_funciona": "Cada lista pinta o marcador daquelas unidades com a cor indicada e o faz piscar devagar no mapa. Os nomes são os do mapa; ESF e UBS não entram aqui e mantêm verde e azul.",
+ "vermelho": ["SAM", "UPA 24h Cachoeirinha", "Hospital Padre Jeremias"],
+ "amarelo": ["CAPS II - Centro de Atenção Psicossocial",
+             "CAPS AD - Centro de Atenção Psicossocial Álcool e outra Drogas",
+             "CAPS IJ - Unidade de Saúde Mental Infanto Juvenil",
+             "eMulti"],
+ "azul": ["CEO - Centro de Especialidades Odontológicas",
+          "CEC - Centro de especialidades médicas",
+          "SAE",
+          "SAE - Tuberculose",
+          "Centro de Saúde da Pessoa Idosa"]
+}

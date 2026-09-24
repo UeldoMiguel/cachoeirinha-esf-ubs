@@ -21,6 +21,9 @@
   --aviso-fundo: #fff6ec;
   --aviso-borda: #f0dcc4;
   --via: #d81f26;
+  --sinal-vermelho: #e02020;
+  --sinal-amarelo: #d99100;
+  --sinal-azul: #1e88e5;
   --mapa-fundo: #e9ece8;
   color-scheme: light;
 }
@@ -71,6 +74,9 @@
   --aviso-fundo: #2a2118;
   --aviso-borda: #4a3a27;
   --via: #ff5d5d;
+  --sinal-vermelho: #ff4d4d;
+  --sinal-amarelo: #ffc13d;
+  --sinal-azul: #56aaff;
   --mapa-fundo: #10161a;
   color-scheme: dark;
 }
@@ -444,4 +450,37 @@ input:focus-visible,
   border-radius: 0 6px 6px 0;
   font-size: 13px;
   color: var(--tinta-2);
+}
+
+/* Sinalização dos serviços: cor própria e pisca lento --------------------- */
+.sinal { animation: pisca 1.8s ease-in-out infinite; }
+.sinal-vermelho { stroke: var(--sinal-vermelho); fill: var(--sinal-vermelho); }
+.sinal-amarelo  { stroke: var(--sinal-amarelo);  fill: var(--sinal-amarelo); }
+.sinal-azul     { stroke: var(--sinal-azul);     fill: var(--sinal-azul); }
+
+@keyframes pisca {
+  0%, 100% { opacity: 1; stroke-width: 3; }
+  50%      { opacity: .35; stroke-width: 8; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sinal { animation: none; stroke-width: 5; }
+}
+
+.legenda .amostra.sinal-vermelho,
+.legenda .amostra.sinal-amarelo,
+.legenda .amostra.sinal-azul {
+  width: 14px; height: 14px; border-radius: 50%; border: 3px solid;
+  background: var(--painel); animation: pisca-legenda 1.8s ease-in-out infinite;
+}
+.legenda .amostra.sinal-vermelho { border-color: var(--sinal-vermelho); }
+.legenda .amostra.sinal-amarelo  { border-color: var(--sinal-amarelo); }
+.legenda .amostra.sinal-azul     { border-color: var(--sinal-azul); }
+
+@keyframes pisca-legenda { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .legenda .amostra.sinal-vermelho,
+  .legenda .amostra.sinal-amarelo,
+  .legenda .amostra.sinal-azul { animation: none; }
 }

@@ -31,7 +31,7 @@
      na mesma chave. */
   var TIPOS = { rua: 1, r: 1, avenida: 1, av: 1, travessa: 1, trav: 1, tv: 1, beco: 1, bc: 1,
     estrada: 1, est: 1, praca: 1, pc: 1, alameda: 1, al: 1, rodovia: 1, rod: 1, largo: 1,
-    via: 1, acesso: 1, viela: 1, passagem: 1, linha: 1, servidao: 1, esquina: 1 };
+    via: 1, viela: 1, passagem: 1, linha: 1, servidao: 1, esquina: 1 };
   var ABREV = { sto: 'santo', sta: 'santa', s: 'sao', sao: 'sao', dr: 'doutor', dra: 'doutora',
     prof: 'professor', profa: 'professora', pe: 'padre', cel: 'coronel', gal: 'general',
     gen: 'general', cap: 'capitao', ten: 'tenente', sgt: 'sargento', mal: 'marechal',
@@ -309,13 +309,16 @@
     var num = numeroDigitado(termoOriginal);
     var candidatas = ranquear(chave || q);
     return candidatas.map(function (r) {
+      /* "Acesso 05" é o nome da via, não a via "Acesso" no número 5 */
+      var partes = r[0].split(' ');
+      var numDaVia = (num && partes[partes.length - 1] === String(num)) ? null : num;
       return {
-        nome: r[1] + (num ? ', ' + num : ''),
+        nome: r[1] + (numDaVia ? ', ' + numDaVia : ''),
         tipo: (r[2][0] || '').indexOf('ESF') === 0 ? 'ESF' : 'UBS',
         marca: r[5] ? 'via sugerida' : 'via',
         escolher: function () {
-          elBusca.value = r[1] + (num ? ', ' + num : '');
-          responder(r, num);
+          elBusca.value = r[1] + (numDaVia ? ', ' + numDaVia : '');
+          responder(r, numDaVia);
         }
       };
     });

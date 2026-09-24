@@ -1,0 +1,14 @@
+{
+ "_fonte": "Inclusões de abrangência determinadas pela Secretaria Municipal de Saúde de Cachoeirinha/RS.",
+ "_como_funciona": "As vias listadas entram na abrangência da unidade: vão para a lista de ruas e passam a responder na consulta por endereço. Com 'estender_area': true, o polígono da unidade também é esticado para cobrir o traçado dessas vias (envoltória convexa do conjunto, com folga de 25 m).",
+ "adicoes": [
+  {
+   "unidade": "UBS CAIC Granja",
+   "ruas": ["Acesso 01", "Acesso 02", "Acesso 03", "Acesso 04", "Acesso 05", "Acesso 06",
+            "Acesso 07", "Acesso 08", "Acesso 09", "Acesso 10", "Acesso 11", "Acesso 14",
+            "Acesso 17"],
+   "estender_area": true,
+   "motivo": "Secretaria (2026-09-24): o conjunto dos Acessos, junto à Rua Túnel Verde, é referência da UBS CAIC Granja."
+  }
+ ]
+}

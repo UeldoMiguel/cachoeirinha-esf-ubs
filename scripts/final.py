@@ -66,6 +66,12 @@ def recorta(poly):
     perdido=1-(corte.area/p.area) if p.area else 0
     return [[round(x,5),round(y,5)] for x,y in maior.exterior.coords], perdido
 
+# inclusões de ruas na abrangência (dados/ruas_adicionadas.json)
+try:
+    ADICOES=json.load(open('ruas_adicionadas.json',encoding='utf-8'))['adicoes']
+except (IOError,OSError,ValueError):
+    ADICOES=[]
+
 # unidades desativadas: a área e as ruas passam para quem absorveu
 try:
     INATIVAS={i['unidade']:i for i in json.load(open('unidades_inativas.json',encoding='utf-8'))['inativas']}
@@ -162,6 +168,31 @@ for m in mortas:
     if m.get('_sucessora') is not None and m['_sucessora'] in REMAP:
         REMAP[m['_orig']]=REMAP[m['_sucessora']]
 
+if ADICOES:
+    from shapely.geometry import LineString as _LS, MultiLineString as _MLS
+    from shapely.ops import unary_union as _u2
+    por_nome_area={a['n']:a for a in areas}
+    for add in ADICOES:
+        alvo=por_nome_area.get(add['unidade'])
+        if not alvo:
+            print('inclusão ignorada, unidade não encontrada:',add['unidade']); continue
+        alvo['ruas']=sorted(set(alvo['ruas'])|set(add['ruas']))
+        if add.get('estender_area'):
+            segs=[]
+            for nome in add['ruas']:
+                for i in lin['porNome'].get(nome,[]):
+                    l=lin['linhas'][i]
+                    if len(l)>1: segs.append(_LS([(x,y) for x,y in l]))
+            if segs:
+                mancha=_MLS(segs).convex_hull.buffer(25/111320.0)
+                j=_u2([Polygon([(x,y) for x,y in alvo['poly']]).buffer(0),mancha])
+                if j.geom_type=='MultiPolygon': j=max(j.geoms,key=lambda g:g.area)
+                antes=Polygon([(x,y) for x,y in alvo['poly']]).area
+                alvo['poly']=[[round(x,5),round(y,5)] for x,y in j.simplify(3/111320.0).exterior.coords]
+                print('área estendida: %-22s +%.1f%% para cobrir %d vias incluídas'
+                      % (add['unidade'],(j.area/antes-1)*100,len(add['ruas'])))
+        print('ruas incluídas na abrangência de %s: %d' % (add['unidade'],len(add['ruas'])))
+
 def entrada(k,label,indices,prov=0,traduzir=True):
     g=geon.get(k)
     if traduzir:
@@ -199,6 +230,22 @@ for f in d['faltantes_det']:
     idx.append(entrada(k,f['rua'],[ai],2 if fora else 1,traduzir=False))
     existentes.add(k); prov+=1
 print('sugeridas adicionadas ao indice:',prov)
+if ADICOES:
+    pos={a['n']:i for i,a in enumerate(areas)}
+    por_chave={e[0]:e for e in idx}
+    incluidas=0
+    for add in ADICOES:
+        ai=pos.get(add['unidade'])
+        if ai is None: continue
+        for nome in add['ruas']:
+            k=norm(nome)
+            e=por_chave.get(k)
+            if e is None:
+                e=entrada(k,nome,[ai],0,traduzir=False)
+                idx.append(e); por_chave[k]=e; incluidas+=1
+            elif ai not in e[2]:
+                e[2].append(ai); incluidas+=1
+    print('vias incluídas no índice:',incluidas)
 # contatos da lista da Secretaria substituem o texto livre do KML
 try:
     oficiais=json.load(open('contatos_oficiais.json',encoding='utf-8'))

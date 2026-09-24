@@ -28,6 +28,7 @@ Dar a gestores, equipes e à população uma forma direta de responder a duas pe
 - A mesma caixa também acha **unidades e áreas pelo nome**.
 - **Modo escuro**, com botão no topo. Sem escolha manual a página acompanha o sistema; a escolha fica gravada no navegador. Os tiles do OSM são invertidos por CSS — nenhum serviço de base escura com chave de API foi introduzido.
 - **Popup e painel** mostram apenas: nome, unidade de referência, tipo, endereço, telefone e e-mail. Campo que a fonte não traz não aparece.
+- **Serviços sinalizados**: urgência (UPA, hospital, SAM) em vermelho, saúde mental e eMulti (CAPS II, AD e IJ) em amarelo, especialidades (CEC, CEO, SAE e Centro de Saúde da Pessoa Idosa) em azul — piscando devagar, e parados para quem pede menos movimento no sistema. As cores ficam em `dados/destaques.json`.
 - **Áreas e ruas recortadas no limite municipal**: os polígonos do mapa colaborativo passavam da divisa (o da UBS Parque da Matriz avançava 26% para fora) e a malha viária também. Os dois são cortados pelo limite do OpenStreetMap na geração dos dados.
 
 ## 2. Tecnologias
@@ -208,6 +209,12 @@ Recorte em vigor: a **ESF Jardim Betânia** perdeu o setor a oeste da Souza Cruz
 `dados/unidades_inativas.json` registra unidade que deixou de existir e quem herdou o território. `scripts/final.py` funde a área na sucessora, transfere as ruas da abrangência, remove o ponto do mapa e remapeia os índices do índice de ruas.
 
 Em vigor: **UBS Getúlio Vargas** foi desativada e sua área e suas 48 ruas passaram para a **UBS Osvaldo Cruz**.
+
+## 8.5 Inclusões de ruas
+
+`dados/ruas_adicionadas.json` acrescenta vias à abrangência de uma unidade. Com `"estender_area": true`, o polígono também é esticado para cobrir o traçado delas (envoltória convexa do conjunto, com folga de 25 m).
+
+Em vigor: os **13 Acessos** junto à Rua Túnel Verde entraram na **UBS CAIC Granja**, que passou a 135 vias, e a área cresceu 3,8% para alcançá-los.
 
 ## 9. Dados territoriais oficiais
 

@@ -135,6 +135,12 @@ def main():
         caminho = os.path.join(RAIZ, 'dados', nome_arquivo)
         return json.load(io.open(caminho, encoding='utf-8')) if os.path.exists(caminho) else {}
 
+    destaques = carrega('destaques.json')
+    cor_destaque = {}
+    for cor in ('vermelho', 'amarelo', 'azul'):
+        for nome in destaques.get(cor, []):
+            cor_destaque[nome] = cor
+
     oficiais = carrega('contatos_oficiais.json')
     enderecos = carrega('enderecos_unidades.json')
     # final.json já traz o nome renomeado; a busca aceita os dois
@@ -253,6 +259,7 @@ def main():
              'endereco': endereco_de(u['n']),
              'telefone': telefone_de(u['n'], info),
              'email': email(info),
+             'destaque': cor_destaque.get(nome_de(u['n'])) or cor_destaque.get(u['n']),
              'informacoes': info,
              'fonte': fonte_contato(u['n'])}))
 
@@ -273,6 +280,7 @@ def main():
              'tem_area': False,
              'endereco': o['endereco'],
              'telefone': o['telefone'],
+             'destaque': cor_destaque.get(o.get('nome_oficial') or nome),
              'posicao': 'coordenada do endereço no CNEFE 2022 (' + o['geocodificacao'] + ')',
              'fonte': FONTE_OFICIAL}))
         print('unidade acrescentada da lista oficial:', nome)

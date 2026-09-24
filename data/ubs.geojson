@@ -444,9 +444,22 @@
     "codigos": [
      "UBS-CAIC-GRANJA"
     ],
-    "descricao": "Território de abrangência da UBS CAIC Granja, com 123 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 123,
+    "descricao": "Território de abrangência da UBS CAIC Granja, com 135 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 135,
     "ruas": [
+     "Acesso 01",
+     "Acesso 02",
+     "Acesso 03",
+     "Acesso 04",
+     "Acesso 05",
+     "Acesso 06",
+     "Acesso 07",
+     "Acesso 08",
+     "Acesso 09",
+     "Acesso 10",
+     "Acesso 11",
+     "Acesso 14",
+     "Acesso 17",
      "Av Getúlio Vargas",
      "Av. Anildo Gomes Alano",
      "Av. Frederico Augusto Ritter",
@@ -545,7 +558,6 @@
      "Rua Mário Quintana",
      "Rua Nildo Schutz",
      "Rua Nils Taranger",
-     "Rua Nils Taranger",
      "Rua Olavo Da Silva Ribeiro",
      "Rua Orquídea",
      "Rua Osmar Silva De Oliveira",
@@ -580,10 +592,6 @@
     "coordinates": [
      [
       [
-       -51.09653,
-       -29.90854
-      ],
-      [
        -51.09647,
        -29.90734
       ],
@@ -594,10 +602,6 @@
       [
        -51.09606,
        -29.90309
-      ],
-      [
-       -51.09472,
-       -29.89949
       ],
       [
        -51.09332,
@@ -612,8 +616,52 @@
        -29.89434
       ],
       [
-       -51.09532,
-       -29.8918
+       -51.09254,
+       -29.89421
+      ],
+      [
+       -51.09262,
+       -29.8944
+      ],
+      [
+       -51.09275,
+       -29.89449
+      ],
+      [
+       -51.09288,
+       -29.89451
+      ],
+      [
+       -51.09468,
+       -29.89404
+      ],
+      [
+       -51.10036,
+       -29.89107
+      ],
+      [
+       -51.10047,
+       -29.89089
+      ],
+      [
+       -51.10039,
+       -29.8907
+      ],
+      [
+       -51.10025,
+       -29.89065
+      ],
+      [
+       -51.09828,
+       -29.89061
+      ],
+      [
+       -51.09629,
+       -29.89111
+      ],
+      [
+       -51.09413,
+       -29.89283
       ],
       [
        -51.09841,
@@ -712,10 +760,6 @@
        -29.91174
       ],
       [
-       -51.0904,
-       -29.91043
-      ],
-      [
        -51.09074,
        -29.9103
       ],
@@ -726,6 +770,10 @@
       [
        -51.09653,
        -29.90854
+      ],
+      [
+       -51.09647,
+       -29.90734
       ]
      ]
     ]

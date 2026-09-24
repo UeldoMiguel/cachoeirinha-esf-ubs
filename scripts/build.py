@@ -4,7 +4,7 @@ osm=json.load(open('osm_streets.json',encoding='utf-8'))
 
 def strip_acc(s):
     return ''.join(c for c in unicodedata.normalize('NFD',s) if unicodedata.category(c)!='Mn')
-TIPOS={'rua':'r','r':'r','avenida':'av','av':'av','travessa':'tv','trav':'tv','tv':'tv','beco':'bc','bc':'bc','estrada':'est','est':'est','praca':'pc','pça':'pc','pc':'pc','alameda':'al','al':'al','rodovia':'rod','rod':'rod','largo':'lg','via':'via','acesso':'ac','viela':'vl','passagem':'pss','linha':'lnh','servidao':'srv','esquina':'esq'}
+TIPOS={'rua':'r','r':'r','avenida':'av','av':'av','travessa':'tv','trav':'tv','tv':'tv','beco':'bc','bc':'bc','estrada':'est','est':'est','praca':'pc','pça':'pc','pc':'pc','alameda':'al','al':'al','rodovia':'rod','rod':'rod','largo':'lg','via':'via','viela':'vl','passagem':'pss','linha':'lnh','servidao':'srv','esquina':'esq'}
 NUM={'primeiro':'1','primeira':'1','segundo':'2','segunda':'2','terceiro':'3','terceira':'3','um':'1','uma':'1','dois':'2','duas':'2','tres':'3','quatro':'4','cinco':'5','seis':'6','sete':'7','oito':'8','nove':'9','dez':'10','onze':'11','doze':'12','treze':'13','quatorze':'14','catorze':'14','quinze':'15','dezesseis':'16','dezessete':'17','dezoito':'18','dezenove':'19','vinte':'20','trinta':'30','quarenta':'40','cinquenta':'50'}
 ABREV={'sto':'santo','sta':'santa','s':'sao','sao':'sao','dr':'doutor','dra':'doutora','prof':'professor','profa':'professora','pe':'padre','cel':'coronel','gal':'general','gen':'general','cap':'capitao','ten':'tenente','sgt':'sargento','mal':'marechal','maj':'major','eng':'engenheiro','pres':'presidente','vda':'viuva','d':'dom','pq':'parque','jd':'jardim','cj':'conjunto','vl':'vila'}
 def norm(s):
