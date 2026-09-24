@@ -1,11 +1,13 @@
 {
  "_fonte": "Correções de abrangência determinadas pela Secretaria Municipal de Saúde de Cachoeirinha/RS sobre os polígonos do mapa colaborativo.",
- "_como_funciona": "Cada recorte descreve uma parte a remover do polígono da unidade. 'remover_oeste_de' / 'remover_leste_de' cortam por longitude; 'remover_norte_de' / 'remover_sul_de' cortam por latitude. As ruas que ficam só na parte removida saem da lista de abrangência da unidade.",
+ "_como_funciona": "Cada recorte descreve uma parte a remover do polígono da unidade. 'remover_oeste_de' / 'remover_leste_de' cortam por longitude; 'remover_norte_de' / 'remover_sul_de' cortam por latitude. As ruas que ficam só na parte removida saem da lista de abrangência da unidade; com 'transferir_orfas_para' elas passam para a unidade indicada em vez de ficarem sem referência.",
  "recortes": [
   {
    "unidade": "ESF Jardim Betânia",
    "remover_oeste_de": -51.0965,
-   "motivo": "Secretaria (2026-09-24): o setor a oeste da Souza Cruz — Parque do Sabiá, Meu Rincão, Residencial Caetanos I e II e Sítio Ipiranga — não é referência da ESF Jardim Betânia."
+   "motivo": "Secretaria (2026-09-24): o setor a oeste da Souza Cruz — Parque do Sabiá, Meu Rincão, Residencial Caetanos I e II e Sítio Ipiranga — não é referência da ESF Jardim Betânia.",
+   "transferir_orfas_para": "UBS CAIC Granja",
+   "motivo_transferencia": "Secretaria (2026-09-24): as ruas do setor retirado da ESF Jardim Betânia passam a ter a UBS CAIC Granja como unidade de referência."
   }
  ]
 }

@@ -329,23 +329,38 @@ if RECORTES:
         if e[6]: return False
         if e[3] is None: return True
         return poly.covers(Point(e[4],e[3]))
-    podadas=0; orfas=[]
+    # para quem vão as ruas que o recorte deixou sem unidade
+    herdeiro={}
+    for r in RECORTES:
+        if r.get('transferir_orfas_para'):
+            herdeiro[r['unidade']]=r['transferir_orfas_para']
+    indice_por_nome={a['n']:i for i,a in enumerate(areas)}
+    podadas=0; orfas=[]; transferidas={}
     for e in idx:
-        novas=[]
+        novas=[]; perdeu=[]
         for ai in e[2]:
             nome=areas[ai]['n'] if ai<len(areas) else None
             if nome in poligonos and not rua_na_area(e,poligonos[nome]):
-                podadas+=1; continue
+                podadas+=1; perdeu.append(nome); continue
             novas.append(ai)
+        if not novas:
+            for nome in perdeu:
+                destino=indice_por_nome.get(herdeiro.get(nome))
+                if destino is not None and destino not in novas:
+                    novas.append(destino)
+                    transferidas.setdefault(herdeiro[nome],[]).append(e[1])
         if not novas: orfas.append(e[1])
         e[2]=novas
+    for destino,ruas in transferidas.items():
+        areas[indice_por_nome[destino]]['ruas']=sorted(set(areas[indice_por_nome[destino]]['ruas'])|set(ruas))
+        print('ruas do setor recortado transferidas para %s: %d' % (destino,len(ruas)))
     antes_idx=len(idx)
     idx=[e for e in idx if e[2]]
     print('ruas retiradas da abrangência por recorte:',podadas,
           '| ruas que ficaram sem unidade:',len(orfas),
           ('— ex.: '+', '.join(orfas[:8])) if orfas else '')
     for a in areas:
-        if a['n'] not in poligonos: continue
+        if a['n'] not in poligonos or a['n'] in herdeiro.values(): continue
         poly=poligonos[a['n']]
         chaves={e[0] for e in idx if indice_area[a['n']] in e[2]}
         a['ruas']=[r for r in a['ruas'] if norm(r) in chaves]

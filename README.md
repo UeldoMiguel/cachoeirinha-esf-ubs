@@ -28,6 +28,7 @@ Dar a gestores, equipes e à população uma forma direta de responder a duas pe
 - A mesma caixa também acha **unidades e áreas pelo nome**.
 - **Modo escuro**, com botão no topo. Sem escolha manual a página acompanha o sistema; a escolha fica gravada no navegador. Os tiles do OSM são invertidos por CSS — nenhum serviço de base escura com chave de API foi introduzido.
 - **Popup e painel** mostram apenas: nome, unidade de referência, tipo, endereço, telefone e e-mail. Campo que a fonte não traz não aparece.
+- **Telefone com um toque**: cada número exibido é um link para o WhatsApp (`wa.me/55` + DDD + número), no popup, no painel e na resposta da consulta. A maioria das linhas da rede é fixa; se aquele número não tiver WhatsApp, o próprio aplicativo avisa ao abrir.
 - **Serviços sinalizados por cor**: urgência (UPA, hospital, SAM) em vermelho, saúde mental e eMulti (CAPS II, AD e IJ) em amarelo, especialidades (CEC, CEO, SAE e Centro de Saúde da Pessoa Idosa) em azul. Muda só a cor do anel do círculo, sem animação. As listas ficam em `dados/destaques.json`.
 - **Áreas e ruas recortadas no limite municipal**: os polígonos do mapa colaborativo passavam da divisa (o da UBS Parque da Matriz avançava 26% para fora) e a malha viária também. Os dois são cortados pelo limite do OpenStreetMap na geração dos dados.
 
@@ -185,9 +186,9 @@ O arquivo `.nojekyll` na raiz desliga o processamento Jekyll, que não é necess
 
 ## 8.2 Correções de abrangência
 
-Ajustes que a Secretaria determina sobre os polígonos ficam em `dados/recortes_areas.json`, com o motivo registrado. Cada recorte descreve a parte a remover por longitude ou latitude (`remover_oeste_de`, `remover_leste_de`, `remover_norte_de`, `remover_sul_de`); `scripts/final.py` aplica o corte e, junto, tira da lista de abrangência da unidade as ruas que ficaram só na parte removida.
+Ajustes que a Secretaria determina sobre os polígonos ficam em `dados/recortes_areas.json`, com o motivo registrado. Cada recorte descreve a parte a remover por longitude ou latitude (`remover_oeste_de`, `remover_leste_de`, `remover_norte_de`, `remover_sul_de`); `scripts/final.py` aplica o corte e, junto, tira da lista de abrangência da unidade as ruas que ficaram só na parte removida. Com `transferir_orfas_para`, essas ruas passam para a unidade indicada em vez de ficarem sem referência.
 
-Recorte em vigor: a **ESF Jardim Betânia** perdeu o setor a oeste da Souza Cruz — Parque do Sabiá, Meu Rincão, Residencial Caetanos I e II e Sítio Ipiranga —, 60% da área original. As 66 vias daquele setor saíram da abrangência da unidade e, sem outra unidade indicada, deixaram de responder na consulta.
+Recorte em vigor: a **ESF Jardim Betânia** perdeu o setor a oeste da Souza Cruz — Parque do Sabiá, Meu Rincão, Residencial Caetanos I e II e Sítio Ipiranga —, 60% da área original. As 66 vias daquele setor passaram para a **UBS CAIC Granja**, que é a unidade de referência que a consulta informa para esses endereços. A transferência muda a lista de abrangência e a resposta da consulta; o polígono da UBS CAIC Granja não foi esticado até lá, porque o setor fica longe do território desenhado da unidade e a extensão passaria por cima de áreas vizinhas.
 
 ## 8.3 Agrupamentos por tipo de atendimento
 

@@ -560,7 +560,9 @@ var res=document.getElementById('result');
 function esc(s){return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
 function infoHTML(txt){
   if(!txt)return '';
-  return esc(txt).replace(/\n+/g,' · ').replace(/([\w.\-+]+@[\w.\-]+)/g,'<a href="mailto:$1">$1</a>');
+  return esc(txt).replace(/\n+/g,' \u00b7 ')
+    .replace(/([\w.\-+]+@[\w.\-]+)/g,'<a href="mailto:$1">$1</a>')
+    .replace(/\((\d{2})\)\s*(\d{4,5})-(\d{4})/g,'<a href="https://wa.me/55$1$2$3" target="_blank" rel="noopener" title="Abrir conversa no WhatsApp">($1)&nbsp;$2-$3</a>');
 }
 function cardUnidade(u,dist,rot){
   var col=u.c==='ESF'?'var(--esf)':u.c==='UBS'?'var(--ubs)':'var(--ink-3)';

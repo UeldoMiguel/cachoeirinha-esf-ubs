@@ -67,7 +67,7 @@
       return '<dl>' + props.unidades.map(function (u) {
         return '<dt>' + esc(u.nome) + '</dt><dd>' +
           (u.endereco ? esc(u.endereco) : '') +
-          (u.telefone ? (u.endereco ? '<br>' : '') + esc(u.telefone) : '') + '</dd>';
+          (u.telefone ? (u.endereco ? '<br>' : '') + linkTelefone(u.telefone) : '') + '</dd>';
       }).join('') + '</dl>';
     }
     var html = '';
@@ -76,10 +76,21 @@
       if (v === undefined || v === null || v === '') return;
       var valor = par[0] === 'email'
         ? '<a href="mailto:' + esc(v) + '">' + esc(v) + '</a>'
-        : esc(v);
+        : par[0] === 'telefone' ? linkTelefone(v) : esc(v);
       html += '<dt>' + esc(par[1]) + '</dt><dd>' + valor + '</dd>';
     });
     return html ? '<dl>' + html + '</dl>' : '';
+  }
+
+  /* Cada telefone vira um link de WhatsApp: wa.me/55 + DDD + número, sem
+     traço nem parênteses. O texto mostrado não muda, e o que não é número
+     (um "(ramal)", a barra entre dois contatos) fica como está. Se a linha
+     não tiver WhatsApp, o próprio aplicativo avisa ao abrir. */
+  function linkTelefone(txt) {
+    return esc(txt).replace(/\((\d{2})\)\s*(\d{4,5})-(\d{4})/g, function (todo, ddd, a, b) {
+      return '<a href="https://wa.me/55' + ddd + a + b + '" target="_blank" rel="noopener"' +
+        ' title="Abrir conversa no WhatsApp">' + todo + '</a>';
+    });
   }
 
   function classeMarca(tipo) {
@@ -485,6 +496,7 @@
     aplicarTemaMapa: aplicarTemaMapa,
     cores: CORES,
     esc: esc,
+    linkTelefone: linkTelefone,
     semAcento: semAcento,
     classeMarca: classeMarca,
     mostrarDetalhe: mostrarDetalhe,

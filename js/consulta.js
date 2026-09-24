@@ -163,7 +163,7 @@
       '<span class="nm">' + esc(props.nome) + '</span>' +
       (distancia != null ? '<br><span class="dist">' + distancia.toFixed(1).replace('.', ',') +
         ' km pelas quadras</span>' : '') +
-      (props.telefone ? '<br><span class="dist">' + esc(props.telefone) + '</span>' : '') +
+      (props.telefone ? '<br><span class="dist">' + API.linkTelefone(props.telefone) + '</span>' : '') +
       '</span></li>';
   }
 
