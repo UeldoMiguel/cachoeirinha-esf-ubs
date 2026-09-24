@@ -160,7 +160,8 @@
    -29.937976,
    -51.091228
   ],
-  "novo": true,
+  "novo": false,
+  "distancia_ponto_m": 0,
   "tipo": "Especialidades"
  },
  "SAM": {
@@ -172,7 +173,8 @@
    -29.912026,
    -51.072852
   ],
-  "novo": true,
+  "novo": false,
+  "distancia_ponto_m": 0,
   "tipo": "Especialidades"
  },
  "Secretaria de Saúde": {
@@ -305,7 +307,8 @@
    -29.947016,
    -51.09127
   ],
-  "novo": true,
-  "tipo": "Especialidades"
+  "novo": false,
+  "distancia_ponto_m": 0,
+  "tipo": "Saúde Mental"
  }
 }

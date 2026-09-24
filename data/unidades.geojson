@@ -557,7 +557,7 @@
    "type": "Feature",
    "properties": {
     "nome": "eMulti",
-    "tipo": "Especialidades",
+    "tipo": "Saúde Mental",
     "codigo": "EMULTI",
     "tem_area": false,
     "endereco": "Avenida General Flores da Cunha, 2385",

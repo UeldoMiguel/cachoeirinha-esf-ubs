@@ -161,9 +161,10 @@
   {
    "nome_oficial": "eMulti",
    "alias": null,
-   "tipo": "Especialidades",
+   "tipo": "Saúde Mental",
    "telefone": "3041-7184 / 3041-2582 (ramal)",
-   "endereco": "Avenida General Flores da Cunha, 2385"
+   "endereco": "Avenida General Flores da Cunha, 2385",
+   "_nota": "Secretaria (2026-09-24): a eMulti é listada junto da saúde mental, não das especialidades."
   }
  ]
 }
