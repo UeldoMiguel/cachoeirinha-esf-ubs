@@ -148,6 +148,10 @@ def main():
             registro['distancia_ponto_m'] = round(metros((u['ll'][0], u['ll'][1]), (ll[0], ll[1])))
         if item.get('tipo'):
             registro['tipo'] = item['tipo']
+        # e-mail da lista da Secretaria; '' diz que a unidade não divulga um,
+        # e nesse caso o que veio do mapa colaborativo também não aparece
+        if 'email' in item:
+            registro['email'] = item['email']
         if item.get('usar_coordenada_do_endereco'):
             registro['usar_coordenada_do_endereco'] = True
         if item.get('renomear'):

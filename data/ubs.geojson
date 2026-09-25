@@ -2,7 +2,7 @@
  "type": "FeatureCollection",
  "name": "Áreas de UBS — Cachoeirinha/RS",
  "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
- "gerado_em": "2026-09-24",
+ "gerado_em": "2026-09-25",
  "features": [
   {
    "type": "Feature",
@@ -124,6 +124,7 @@
     ],
     "endereco": "Rua Panamericana, 460",
     "telefone": "(51) 3041-6273",
+    "email": "ubs.parquedamatriz@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -324,6 +325,7 @@
     ],
     "endereco": "Rua Décio Martins Costa, 464",
     "telefone": "(51) 3074-5539 / (51) 3074-5508",
+    "email": "ubs.deciomartinscosta@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -651,6 +653,7 @@
     ],
     "endereco": "Rua Jardim das Flores, s/n",
     "telefone": "(51) 3074-5572",
+    "email": "ubs.caicgranja@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -1135,6 +1138,7 @@
     ],
     "endereco": "Rua Osvaldo Cruz, 590",
     "telefone": "(51) 3041-7134 / (51) 3041-6219",
+    "email": "ubs.osvaldocruz@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -1498,6 +1502,7 @@
     "endereco": "Rua Francisco Brochado da Rocha, 95",
     "telefone": "(51) 3041-6227",
     "sem_whatsapp": true,
+    "email": "ubs.cohab@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -1881,6 +1886,7 @@
     "endereco": "Rua Paranaguá, 105",
     "telefone": "(51) 3438-8664 / (51) 3074-5547",
     "sem_whatsapp": true,
+    "email": "ubs.odiloliveira@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -2221,6 +2227,7 @@
     ],
     "endereco": "Rua Capitão Garibaldi Santos, 497",
     "telefone": "(51) 3041-6211",
+    "email": "ubs.jardimdobosque@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {

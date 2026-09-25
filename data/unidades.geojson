@@ -2,7 +2,7 @@
  "type": "FeatureCollection",
  "name": "Unidades e serviços de saúde — Cachoeirinha/RS",
  "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
- "gerado_em": "2026-09-24",
+ "gerado_em": "2026-09-25",
  "features": [
   {
    "type": "Feature",
@@ -14,8 +14,7 @@
     "endereco": "Avenida José Brambila, 40",
     "telefone": "(51) 3041-8650",
     "sem_whatsapp": true,
-    "email": "almoxarifado.saude@cachoeirinha.rs.gov.br",
-    "informacoes": "Telefone: (51) 3041-8650\nEndereço: Avenida José Brambila, 40\nE-mail: almoxarifado.saude@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3041-8650\nEndereço: Avenida José Brambila, 40",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -35,7 +34,8 @@
     "tem_area": true,
     "endereco": "Rua Jardim das Flores, s/n",
     "telefone": "(51) 3074-5572",
-    "informacoes": "Telefone: (51) 3074-5572\nEndereço: Rua Jardim das Flores, s/n",
+    "email": "ubs.caicgranja@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3074-5572\nEndereço: Rua Jardim das Flores, s/n\nE-mail: ubs.caicgranja@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -56,7 +56,8 @@
     "endereco": "Rua Francisco Brochado da Rocha, 95",
     "telefone": "(51) 3041-6227",
     "sem_whatsapp": true,
-    "informacoes": "Telefone: (51) 3041-6227\nEndereço: Rua Francisco Brochado da Rocha, 95",
+    "email": "ubs.cohab@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3041-6227\nEndereço: Rua Francisco Brochado da Rocha, 95\nE-mail: ubs.cohab@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -76,7 +77,8 @@
     "tem_area": true,
     "endereco": "Rua Capitão Garibaldi Santos, 497",
     "telefone": "(51) 3041-6211",
-    "informacoes": "Telefone: (51) 3041-6211\nEndereço: Rua Capitão Garibaldi Santos, 497",
+    "email": "ubs.jardimdobosque@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3041-6211\nEndereço: Rua Capitão Garibaldi Santos, 497\nE-mail: ubs.jardimdobosque@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -118,7 +120,8 @@
     "endereco": "Rua Paranaguá, 105",
     "telefone": "(51) 3438-8664 / (51) 3074-5547",
     "sem_whatsapp": true,
-    "informacoes": "Telefone: (51) 3438-8664 / (51) 3074-5547\nEndereço: Rua Paranaguá, 105",
+    "email": "ubs.odiloliveira@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3438-8664 / (51) 3074-5547\nEndereço: Rua Paranaguá, 105\nE-mail: ubs.odiloliveira@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -138,7 +141,8 @@
     "tem_area": true,
     "endereco": "Rua Panamericana, 460",
     "telefone": "(51) 3041-6273",
-    "informacoes": "Telefone: (51) 3041-6273\nEndereço: Rua Panamericana, 460",
+    "email": "ubs.parquedamatriz@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3041-6273\nEndereço: Rua Panamericana, 460\nE-mail: ubs.parquedamatriz@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -158,7 +162,8 @@
     "tem_area": true,
     "endereco": "Rua Décio Martins Costa, 464",
     "telefone": "(51) 3074-5539 / (51) 3074-5508",
-    "informacoes": "Telefone: (51) 3074-5539 / (51) 3074-5508\nEndereço: Rua Décio Martins Costa, 464",
+    "email": "ubs.deciomartinscosta@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3074-5539 / (51) 3074-5508\nEndereço: Rua Décio Martins Costa, 464\nE-mail: ubs.deciomartinscosta@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -178,7 +183,8 @@
     "tem_area": true,
     "endereco": "Rua Osvaldo Cruz, 590",
     "telefone": "(51) 3041-7134 / (51) 3041-6219",
-    "informacoes": "Telefone: (51) 3041-7134 / (51) 3041-6219\nEndereço: Rua Osvaldo Cruz, 590",
+    "email": "ubs.osvaldocruz@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3041-7134 / (51) 3041-6219\nEndereço: Rua Osvaldo Cruz, 590\nE-mail: ubs.osvaldocruz@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -242,7 +248,8 @@
     "tem_area": true,
     "endereco": "Rua Fidel Zancheta, 655",
     "telefone": "(51) 3041-6244",
-    "informacoes": "Telefone: (51) 3041-6244\nEndereço: Rua Fidel Zancheta, 655",
+    "email": "esf.vereadorjoseramos@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3041-6244\nEndereço: Rua Fidel Zancheta, 655\nE-mail: esf.vereadorjoseramos@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -262,7 +269,8 @@
     "tem_area": true,
     "endereco": "Rua Orleans, 325",
     "telefone": "(51) 3041-7193",
-    "informacoes": "Telefone: (51) 3041-7193\nEndereço: Rua Orleans, 325",
+    "email": "esf.josearidasilveira@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3041-7193\nEndereço: Rua Orleans, 325\nE-mail: esf.josearidasilveira@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {
@@ -283,7 +291,8 @@
     "endereco": "Rua Amazonas, 583",
     "telefone": "(51) 3074-5566",
     "sem_whatsapp": true,
-    "informacoes": "Telefone: (51) 3074-5566\nEndereço: Rua Amazonas, 583",
+    "email": "esf.otaciliosilveira@cachoeirinha.rs.gov.br",
+    "informacoes": "Telefone: (51) 3074-5566\nEndereço: Rua Amazonas, 583\nE-mail: esf.otaciliosilveira@cachoeirinha.rs.gov.br",
     "fonte": "Lista de contatos das unidades da Secretaria Municipal de Saúde de Cachoeirinha/RS"
    },
    "geometry": {

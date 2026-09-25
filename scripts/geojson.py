@@ -172,6 +172,18 @@ def main():
             return o['telefone']
         return telefone(texto)
 
+    def email_de(nome, texto, outro=None):
+        """E-mail da lista da Secretaria; '' na lista significa "não tem".
+
+        A unidade pode ser procurada pelo nome do mapa ou pelo nome de
+        exibição: a lista responde pelos dois.
+        """
+        for n in (nome, outro):
+            o = oficiais.get(n) if n else None
+            if o and 'email' in o:
+                return o['email'] or None
+        return email(texto)
+
     def fonte_contato(nome):
         return FONTE_OFICIAL if nome in oficiais else FONTE_AREAS
 
@@ -193,7 +205,7 @@ def main():
              'endereco': endereco_de(a['n']),
              'telefone': telefone_de(a['n'], u.get('info', '')),
              'sem_whatsapp': sem_whatsapp(a['n']),
-             'email': email(u.get('info', '')),
+             'email': email_de(a['n'], u.get('info', '')),
              'fonte': FONTE_AREAS}
 
     def area_unida(grupo):
@@ -285,7 +297,7 @@ def main():
              'endereco': endereco_de(u['n']),
              'telefone': telefone_de(u['n'], info),
              'sem_whatsapp': sem_whatsapp(nome_de(u['n'])) or sem_whatsapp(u['n']),
-             'email': email(info),
+             'email': email_de(nome_de(u['n']), info, u['n']),
              'destaque': cor_destaque.get(nome_de(u['n'])) or cor_destaque.get(u['n']),
              'informacoes': info,
              'fonte': fonte_contato(u['n'])}))

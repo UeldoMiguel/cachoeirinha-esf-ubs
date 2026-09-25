@@ -1,6 +1,6 @@
 {
  "_fonte": "Lista de contatos das unidades fornecida pela Secretaria Municipal de Saúde de Cachoeirinha/RS (transcrita em 2026-09-18). Telefone e endereço desta lista têm precedência sobre o que foi derivado do mapa colaborativo e do CNEFE.",
- "_campos": "nome_oficial | telefone (como na lista) | endereco | alias: nome da unidade no mapa, quando difere",
+ "_campos": "nome_oficial | telefone (como na lista) | endereco | email (da lista da Secretaria; \"\" quando a unidade não divulga endereço de e-mail) | alias: nome da unidade no mapa, quando difere",
  "unidades": [
   {
    "nome_oficial": "CAPS AD",
@@ -44,37 +44,43 @@
    "nome_oficial": "ESF Canarinho",
    "alias": "ESF Canarinho",
    "telefone": "3041-8660",
-   "endereco": "Rua Espanha, 821"
+   "endereco": "Rua Espanha, 821",
+   "email": "esf.canarinho@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "ESF Carlos Wilkens",
    "alias": "ESF Carlos Wilkens",
    "telefone": "3041-7190",
-   "endereco": "Travessa São Jorge, 81"
+   "endereco": "Travessa São Jorge, 81",
+   "email": "esf.carloswilkens@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "ESF Jardim Betânia",
    "alias": "ESF Jardim Betânia",
    "telefone": "3074-5516",
-   "endereco": "Rua Capão da Canoa, 185"
+   "endereco": "Rua Capão da Canoa, 185",
+   "email": "esf.jardimbetania@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "ESF José Ari",
    "alias": "ESF José Ari da Silveira",
    "telefone": "3041-7193",
-   "endereco": "Rua Orleans, 325"
+   "endereco": "Rua Orleans, 325",
+   "email": "esf.josearidasilveira@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "ESF José Ramos",
    "alias": "ESF José Ramos",
    "telefone": "3041-6244",
-   "endereco": "Rua Fidel Zancheta, 655"
+   "endereco": "Rua Fidel Zancheta, 655",
+   "email": "esf.vereadorjoseramos@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "ESF Otacílio Silveira",
    "alias": "ESF Otacílio Silveira",
    "telefone": "3074-5566",
-   "endereco": "Rua Amazonas, 583"
+   "endereco": "Rua Amazonas, 583",
+   "email": "esf.otaciliosilveira@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "SAE",
@@ -101,56 +107,66 @@
    "alias": "Secretaria de Saúde",
    "telefone": "3041-8650",
    "endereco": "Avenida José Brambila, 40",
-   "observacao": "Telefone informado pela Secretaria em 2026-09-24; endereço como já constava no mapa."
+   "observacao": "Telefone informado pela Secretaria em 2026-09-24; endereço como já constava no mapa.",
+   "email": "",
+   "_nota_email": "Secretaria (2026-09-25): a Secretaria não divulga e-mail na caixa; o que vinha do mapa era do almoxarifado."
   },
   {
    "nome_oficial": "UBS CAIC Granja",
    "alias": "UBS CAIC Granja",
    "telefone": "3074-5572",
-   "endereco": "Rua Jardim das Flores, s/n"
+   "endereco": "Rua Jardim das Flores, s/n",
+   "email": "ubs.caicgranja@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "UBS COHAB",
    "alias": "UBS COHAB",
    "usar_coordenada_do_endereco": true,
    "telefone": "3041-6227",
-   "endereco": "Rua Francisco Brochado da Rocha, 95"
+   "endereco": "Rua Francisco Brochado da Rocha, 95",
+   "email": "ubs.cohab@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "UBS Décio Martins Costa",
    "alias": "UBS Décio Martins Costa",
    "telefone": "3074-5539 / 3074-5508",
-   "endereco": "Rua Décio Martins Costa, 464"
+   "endereco": "Rua Décio Martins Costa, 464",
+   "email": "ubs.deciomartinscosta@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "UBS Jardim do Bosque",
    "alias": "UBS Jardim do Bosque",
    "telefone": "3041-6211",
-   "endereco": "Rua Capitão Garibaldi Santos, 497"
+   "endereco": "Rua Capitão Garibaldi Santos, 497",
+   "email": "ubs.jardimdobosque@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "UBS Nova Cachoeirinha",
    "alias": "UBS Nova Cachoeirinha",
    "telefone": "3041-6245",
-   "endereco": "Rua Eldorado, 260"
+   "endereco": "Rua Eldorado, 260",
+   "email": "ubs.novacachoeirinha@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "UBS Odil",
    "alias": "UBS Odil Silva de Oliveira",
    "telefone": "3438-8664 / 3074-5547",
-   "endereco": "Rua Paranaguá, 105"
+   "endereco": "Rua Paranaguá, 105",
+   "email": "ubs.odiloliveira@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "UBS Osvaldo Cruz",
    "alias": "UBS Osvaldo Cruz",
    "telefone": "3041-7134 / 3041-6219",
-   "endereco": "Rua Osvaldo Cruz, 590"
+   "endereco": "Rua Osvaldo Cruz, 590",
+   "email": "ubs.osvaldocruz@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "UBS Parque da Matriz",
    "alias": "UBS Parque da Matriz",
    "telefone": "3041-6273",
-   "endereco": "Rua Panamericana, 460"
+   "endereco": "Rua Panamericana, 460",
+   "email": "ubs.parquedamatriz@cachoeirinha.rs.gov.br"
   },
   {
    "nome_oficial": "UPA",

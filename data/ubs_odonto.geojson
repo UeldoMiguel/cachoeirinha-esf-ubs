@@ -2,7 +2,7 @@
  "type": "FeatureCollection",
  "name": "Áreas de UBS — Cachoeirinha/RS",
  "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
- "gerado_em": "2026-09-24",
+ "gerado_em": "2026-09-25",
  "features": [
   {
    "type": "Feature",
@@ -2343,6 +2343,7 @@
     "endereco": "Rua Paranaguá, 105",
     "telefone": "(51) 3438-8664 / (51) 3074-5547",
     "sem_whatsapp": true,
+    "email": "ubs.odiloliveira@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {

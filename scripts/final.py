@@ -280,8 +280,12 @@ def contato(nome,info):
     if o:
         linhas.append('Telefone: '+o['telefone'])
         linhas.append('Endereço: '+o['endereco'])
-    m=_re.search(r'[\w.\-+]+@[\w.\-]+\.\w+',info or '')
-    if m: linhas.append('E-mail: '+m.group(0))
+    if o and 'email' in o:
+        # a lista da Secretaria manda também no e-mail; '' diz que não há
+        if o['email']: linhas.append('E-mail: '+o['email'])
+    else:
+        m=_re.search(r'[\w.\-+]+@[\w.\-]+\.\w+',info or '')
+        if m: linhas.append('E-mail: '+m.group(0))
     return chr(10).join(linhas) if linhas else info
 def nome_exibido(nome):
     o=oficiais.get(nome) or {}

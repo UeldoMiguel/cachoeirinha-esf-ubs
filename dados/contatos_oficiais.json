@@ -81,7 +81,8 @@
    -51.071145
   ],
   "novo": false,
-  "distancia_ponto_m": 25
+  "distancia_ponto_m": 25,
+  "email": "esf.canarinho@cachoeirinha.rs.gov.br"
  },
  "ESF Carlos Wilkens": {
   "nome_oficial": "ESF Carlos Wilkens",
@@ -93,7 +94,8 @@
    -51.109974
   ],
   "novo": false,
-  "distancia_ponto_m": 13
+  "distancia_ponto_m": 13,
+  "email": "esf.carloswilkens@cachoeirinha.rs.gov.br"
  },
  "ESF Jardim Betânia": {
   "nome_oficial": "ESF Jardim Betânia",
@@ -105,7 +107,8 @@
    -51.087306
   ],
   "novo": false,
-  "distancia_ponto_m": 10
+  "distancia_ponto_m": 10,
+  "email": "esf.jardimbetania@cachoeirinha.rs.gov.br"
  },
  "ESF José Ari da Silveira": {
   "nome_oficial": "ESF José Ari",
@@ -117,7 +120,8 @@
    -51.075394
   ],
   "novo": false,
-  "distancia_ponto_m": 19
+  "distancia_ponto_m": 19,
+  "email": "esf.josearidasilveira@cachoeirinha.rs.gov.br"
  },
  "ESF José Ramos": {
   "nome_oficial": "ESF José Ramos",
@@ -125,7 +129,8 @@
   "endereco": "Rua Fidel Zancheta, 655",
   "geocodificacao": "via não encontrada no CNEFE",
   "ll": null,
-  "novo": false
+  "novo": false,
+  "email": "esf.vereadorjoseramos@cachoeirinha.rs.gov.br"
  },
  "ESF Otacílio Silveira": {
   "nome_oficial": "ESF Otacílio Silveira",
@@ -137,7 +142,8 @@
    -51.075418
   ],
   "novo": false,
-  "distancia_ponto_m": 3
+  "distancia_ponto_m": 3,
+  "email": "esf.otaciliosilveira@cachoeirinha.rs.gov.br"
  },
  "SAE": {
   "nome_oficial": "SAE",
@@ -187,7 +193,8 @@
    -51.077421
   ],
   "novo": false,
-  "distancia_ponto_m": 10
+  "distancia_ponto_m": 10,
+  "email": ""
  },
  "UBS CAIC Granja": {
   "nome_oficial": "UBS CAIC Granja",
@@ -199,7 +206,8 @@
    -51.082581
   ],
   "novo": false,
-  "distancia_ponto_m": 68
+  "distancia_ponto_m": 68,
+  "email": "ubs.caicgranja@cachoeirinha.rs.gov.br"
  },
  "UBS COHAB": {
   "nome_oficial": "UBS COHAB",
@@ -212,6 +220,7 @@
   ],
   "novo": false,
   "distancia_ponto_m": 536,
+  "email": "ubs.cohab@cachoeirinha.rs.gov.br",
   "usar_coordenada_do_endereco": true
  },
  "UBS Décio Martins Costa": {
@@ -224,7 +233,8 @@
    -51.102738
   ],
   "novo": false,
-  "distancia_ponto_m": 19
+  "distancia_ponto_m": 19,
+  "email": "ubs.deciomartinscosta@cachoeirinha.rs.gov.br"
  },
  "UBS Jardim do Bosque": {
   "nome_oficial": "UBS Jardim do Bosque",
@@ -236,7 +246,8 @@
    -51.091278
   ],
   "novo": false,
-  "distancia_ponto_m": 88
+  "distancia_ponto_m": 88,
+  "email": "ubs.jardimdobosque@cachoeirinha.rs.gov.br"
  },
  "UBS Nova Cachoeirinha": {
   "nome_oficial": "UBS Nova Cachoeirinha",
@@ -248,7 +259,8 @@
    -51.071862
   ],
   "novo": false,
-  "distancia_ponto_m": 73
+  "distancia_ponto_m": 73,
+  "email": "ubs.novacachoeirinha@cachoeirinha.rs.gov.br"
  },
  "UBS Odil Silva de Oliveira": {
   "nome_oficial": "UBS Odil",
@@ -260,7 +272,8 @@
    -51.072852
   ],
   "novo": false,
-  "distancia_ponto_m": 47
+  "distancia_ponto_m": 47,
+  "email": "ubs.odiloliveira@cachoeirinha.rs.gov.br"
  },
  "UBS Osvaldo Cruz": {
   "nome_oficial": "UBS Osvaldo Cruz",
@@ -272,7 +285,8 @@
    -51.091113
   ],
   "novo": false,
-  "distancia_ponto_m": 27
+  "distancia_ponto_m": 27,
+  "email": "ubs.osvaldocruz@cachoeirinha.rs.gov.br"
  },
  "UBS Parque da Matriz": {
   "nome_oficial": "UBS Parque da Matriz",
@@ -284,7 +298,8 @@
    -51.080366
   ],
   "novo": false,
-  "distancia_ponto_m": 16
+  "distancia_ponto_m": 16,
+  "email": "ubs.parquedamatriz@cachoeirinha.rs.gov.br"
  },
  "UPA 24h Cachoeirinha": {
   "nome_oficial": "UPA",

@@ -2,7 +2,7 @@
  "type": "FeatureCollection",
  "name": "Áreas de ESF — Cachoeirinha/RS",
  "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
- "gerado_em": "2026-09-24",
+ "gerado_em": "2026-09-25",
  "features": [
   {
    "type": "Feature",
@@ -518,6 +518,7 @@
     ],
     "endereco": "Rua Orleans, 325",
     "telefone": "(51) 3041-7193",
+    "email": "esf.josearidasilveira@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -756,6 +757,7 @@
     "endereco": "Rua Amazonas, 583",
     "telefone": "(51) 3074-5566",
     "sem_whatsapp": true,
+    "email": "esf.otaciliosilveira@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
@@ -987,6 +989,7 @@
     ],
     "endereco": "Rua Fidel Zancheta, 655",
     "telefone": "(51) 3041-6244",
+    "email": "esf.vereadorjoseramos@cachoeirinha.rs.gov.br",
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
