@@ -1,0 +1,14 @@
+{
+ "_fonte": "Secretaria Municipal de Saúde de Cachoeirinha/RS (2026-10-27).",
+ "_como_funciona": "Todo pedaço do município que não está em área nenhuma passa para a UBS mais próxima. A divisão é feita por células de Voronoi em torno do ponto de cada UBS: cada ponto do vazio fica com a UBS cuja unidade está mais perto dele. O pedaço se junta ao território dessa UBS; o que sobrar solto entra como parte separada da mesma área. Lascas menores que 'area_minima_m2' são descartadas, para não encher o desenho de fiapos. As áreas de ESF não entram na divisão e não mudam. Em 'excecoes', um polígono nomeado de dados/osm_poligonos.json vai para a unidade indicada, antes da divisão automática.",
+ "distribuir": true,
+ "entre": "UBS",
+ "area_minima_m2": 2000,
+ "excecoes": [
+  {
+   "poligono": "Mato do Júlio",
+   "para": "UBS Parque da Matriz",
+   "motivo": "Secretaria (2026-10-27): o Mato do Júlio é referência da UBS Parque da Matriz."
+  }
+ ]
+}

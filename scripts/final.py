@@ -301,6 +301,80 @@ if TRANSF:
         REGIOES.setdefault(t['para'],[]).append(reg)
 
 
+# vazios de cobertura: todo pedaço do município que não está em área nenhuma
+# passa para a UBS mais próxima (dados/vazios.json)
+try:
+    VAZIOS=json.load(open('vazios.json',encoding='utf-8'))
+except (IOError,OSError,ValueError):
+    VAZIOS={}
+if VAZIOS.get('distribuir') and areas:
+    from shapely.geometry import MultiPoint as _MP
+    from shapely.ops import voronoi_diagram as _vor
+    minimo=VAZIOS.get('area_minima_m2',2000)/(111320.0**2)
+    def _todas(a):
+        return [Polygon(a['poly']).buffer(0)]+[Polygon(r).buffer(0) for r in a.get('poly_extra') or []]
+    cobertura=unary_union([q for a in areas for q in _todas(a)])
+    vazio=LIMITE.difference(cobertura)
+    tipo=VAZIOS.get('entre','UBS')
+    pontos=[(' '.join(u['nome'].split()),Point(u['ll'][1],u['ll'][0]))
+            for u in d['unidades'] if u['cat']==tipo]
+    por_nome_area={a['n']:a for a in areas}
+    pontos=[(n,p) for n,p in pontos if n in por_nome_area]
+    # exceções: o vazio de um polígono nomeado vai para a unidade indicada,
+    # antes da divisão automática pela unidade mais próxima
+    try:
+        POLIS=json.load(open('osm_poligonos.json',encoding='utf-8'))['poligonos']
+    except (IOError,OSError,ValueError,KeyError):
+        POLIS={}
+    for exc in VAZIOS.get('excecoes',[]):
+        reg=POLIS.get(exc['poligono'])
+        alvo=por_nome_area.get(exc['para'])
+        if not reg or not alvo:
+            print('exceção ignorada:',exc.get('poligono'),'->',exc.get('para')); continue
+        parte=vazio.intersection(Polygon(reg['anel']).buffer(0))
+        if parte.is_empty:
+            print('exceção sem vazio para distribuir:',exc['poligono']); continue
+        j=unary_union(_todas(alvo)+[parte])
+        qs=[q for q in (j.geoms if j.geom_type=='MultiPolygon' else [j]) if q.area>minimo]
+        qs.sort(key=lambda q:-q.area)
+        alvo['poly']=[[round(x,5),round(y,5)] for x,y in qs[0].simplify(3/111320.0).exterior.coords]
+        extras=[[[round(x,5),round(y,5)] for x,y in q.simplify(3/111320.0).exterior.coords] for q in qs[1:]]
+        if extras: alvo['poly_extra']=extras
+        REGIOES.setdefault(exc['para'],[]).append(parte)
+        vazio=vazio.difference(parte)
+        print('exceção: %s (%.2f km2) -> %s' % (exc['poligono'],parte.area*111.32**2,exc['para']))
+
+    if not vazio.is_empty and len(pontos)>1:
+        # células de Voronoi: cada ponto do vazio fica com a unidade mais próxima
+        celulas=_vor(_MP([p for _,p in pontos]),envelope=LIMITE.buffer(0.02))
+        de_quem={}
+        for g in celulas.geoms:
+            for n,p in pontos:
+                if g.contains(p): de_quem[n]=g; break
+        e3=10/111320.0
+        total=0.0
+        for nome,celula in sorted(de_quem.items()):
+            parte=vazio.intersection(celula)
+            if parte.is_empty: continue
+            parte=parte.buffer(e3).buffer(-e3)              # tira os fiapos da divisa
+            if parte.is_empty: continue
+            alvo=por_nome_area[nome]
+            j=unary_union(_todas(alvo)+[parte])
+            qs=list(j.geoms) if j.geom_type=='MultiPolygon' else [j]
+            qs=[q for q in qs if q.area>minimo]
+            if not qs: continue
+            qs.sort(key=lambda q:-q.area)
+            qs=[q.simplify(3/111320.0) for q in qs]
+            alvo['poly']=[[round(x,5),round(y,5)] for x,y in qs[0].exterior.coords]
+            extras=[[[round(x,5),round(y,5)] for x,y in q.exterior.coords] for q in qs[1:]]
+            if extras: alvo['poly_extra']=extras
+            elif 'poly_extra' in alvo: del alvo['poly_extra']
+            REGIOES.setdefault(nome,[]).append(parte)
+            total+=parte.area*111.32**2
+            print('vazio distribuído: %-26s +%5.2f km2  (%d parte%s)'
+                  % (nome[:26],parte.area*111.32**2,len(qs),'' if len(qs)==1 else 's'))
+        print('área sem referência distribuída: %.2f km2' % total)
+
 def entrada(k,label,indices,prov=0,traduzir=True):
     g=geon.get(k)
     if traduzir:

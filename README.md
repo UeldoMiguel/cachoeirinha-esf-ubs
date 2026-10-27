@@ -196,7 +196,15 @@ Quando a Secretaria passa um trecho inteiro de uma unidade para outra, o trecho 
 
 Transferência em vigor: o trecho entre a **Avenida da Federação**, a **Estrada dos Capistranos** e a **RS-118 (Rodovia Mário Quintana)** — Residencial Amazonas e vizinhança, 0,95 km² — é referência da **ESF Canarinho**, e como encosta no território dela entrou no mesmo desenho (a área da unidade foi de 1,1 para 2,0 km²). Saiu 32% da área da ESF Jardim Betânia; o resto do trecho não estava em área nenhuma.
 
-## 8.4 Agrupamentos por tipo de atendimento
+## 8.4 Área sem referência
+
+Todo pedaço do município que não cai em área nenhuma passa para a **UBS mais próxima**, conforme `dados/vazios.json`. A divisão usa células de Voronoi em torno do ponto de cada UBS: cada ponto do vazio fica com a unidade mais perto dele, e o pedaço se junta ao território dessa UBS (o que ficar solto entra como parte separada da mesma área). Lascas menores que `area_minima_m2` são descartadas. As áreas de ESF não entram na divisão.
+
+Em `excecoes`, um polígono nomeado de `dados/osm_poligonos.json` vai para a unidade indicada antes da divisão automática — é o caso do **Mato do Júlio** (1,37 km², do OpenStreetMap), que é referência da UBS Parque da Matriz.
+
+Resultado: 15,3 km² distribuídos e **100% do município com unidade de referência**, contra 70% antes.
+
+## 8.5 Agrupamentos por tipo de atendimento
 
 `dados/agrupamentos_ubs.json` lista, para cada modo, quais UBS dividem território:
 
@@ -211,13 +219,13 @@ Transferência em vigor: o trecho entre a **Avenida da Federação**, a **Estrad
 
 `scripts/geojson.py` funde os polígonos de cada lista (união geométrica, com fechamento de frestas de digitalização) e gera `data/ubs.geojson` e `data/ubs_odonto.geojson`. A feição resultante guarda `codigos` com o código de cada unidade do grupo, e `unidades` com nome, endereço e telefone de cada uma — é o que a caixa de informações e a consulta por endereço exibem. Mudar um agrupamento é editar esse arquivo e rodar `python scripts/geojson.py`.
 
-## 8.5 Unidades desativadas
+## 8.6 Unidades desativadas
 
 `dados/unidades_inativas.json` registra unidade que deixou de existir e quem herdou o território. `scripts/final.py` funde a área na sucessora, transfere as ruas da abrangência, remove o ponto do mapa e remapeia os índices do índice de ruas.
 
 Em vigor: **UBS Getúlio Vargas** foi desativada e sua área e suas 48 ruas passaram para a **UBS Osvaldo Cruz**.
 
-## 8.6 Inclusões de ruas
+## 8.7 Inclusões de ruas
 
 `dados/ruas_adicionadas.json` acrescenta vias à abrangência de uma unidade. Com `"estender_area": true`, o polígono também é esticado para cobrir o traçado delas (envoltória convexa do conjunto, com folga de 25 m).
 
