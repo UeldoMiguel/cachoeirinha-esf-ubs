@@ -277,7 +277,7 @@ if TRANSF:
         elif 'poly_extra' in a2: a2.pop('poly_extra')
 
     for t in TRANSF:
-        if t.get('pedaco_em'): continue   # tratado no fim, sobre a área já pronta
+        if t.get('pedaco_em') or t.get('caixa'): continue   # tratados no fim, sobre a área já pronta
         reg=regiao_entre_vias(t['eixo'],t['lados'])
         if reg is None or reg.is_empty:
             print('transferência ignorada, região não pôde ser fechada:',t.get('para')); continue
@@ -440,6 +440,28 @@ if TRANSF:
         elif 'poly_extra' in a2: a2.pop('poly_extra')
 
     for t in TRANSF:
+        if t.get('caixa'):
+            # move o que a unidade de origem tem dentro da caixa
+            origem=por_nome_area.get(t.get('de')); alvo=por_nome_area.get(t['para'])
+            if not origem or not alvo:
+                print('transferência por caixa ignorada:',t.get('de'),'->',t.get('para')); continue
+            sul,oeste,norte,leste=t['caixa']
+            molde=_box(oeste,sul,leste,norte)
+            seu=unary_union(partes(origem))
+            vai=seu.intersection(molde)
+            if vai.is_empty:
+                print('caixa sem área de %s dentro' % t['de']); continue
+            fica=seu.difference(molde)
+            if fica.is_empty:
+                print('a caixa pega a área inteira de %s, transferência ignorada' % t['de']); continue
+            e5=8/111320.0
+            fica=fica.buffer(-e5).buffer(e5*1.05)        # some com o fiapo deixado pelo corte
+            guarda(origem,list(fica.geoms) if fica.geom_type=='MultiPolygon' else [fica])
+            j=unary_union(partes(alvo)+[vai])
+            guarda(alvo,list(j.geoms) if j.geom_type=='MultiPolygon' else [j])
+            REGIOES.setdefault(t['para'],[]).append(vai)
+            print('caixa de %.3f km2: %s -> %s' % (vai.area*111.32**2,t['de'],t['para']))
+            continue
         if not t.get('pedaco_em'): continue
         origem=por_nome_area.get(t.get('de')); alvo=por_nome_area.get(t['para'])
         if not origem or not alvo:
@@ -457,6 +479,43 @@ if TRANSF:
         guarda(alvo,list(j.geoms) if j.geom_type=='MultiPolygon' else [j])
         REGIOES.setdefault(t['para'],[]).append(unary_union(vai))
         print('pedaço de %.3f km2: %s -> %s' % (sum(q.area for q in vai)*111.32**2,t['de'],t['para']))
+
+# nenhuma área pode cobrir outra: onde duas se sobrepõem, o território fica
+# com a ESF (equipe de Saúde da Família vinculada) e sai da UBS. O que sobra
+# cercado vira buraco no desenho da UBS, em vez de engolir a vizinha.
+def _geom(a2):
+    pecas=[Polygon(a2['poly']).buffer(0)]+[Polygon(r).buffer(0) for r in a2.get('poly_extra') or []]
+    g=unary_union(pecas)
+    for r in a2.get('buracos') or []:
+        g=g.difference(Polygon(r).buffer(0))
+    return g
+
+def _grava(a2,g):
+    if g.is_empty: return False
+    qs=list(g.geoms) if g.geom_type=='MultiPolygon' else [g]
+    qs=[q for q in qs if q.area>2000/(111320.0**2)]
+    if not qs: return False
+    qs.sort(key=lambda q:-q.area)
+    a2['poly']=[[round(x,5),round(y,5)] for x,y in qs[0].exterior.coords]
+    extras=[[[round(x,5),round(y,5)] for x,y in q.exterior.coords] for q in qs[1:]]
+    if extras: a2['poly_extra']=extras
+    elif 'poly_extra' in a2: a2.pop('poly_extra')
+    furos=[[[round(x,5),round(y,5)] for x,y in anel.coords] for q in qs for anel in q.interiors]
+    if furos: a2['buracos']=furos
+    elif 'buracos' in a2: a2.pop('buracos')
+    return True
+
+esf=[a for a in areas if a['t']=='ESF']
+for a in areas:
+    if a['t']=='ESF': continue
+    g=_geom(a)
+    for b in esf:
+        gb=_geom(b)
+        if g.intersects(gb): g=g.difference(gb)
+    if not _grava(a,g):
+        print('aviso: área da %s ficou vazia depois de respeitar as ESF' % a['n'])
+    elif a.get('buracos'):
+        print('buraco no desenho: %-26s %d área(s) de ESF cercada(s)' % (a['n'][:26],len(a['buracos'])))
 
 def entrada(k,label,indices,prov=0,traduzir=True):
     g=geon.get(k)

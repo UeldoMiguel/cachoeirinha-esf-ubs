@@ -194,7 +194,7 @@ Recorte em vigor: a **ESF Jardim Betânia** perdeu o setor a oeste da Souza Cruz
 
 Quando a Secretaria passa um trecho inteiro de uma unidade para outra, o trecho é descrito em `dados/areas_transferidas.json` pelas vias que o cercam — `eixo` é a via que liga as outras duas, `lados` são as vias que fecham as pontas. `scripts/final.py` monta a região a partir do traçado dessas vias no OpenStreetMap e recorta dela as unidades listadas em `retirar_de`. A transferência só toma o que está vago ou pertence a essas unidades: o território de qualquer outra fica como está e sai da região. Se a região encostar no território da unidade de destino, as duas viram um desenho só, sem divisa interna; se ficar longe, entra como **polígono separado**, sem ponte até a área principal. As ruas com traçado dentro da região passam a responder pela unidade de destino; quem atravessa a divisa fica nas duas, e o número da casa decide.
 
-Uma transferência também pode ser dita por `pedaco_em` (`[lat, lon]`): o pedaço da área de `de` que contém aquele ponto passa inteiro para `para`, já sobre a geometria pronta. Em vigor: dois fragmentos da UBS CAIC Granja junto à Rua Mário Teixeira de Souza passaram para a UBS Jardim do Bosque.
+Uma transferência também pode ser dita por `caixa` (`[sul, oeste, norte, leste]`): o que a unidade de `de` tiver dentro da caixa passa para `para` — foi assim que a parte da ESF Canarinho a oeste da Rua Chimango foi para a UBS Nova Cachoeirinha e a faixa da ESF Carlos Wilkens junto ao arroio, na altura da Rua 7 de Setembro, foi para a UBS Décio Martins Costa. Ou por `pedaco_em` (`[lat, lon]`): o pedaço da área de `de` que contém aquele ponto passa inteiro para `para`, já sobre a geometria pronta. Em vigor: dois fragmentos da UBS CAIC Granja junto à Rua Mário Teixeira de Souza passaram para a UBS Jardim do Bosque.
 
 Transferência em vigor: o trecho entre a **Avenida da Federação**, a **Estrada dos Capistranos** e a **RS-118 (Rodovia Mário Quintana)** — Residencial Amazonas e vizinhança — é referência da **UBS CAIC Granja**: 0,89 km², que entram como parte separada da área dela. A ponta leste da cunha, 6% que a **ESF Canarinho** já cobria, continua com a Canarinho. Saiu 32% da área da ESF Jardim Betânia; o resto do trecho não estava em área nenhuma.
 
@@ -205,6 +205,8 @@ Todo pedaço do município que não cai em área nenhuma passa para a **UBS mais
 Em `excecoes`, um pedaço do vazio vai para a unidade indicada antes da divisão automática, dito por `poligono` (nome em `dados/osm_poligonos.json`) ou por `caixa` (`[sul, oeste, norte, leste]`); a exceção pode mandar para uma ESF, o que a divisão automática não faz. Em vigor: o **Mato do Júlio** (1,37 km², polígono do OpenStreetMap) para a UBS Parque da Matriz, a faixa norte do **CADOP** (0,66 km²) para a UBS COHAB e a faixa sul, até o arroio (0,11 km²), para a ESF Carlos Wilkens.
 
 Resultado: 15,3 km² distribuídos e **100% do município com unidade de referência**, contra 70% antes.
+
+Nenhuma área cobre outra: no fim do build, onde uma área de UBS se sobrepõe a uma de ESF, o território fica com a ESF. Quando a UBS acaba cercando a ESF, o desenho dela ganha um **buraco** — `buracos` em `dados/final.json`, anel interno no GeoJSON — em vez de engolir a vizinha. O mapa, a consulta por endereço e a página autônoma tratam o buraco como fora da área.
 
 ## 8.5 Agrupamentos por tipo de atendimento
 

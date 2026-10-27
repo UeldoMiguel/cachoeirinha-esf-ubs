@@ -249,10 +249,15 @@ function dentro(lat,lon,poly){
 /* uma área pode ter mais de um pedaço: o principal e o que ela herdou de
    outra unidade, que fica separado dele no mapa */
 function aneis(a){ return [a.poly].concat(a.poly_extra||[]); }
+function buracos(a){ return a.buracos||[]; }
 function dentroDaArea(lat,lon,a){
-  var r=aneis(a);
-  for(var i=0;i<r.length;i++) if(dentro(lat,lon,r[i])) return true;
-  return false;
+  var r=aneis(a), b=buracos(a), i;
+  var achou=false;
+  for(i=0;i<r.length;i++) if(dentro(lat,lon,r[i])){achou=true;break;}
+  if(!achou) return false;
+  /* buraco: território de outra unidade cercado por esta */
+  for(i=0;i<b.length;i++) if(dentro(lat,lon,b[i])) return false;
+  return true;
 }
 function areaPorPonto(ll){
   for(var i=0;i<AREAS.length;i++) if(dentroDaArea(ll[0],ll[1],AREAS[i])) return i;
@@ -290,7 +295,8 @@ BOUND.forEach(function(s){
 var gAreas=el('g',{}); svg.appendChild(gAreas);
 var paths=AREAS.map(function(a,i){
   var col=a.t==='ESF'?'var(--esf)':'var(--ubs)';
-  var p=el('path',{d:aneis(a).map(function(r){return d_(r,true);}).join(''),fill:col,'fill-opacity':.28,stroke:col,'stroke-width':1.2,
+  var p=el('path',{'fill-rule':'evenodd',
+    d:aneis(a).concat(buracos(a)).map(function(r){return d_(r,true);}).join(''),fill:col,'fill-opacity':.28,stroke:col,'stroke-width':1.2,
     'stroke-linejoin':'round',class:'area','data-i':i,tabindex:'0',role:'button'});
   var t=el('title',{}); t.textContent=a.n+' — '+a.ruas.length+' ruas'; p.appendChild(t);
   p.addEventListener('click',function(){selecionarArea(i);});

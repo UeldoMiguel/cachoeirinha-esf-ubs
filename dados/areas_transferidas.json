@@ -1,6 +1,6 @@
 {
  "_fonte": "Transferências de território determinadas pela Secretaria Municipal de Saúde de Cachoeirinha/RS.",
- "_como_funciona": "Cada transferência descreve uma região cercada por três vias e diz para qual unidade ela passa. A região é calculada do traçado do OpenStreetMap na hora do build — 'eixo' é a via que liga as outras duas, 'lados' são as duas vias que fecham a região nas pontas. A transferência só toma o que está vago ou pertence às unidades listadas em 'retirar_de': o território de qualquer outra unidade é descontado da região e fica como está. Se a região encostar no território da unidade de destino, funde-se com ele num desenho só; se ficar longe, entra como polígono separado. As ruas com traçado dentro da região passam a responder pela unidade de destino. Uma transferência também pode ser dita por 'pedaco_em' ([lat, lon]): o pedaço da área de 'de' que contém aquele ponto passa inteiro para 'para'.",
+ "_como_funciona": "Cada transferência descreve uma região cercada por três vias e diz para qual unidade ela passa. A região é calculada do traçado do OpenStreetMap na hora do build — 'eixo' é a via que liga as outras duas, 'lados' são as duas vias que fecham a região nas pontas. A transferência só toma o que está vago ou pertence às unidades listadas em 'retirar_de': o território de qualquer outra unidade é descontado da região e fica como está. Se a região encostar no território da unidade de destino, funde-se com ele num desenho só; se ficar longe, entra como polígono separado. As ruas com traçado dentro da região passam a responder pela unidade de destino. Uma transferência também pode ser dita por 'pedaco_em' ([lat, lon]): o pedaço da área de 'de' que contém aquele ponto passa inteiro para 'para'. E por 'caixa' ([sul, oeste, norte, leste]): o que a unidade de 'de' tiver dentro da caixa passa para 'para'.",
  "transferencias": [
   {
    "para": "UBS CAIC Granja",
@@ -31,6 +31,28 @@
     -51.08414
    ],
    "motivo": "Secretaria (2026-10-27): o pedaço vizinho, na mesma quadra, é da UBS Jardim do Bosque."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS Nova Cachoeirinha",
+   "caixa": [
+    -29.903,
+    -51.08,
+    -29.886,
+    -51.0721
+   ],
+   "motivo": "Secretaria (2026-10-27): o que fica à esquerda (oeste) da Rua Chimango, junto ao fim da Av. Espírito Santo, é da UBS Nova Cachoeirinha."
+  },
+  {
+   "de": "ESF Carlos Wilkens",
+   "para": "UBS Décio Martins Costa",
+   "caixa": [
+    -29.967,
+    -51.109,
+    -29.961,
+    -51.098
+   ],
+   "motivo": "Secretaria (2026-10-27): a faixa junto ao arroio, na altura da Rua 7 de Setembro, é da UBS Décio Martins Costa."
   }
  ]
 }

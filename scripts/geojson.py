@@ -125,6 +125,17 @@ def anel_fechado(poly):
     return anel
 
 
+def geometria(a):
+    """Geometria da área: as partes menos os buracos (território de outra
+    unidade cercado por esta)."""
+    pecas = [Polygon(anel_fechado(a['poly'])).buffer(0)]
+    pecas += [Polygon(anel_fechado(r)).buffer(0) for r in a.get('poly_extra') or []]
+    g = unary_union(pecas)
+    for r in a.get('buracos') or []:
+        g = g.difference(Polygon(anel_fechado(r)).buffer(0))
+    return g
+
+
 def main():
     d = json.load(io.open(os.path.join(RAIZ, 'dados', 'final.json'), encoding='utf-8'))
     areas, unidades = d['areas'], d['unidades']
@@ -213,10 +224,14 @@ def main():
         membros = [a for a in areas if a['n'] in grupo]
         if len(membros) < 2:
             return None
-        pecas = [Polygon(anel_fechado(a['poly'])).buffer(0) for a in membros]
-        soltas = [Polygon(anel_fechado(r)).buffer(0)
-                  for a in membros for r in a.get('poly_extra') or []]
-        juntas = unary_union(pecas)
+        pecas = [geometria(a) for a in membros]
+        soltas = []
+        juntas = unary_union([max(p.geoms, key=lambda q: q.area) if p.geom_type == 'MultiPolygon' else p
+                              for p in pecas])
+        for a in membros:
+            for p in ([] if pecas[membros.index(a)].geom_type != 'MultiPolygon' else
+                      sorted(pecas[membros.index(a)].geoms, key=lambda q: -q.area)[1:]):
+                soltas.append(p)
         # as áreas vizinhas foram digitalizadas com folga de 12 a 31 m entre si;
         # fechar 25 m dissolve a divisa interna sem inchar o território (+0,4%)
         juntas = juntas.buffer(25 / 111320.0).buffer(-25 / 111320.0)
@@ -256,16 +271,9 @@ def main():
         for a in areas:
             if a['t'] != tipo or a['n'] in agrupadas:
                 continue
-            extras = a.get('poly_extra') or []
-            if extras:
-                # um território que a unidade herdou, longe da área principal:
-                # MultiPolygon mantém as partes separadas, cada uma no seu lugar
-                geom = {'type': 'MultiPolygon',
-                        'coordinates': [[anel_fechado(a['poly'])]] +
-                                       [[anel_fechado(r)] for r in extras]}
-            else:
-                geom = {'type': 'Polygon', 'coordinates': [anel_fechado(a['poly'])]}
-            feats.append(feature(geom, props_area(a, por_nome.get(a['n'], {}))))
+            # partes separadas e buracos vêm prontos da geometria
+            feats.append(feature(json.loads(shapely_json(geometria(a))),
+                                 props_area(a, por_nome.get(a['n'], {}))))
         return colecao(feats, 'Áreas de ' + tipo + ' — Cachoeirinha/RS', FONTE_AREAS,
                        'Limites de trabalho digitalizados em mapa colaborativo. Devem ser '
                        'substituídos pelos limites oficiais quando a Secretaria os publicar.')

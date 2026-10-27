@@ -148,7 +148,15 @@
     var g = camada.feature.geometry;
     var partes = g.type === 'MultiPolygon' ? g.coordinates : [g.coordinates];
     for (var i = 0; i < partes.length; i++) {
-      if (noAnel(latlng, (partes[i] || [])[0] || [])) return true;
+      var aneis = partes[i] || [];
+      if (!noAnel(latlng, aneis[0] || [])) continue;
+      /* o primeiro anel é o contorno; os seguintes são buracos — território
+         de outra unidade cercado por esta, que não conta como dentro */
+      var buraco = false;
+      for (var j = 1; j < aneis.length; j++) {
+        if (noAnel(latlng, aneis[j])) { buraco = true; break; }
+      }
+      if (!buraco) return true;
     }
     return false;
   }
