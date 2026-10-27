@@ -229,7 +229,11 @@ Nenhuma área cobre outra: no fim do build, onde uma área de UBS se sobrepõe a
 
 Em vigor: **UBS Getúlio Vargas** foi desativada e sua área e suas 48 ruas passaram para a **UBS Osvaldo Cruz**.
 
-## 8.7 Inclusões de ruas
+## 8.7 Faixas de numeração
+
+A lista da Secretaria traz verbetes com faixa — "Espanha (575 ao 921)", "Amazonas (784-828 lado par)". Eles não tinham traçado e respondiam como via própria, separados da rua. Agora `scripts/final.py` amarra cada verbete ao traçado da via (143 dos 170) e registra a faixa na rua-base: `[nº inicial, nº final, paridade, área]`, com paridade 0 = qualquer, 1 = ímpar, 2 = par. Com o número da casa, a faixa decide a unidade — "Rua Espanha, 821" responde ESF Canarinho, "Rua Espanha, 300" responde a unidade do desenho. Vale no mapa e na página de consulta.
+
+## 8.8 Inclusões de ruas
 
 `dados/ruas_adicionadas.json` acrescenta vias à abrangência de uma unidade. Com `"estender_area": true`, o polígono também é esticado para cobrir o traçado delas (envoltória convexa do conjunto, com folga de 25 m).
 

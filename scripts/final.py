@@ -454,9 +454,13 @@ if TRANSF:
             fica=seu.difference(molde)
             if fica.is_empty:
                 print('a caixa pega a área inteira de %s, transferência ignorada' % t['de']); continue
-            e5=8/111320.0
-            fica=fica.buffer(-e5).buffer(e5*1.05)        # some com o fiapo deixado pelo corte
-            guarda(origem,list(fica.geoms) if fica.geom_type=='MultiPolygon' else [fica])
+            # o corte é reto: basta descartar lasca menor que 2.000 m2, sem
+            # erodir a borda — erodir abriria uma fresta entre as duas áreas
+            qs=list(fica.geoms) if fica.geom_type=='MultiPolygon' else [fica]
+            qs=[q for q in qs if q.area>2000/(111320.0**2)]
+            if not qs:
+                print('a caixa pega a área inteira de %s, transferência ignorada' % t['de']); continue
+            guarda(origem,qs)
             j=unary_union(partes(alvo)+[vai])
             guarda(alvo,list(j.geoms) if j.geom_type=='MultiPolygon' else [j])
             REGIOES.setdefault(t['para'],[]).append(vai)
@@ -739,6 +743,45 @@ if RECORTES:
         a['ruas']=[r for r in a['ruas'] if norm(r) in chaves]
 
 print('logradouros CNEFE:',len(tren),'| ruas do índice com trechos numerados:',casados,'de',len(idx))
+# verbetes com faixa de numeração — "Espanha (575 ao 921)" — ganham o traçado
+# da própria via e passam a valer como faixa na rua-base: com o número da casa,
+# a consulta responde a unidade daquele trecho, não a da via inteira
+FAIXA=_re.compile(r'^(.*?)\s*\(([^)]*\d[^)]*)\)\s*$')
+NUMS=_re.compile(r'(\d+)\s*(?:a|ao|at[eé]|[-–])\s*(\d+)|(\d+)')
+por_chave={e[0]:e for e in idx}
+amarrados=casadas=0
+for e in idx:
+    m=FAIXA.match(e[1])
+    if not m: continue
+    base=norm(m.group(1))
+    if not e[6] and base in linn:
+        e[6]=list(linn[base])                      # desenha no traçado da via
+        amarrados+=1
+    g=geon.get(base)
+    if e[3] is None and g:
+        e[3],e[4]=round(g['lat'],5),round(g['lon'],5)
+    mae=por_chave.get(base)
+    if mae is None or mae is e or not e[2]: continue
+    txt=m.group(2).lower()
+    par=1 if 'impar' in txt or 'ímpar' in txt else (2 if 'par' in txt else 0)
+    trechos_num=[]
+    for a1,b1,so in NUMS.findall(txt):
+        if a1 and b1: trechos_num.append((int(a1),int(b1)))
+        elif so: trechos_num.append((int(so),int(so)))
+    if txt.startswith('at') and trechos_num:          # "(até 49)"
+        trechos_num=[(0,trechos_num[0][1])]
+    if not trechos_num: continue
+    faixas=mae[7] if len(mae)>7 else []
+    for lo,hi in trechos_num:
+        if lo>hi: lo,hi=hi,lo
+        faixas.append([lo,hi,par,e[2][0]])
+    if len(mae)>7: mae[7]=faixas
+    else: mae.append(faixas)
+    casadas+=1
+for e in idx:
+    if len(e)==7: e.append(None)
+print('verbetes com faixa: traçado amarrado em %d | faixas ligadas à rua-base: %d' % (amarrados,casadas))
+
 for a in areas: a.pop('_orig',None)
 out={'areas':areas,'idx':idx,'unidades':un,'faltantes':falt,'trechos':tren,
      'bound':json.load(open('boundary.json')),'linhas':linhas_novas}

@@ -188,11 +188,28 @@
 
   var ultima = null;
 
+  /* Faixas de numeração vindas da lista da Secretaria: "Espanha (575 ao 921)"
+     vira [575, 921, paridade, código da área] na própria rua. Com o número da
+     casa, a faixa manda — é a abrangência que a unidade declarou. */
+  function areaDaFaixa(rua, num) {
+    var faixas = rua[7];
+    if (!faixas || !num) return null;
+    for (var i = 0; i < faixas.length; i++) {
+      var f = faixas[i];
+      if (num < f[0] || num > f[1]) continue;
+      if (f[2] === 1 && num % 2 === 0) continue;
+      if (f[2] === 2 && num % 2 !== 0) continue;
+      return f[3];
+    }
+    return null;
+  }
+
   function responder(rua, num) {
     ultima = { rua: rua, num: num };
     var codigo = rua[2][0];
     var trecho = num ? acharTrecho(rua[0], num) : null;
     var alvo = null;
+    var daFaixa = areaDaFaixa(rua, num);
 
     /* Com número, é o trecho que decide a área — inclusive em rua de divisa */
     if (trecho && trecho.t) {
@@ -203,6 +220,7 @@
       }
       alvo = p;
     }
+    if (daFaixa) codigo = daFaixa;
 
     var area = unidadeDaArea(codigo);
     if (!area) { elResposta.innerHTML = '<p class="dica">Área não encontrada no mapa.</p>'; return; }
