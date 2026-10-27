@@ -192,9 +192,9 @@ Recorte em vigor: a **ESF Jardim Betânia** perdeu o setor a oeste da Souza Cruz
 
 ## 8.3 Transferências de território
 
-Quando a Secretaria passa um trecho inteiro de uma unidade para outra, o trecho é descrito em `dados/areas_transferidas.json` pelas vias que o cercam — `eixo` é a via que liga as outras duas, `lados` são as vias que fecham as pontas. `scripts/final.py` monta a região a partir do traçado dessas vias no OpenStreetMap, recorta dela as unidades listadas em `retirar_de` e anexa a região à unidade de destino como **polígono separado**, sem unir ao território principal. As ruas com traçado dentro da região passam a responder pela unidade de destino; quem atravessa a divisa fica nas duas, e o número da casa decide.
+Quando a Secretaria passa um trecho inteiro de uma unidade para outra, o trecho é descrito em `dados/areas_transferidas.json` pelas vias que o cercam — `eixo` é a via que liga as outras duas, `lados` são as vias que fecham as pontas. `scripts/final.py` monta a região a partir do traçado dessas vias no OpenStreetMap e recorta dela as unidades listadas em `retirar_de`. Se a região encostar no território da unidade de destino, as duas viram um desenho só, sem divisa interna; se ficar longe, entra como **polígono separado**, sem ponte até a área principal. As ruas com traçado dentro da região passam a responder pela unidade de destino; quem atravessa a divisa fica nas duas, e o número da casa decide.
 
-Transferência em vigor: o trecho entre a **Avenida da Federação**, a **Estrada dos Capistranos** e a **RS-118 (Rodovia Mário Quintana)** — Residencial Amazonas e vizinhança, 0,95 km² — passou a ser referência da **UBS CAIC Granja**. Saiu 32% da área da ESF Jardim Betânia e 5% da ESF Canarinho; o restante do trecho não estava em área nenhuma.
+Transferência em vigor: o trecho entre a **Avenida da Federação**, a **Estrada dos Capistranos** e a **RS-118 (Rodovia Mário Quintana)** — Residencial Amazonas e vizinhança, 0,95 km² — é referência da **ESF Canarinho**, e como encosta no território dela entrou no mesmo desenho (a área da unidade foi de 1,1 para 2,0 km²). Saiu 32% da área da ESF Jardim Betânia; o resto do trecho não estava em área nenhuma.
 
 ## 8.4 Agrupamentos por tipo de atendimento
 

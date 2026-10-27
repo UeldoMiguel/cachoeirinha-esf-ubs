@@ -1,19 +1,18 @@
 {
  "_fonte": "Transferências de território determinadas pela Secretaria Municipal de Saúde de Cachoeirinha/RS.",
- "_como_funciona": "Cada transferência descreve uma região cercada por três vias e diz para qual unidade ela passa. A região é calculada do traçado do OpenStreetMap na hora do build — 'eixo' é a via que liga as outras duas, 'lados' são as duas vias que fecham a região nas pontas. A região sai das unidades listadas em 'retirar_de' e entra como polígono separado da unidade de destino, sem se unir ao território principal dela. As ruas com traçado dentro da região passam a responder pela unidade de destino.",
+ "_como_funciona": "Cada transferência descreve uma região cercada por três vias e diz para qual unidade ela passa. A região é calculada do traçado do OpenStreetMap na hora do build — 'eixo' é a via que liga as outras duas, 'lados' são as duas vias que fecham a região nas pontas. A região sai das unidades listadas em 'retirar_de'. Se encostar no território da unidade de destino, funde-se com ele num desenho só; se ficar longe, entra como polígono separado, sem ponte até a área principal. As ruas com traçado dentro da região passam a responder pela unidade de destino.",
  "transferencias": [
   {
-   "para": "UBS CAIC Granja",
+   "para": "ESF Canarinho",
    "eixo": "Avenida da Federação",
    "lados": [
     "Estrada dos Capistranos",
     "Rodovia Mário Quintana"
    ],
    "retirar_de": [
-    "ESF Jardim Betânia",
-    "ESF Canarinho"
+    "ESF Jardim Betânia"
    ],
-   "motivo": "Secretaria (2026-10-27): o trecho entre a Avenida da Federação, a Estrada dos Capistranos e a RS-118 — Residencial Amazonas e vizinhança — é referência da UBS CAIC Granja."
+   "motivo": "Secretaria (2026-10-27): o trecho entre a Avenida da Federação, a Estrada dos Capistranos e a RS-118 — Residencial Amazonas e vizinhança — é referência da ESF Canarinho."
   }
  ]
 }

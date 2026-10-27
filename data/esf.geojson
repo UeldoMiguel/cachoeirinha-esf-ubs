@@ -228,20 +228,18 @@
     "codigos": [
      "ESF-CANARINHO"
     ],
-    "descricao": "Território de abrangência da ESF Canarinho, com 69 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 69,
+    "descricao": "Território de abrangência da ESF Canarinho, com 77 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 77,
     "ruas": [
      "- Antenas:",
      "- Loteamento Chico Mendes:",
      "- União:",
      "==================================",
-     "==================================",
-     "==================================",
-     "==================================",
      "Araras",
      "Austria (02 ao 300)",
      "Beco da Pardal 1 (do n. 1 ao 50)",
      "Beco da Pardal 2 (do n. 1 ao 8)",
+     "Beco da Sereia",
      "Bem-te-vi",
      "Bulgária",
      "Camélias (31 a 71)",
@@ -259,40 +257,50 @@
      "França (565 ao 840)",
      "Gavião",
      "Holanda (582 ao 803)",
+     "Imbé",
      "Israel",
      "João de Barro",
      "Malta",
      "Manoel Inácio Nunes (1305 ao 1622)",
      "Marechal Rondon (3756 a 4470)",
+     "Mariluz",
+     "Noiva do Mar",
      "Noruega",
      "Pardal (5 ao 27)",
      "Pardal (lado esquerdo)",
      "Polônia (565 a 625)",
      "Quero-quero",
+     "Quintão",
      "RS 118 (11438 a 11676)",
+     "Rainha do Mar",
      "Romênia (205 a 533)",
      "Rua A",
-     "Rua A",
+     "Rua Aloncio Gomes Correa",
+     "Rua Aparicio Borges",
      "Rua Aracuã",
      "Rua Azulão",
      "Rua B",
-     "Rua B",
-     "Rua C",
      "Rua C",
      "Rua Carruíra",
      "Rua Chimango",
      "Rua Coruja",
-     "Rua D",
+     "Rua Cuibá",
      "Rua D",
      "Rua E",
+     "Rua Flores Do Campo",
      "Rua G",
+     "Rua Graciano Silva Machado",
      "Rua H",
      "Rua Martim Pescador",
      "Rua Maçanico",
+     "Rua Mário Quintana",
+     "Rua Oliveira Vieira Aguiar",
+     "Rua Palmas",
      "Rua Pintassilgo",
      "Rua Saracura",
      "Rua Tangará",
      "Rua Tesourinha",
+     "Salinas",
      "Suíça (586 a 1004)",
      "Travessa Maciel (35 a 80)",
      "Travessa Monte Claro (30 a 50)",
@@ -312,115 +320,131 @@
     "coordinates": [
      [
       [
-       -51.07191,
+       -51.0719,
        -29.89832
       ],
       [
-       -51.07361,
+       -51.0736,
        -29.89586
       ],
       [
-       -51.07386,
-       -29.89429
+       -51.07385,
+       -29.89428
       ],
       [
-       -51.07398,
+       -51.07397,
        -29.89265
       ],
       [
-       -51.07433,
+       -51.07432,
        -29.8905
       ],
       [
-       -51.07454,
-       -29.88979
+       -51.07455,
+       -29.8898
       ],
       [
-       -51.0744,
+       -51.07447,
        -29.88966
       ],
       [
-       -51.0737,
-       -29.88971
+       -51.07484,
+       -29.88963
       ],
       [
-       -51.07212,
-       -29.88967
+       -51.07571,
+       -29.88976
       ],
       [
-       -51.07069,
-       -29.8894
+       -51.08285,
+       -29.89121
       ],
       [
-       -51.07062,
-       -29.88935
+       -51.08719,
+       -29.89202
       ],
       [
-       -51.07057,
-       -29.88912
+       -51.0871,
+       -29.89183
       ],
       [
-       -51.07043,
-       -29.88907
+       -51.08524,
+       -29.88489
+      ],
+      [
+       -51.08508,
+       -29.88422
+      ],
+      [
+       -51.08511,
+       -29.88414
+      ],
+      [
+       -51.08411,
+       -29.8824
+      ],
+      [
+       -51.08128,
+       -29.88398
+      ],
+      [
+       -51.07951,
+       -29.88482
+      ],
+      [
+       -51.07051,
+       -29.88891
+      ],
+      [
+       -51.07055,
+       -29.88901
       ],
       [
        -51.06981,
-       -29.88935
+       -29.88936
       ],
       [
        -51.06959,
-       -29.88954
+       -29.88955
       ],
       [
-       -51.0684,
+       -51.06841,
        -29.89007
       ],
       [
        -51.06596,
-       -29.89134
+       -29.89131
       ],
       [
-       -51.06593,
-       -29.89235
+       -51.06594,
+       -29.89234
       ],
       [
-       -51.06612,
+       -51.06613,
        -29.89446
       ],
       [
-       -51.06564,
-       -29.89573
+       -51.06565,
+       -29.89572
       ],
       [
        -51.06553,
-       -29.89971
-      ],
-      [
-       -51.06564,
-       -29.89982
+       -29.89979
       ],
       [
        -51.0687,
-       -29.90053
+       -29.90052
       ],
       [
-       -51.07289,
-       -29.90199
+       -51.07293,
+       -29.90202
       ],
       [
-       -51.07299,
-       -29.90191
+       -51.07413,
+       -29.89939
       ],
       [
-       -51.07409,
-       -29.89942
-      ],
-      [
-       -51.07401,
-       -29.89933
-      ],
-      [
-       -51.07191,
+       -51.0719,
        -29.89832
       ]
      ]

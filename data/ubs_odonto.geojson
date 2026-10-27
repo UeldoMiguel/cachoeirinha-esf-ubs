@@ -1210,7 +1210,7 @@
      "UBS-JARDIM-DO-BOSQUE"
     ],
     "descricao": "Território atendido em conjunto por UBS CAIC Granja e UBS Jardim do Bosque.",
-    "ruas_cadastradas": 311,
+    "ruas_cadastradas": 299,
     "ruas": [
      "Acesso 01",
      "Acesso 02",
@@ -1235,15 +1235,9 @@
      "Av. Frederico Augusto Ritter",
      "Av. do Carvalho",
      "Avenida Safira",
-     "Beco da Sereia",
      "Est. Manuel José do Nascimento",
      "Estrada dos Caetanos",
      "Estrada dos Capistranos",
-     "Imbé",
-     "Mariluz",
-     "Noiva do Mar",
-     "Quintão",
-     "Rainha do Mar",
      "Rua 1",
      "Rua 10",
      "Rua 11",
@@ -1310,7 +1304,6 @@
      "Rua Alecrim",
      "Rua Alexandrita",
      "Rua Alfazema",
-     "Rua Aloncio Gomes Correa",
      "Rua Alvicio De Souza",
      "Rua Alzira C. Silveira",
      "Rua Amadelino Vaz Garcia",
@@ -1364,7 +1357,6 @@
      "Rua Cravo",
      "Rua Cristiano J. Nascimento",
      "Rua Crisântemo Amarelo",
-     "Rua Cuibá",
      "Rua D",
      "Rua Darci Michel",
      "Rua Deli Silveira Nunes",
@@ -1402,7 +1394,6 @@
      "Rua Girassol",
      "Rua Goiabeira",
      "Rua Gota De Carvalho",
-     "Rua Graciano Silva Machado",
      "Rua Grandiuva",
      "Rua Grapia",
      "Rua Grevilha",
@@ -1472,7 +1463,6 @@
      "Rua Nogueira",
      "Rua Obedy Cândido Vieira",
      "Rua Olavo Da Silva Ribeiro",
-     "Rua Oliveira Vieira Aguiar",
      "Rua Opala",
      "Rua Orquídea",
      "Rua Osmar Silva De Oliveira",
@@ -1481,7 +1471,6 @@
      "Rua Otto Espíndola",
      "Rua Otávio S. Pereira",
      "Rua Padre Geremias",
-     "Rua Palmas",
      "Rua Palmira",
      "Rua Papiro",
      "Rua Pedro G. De Freitas",
@@ -1521,8 +1510,7 @@
      "Rua do Bosque",
      "Rua Ágata",
      "Rua Âmbar",
-     "Rua Íris Azul",
-     "Salinas"
+     "Rua Íris Azul"
     ],
     "unidades": [
      {
@@ -2098,81 +2086,9 @@
      [
       [
        [
-        -51.08508,
-        -29.88422
+        -51.12155,
+        -29.86653
        ],
-       [
-        -51.08511,
-        -29.88414
-       ],
-       [
-        -51.08411,
-        -29.8824
-       ],
-       [
-        -51.08128,
-        -29.88398
-       ],
-       [
-        -51.07951,
-        -29.88482
-       ],
-       [
-        -51.07051,
-        -29.88891
-       ],
-       [
-        -51.07057,
-        -29.88905
-       ],
-       [
-        -51.07061,
-        -29.88935
-       ],
-       [
-        -51.07069,
-        -29.88941
-       ],
-       [
-        -51.07212,
-        -29.88968
-       ],
-       [
-        -51.0737,
-        -29.88972
-       ],
-       [
-        -51.07484,
-        -29.88963
-       ],
-       [
-        -51.07571,
-        -29.88976
-       ],
-       [
-        -51.08285,
-        -29.89121
-       ],
-       [
-        -51.08719,
-        -29.89202
-       ],
-       [
-        -51.0871,
-        -29.89183
-       ],
-       [
-        -51.08524,
-        -29.88489
-       ],
-       [
-        -51.08508,
-        -29.88422
-       ]
-      ]
-     ],
-     [
-      [
        [
         -51.12148,
         -29.86643
@@ -2340,10 +2256,6 @@
        [
         -51.12155,
         -29.86653
-       ],
-       [
-        -51.12148,
-        -29.86643
        ]
       ]
      ]

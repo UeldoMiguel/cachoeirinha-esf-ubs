@@ -284,10 +284,21 @@ if TRANSF:
             if sobra.geom_type=='MultiPolygon': sobra=max(sobra.geoms,key=lambda g:g.area)
             print('região transferida: %-22s -%.0f%% da área' % (nome,(1-sobra.area/p.area)*100))
             velha['poly']=[[round(x,5),round(y,5)] for x,y in sobra.exterior.coords]
-        alvo.setdefault('poly_extra',[]).append(
-            [[round(x,5),round(y,5)] for x,y in reg.simplify(3/111320.0).exterior.coords])
+        principal=Polygon(alvo['poly']).buffer(0)
+        if principal.intersects(reg):
+            # encosta no território da unidade: vira um desenho só, sem divisa interna
+            j=_u2([principal,reg]).buffer(0)
+            if j.geom_type=='MultiPolygon': j=max(j.geoms,key=lambda g:g.area)
+            alvo['poly']=[[round(x,5),round(y,5)] for x,y in j.simplify(3/111320.0).exterior.coords]
+            print('região de %.2f km2 unida ao território da %s (+%.0f%%)'
+                  % (reg.area*111.32**2,t['para'],(j.area/principal.area-1)*100))
+        else:
+            # território distante: entra como parte separada, sem ponte até a área principal
+            alvo.setdefault('poly_extra',[]).append(
+                [[round(x,5),round(y,5)] for x,y in reg.simplify(3/111320.0).exterior.coords])
+            print('região de %.2f km2 anexada à %s como polígono separado'
+                  % (reg.area*111.32**2,t['para']))
         REGIOES.setdefault(t['para'],[]).append(reg)
-        print('região de %.2f km2 passou a ser referência da %s' % (reg.area*111.32**2,t['para']))
 
 
 def entrada(k,label,indices,prov=0,traduzir=True):
@@ -440,6 +451,28 @@ fora=[e[1] for e in idx if not dentro_do_municipio(e)]
 idx=[e for e in idx if dentro_do_municipio(e)]
 print('ruas fora do município removidas:',antes-len(idx), ('— ex.: '+', '.join(fora[:6])) if fora else '')
 
+# as ruas com traçado dentro de uma região transferida passam a responder
+# pela unidade que a recebeu; quem também atravessa a área antiga continua nas
+# duas, e aí o número da casa é que decide
+if REGIOES:
+    from shapely.geometry import LineString as _LS4
+    indice_area={a['n']:i for i,a in enumerate(areas)}
+    for destino,regioes in REGIOES.items():
+        ai=indice_area.get(destino)
+        if ai is None: continue
+        reg=regioes[0] if len(regioes)==1 else _u2(regioes)
+        ganhas=[]
+        for e in idx:
+            if ai in e[2] or not e[6]: continue
+            for i in e[6]:
+                l=linhas_novas[i]
+                if len(l)>1 and reg.intersects(_LS4([(x,y) for x,y in l])):
+                    e[2].append(ai); ganhas.append(e[1]); break
+        if ganhas:
+            areas[ai]['ruas']=sorted(set(areas[ai]['ruas'])|set(ganhas))
+            print('ruas da região transferida para %s: %d — ex.: %s'
+                  % (destino,len(ganhas),', '.join(sorted(ganhas)[:6])))
+
 # ruas que sobraram fora da área recortada deixam de pertencer àquela unidade
 if RECORTES:
     from shapely.geometry import LineString as _LS
@@ -488,28 +521,6 @@ if RECORTES:
         poly=poligonos[a['n']]
         chaves={e[0] for e in idx if indice_area[a['n']] in e[2]}
         a['ruas']=[r for r in a['ruas'] if norm(r) in chaves]
-
-# as ruas com traçado dentro de uma região transferida passam a responder
-# pela unidade que a recebeu; quem também atravessa a área antiga continua nas
-# duas, e aí o número da casa é que decide
-if REGIOES:
-    from shapely.geometry import LineString as _LS4
-    indice_area={a['n']:i for i,a in enumerate(areas)}
-    for destino,regioes in REGIOES.items():
-        ai=indice_area.get(destino)
-        if ai is None: continue
-        reg=regioes[0] if len(regioes)==1 else _u2(regioes)
-        ganhas=[]
-        for e in idx:
-            if ai in e[2] or not e[6]: continue
-            for i in e[6]:
-                l=linhas_novas[i]
-                if len(l)>1 and reg.intersects(_LS4([(x,y) for x,y in l])):
-                    e[2].append(ai); ganhas.append(e[1]); break
-        if ganhas:
-            areas[ai]['ruas']=sorted(set(areas[ai]['ruas'])|set(ganhas))
-            print('ruas da região transferida para %s: %d — ex.: %s'
-                  % (destino,len(ganhas),', '.join(sorted(ganhas)[:6])))
 
 print('logradouros CNEFE:',len(tren),'| ruas do índice com trechos numerados:',casados,'de',len(idx))
 for a in areas: a.pop('_orig',None)
