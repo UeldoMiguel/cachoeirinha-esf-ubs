@@ -271,6 +271,20 @@ if TRANSF:
         alvo=por_nome_area.get(t['para'])
         if not alvo:
             print('transferência ignorada, unidade não encontrada:',t['para']); continue
+        # a transferência só pega o que está vago ou pertence a quem foi listado:
+        # o território de qualquer outra unidade sai da região e fica como está
+        poupadas=set(t.get('retirar_de',[]))|{t['para']}
+        alheio=[Polygon(a2['poly']).buffer(0) for a2 in areas if a2['n'] not in poupadas]
+        alheio+= [Polygon(r).buffer(0) for a2 in areas if a2['n'] not in poupadas
+                  for r in a2.get('poly_extra') or []]
+        if alheio:
+            antes_reg=reg.area
+            reg=reg.difference(unary_union(alheio))
+            if reg.is_empty:
+                print('transferência vazia depois de respeitar as vizinhas:',t['para']); continue
+            if reg.geom_type=='MultiPolygon': reg=max(reg.geoms,key=lambda g:g.area)
+            if reg.area<antes_reg:
+                print('região reduzida a %.0f%%: o resto já é de outra unidade' % (100*reg.area/antes_reg))
         for nome in t.get('retirar_de',[]):
             velha=por_nome_area.get(nome)
             if not velha: continue

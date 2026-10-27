@@ -1,9 +1,9 @@
 {
  "_fonte": "Transferências de território determinadas pela Secretaria Municipal de Saúde de Cachoeirinha/RS.",
- "_como_funciona": "Cada transferência descreve uma região cercada por três vias e diz para qual unidade ela passa. A região é calculada do traçado do OpenStreetMap na hora do build — 'eixo' é a via que liga as outras duas, 'lados' são as duas vias que fecham a região nas pontas. A região sai das unidades listadas em 'retirar_de'. Se encostar no território da unidade de destino, funde-se com ele num desenho só; se ficar longe, entra como polígono separado, sem ponte até a área principal. As ruas com traçado dentro da região passam a responder pela unidade de destino.",
+ "_como_funciona": "Cada transferência descreve uma região cercada por três vias e diz para qual unidade ela passa. A região é calculada do traçado do OpenStreetMap na hora do build — 'eixo' é a via que liga as outras duas, 'lados' são as duas vias que fecham a região nas pontas. A transferência só toma o que está vago ou pertence às unidades listadas em 'retirar_de': o território de qualquer outra unidade é descontado da região e fica como está. Se a região encostar no território da unidade de destino, funde-se com ele num desenho só; se ficar longe, entra como polígono separado. As ruas com traçado dentro da região passam a responder pela unidade de destino.",
  "transferencias": [
   {
-   "para": "ESF Canarinho",
+   "para": "UBS CAIC Granja",
    "eixo": "Avenida da Federação",
    "lados": [
     "Estrada dos Capistranos",
@@ -12,7 +12,7 @@
    "retirar_de": [
     "ESF Jardim Betânia"
    ],
-   "motivo": "Secretaria (2026-10-27): o trecho entre a Avenida da Federação, a Estrada dos Capistranos e a RS-118 — Residencial Amazonas e vizinhança — é referência da ESF Canarinho."
+   "motivo": "Secretaria (2026-10-27): o trecho entre a Avenida da Federação, a Estrada dos Capistranos e a RS-118 — Residencial Amazonas e vizinhança — é referência da UBS CAIC Granja. A ponta leste da cunha, que a ESF Canarinho já cobria, continua com ela."
   }
  ]
 }

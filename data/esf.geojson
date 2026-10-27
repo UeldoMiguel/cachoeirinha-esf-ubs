@@ -228,18 +228,20 @@
     "codigos": [
      "ESF-CANARINHO"
     ],
-    "descricao": "Território de abrangência da ESF Canarinho, com 77 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 77,
+    "descricao": "Território de abrangência da ESF Canarinho, com 69 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 69,
     "ruas": [
      "- Antenas:",
      "- Loteamento Chico Mendes:",
      "- União:",
      "==================================",
+     "==================================",
+     "==================================",
+     "==================================",
      "Araras",
      "Austria (02 ao 300)",
      "Beco da Pardal 1 (do n. 1 ao 50)",
      "Beco da Pardal 2 (do n. 1 ao 8)",
-     "Beco da Sereia",
      "Bem-te-vi",
      "Bulgária",
      "Camélias (31 a 71)",
@@ -257,50 +259,40 @@
      "França (565 ao 840)",
      "Gavião",
      "Holanda (582 ao 803)",
-     "Imbé",
      "Israel",
      "João de Barro",
      "Malta",
      "Manoel Inácio Nunes (1305 ao 1622)",
      "Marechal Rondon (3756 a 4470)",
-     "Mariluz",
-     "Noiva do Mar",
      "Noruega",
      "Pardal (5 ao 27)",
      "Pardal (lado esquerdo)",
      "Polônia (565 a 625)",
      "Quero-quero",
-     "Quintão",
      "RS 118 (11438 a 11676)",
-     "Rainha do Mar",
      "Romênia (205 a 533)",
      "Rua A",
-     "Rua Aloncio Gomes Correa",
-     "Rua Aparicio Borges",
+     "Rua A",
      "Rua Aracuã",
      "Rua Azulão",
      "Rua B",
+     "Rua B",
+     "Rua C",
      "Rua C",
      "Rua Carruíra",
      "Rua Chimango",
      "Rua Coruja",
-     "Rua Cuibá",
+     "Rua D",
      "Rua D",
      "Rua E",
-     "Rua Flores Do Campo",
      "Rua G",
-     "Rua Graciano Silva Machado",
      "Rua H",
      "Rua Martim Pescador",
      "Rua Maçanico",
-     "Rua Mário Quintana",
-     "Rua Oliveira Vieira Aguiar",
-     "Rua Palmas",
      "Rua Pintassilgo",
      "Rua Saracura",
      "Rua Tangará",
      "Rua Tesourinha",
-     "Salinas",
      "Suíça (586 a 1004)",
      "Travessa Maciel (35 a 80)",
      "Travessa Monte Claro (30 a 50)",
@@ -320,6 +312,10 @@
     "coordinates": [
      [
       [
+       -51.07413,
+       -29.89939
+      ],
+      [
        -51.0719,
        -29.89832
       ],
@@ -336,6 +332,10 @@
        -29.89265
       ],
       [
+       -51.07421,
+       -29.89121
+      ],
+      [
        -51.07432,
        -29.8905
       ],
@@ -344,60 +344,8 @@
        -29.8898
       ],
       [
-       -51.07447,
-       -29.88966
-      ],
-      [
-       -51.07484,
-       -29.88963
-      ],
-      [
-       -51.07571,
-       -29.88976
-      ],
-      [
-       -51.08285,
-       -29.89121
-      ],
-      [
-       -51.08719,
-       -29.89202
-      ],
-      [
-       -51.0871,
-       -29.89183
-      ],
-      [
-       -51.08524,
-       -29.88489
-      ],
-      [
-       -51.08508,
-       -29.88422
-      ],
-      [
-       -51.08511,
-       -29.88414
-      ],
-      [
-       -51.08411,
-       -29.8824
-      ],
-      [
-       -51.08128,
-       -29.88398
-      ],
-      [
-       -51.07951,
-       -29.88482
-      ],
-      [
-       -51.07051,
-       -29.88891
-      ],
-      [
-       -51.07055,
-       -29.88901
+       -51.07339,
+       -29.88768
       ],
       [
        -51.06981,
@@ -410,6 +358,10 @@
       [
        -51.06841,
        -29.89007
+      ],
+      [
+       -51.06737,
+       -29.89059
       ],
       [
        -51.06596,
@@ -436,16 +388,16 @@
        -29.90052
       ],
       [
+       -51.07082,
+       -29.90125
+      ],
+      [
        -51.07293,
        -29.90202
       ],
       [
        -51.07413,
        -29.89939
-      ],
-      [
-       -51.0719,
-       -29.89832
       ]
      ]
     ]
