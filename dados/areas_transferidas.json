@@ -1,6 +1,6 @@
 {
  "_fonte": "Transferências de território determinadas pela Secretaria Municipal de Saúde de Cachoeirinha/RS.",
- "_como_funciona": "Cada transferência descreve uma região cercada por três vias e diz para qual unidade ela passa. A região é calculada do traçado do OpenStreetMap na hora do build — 'eixo' é a via que liga as outras duas, 'lados' são as duas vias que fecham a região nas pontas. A transferência só toma o que está vago ou pertence às unidades listadas em 'retirar_de': o território de qualquer outra unidade é descontado da região e fica como está. Se a região encostar no território da unidade de destino, funde-se com ele num desenho só; se ficar longe, entra como polígono separado. As ruas com traçado dentro da região passam a responder pela unidade de destino. Uma transferência também pode ser dita por 'pedaco_em' ([lat, lon]): o pedaço da área de 'de' que contém aquele ponto passa inteiro para 'para'. E por 'caixa' ([sul, oeste, norte, leste]): o que a unidade de 'de' tiver dentro da caixa passa para 'para'. E por 'ao_norte_da_via' / 'ao_sul_da_via' / 'ao_leste_da_via' / 'ao_oeste_da_via' (nome de uma via do OpenStreetMap): o que a unidade de 'de' tiver daquele lado da via passa para 'para'.",
+ "_como_funciona": "Cada transferência descreve uma região cercada por três vias e diz para qual unidade ela passa. A região é calculada do traçado do OpenStreetMap na hora do build — 'eixo' é a via que liga as outras duas, 'lados' são as duas vias que fecham a região nas pontas. A transferência só toma o que está vago ou pertence às unidades listadas em 'retirar_de': o território de qualquer outra unidade é descontado da região e fica como está. Se a região encostar no território da unidade de destino, funde-se com ele num desenho só; se ficar longe, entra como polígono separado. As ruas com traçado dentro da região passam a responder pela unidade de destino. Uma transferência também pode ser dita por 'pedaco_em' ([lat, lon]): o pedaço da área de 'de' que contém aquele ponto passa inteiro para 'para'. E por 'caixa' ([sul, oeste, norte, leste]): o que a unidade de 'de' tiver dentro da caixa passa para 'para'. Os critérios se somam: 'caixa' junto com 'ao_norte_da_via' pega só o que está dentro da caixa e ao norte da via. E por 'ao_norte_da_via' / 'ao_sul_da_via' / 'ao_leste_da_via' / 'ao_oeste_da_via' (nome de uma via do OpenStreetMap): o que a unidade de 'de' tiver daquele lado da via passa para 'para'. Os critérios se somam: 'caixa' junto com 'ao_norte_da_via' pega só o que está dentro da caixa e ao norte da via.",
  "transferencias": [
   {
    "para": "UBS CAIC Granja",
@@ -58,12 +58,13 @@
    "de": "UBS Nova Cachoeirinha",
    "para": "ESF Canarinho",
    "caixa": [
-    -29.894,
+    -29.899,
     -51.079,
     -29.882,
     -51.062
    ],
-   "motivo": "Secretaria (2026-10-27): a faixa que a UBS Nova Cachoeirinha tinha junto à ERS-118, ao norte da ESF Canarinho, é da ESF Canarinho."
+   "motivo": "Secretaria (2026-10-27): a faixa junto à ERS-118, ao norte da Estrada dos Capistranos, é da ESF Canarinho. Ao sul da estrada o território continua com a UBS Nova Cachoeirinha.",
+   "ao_norte_da_via": "Estrada dos Capistranos"
   },
   {
    "de": "UBS Nova Cachoeirinha",
@@ -81,6 +82,12 @@
    "para": "ESF Canarinho",
    "ao_norte_da_via": "Estrada dos Capistranos",
    "motivo": "Secretaria (2026-10-27): a ponta ao norte da Estrada dos Capistranos que tinha ficado com a UBS Nova Cachoeirinha é da ESF Canarinho."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS CAIC Granja",
+   "ao_norte_da_via": "Rua Lateral da ERS-118",
+   "motivo": "Secretaria (2026-10-27): a ESF Canarinho não passa da Rua Lateral da ERS-118; a faixa entre ela e a rodovia fica com a UBS CAIC Granja, que já responde pelo resto da beira da ERS-118."
   }
  ]
 }

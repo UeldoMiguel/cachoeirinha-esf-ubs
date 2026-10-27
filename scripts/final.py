@@ -268,8 +268,14 @@ if TRANSF:
     def partes(a2):
         return [Polygon(a2['poly']).buffer(0)]+[Polygon(r).buffer(0) for r in a2.get('poly_extra') or []]
 
+    def so_poligonos(g):
+        """Interseção pode devolver linhas e pontos junto: fica só a área."""
+        if g.is_empty: return g
+        if g.geom_type in ('Polygon','MultiPolygon'): return g
+        return unary_union([q for q in getattr(g,'geoms',[]) if q.geom_type in ('Polygon','MultiPolygon')])
+
     def guarda(a2,qs):
-        qs=[q for q in qs if not q.is_empty]
+        qs=[q for q in qs if not q.is_empty and q.geom_type=='Polygon']
         qs.sort(key=lambda q:-q.area)
         a2['poly']=[[round(x,5),round(y,5)] for x,y in qs[0].exterior.coords]
         extras=[[[round(x,5),round(y,5)] for x,y in q.exterior.coords] for q in qs[1:]]
@@ -433,8 +439,14 @@ if TRANSF:
     def partes(a2):
         return [Polygon(a2['poly']).buffer(0)]+[Polygon(r).buffer(0) for r in a2.get('poly_extra') or []]
 
+    def so_poligonos(g):
+        """Interseção pode devolver linhas e pontos junto: fica só a área."""
+        if g.is_empty: return g
+        if g.geom_type in ('Polygon','MultiPolygon'): return g
+        return unary_union([q for q in getattr(g,'geoms',[]) if q.geom_type in ('Polygon','MultiPolygon')])
+
     def guarda(a2,qs):
-        qs=[q for q in qs if not q.is_empty]
+        qs=[q for q in qs if not q.is_empty and q.geom_type=='Polygon']
         qs.sort(key=lambda q:-q.area)
         a2['poly']=[[round(x,5),round(y,5)] for x,y in qs[0].exterior.coords]
         extras=[[[round(x,5),round(y,5)] for x,y in q.exterior.coords] for q in qs[1:]]
@@ -462,18 +474,25 @@ if TRANSF:
 
     for t in TRANSF:
         lado=([l for l in ('norte','sul','leste','oeste') if t.get('ao_'+l+'_da_via')] or [None])[0]
-        if lado:
+        if lado or t.get('caixa'):
             origem=por_nome_area.get(t.get('de')); alvo=por_nome_area.get(t['para'])
             if not origem or not alvo:
-                print('transferência por via ignorada:',t.get('de'),'->',t.get('para')); continue
+                print('transferência ignorada:',t.get('de'),'->',t.get('para')); continue
             seu=unary_union(partes(origem))
-            molde=lado_da_via(t['ao_'+lado+'_da_via'],lado,seu.bounds)
-            if molde is None:
-                print('via não encontrada:',t['ao_'+lado+'_da_via']); continue
-            vai=seu.intersection(molde); fica=seu.difference(molde)
+            # os critérios se somam: caixa e lado de via valem ao mesmo tempo
+            molde=None; rotulo=[]
+            if t.get('caixa'):
+                sul,oeste,norte,leste=t['caixa']
+                molde=_box(oeste,sul,leste,norte); rotulo.append('caixa')
+            if lado:
+                m2=lado_da_via(t['ao_'+lado+'_da_via'],lado,seu.bounds)
+                if m2 is None:
+                    print('via não encontrada:',t['ao_'+lado+'_da_via']); continue
+                molde=m2 if molde is None else molde.intersection(m2)
+                rotulo.append('ao %s da %s' % (lado,t['ao_'+lado+'_da_via']))
+            vai=so_poligonos(seu.intersection(molde)); fica=so_poligonos(seu.difference(molde))
             if vai.is_empty:
-                print('nada a mover: %s não tem área ao %s da %s'
-                      % (t['de'],lado,t['ao_'+lado+'_da_via'])); continue
+                print('nada a mover: %s não tem área em %s' % (t['de'],' + '.join(rotulo))); continue
             qs=[q for q in (fica.geoms if fica.geom_type=='MultiPolygon' else [fica])
                 if q.area>2000/(111320.0**2)]
             if not qs:
@@ -482,10 +501,9 @@ if TRANSF:
             j=unary_union(partes(alvo)+[vai])
             guarda(alvo,list(j.geoms) if j.geom_type=='MultiPolygon' else [j])
             REGIOES.setdefault(t['para'],[]).append(vai)
-            print('ao %s da %s: %.3f km2  %s -> %s'
-                  % (lado,t['ao_'+lado+'_da_via'],vai.area*111.32**2,t['de'],t['para']))
+            print('%s: %.3f km2  %s -> %s' % (' + '.join(rotulo),vai.area*111.32**2,t['de'],t['para']))
             continue
-        if t.get('caixa'):
+        if False:
             # move o que a unidade de origem tem dentro da caixa
             origem=por_nome_area.get(t.get('de')); alvo=por_nome_area.get(t['para'])
             if not origem or not alvo:
