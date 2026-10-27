@@ -2,7 +2,7 @@
  "type": "FeatureCollection",
  "name": "Áreas de UBS — Cachoeirinha/RS",
  "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
- "gerado_em": "2026-09-25",
+ "gerado_em": "2026-10-27",
  "features": [
   {
    "type": "Feature",
@@ -446,8 +446,8 @@
     "codigos": [
      "UBS-CAIC-GRANJA"
     ],
-    "descricao": "Território de abrangência da UBS CAIC Granja, com 201 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 201,
+    "descricao": "Território de abrangência da UBS CAIC Granja, com 213 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 213,
     "ruas": [
      "Acesso 01",
      "Acesso 02",
@@ -469,6 +469,11 @@
      "Beco da Sereia",
      "Estrada dos Caetanos",
      "Estrada dos Capistranos",
+     "Imbé",
+     "Mariluz",
+     "Noiva do Mar",
+     "Quintão",
+     "Rainha do Mar",
      "Rua 22",
      "Rua 25",
      "Rua 27",
@@ -485,6 +490,7 @@
      "Rua 38",
      "Rua 39",
      "Rua 40",
+     "Rua 41",
      "Rua 42",
      "Rua 43",
      "Rua 44",
@@ -508,6 +514,7 @@
      "Rua Adão José Hass",
      "Rua Alexandrita",
      "Rua Alfazema",
+     "Rua Aloncio Gomes Correa",
      "Rua Alvicio De Souza",
      "Rua Alzira C. Silveira",
      "Rua Amadelino Vaz Garcia",
@@ -539,6 +546,7 @@
      "Rua Coroa Imperial",
      "Rua Cravo",
      "Rua Crisântemo Amarelo",
+     "Rua Cuibá",
      "Rua D",
      "Rua Darci Michel",
      "Rua Deli Silveira Nunes",
@@ -551,6 +559,7 @@
      "Rua E",
      "Rua Ema B Dos Santos",
      "Rua Emilio A. Da Rosa",
+     "Rua Esmeralda",
      "Rua Espinela",
      "Rua Eugênio Monteiro",
      "Rua F",
@@ -567,6 +576,7 @@
      "Rua G",
      "Rua Gardênia",
      "Rua Gota De Carvalho",
+     "Rua Graciano Silva Machado",
      "Rua Guará",
      "Rua H",
      "Rua Hematita",
@@ -615,6 +625,7 @@
      "Rua Nildo Schutz",
      "Rua Nils Taranger",
      "Rua Olavo Da Silva Ribeiro",
+     "Rua Oliveira Vieira Aguiar",
      "Rua Opala",
      "Rua Orquídea",
      "Rua Osmar Silva De Oliveira",
@@ -649,7 +660,8 @@
      "Rua Zínia",
      "Rua Ágata",
      "Rua Âmbar",
-     "Rua Íris Azul"
+     "Rua Íris Azul",
+     "Salinas"
     ],
     "endereco": "Rua Jardim das Flores, s/n",
     "telefone": "(51) 3074-5572",
@@ -1020,6 +1032,82 @@
        [
         -51.12151,
         -29.86665
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        -51.0871,
+        -29.89183
+       ],
+       [
+        -51.08524,
+        -29.88489
+       ],
+       [
+        -51.08508,
+        -29.88422
+       ],
+       [
+        -51.08511,
+        -29.88414
+       ],
+       [
+        -51.08411,
+        -29.8824
+       ],
+       [
+        -51.08128,
+        -29.88398
+       ],
+       [
+        -51.07951,
+        -29.88482
+       ],
+       [
+        -51.07051,
+        -29.88891
+       ],
+       [
+        -51.07057,
+        -29.88905
+       ],
+       [
+        -51.07061,
+        -29.88935
+       ],
+       [
+        -51.07069,
+        -29.88941
+       ],
+       [
+        -51.07212,
+        -29.88968
+       ],
+       [
+        -51.0737,
+        -29.88972
+       ],
+       [
+        -51.07484,
+        -29.88963
+       ],
+       [
+        -51.07571,
+        -29.88976
+       ],
+       [
+        -51.08285,
+        -29.89121
+       ],
+       [
+        -51.08719,
+        -29.89202
+       ],
+       [
+        -51.0871,
+        -29.89183
        ]
       ]
      ]

@@ -215,6 +215,81 @@ if ADICOES:
                       % (add['unidade'],(j.area/antes-1)*100,len(add['ruas'])))
         print('ruas incluídas na abrangência de %s: %d' % (add['unidade'],len(add['ruas'])))
 
+# transferências de território pedidas pela Secretaria (dados/areas_transferidas.json)
+try:
+    TRANSF=json.load(open('areas_transferidas.json',encoding='utf-8'))['transferencias']
+except (IOError,OSError,ValueError,KeyError):
+    TRANSF=[]
+REGIOES={}                        # unidade de destino -> regiões que ela recebeu
+if TRANSF:
+    from shapely.geometry import LineString as _LS3
+    from shapely.ops import unary_union as _u4, linemerge as _lm, substring as _sub
+
+    def _via(nome):
+        """Traçado inteiro de uma via do OpenStreetMap, emendado ponta a ponta."""
+        partes=[_LS3([(x,y) for x,y in lin['linhas'][i]])
+                for i in lin['porNome'].get(nome,[]) if len(lin['linhas'][i])>1]
+        if not partes: return None
+        g=_u4(partes)
+        g=_lm(g) if g.geom_type=='MultiLineString' else g
+        return max(g.geoms,key=lambda q:q.length) if g.geom_type=='MultiLineString' else g
+
+    def regiao_entre_vias(eixo,lados):
+        """Região cercada por três vias.
+
+        O 'eixo' precisa ir de uma via de 'lados' até a outra. O contorno é o
+        eixo inteiro, mais o pedaço de cada lateral entre o eixo e o ponto em
+        que as duas laterais se encontram. Nada é desenhado à mão: o traçado
+        todo vem do OpenStreetMap.
+        """
+        e=_via(eixo); a=_via(lados[0]); b=_via(lados[1])
+        if e is None or a is None or b is None: return None
+        p0,p1=Point(e.coords[0]),Point(e.coords[-1])
+        if a.distance(p0)>a.distance(p1):          # p0 é a ponta que encosta em 'a'
+            p0,p1=p1,p0
+        eixo_pts=list(e.coords)
+        if Point(eixo_pts[0]).distance(p0)>Point(eixo_pts[-1]).distance(p0):
+            eixo_pts=list(reversed(eixo_pts))
+        # de 'a': do encontro com o eixo até a ponta que chega em 'b'
+        fim_a=a.length if Point(a.coords[-1]).distance(b)<Point(a.coords[0]).distance(b) else 0.0
+        ta=_sub(a,a.project(p0),fim_a)
+        if ta.is_empty: return None
+        canto=Point(list(ta.coords)[-1])
+        tb=_sub(b,b.project(p1),b.project(canto))   # de 'b': do eixo até esse canto
+        if tb.is_empty: return None
+        anel=eixo_pts+list(tb.coords)+list(reversed(list(ta.coords)))
+        reg=Polygon(anel).buffer(0)
+        if reg.is_empty: return None
+        if reg.geom_type=='MultiPolygon': reg=max(reg.geoms,key=lambda g:g.area)
+        return reg.intersection(LIMITE)
+
+    por_nome_area={a['n']:a for a in areas}
+    for t in TRANSF:
+        reg=regiao_entre_vias(t['eixo'],t['lados'])
+        if reg is None or reg.is_empty:
+            print('transferência ignorada, região não pôde ser fechada:',t.get('para')); continue
+        alvo=por_nome_area.get(t['para'])
+        if not alvo:
+            print('transferência ignorada, unidade não encontrada:',t['para']); continue
+        for nome in t.get('retirar_de',[]):
+            velha=por_nome_area.get(nome)
+            if not velha: continue
+            p=Polygon(velha['poly']).buffer(0)
+            sobra=p.difference(reg)
+            if sobra.is_empty: continue
+            if sobra.geom_type=='MultiPolygon': sobra=max(sobra.geoms,key=lambda g:g.area)
+            e2=15/111320.0
+            sobra=sobra.buffer(-e2).buffer(e2*1.05).simplify(4/111320.0)
+            if sobra.is_empty: continue
+            if sobra.geom_type=='MultiPolygon': sobra=max(sobra.geoms,key=lambda g:g.area)
+            print('região transferida: %-22s -%.0f%% da área' % (nome,(1-sobra.area/p.area)*100))
+            velha['poly']=[[round(x,5),round(y,5)] for x,y in sobra.exterior.coords]
+        alvo.setdefault('poly_extra',[]).append(
+            [[round(x,5),round(y,5)] for x,y in reg.simplify(3/111320.0).exterior.coords])
+        REGIOES.setdefault(t['para'],[]).append(reg)
+        print('região de %.2f km2 passou a ser referência da %s' % (reg.area*111.32**2,t['para']))
+
+
 def entrada(k,label,indices,prov=0,traduzir=True):
     g=geon.get(k)
     if traduzir:
@@ -413,6 +488,28 @@ if RECORTES:
         poly=poligonos[a['n']]
         chaves={e[0] for e in idx if indice_area[a['n']] in e[2]}
         a['ruas']=[r for r in a['ruas'] if norm(r) in chaves]
+
+# as ruas com traçado dentro de uma região transferida passam a responder
+# pela unidade que a recebeu; quem também atravessa a área antiga continua nas
+# duas, e aí o número da casa é que decide
+if REGIOES:
+    from shapely.geometry import LineString as _LS4
+    indice_area={a['n']:i for i,a in enumerate(areas)}
+    for destino,regioes in REGIOES.items():
+        ai=indice_area.get(destino)
+        if ai is None: continue
+        reg=regioes[0] if len(regioes)==1 else _u2(regioes)
+        ganhas=[]
+        for e in idx:
+            if ai in e[2] or not e[6]: continue
+            for i in e[6]:
+                l=linhas_novas[i]
+                if len(l)>1 and reg.intersects(_LS4([(x,y) for x,y in l])):
+                    e[2].append(ai); ganhas.append(e[1]); break
+        if ganhas:
+            areas[ai]['ruas']=sorted(set(areas[ai]['ruas'])|set(ganhas))
+            print('ruas da região transferida para %s: %d — ex.: %s'
+                  % (destino,len(ganhas),', '.join(sorted(ganhas)[:6])))
 
 print('logradouros CNEFE:',len(tren),'| ruas do índice com trechos numerados:',casados,'de',len(idx))
 for a in areas: a.pop('_orig',None)

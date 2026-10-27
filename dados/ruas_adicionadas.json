@@ -4,11 +4,30 @@
  "adicoes": [
   {
    "unidade": "UBS CAIC Granja",
-   "ruas": ["Acesso 01", "Acesso 02", "Acesso 03", "Acesso 04", "Acesso 05", "Acesso 06",
-            "Acesso 07", "Acesso 08", "Acesso 09", "Acesso 10", "Acesso 11", "Acesso 14",
-            "Acesso 17"],
+   "ruas": [
+    "Acesso 01",
+    "Acesso 02",
+    "Acesso 03",
+    "Acesso 04",
+    "Acesso 05",
+    "Acesso 06",
+    "Acesso 07",
+    "Acesso 08",
+    "Acesso 09",
+    "Acesso 10",
+    "Acesso 11",
+    "Acesso 14",
+    "Acesso 17"
+   ],
    "estender_area": true,
    "motivo": "Secretaria (2026-09-24): o conjunto dos Acessos, junto à Rua Túnel Verde, é referência da UBS CAIC Granja."
+  },
+  {
+   "unidade": "UBS CAIC Granja",
+   "ruas": [
+    "Rua Oliveira Vieira Aguiar"
+   ],
+   "motivo": "Secretaria (2026-10-27): via dentro do trecho transferido (entre a Avenida da Federação, a Estrada dos Capistranos e a RS-118) que não constava de nenhuma lista de abrangência."
   }
  ]
 }
