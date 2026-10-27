@@ -1,6 +1,6 @@
 {
  "_fonte": "Transferências de território determinadas pela Secretaria Municipal de Saúde de Cachoeirinha/RS.",
- "_como_funciona": "Cada transferência descreve uma região cercada por três vias e diz para qual unidade ela passa. A região é calculada do traçado do OpenStreetMap na hora do build — 'eixo' é a via que liga as outras duas, 'lados' são as duas vias que fecham a região nas pontas. A transferência só toma o que está vago ou pertence às unidades listadas em 'retirar_de': o território de qualquer outra unidade é descontado da região e fica como está. Se a região encostar no território da unidade de destino, funde-se com ele num desenho só; se ficar longe, entra como polígono separado. As ruas com traçado dentro da região passam a responder pela unidade de destino.",
+ "_como_funciona": "Cada transferência descreve uma região cercada por três vias e diz para qual unidade ela passa. A região é calculada do traçado do OpenStreetMap na hora do build — 'eixo' é a via que liga as outras duas, 'lados' são as duas vias que fecham a região nas pontas. A transferência só toma o que está vago ou pertence às unidades listadas em 'retirar_de': o território de qualquer outra unidade é descontado da região e fica como está. Se a região encostar no território da unidade de destino, funde-se com ele num desenho só; se ficar longe, entra como polígono separado. As ruas com traçado dentro da região passam a responder pela unidade de destino. Uma transferência também pode ser dita por 'pedaco_em' ([lat, lon]): o pedaço da área de 'de' que contém aquele ponto passa inteiro para 'para'.",
  "transferencias": [
   {
    "para": "UBS CAIC Granja",
@@ -13,6 +13,24 @@
     "ESF Jardim Betânia"
    ],
    "motivo": "Secretaria (2026-10-27): o trecho entre a Avenida da Federação, a Estrada dos Capistranos e a RS-118 — Residencial Amazonas e vizinhança — é referência da UBS CAIC Granja. A ponta leste da cunha, que a ESF Canarinho já cobria, continua com ela."
+  },
+  {
+   "de": "UBS CAIC Granja",
+   "para": "UBS Jardim do Bosque",
+   "pedaco_em": [
+    -29.91103,
+    -51.0811
+   ],
+   "motivo": "Secretaria (2026-10-27): o pedaço junto à Rua Mário Teixeira de Souza é da UBS Jardim do Bosque."
+  },
+  {
+   "de": "UBS CAIC Granja",
+   "para": "UBS Jardim do Bosque",
+   "pedaco_em": [
+    -29.91669,
+    -51.08414
+   ],
+   "motivo": "Secretaria (2026-10-27): o pedaço vizinho, na mesma quadra, é da UBS Jardim do Bosque."
   }
  ]
 }

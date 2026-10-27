@@ -194,13 +194,15 @@ Recorte em vigor: a **ESF Jardim Betânia** perdeu o setor a oeste da Souza Cruz
 
 Quando a Secretaria passa um trecho inteiro de uma unidade para outra, o trecho é descrito em `dados/areas_transferidas.json` pelas vias que o cercam — `eixo` é a via que liga as outras duas, `lados` são as vias que fecham as pontas. `scripts/final.py` monta a região a partir do traçado dessas vias no OpenStreetMap e recorta dela as unidades listadas em `retirar_de`. A transferência só toma o que está vago ou pertence a essas unidades: o território de qualquer outra fica como está e sai da região. Se a região encostar no território da unidade de destino, as duas viram um desenho só, sem divisa interna; se ficar longe, entra como **polígono separado**, sem ponte até a área principal. As ruas com traçado dentro da região passam a responder pela unidade de destino; quem atravessa a divisa fica nas duas, e o número da casa decide.
 
+Uma transferência também pode ser dita por `pedaco_em` (`[lat, lon]`): o pedaço da área de `de` que contém aquele ponto passa inteiro para `para`, já sobre a geometria pronta. Em vigor: dois fragmentos da UBS CAIC Granja junto à Rua Mário Teixeira de Souza passaram para a UBS Jardim do Bosque.
+
 Transferência em vigor: o trecho entre a **Avenida da Federação**, a **Estrada dos Capistranos** e a **RS-118 (Rodovia Mário Quintana)** — Residencial Amazonas e vizinhança — é referência da **UBS CAIC Granja**: 0,89 km², que entram como parte separada da área dela. A ponta leste da cunha, 6% que a **ESF Canarinho** já cobria, continua com a Canarinho. Saiu 32% da área da ESF Jardim Betânia; o resto do trecho não estava em área nenhuma.
 
 ## 8.4 Área sem referência
 
-Todo pedaço do município que não cai em área nenhuma passa para a **UBS mais próxima**, conforme `dados/vazios.json`. A divisão usa células de Voronoi em torno do ponto de cada UBS: cada ponto do vazio fica com a unidade mais perto dele, e o pedaço se junta ao território dessa UBS (o que ficar solto entra como parte separada da mesma área). Lascas menores que `area_minima_m2` são descartadas. As áreas de ESF não entram na divisão.
+Todo pedaço do município que não cai em área nenhuma passa para a **UBS mais próxima**, conforme `dados/vazios.json`. A divisão usa células de Voronoi em torno do ponto de cada UBS: cada ponto do vazio fica com a unidade mais perto dele, e o pedaço se junta ao território dessa UBS (o que ficar solto entra como parte separada da mesma área). Lascas menores que `area_minima_m2` são descartadas. No fim, partes da mesma unidade que se encostam viram um desenho só, para não sobrar divisa à toa dentro do território — foi o caso dos dois territórios da UBS Nova Cachoeirinha. As áreas de ESF não entram na divisão.
 
-Em `excecoes`, um polígono nomeado de `dados/osm_poligonos.json` vai para a unidade indicada antes da divisão automática — é o caso do **Mato do Júlio** (1,37 km², do OpenStreetMap), que é referência da UBS Parque da Matriz.
+Em `excecoes`, um pedaço do vazio vai para a unidade indicada antes da divisão automática, dito por `poligono` (nome em `dados/osm_poligonos.json`) ou por `caixa` (`[sul, oeste, norte, leste]`); a exceção pode mandar para uma ESF, o que a divisão automática não faz. Em vigor: o **Mato do Júlio** (1,37 km², polígono do OpenStreetMap) para a UBS Parque da Matriz, a faixa norte do **CADOP** (0,66 km²) para a UBS COHAB e a faixa sul, até o arroio (0,11 km²), para a ESF Carlos Wilkens.
 
 Resultado: 15,3 km² distribuídos e **100% do município com unidade de referência**, contra 70% antes.
 

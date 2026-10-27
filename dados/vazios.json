@@ -1,6 +1,6 @@
 {
  "_fonte": "Secretaria Municipal de Saúde de Cachoeirinha/RS (2026-10-27).",
- "_como_funciona": "Todo pedaço do município que não está em área nenhuma passa para a UBS mais próxima. A divisão é feita por células de Voronoi em torno do ponto de cada UBS: cada ponto do vazio fica com a UBS cuja unidade está mais perto dele. O pedaço se junta ao território dessa UBS; o que sobrar solto entra como parte separada da mesma área. Lascas menores que 'area_minima_m2' são descartadas, para não encher o desenho de fiapos. As áreas de ESF não entram na divisão e não mudam. Em 'excecoes', um polígono nomeado de dados/osm_poligonos.json vai para a unidade indicada, antes da divisão automática.",
+ "_como_funciona": "Todo pedaço do município que não está em área nenhuma passa para a UBS mais próxima. A divisão é feita por células de Voronoi em torno do ponto de cada UBS: cada ponto do vazio fica com a UBS cuja unidade está mais perto dele. O pedaço se junta ao território dessa UBS; o que sobrar solto entra como parte separada da mesma área. Lascas menores que 'area_minima_m2' são descartadas, para não encher o desenho de fiapos. As áreas de ESF não entram na divisão e não mudam. Em 'excecoes', um pedaço do vazio vai para a unidade indicada antes da divisão automática. O pedaço pode ser dito por 'poligono' (nome em dados/osm_poligonos.json) ou por 'caixa' ([sul, oeste, norte, leste]). A exceção pode mandar para uma ESF, o que a divisão automática não faz.",
  "distribuir": true,
  "entre": "UBS",
  "area_minima_m2": 2000,
@@ -9,6 +9,26 @@
    "poligono": "Mato do Júlio",
    "para": "UBS Parque da Matriz",
    "motivo": "Secretaria (2026-10-27): o Mato do Júlio é referência da UBS Parque da Matriz."
+  },
+  {
+   "caixa": [
+    -29.954,
+    -51.129,
+    -29.947,
+    -51.1
+   ],
+   "para": "UBS COHAB",
+   "motivo": "Secretaria (2026-10-27): a faixa norte do CADOP, que tinha ficado com a UBS Décio Martins Costa, é da UBS COHAB."
+  },
+  {
+   "caixa": [
+    -29.965,
+    -51.129,
+    -29.954,
+    -51.1
+   ],
+   "para": "ESF Carlos Wilkens",
+   "motivo": "Secretaria (2026-10-27): a faixa sul do CADOP, até o arroio, que tinha ficado com a UBS Décio Martins Costa, é da ESF Carlos Wilkens."
   }
  ]
 }

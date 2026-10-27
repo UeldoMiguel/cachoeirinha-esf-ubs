@@ -264,7 +264,20 @@ if TRANSF:
         return reg.intersection(LIMITE)
 
     por_nome_area={a['n']:a for a in areas}
+
+    def partes(a2):
+        return [Polygon(a2['poly']).buffer(0)]+[Polygon(r).buffer(0) for r in a2.get('poly_extra') or []]
+
+    def guarda(a2,qs):
+        qs=[q for q in qs if not q.is_empty]
+        qs.sort(key=lambda q:-q.area)
+        a2['poly']=[[round(x,5),round(y,5)] for x,y in qs[0].exterior.coords]
+        extras=[[[round(x,5),round(y,5)] for x,y in q.exterior.coords] for q in qs[1:]]
+        if extras: a2['poly_extra']=extras
+        elif 'poly_extra' in a2: a2.pop('poly_extra')
+
     for t in TRANSF:
+        if t.get('pedaco_em'): continue   # tratado no fim, sobre a área já pronta
         reg=regiao_entre_vias(t['eixo'],t['lados'])
         if reg is None or reg.is_empty:
             print('transferência ignorada, região não pôde ser fechada:',t.get('para')); continue
@@ -341,13 +354,19 @@ if VAZIOS.get('distribuir') and areas:
     except (IOError,OSError,ValueError,KeyError):
         POLIS={}
     for exc in VAZIOS.get('excecoes',[]):
-        reg=POLIS.get(exc['poligono'])
         alvo=por_nome_area.get(exc['para'])
-        if not reg or not alvo:
-            print('exceção ignorada:',exc.get('poligono'),'->',exc.get('para')); continue
-        parte=vazio.intersection(Polygon(reg['anel']).buffer(0))
+        rotulo=exc.get('poligono') or 'caixa'
+        if exc.get('caixa'):
+            sul,oeste,norte,leste=exc['caixa']
+            molde=_box(oeste,sul,leste,norte)
+        else:
+            reg=POLIS.get(exc.get('poligono'))
+            molde=Polygon(reg['anel']).buffer(0) if reg else None
+        if molde is None or not alvo:
+            print('exceção ignorada:',rotulo,'->',exc.get('para')); continue
+        parte=vazio.intersection(molde)
         if parte.is_empty:
-            print('exceção sem vazio para distribuir:',exc['poligono']); continue
+            print('exceção sem vazio para distribuir:',rotulo); continue
         j=unary_union(_todas(alvo)+[parte])
         qs=[q for q in (j.geoms if j.geom_type=='MultiPolygon' else [j]) if q.area>minimo]
         qs.sort(key=lambda q:-q.area)
@@ -356,7 +375,7 @@ if VAZIOS.get('distribuir') and areas:
         if extras: alvo['poly_extra']=extras
         REGIOES.setdefault(exc['para'],[]).append(parte)
         vazio=vazio.difference(parte)
-        print('exceção: %s (%.2f km2) -> %s' % (exc['poligono'],parte.area*111.32**2,exc['para']))
+        print('exceção: %s (%.2f km2) -> %s' % (rotulo,parte.area*111.32**2,exc['para']))
 
     if not vazio.is_empty and len(pontos)>1:
         # células de Voronoi: cada ponto do vazio fica com a unidade mais próxima
@@ -388,6 +407,56 @@ if VAZIOS.get('distribuir') and areas:
             print('vazio distribuído: %-26s +%5.2f km2  (%d parte%s)'
                   % (nome[:26],parte.area*111.32**2,len(qs),'' if len(qs)==1 else 's'))
         print('área sem referência distribuída: %.2f km2' % total)
+
+# partes da mesma unidade que se encostam viram um desenho só: duas metades
+# coladas pela ponta ficariam com uma divisa à toa no meio do território
+for a in areas:
+    if not a.get('poly_extra'): continue
+    pecas=[Polygon(a['poly']).buffer(0)]+[Polygon(r).buffer(0) for r in a['poly_extra']]
+    e4=5/111320.0
+    j=unary_union(pecas).buffer(e4).buffer(-e4)
+    qs=list(j.geoms) if j.geom_type=='MultiPolygon' else [j]
+    if len(qs)>=len(pecas): continue
+    qs=[q.simplify(3/111320.0) for q in sorted(qs,key=lambda q:-q.area)]
+    a['poly']=[[round(x,5),round(y,5)] for x,y in qs[0].exterior.coords]
+    if qs[1:]: a['poly_extra']=[[[round(x,5),round(y,5)] for x,y in q.exterior.coords] for q in qs[1:]]
+    else: a.pop('poly_extra')
+    print('partes encostadas unidas: %-26s %d -> %d' % (a['n'][:26],len(pecas),len(qs)))
+
+# pedaços avulsos que mudam de unidade (entradas com 'pedaco_em' em
+# dados/areas_transferidas.json): aplicados sobre a área já pronta
+if TRANSF:
+    por_nome_area={a['n']:a for a in areas}
+
+    def partes(a2):
+        return [Polygon(a2['poly']).buffer(0)]+[Polygon(r).buffer(0) for r in a2.get('poly_extra') or []]
+
+    def guarda(a2,qs):
+        qs=[q for q in qs if not q.is_empty]
+        qs.sort(key=lambda q:-q.area)
+        a2['poly']=[[round(x,5),round(y,5)] for x,y in qs[0].exterior.coords]
+        extras=[[[round(x,5),round(y,5)] for x,y in q.exterior.coords] for q in qs[1:]]
+        if extras: a2['poly_extra']=extras
+        elif 'poly_extra' in a2: a2.pop('poly_extra')
+
+    for t in TRANSF:
+        if not t.get('pedaco_em'): continue
+        origem=por_nome_area.get(t.get('de')); alvo=por_nome_area.get(t['para'])
+        if not origem or not alvo:
+            print('transferência de pedaço ignorada:',t.get('de'),'->',t.get('para')); continue
+        lat,lon=t['pedaco_em']; ponto=Point(lon,lat)
+        qs=partes(origem)
+        vai=[q for q in qs if q.contains(ponto)]
+        fica=[q for q in qs if not q.contains(ponto)]
+        if not vai:
+            print('nenhum pedaço de %s contém %.5f,%.5f' % (t['de'],lat,lon)); continue
+        if not fica:
+            print('o pedaço é a área inteira de %s, transferência ignorada' % t['de']); continue
+        guarda(origem,fica)
+        j=unary_union(partes(alvo)+vai)
+        guarda(alvo,list(j.geoms) if j.geom_type=='MultiPolygon' else [j])
+        REGIOES.setdefault(t['para'],[]).append(unary_union(vai))
+        print('pedaço de %.3f km2: %s -> %s' % (sum(q.area for q in vai)*111.32**2,t['de'],t['para']))
 
 def entrada(k,label,indices,prov=0,traduzir=True):
     g=geon.get(k)
