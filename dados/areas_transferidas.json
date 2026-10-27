@@ -53,6 +53,28 @@
     -51.098
    ],
    "motivo": "Secretaria (2026-10-27): a faixa junto ao arroio, na altura da Rua 7 de Setembro, é da UBS Décio Martins Costa."
+  },
+  {
+   "de": "UBS Nova Cachoeirinha",
+   "para": "ESF Canarinho",
+   "caixa": [
+    -29.894,
+    -51.079,
+    -29.882,
+    -51.062
+   ],
+   "motivo": "Secretaria (2026-10-27): a faixa que a UBS Nova Cachoeirinha tinha junto à ERS-118, ao norte da ESF Canarinho, é da ESF Canarinho."
+  },
+  {
+   "de": "UBS Nova Cachoeirinha",
+   "para": "ESF Canarinho",
+   "caixa": [
+    -29.902,
+    -51.0665,
+    -29.887,
+    -51.06
+   ],
+   "motivo": "Secretaria (2026-10-27): na Avenida Marechal Rondon, o que fica a leste da área da ESF Canarinho também é da ESF Canarinho."
   }
  ]
 }
