@@ -277,7 +277,9 @@ if TRANSF:
         elif 'poly_extra' in a2: a2.pop('poly_extra')
 
     for t in TRANSF:
-        if t.get('pedaco_em') or t.get('caixa'): continue   # tratados no fim, sobre a área já pronta
+        if (t.get('pedaco_em') or t.get('caixa')
+                or any(t.get('ao_'+l+'_da_via') for l in ('norte','sul','leste','oeste'))):
+            continue                      # tratados no fim, sobre a área já pronta
         reg=regiao_entre_vias(t['eixo'],t['lados'])
         if reg is None or reg.is_empty:
             print('transferência ignorada, região não pôde ser fechada:',t.get('para')); continue
@@ -439,7 +441,50 @@ if TRANSF:
         if extras: a2['poly_extra']=extras
         elif 'poly_extra' in a2: a2.pop('poly_extra')
 
+    def lado_da_via(nome,lado,molde_bbox):
+        """Polígono com tudo que fica de um lado da via (norte, sul, leste ou
+        oeste): o traçado do OSM, fechado contra a borda daquele lado."""
+        v=_via(nome)
+        if v is None: return None
+        minx,miny,maxx,maxy=molde_bbox
+        minx-=0.02; maxx+=0.02; miny-=0.02; maxy+=0.02
+        c=list(v.coords)
+        if lado in ('norte','sul'):
+            if c[0][0]>c[-1][0]: c=list(reversed(c))      # de oeste para leste
+            borda=maxy if lado=='norte' else miny
+            anel=[(minx,c[0][1])]+c+[(maxx,c[-1][1]),(maxx,borda),(minx,borda)]
+        else:
+            if c[0][1]>c[-1][1]: c=list(reversed(c))      # de sul para norte
+            borda=maxx if lado=='leste' else minx
+            anel=[(c[0][0],miny)]+c+[(c[-1][0],maxy),(borda,maxy),(borda,miny)]
+        p=Polygon(anel).buffer(0)
+        return p if not p.is_empty else None
+
     for t in TRANSF:
+        lado=([l for l in ('norte','sul','leste','oeste') if t.get('ao_'+l+'_da_via')] or [None])[0]
+        if lado:
+            origem=por_nome_area.get(t.get('de')); alvo=por_nome_area.get(t['para'])
+            if not origem or not alvo:
+                print('transferência por via ignorada:',t.get('de'),'->',t.get('para')); continue
+            seu=unary_union(partes(origem))
+            molde=lado_da_via(t['ao_'+lado+'_da_via'],lado,seu.bounds)
+            if molde is None:
+                print('via não encontrada:',t['ao_'+lado+'_da_via']); continue
+            vai=seu.intersection(molde); fica=seu.difference(molde)
+            if vai.is_empty:
+                print('nada a mover: %s não tem área ao %s da %s'
+                      % (t['de'],lado,t['ao_'+lado+'_da_via'])); continue
+            qs=[q for q in (fica.geoms if fica.geom_type=='MultiPolygon' else [fica])
+                if q.area>2000/(111320.0**2)]
+            if not qs:
+                print('o corte pega a área inteira de %s, ignorado' % t['de']); continue
+            guarda(origem,qs)
+            j=unary_union(partes(alvo)+[vai])
+            guarda(alvo,list(j.geoms) if j.geom_type=='MultiPolygon' else [j])
+            REGIOES.setdefault(t['para'],[]).append(vai)
+            print('ao %s da %s: %.3f km2  %s -> %s'
+                  % (lado,t['ao_'+lado+'_da_via'],vai.area*111.32**2,t['de'],t['para']))
+            continue
         if t.get('caixa'):
             # move o que a unidade de origem tem dentro da caixa
             origem=por_nome_area.get(t.get('de')); alvo=por_nome_area.get(t['para'])
