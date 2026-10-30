@@ -1,6 +1,6 @@
 {
  "_fonte": "OpenStreetMap, contribuidores (ODbL). Polígonos nomeados usados como referência de território.",
- "_como_foi_buscado": "Overpass API: way/relation com name ~ 'Mato do J' na bbox do município (2026-10-27). Overpass API: way/relation com name ~ 'Novo Cachoeirinha' ou 'Esporte Clube' na bbox do bairro (2026-10-30).",
+ "_como_foi_buscado": "Overpass API: way/relation com name ~ 'Mato do J' na bbox do município (2026-10-27). Overpass API: way/relation com name ~ 'Novo Cachoeirinha' ou 'Esporte Clube' na bbox do bairro (2026-10-30). Overpass API: way/relation com name ~ 'Hava' na bbox do bairro (2026-10-30).",
  "poligonos": {
   "Mato do Júlio": {
    "osm": "way/289658604",
@@ -218,6 +218,32 @@
     [
      -51.073157,
      -29.898357
+    ]
+   ]
+  },
+  "Havai FC": {
+   "tipo": "way",
+   "id": 287331739,
+   "anel": [
+    [
+     -51.074507,
+     -29.898965
+    ],
+    [
+     -51.074262,
+     -29.899466
+    ],
+    [
+     -51.075242,
+     -29.899826
+    ],
+    [
+     -51.075487,
+     -29.899325
+    ],
+    [
+     -51.074507,
+     -29.898965
     ]
    ]
   }

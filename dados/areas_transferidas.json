@@ -172,6 +172,17 @@
     -51.06
    ],
    "motivo": "Secretaria (2026-10-30): do campo do Esporte Clube Nova Cachoeirinha para o norte, até a Rua B — o Arroio Águas Mortas e o campo —, o território é da UBS Nova Cachoeirinha."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS Nova Cachoeirinha",
+   "caixa": [
+    -29.8999,
+    -51.0756,
+    -29.89836,
+    -51.07291
+   ],
+   "motivo": "Secretaria (2026-10-30): do campo do Esporte Clube Nova Cachoeirinha para oeste, até o campo do Havai FC, o território é da UBS Nova Cachoeirinha."
   }
  ]
 }
