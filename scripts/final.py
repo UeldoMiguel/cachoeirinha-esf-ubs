@@ -497,8 +497,8 @@ if TRANSF:
         return p if not p.is_empty else None
 
     for t in TRANSF:
-        lado=([l for l in ('norte','sul','leste','oeste') if t.get('ao_'+l+'_da_via')] or [None])[0]
-        if lado or t.get('caixa'):
+        lados_t=[l for l in ('norte','sul','leste','oeste') if t.get('ao_'+l+'_da_via')]
+        if lados_t or t.get('caixa'):
             origem=por_nome_area.get(t.get('de')); alvo=por_nome_area.get(t['para'])
             if not origem or not alvo:
                 print('transferência ignorada:',t.get('de'),'->',t.get('para')); continue
@@ -508,12 +508,14 @@ if TRANSF:
             if t.get('caixa'):
                 sul,oeste,norte,leste=t['caixa']
                 molde=_box(oeste,sul,leste,norte); rotulo.append('caixa')
-            if lado:
+            faltou=False
+            for lado in lados_t:
                 m2=lado_da_via(t['ao_'+lado+'_da_via'],lado,seu.bounds)
                 if m2 is None:
-                    print('via não encontrada:',t['ao_'+lado+'_da_via']); continue
+                    print('via não encontrada:',t['ao_'+lado+'_da_via']); faltou=True; break
                 molde=m2 if molde is None else molde.intersection(m2)
                 rotulo.append('ao %s da %s' % (lado,t['ao_'+lado+'_da_via']))
+            if faltou: continue
             vai=so_poligonos(seu.intersection(molde)); fica=so_poligonos(seu.difference(molde))
             if vai.is_empty:
                 print('nada a mover: %s não tem área em %s' % (t['de'],' + '.join(rotulo))); continue

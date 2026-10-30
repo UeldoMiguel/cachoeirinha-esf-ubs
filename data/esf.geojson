@@ -538,11 +538,12 @@
     "codigos": [
      "ESF-JOSE-ARI-DA-SILVEIRA"
     ],
-    "descricao": "Território de abrangência da ESF José Ari da Silveira, com 44 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 44,
+    "descricao": "Território de abrangência da ESF José Ari da Silveira, com 47 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 47,
     "ruas": [
      "==================================",
      "Alameda Serafim",
+     "Av. José Brambila",
      "Av. José Brambila (1589-2689 lado impar)",
      "Av. Marechal Rondon (922-1690 lado par)",
      "Av. São João (5-370)",
@@ -552,6 +553,7 @@
      "Rua Amazonas (45-314)",
      "Rua Antonio Pereira Nunes",
      "Rua Bahia (19-806)",
+     "Rua Brasil",
      "Rua Brasília",
      "Rua Campo Grande",
      "Rua Ceará (5-280)",
@@ -561,6 +563,7 @@
      "Rua Guarujá (253-343)",
      "Rua Maranhão (29-261)",
      "Rua Maranhão (45-650)",
+     "Rua Marte",
      "Rua Marte (48-179)",
      "Rua Mato Grosso",
      "Rua Orleans (272-336 toda a rua)",
@@ -596,44 +599,8 @@
     "coordinates": [
      [
       [
-       -51.07397,
-       -29.92299
-      ],
-      [
-       -51.07469,
-       -29.9226
-      ],
-      [
-       -51.07473,
-       -29.92264
-      ],
-      [
-       -51.07648,
-       -29.92326
-      ],
-      [
-       -51.07685,
-       -29.92337
-      ],
-      [
-       -51.07772,
-       -29.9237
-      ],
-      [
-       -51.07806,
-       -29.92316
-      ],
-      [
-       -51.07865,
-       -29.92183
-      ],
-      [
-       -51.07718,
-       -29.92133
-      ],
-      [
-       -51.07931,
-       -29.91902
+       -51.07933,
+       -29.919
       ],
       [
        -51.07953,
@@ -694,6 +661,62 @@
       [
        -51.07397,
        -29.92299
+      ],
+      [
+       -51.07469,
+       -29.9226
+      ],
+      [
+       -51.07473,
+       -29.92264
+      ],
+      [
+       -51.07648,
+       -29.92326
+      ],
+      [
+       -51.07685,
+       -29.92337
+      ],
+      [
+       -51.07772,
+       -29.9237
+      ],
+      [
+       -51.07806,
+       -29.92316
+      ],
+      [
+       -51.07849,
+       -29.9222
+      ],
+      [
+       -51.0785,
+       -29.9222
+      ],
+      [
+       -51.07867,
+       -29.92185
+      ],
+      [
+       -51.07927,
+       -29.92052
+      ],
+      [
+       -51.07975,
+       -29.91999
+      ],
+      [
+       -51.07975,
+       -29.91914
+      ],
+      [
+       -51.07969,
+       -29.919
+      ],
+      [
+       -51.07933,
+       -29.919
       ]
      ]
     ]

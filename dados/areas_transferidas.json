@@ -130,6 +130,19 @@
    ],
    "ao_norte_da_via": "Avenida José Brambila",
    "motivo": "Secretaria (2026-10-30): o trecho ao norte da Avenida José Brambila, entre o Beco Oriental e a esquina a leste, passa da ESF José Ari da Silveira para a ESF Otacílio Silveira."
+  },
+  {
+   "de": "UBS Osvaldo Cruz",
+   "para": "ESF José Ari da Silveira",
+   "caixa": [
+    -29.9222,
+    -51.0801,
+    -29.919,
+    -51.076
+   ],
+   "ao_leste_da_via": "Rua Guarujá",
+   "ao_oeste_da_via": "Avenida São João",
+   "motivo": "Secretaria (2026-10-30): o quarteirão entre a Rua Guarujá, a Avenida São João e a Rua Marte, com a Rua Tiarajú no meio, é da ESF José Ari da Silveira."
   }
  ]
 }
