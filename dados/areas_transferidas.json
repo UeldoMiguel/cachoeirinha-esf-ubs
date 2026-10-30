@@ -155,34 +155,6 @@
    "ao_leste_da_via": "Rua Guarujá",
    "ao_oeste_da_via": "Avenida São João",
    "motivo": "Secretaria (2026-10-30): o quarteirão entre a Rua Guarujá, a Avenida São João e a Rua Marte, com a Rua Tiarajú no meio, é da ESF José Ari da Silveira."
-  },
-  {
-   "de": "ESF Canarinho",
-   "para": "UBS Nova Cachoeirinha",
-   "poligono": "Esporte Clube Nova Cachoeirinha",
-   "motivo": "Secretaria (2026-10-30): o campo do Esporte Clube Nova Cachoeirinha é da UBS Nova Cachoeirinha."
-  },
-  {
-   "de": "ESF Canarinho",
-   "para": "UBS Nova Cachoeirinha",
-   "caixa": [
-    -29.89836,
-    -51.09,
-    -29.88,
-    -51.06
-   ],
-   "motivo": "Secretaria (2026-10-30): do campo do Esporte Clube Nova Cachoeirinha para o norte, até a Rua B — o Arroio Águas Mortas e o campo —, o território é da UBS Nova Cachoeirinha."
-  },
-  {
-   "de": "ESF Canarinho",
-   "para": "UBS Nova Cachoeirinha",
-   "caixa": [
-    -29.8999,
-    -51.0756,
-    -29.89836,
-    -51.07291
-   ],
-   "motivo": "Secretaria (2026-10-30): do campo do Esporte Clube Nova Cachoeirinha para oeste, até o campo do Havai FC, o território é da UBS Nova Cachoeirinha."
   }
  ]
 }
