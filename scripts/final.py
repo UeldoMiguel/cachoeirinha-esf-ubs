@@ -80,6 +80,12 @@ try:
 except (IOError,OSError,ValueError):
     INATIVAS={}
 
+# polígonos nomeados do OpenStreetMap, usados como limite de território
+try:
+    POLIS=json.load(open('osm_poligonos.json',encoding='utf-8'))['poligonos']
+except (IOError,OSError,ValueError,KeyError):
+    POLIS={}
+
 # recortes manuais pedidos pela Secretaria (dados/recortes_areas.json)
 from shapely.geometry import box as _box
 try:
@@ -268,7 +274,14 @@ if TRANSF:
     por_nome_area={a['n']:a for a in areas}
 
     def partes(a2):
-        return [Polygon(a2['poly']).buffer(0)]+[Polygon(r).buffer(0) for r in a2.get('poly_extra') or []]
+        # os buracos fazem parte do desenho: área cercada que é de outra
+        # unidade. Sem descontá-los, uma transferência os devolveria calados.
+        pecas=[Polygon(a2['poly']).buffer(0)]+[Polygon(r).buffer(0) for r in a2.get('poly_extra') or []]
+        furos=a2.get('buracos') or []
+        if not furos: return pecas
+        g=unary_union(pecas)
+        for r in furos: g=g.difference(Polygon(r).buffer(0))
+        return list(g.geoms) if g.geom_type=='MultiPolygon' else [g]
 
     def so_poligonos(g):
         """Interseção pode devolver linhas e pontos junto: fica só a área."""
@@ -283,9 +296,15 @@ if TRANSF:
         extras=[[[round(x,5),round(y,5)] for x,y in q.exterior.coords] for q in qs[1:]]
         if extras: a2['poly_extra']=extras
         elif 'poly_extra' in a2: a2.pop('poly_extra')
+        # guardar só o contorno perderia o vazio de dentro: um pedaço tirado
+        # do miolo da área voltaria sozinho na publicação
+        furos=[[[round(x,5),round(y,5)] for x,y in anel.coords]
+               for q in qs for anel in q.interiors]
+        if furos: a2['buracos']=furos
+        elif 'buracos' in a2: a2.pop('buracos')
 
     for t in TRANSF:
-        if (t.get('pedaco_em') or t.get('caixa')
+        if (t.get('pedaco_em') or t.get('caixa') or t.get('poligono')
                 or any(t.get('ao_'+l+'_da_via') for l in ('norte','sul','leste','oeste'))):
             continue                      # tratados no fim, sobre a área já pronta
         reg=regiao_entre_vias(t['eixo'],t['lados'])
@@ -359,10 +378,6 @@ if VAZIOS.get('distribuir') and areas:
     pontos=[(n,p) for n,p in pontos if n in por_nome_area]
     # exceções: o vazio de um polígono nomeado vai para a unidade indicada,
     # antes da divisão automática pela unidade mais próxima
-    try:
-        POLIS=json.load(open('osm_poligonos.json',encoding='utf-8'))['poligonos']
-    except (IOError,OSError,ValueError,KeyError):
-        POLIS={}
     for exc in VAZIOS.get('excecoes',[]):
         alvo=por_nome_area.get(exc['para'])
         rotulo=exc.get('poligono') or 'caixa'
@@ -439,7 +454,14 @@ if TRANSF:
     por_nome_area={a['n']:a for a in areas}
 
     def partes(a2):
-        return [Polygon(a2['poly']).buffer(0)]+[Polygon(r).buffer(0) for r in a2.get('poly_extra') or []]
+        # os buracos fazem parte do desenho: área cercada que é de outra
+        # unidade. Sem descontá-los, uma transferência os devolveria calados.
+        pecas=[Polygon(a2['poly']).buffer(0)]+[Polygon(r).buffer(0) for r in a2.get('poly_extra') or []]
+        furos=a2.get('buracos') or []
+        if not furos: return pecas
+        g=unary_union(pecas)
+        for r in furos: g=g.difference(Polygon(r).buffer(0))
+        return list(g.geoms) if g.geom_type=='MultiPolygon' else [g]
 
     def so_poligonos(g):
         """Interseção pode devolver linhas e pontos junto: fica só a área."""
@@ -454,6 +476,12 @@ if TRANSF:
         extras=[[[round(x,5),round(y,5)] for x,y in q.exterior.coords] for q in qs[1:]]
         if extras: a2['poly_extra']=extras
         elif 'poly_extra' in a2: a2.pop('poly_extra')
+        # guardar só o contorno perderia o vazio de dentro: um pedaço tirado
+        # do miolo da área voltaria sozinho na publicação
+        furos=[[[round(x,5),round(y,5)] for x,y in anel.coords]
+               for q in qs for anel in q.interiors]
+        if furos: a2['buracos']=furos
+        elif 'buracos' in a2: a2.pop('buracos')
 
     def borda_da_via(nome,lado):
         """Borda da via do lado pedido, de ponta a ponta.
@@ -500,7 +528,7 @@ if TRANSF:
 
     for t in TRANSF:
         lados_t=[l for l in ('norte','sul','leste','oeste') if t.get('ao_'+l+'_da_via')]
-        if lados_t or t.get('caixa'):
+        if lados_t or t.get('caixa') or t.get('poligono'):
             origem=por_nome_area.get(t.get('de')); alvo=por_nome_area.get(t['para'])
             if not origem or not alvo:
                 print('transferência ignorada:',t.get('de'),'->',t.get('para')); continue
@@ -510,6 +538,15 @@ if TRANSF:
             if t.get('caixa'):
                 sul,oeste,norte,leste=t['caixa']
                 molde=_box(oeste,sul,leste,norte); rotulo.append('caixa')
+            if t.get('poligono'):
+                # polígono nomeado do OpenStreetMap (dados/osm_poligonos.json):
+                # praça, campo, mata — o limite é o do próprio lugar
+                reg=POLIS.get(t['poligono'])
+                if reg is None:
+                    print('polígono não encontrado:',t['poligono']); continue
+                m3=Polygon(reg['anel']).buffer(0)
+                molde=m3 if molde is None else molde.intersection(m3)
+                rotulo.append(t['poligono'])
             faltou=False
             for lado in lados_t:
                 m2=lado_da_via(t['ao_'+lado+'_da_via'],lado,seu.bounds)

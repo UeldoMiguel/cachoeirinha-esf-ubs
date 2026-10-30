@@ -126,10 +126,22 @@
     -29.9145,
     -51.078,
     -29.9125,
+    -51.0727
+   ],
+   "ao_norte_da_via": "Avenida José Brambila",
+   "motivo": "Secretaria (2026-10-30): o trecho ao norte da Avenida José Brambila, do Beco Oriental até o Beco União, é da ESF Otacílio Silveira."
+  },
+  {
+   "de": "ESF José Ari da Silveira",
+   "para": "UBS Odil Silva de Oliveira",
+   "caixa": [
+    -29.9145,
+    -51.0727,
+    -29.9125,
     -51.0714
    ],
    "ao_norte_da_via": "Avenida José Brambila",
-   "motivo": "Secretaria (2026-10-30): o trecho ao norte da Avenida José Brambila, do Beco Oriental até a Rua Rondônia, é da ESF Otacílio Silveira."
+   "motivo": "Secretaria (2026-10-30): abaixo do Ginásio de Esportes do Bairro Fátima, o lado norte da Avenida José Brambila é da UBS Odil Silva de Oliveira."
   },
   {
    "de": "UBS Osvaldo Cruz",
@@ -143,6 +155,12 @@
    "ao_leste_da_via": "Rua Guarujá",
    "ao_oeste_da_via": "Avenida São João",
    "motivo": "Secretaria (2026-10-30): o quarteirão entre a Rua Guarujá, a Avenida São João e a Rua Marte, com a Rua Tiarajú no meio, é da ESF José Ari da Silveira."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS Nova Cachoeirinha",
+   "poligono": "Esporte Clube Nova Cachoeirinha",
+   "motivo": "Secretaria (2026-10-30): o campo do Esporte Clube Nova Cachoeirinha é da UBS Nova Cachoeirinha."
   }
  ]
 }
