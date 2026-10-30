@@ -68,9 +68,11 @@ def recorta(poly):
 
 # inclusões de ruas na abrangência (dados/ruas_adicionadas.json)
 try:
-    ADICOES=json.load(open('ruas_adicionadas.json',encoding='utf-8'))['adicoes']
+    _ruas_cfg=json.load(open('ruas_adicionadas.json',encoding='utf-8'))
+    ADICOES=_ruas_cfg['adicoes']
+    REMOCOES=_ruas_cfg.get('remocoes',[])
 except (IOError,OSError,ValueError):
-    ADICOES=[]
+    ADICOES=[]; REMOCOES=[]
 
 # unidades desativadas: a área e as ruas passam para quem absorveu
 try:
@@ -663,6 +665,23 @@ if ADICOES:
             elif ai not in e[2]:
                 e[2].append(ai); incluidas+=1
     print('vias incluídas no índice:',incluidas)
+if REMOCOES:
+    # a Secretaria também tira via de abrangência: o verbete fica, a unidade sai
+    pos={a['n']:i for i,a in enumerate(areas)}
+    por_chave={e[0]:e for e in idx}
+    tiradas=0
+    for rem in REMOCOES:
+        ai=pos.get(rem['unidade'])
+        if ai is None: continue
+        for nome in rem['ruas']:
+            e=por_chave.get(norm(nome))
+            if e is None:
+                print('via não encontrada para retirar:',nome); continue
+            if ai in e[2]:
+                e[2].remove(ai); tiradas+=1
+                if not e[2]: print('  atenção: %s ficou sem unidade' % e[1])
+            if rem.get('renomear'): e[1]=rem['renomear']
+    print('vias retiradas da abrangência:',tiradas)
 # contatos da lista da Secretaria substituem o texto livre do KML
 try:
     oficiais=json.load(open('contatos_oficiais.json',encoding='utf-8'))

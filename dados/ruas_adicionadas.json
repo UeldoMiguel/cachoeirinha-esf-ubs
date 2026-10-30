@@ -42,7 +42,18 @@
    "ruas": [
     "Beco União"
    ],
-   "motivo": "Secretaria (2026-10-30): o Beco União, ao norte da Avenida José Brambila, é de abrangência da ESF Otacílio Silveira. Não constava de nenhuma lista."
+   "motivo": "Secretaria (2026-10-30): o Beco União, ao norte da Avenida José Brambila, é de abrangência da ESF Otacílio Silveira."
+  }
+ ],
+ "_como_funciona_remocoes": "Em remocoes, a unidade sai da abrangência daquela via; o verbete continua no índice, respondendo pelas outras unidades. Com \"renomear\", o verbete passa a aparecer com o nome indicado.",
+ "remocoes": [
+  {
+   "unidade": "ESF Canarinho",
+   "ruas": [
+    "Beco União"
+   ],
+   "renomear": "Beco União",
+   "motivo": "Secretaria (2026-10-30): o Beco União, ao norte da Avenida José Brambila, é da ESF Otacílio Silveira. Vinha da lista como verbete solto (\"- União:\") e estava na ESF Canarinho, do outro lado da cidade."
   }
  ]
 }
