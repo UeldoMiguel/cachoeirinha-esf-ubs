@@ -155,6 +155,17 @@
    ],
    "ao_oeste_da_via": "Avenida Espírito Santo",
    "motivo": "Secretaria (2026-10-30): a oeste da Avenida Espírito Santo, até a Avenida Estados Unidos, o território é da UBS Nova Cachoeirinha. A ESF Canarinho começa na avenida."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS Nova Cachoeirinha",
+   "caixa": [
+    -29.8978,
+    -51.09,
+    -29.88,
+    -51.06
+   ],
+   "motivo": "Secretaria (2026-10-30): tudo o que a ESF Canarinho tinha ao norte do fim da Avenida Espírito Santo — o Arroio Águas Mortas, o Esporte Clube Novo Cachoeirinha e o campo até a Rua B — é da UBS Nova Cachoeirinha."
   }
  ]
 }
