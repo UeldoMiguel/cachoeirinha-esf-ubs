@@ -106,6 +106,18 @@
    ],
    "ao_leste_da_via": "Avenida Espírito Santo",
    "motivo": "Secretaria (2026-10-29): a leste da Avenida Espírito Santo, da Avenida Estados Unidos até os campos de futebol, o território é da ESF Canarinho."
+  },
+  {
+   "de": "UBS Nova Cachoeirinha",
+   "para": "ESF Canarinho",
+   "caixa": [
+    -29.9035,
+    -51.0745,
+    -29.8975,
+    -51.0645
+   ],
+   "ao_norte_da_via": "Avenida Estados Unidos",
+   "motivo": "Secretaria (2026-10-30): a faixa entre a Avenida Estados Unidos e a divisa antiga da área, nas ruas Áustria, Noruega, Holanda e Romênia, é da ESF Canarinho. A área da unidade passa a chegar na própria avenida."
   }
  ]
 }

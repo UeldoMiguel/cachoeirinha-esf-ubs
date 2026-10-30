@@ -453,20 +453,44 @@ if TRANSF:
         if extras: a2['poly_extra']=extras
         elif 'poly_extra' in a2: a2.pop('poly_extra')
 
+    def borda_da_via(nome,lado):
+        """Borda da via do lado pedido, de ponta a ponta.
+
+        Avenida de pista dupla vem do OSM como dois traçados paralelos, que
+        emendados viram um laço de ida e volta: seguir esse laço fecharia um
+        grampo em vez de um lado. Aqui as duas pistas entram juntas e, faixa a
+        faixa ao longo da via, fica só o ponto mais ao norte (ou sul, leste,
+        oeste), que é a borda daquele lado."""
+        partes=[[(x,y) for x,y in lin['linhas'][i]]
+                for i in lin['porNome'].get(nome,[]) if len(lin['linhas'][i])>1]
+        if not partes: return None
+        pts=[q for parte in partes for q in parte]
+        eixo=0 if lado in ('norte','sul') else 1
+        lo=min(q[eixo] for q in pts); hi=max(q[eixo] for q in pts)
+        if hi<=lo: return None
+        faixas=max(12,min(200,int((hi-lo)/0.00025)))
+        passo=(hi-lo)/faixas
+        extremo=max if lado in ('norte','leste') else min
+        caixas={}
+        for q in pts:
+            k=min(faixas-1,int((q[eixo]-lo)/passo))
+            atual=caixas.get(k)
+            if atual is None or extremo(q[1-eixo],atual[1-eixo])==q[1-eixo]:
+                caixas[k]=q
+        c=[caixas[k] for k in sorted(caixas)]
+        return c if len(c)>1 else None
+
     def lado_da_via(nome,lado,molde_bbox):
         """Polígono com tudo que fica de um lado da via (norte, sul, leste ou
-        oeste): o traçado do OSM, fechado contra a borda daquele lado."""
-        v=_via(nome)
-        if v is None: return None
+        oeste): a borda do traçado, fechada contra a borda daquele lado."""
+        c=borda_da_via(nome,lado)
+        if c is None: return None
         minx,miny,maxx,maxy=molde_bbox
         minx-=0.02; maxx+=0.02; miny-=0.02; maxy+=0.02
-        c=list(v.coords)
         if lado in ('norte','sul'):
-            if c[0][0]>c[-1][0]: c=list(reversed(c))      # de oeste para leste
             borda=maxy if lado=='norte' else miny
             anel=[(minx,c[0][1])]+c+[(maxx,c[-1][1]),(maxx,borda),(minx,borda)]
         else:
-            if c[0][1]>c[-1][1]: c=list(reversed(c))      # de sul para norte
             borda=maxx if lado=='leste' else minx
             anel=[(c[0][0],miny)]+c+[(c[-1][0],maxy),(borda,maxy),(borda,miny)]
         p=Polygon(anel).buffer(0)
