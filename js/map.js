@@ -14,6 +14,21 @@
 (function () {
   'use strict';
 
+  /* Versão dos dados ------------------------------------------------------- */
+
+  /* O carimbo vem do ?v= deste próprio script, posto por scripts/versao.py.
+     Sem ele o navegador e o CDN do GitHub Pages continuam servindo o GeoJSON
+     antigo depois de publicar: o HTML e os scripts trocam, os dados não. */
+  var MARCA = (function () {
+    var s = document.currentScript;
+    var m = s && s.src && s.src.match(/[?&]v=([^&]*)/);
+    return m ? m[1] : '';
+  })();
+
+  function comVersao(url) {
+    return MARCA ? url + (url.indexOf('?') < 0 ? '?' : '&') + 'v=' + MARCA : url;
+  }
+
   /* Configuração ---------------------------------------------------------- */
 
   var CENTRO = [-29.9509, -51.0939];   // centro aproximado de Cachoeirinha/RS
@@ -361,7 +376,7 @@
   /* Carregamento ---------------------------------------------------------- */
 
   function carrega(fonte, silencioso) {
-    return fetch(fonte.arquivo)
+    return fetch(comVersao(fonte.arquivo))
       .then(function (r) {
         if (!r.ok) throw new Error(fonte.arquivo + ': HTTP ' + r.status);
         return r.json();

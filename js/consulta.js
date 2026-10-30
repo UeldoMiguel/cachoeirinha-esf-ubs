@@ -17,7 +17,13 @@
   var API = window.MapaSaude;
   if (!API) return;
 
-  var ARQUIVO = 'data/consulta.json';
+  /* O carimbo vem do ?v= deste próprio script (scripts/versao.py). Sem ele o
+     navegador segue servindo o índice antigo depois de publicar. */
+  var ARQUIVO = (function () {
+    var s = document.currentScript;
+    var m = s && s.src && s.src.match(/[?&]v=([^&]*)/);
+    return 'data/consulta.json' + (m ? '?v=' + m[1] : '');
+  })();
   var elResposta = document.getElementById('resposta');
   var elBusca = document.getElementById('busca');
 
