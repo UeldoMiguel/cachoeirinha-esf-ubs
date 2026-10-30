@@ -976,10 +976,6 @@
     "coordinates": [
      [
       [
-       -51.10693,
-       -29.90708
-      ],
-      [
        -51.10773,
        -29.90608
       ],
@@ -1894,6 +1890,10 @@
       [
        -51.10693,
        -29.90708
+      ],
+      [
+       -51.10773,
+       -29.90608
       ]
      ]
     ]
@@ -4692,28 +4692,17 @@
     "codigos": [
      "UBS-NOVA-CACHOEIRINHA"
     ],
-    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 58 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 58,
+    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 41 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 41,
     "ruas": [
      "Av. Espirito Santo",
      "Av. Estados Unidos",
      "Av. Mal. Rondon",
      "Av. Manoel Inacio Nunes",
      "Beco da Servidão",
-     "Bem-te-vi",
-     "Bulgária",
-     "Escócia",
      "Estrada dos Capistranos",
-     "Falcão",
-     "Gavião",
-     "Quero-quero",
-     "Rua Aracuã",
-     "Rua Arara",
-     "Rua Azulão",
      "Rua Bolivia",
      "Rua Canada",
-     "Rua Carruíra",
-     "Rua Chimango",
      "Rua Dinamarca",
      "Rua Domingos Signore",
      "Rua Duque De Caxias",
@@ -4730,12 +4719,9 @@
      "Rua Iugoslavia",
      "Rua Jamaica",
      "Rua José Rodrigues",
-     "Rua Martin Pescador",
-     "Rua Maçanico",
      "Rua Minas Gerais",
      "Rua Mário Quintana",
      "Rua N. Belgica",
-     "Rua Pintassilgo",
      "Rua Polonia",
      "Rua Porto Alegre",
      "Rua Romenia",
@@ -4743,16 +4729,13 @@
      "Rua Sapucaia Do Sul",
      "Rua Suiça",
      "Rua Tangará",
-     "Rua Tesourinha",
      "Rua Uruguai",
      "Rua Áustria",
      "Travessa Suiça A e B",
-     "Turquia",
      "Tv. Rio Grande Do Sul",
      "Tv. Santos",
      "Tv. do Arvoredo",
-     "Tv. dos Tucanos",
-     "Águia"
+     "Tv. dos Tucanos"
     ],
     "endereco": "Rua Eldorado, 260",
     "telefone": "(51) 3041-6245",
@@ -4764,6 +4747,14 @@
     "coordinates": [
      [
       [
+       [
+        -51.073,
+        -29.90203
+       ],
+       [
+        -51.07011,
+        -29.90095
+       ],
        [
         -51.0696,
         -29.90083
@@ -4945,60 +4936,28 @@
         -29.88966
        ],
        [
-        -51.07343,
-        -29.88775
+        -51.0737,
+        -29.88972
        ],
        [
-        -51.07057,
-        -29.88905
+        -51.0726,
+        -29.88971
        ],
        [
-        -51.07006,
-        -29.88905
+        -51.0726,
+        -29.89731
        ],
        [
-        -51.0665,
-        -29.89068
+        -51.07247,
+        -29.8975
        ],
        [
-        -51.0665,
-        -29.89097
-       ],
-       [
-        -51.06645,
-        -29.891
-       ],
-       [
-        -51.06585,
-        -29.891
-       ],
-       [
-        -51.0659,
-        -29.89147
-       ],
-       [
-        -51.06588,
-        -29.8923
-       ],
-       [
-        -51.06605,
-        -29.89441
-       ],
-       [
-        -51.06563,
-        -29.89556
-       ],
-       [
-        -51.06558,
-        -29.8958
-       ],
-       [
-        -51.06553,
-        -29.8978
+        -51.0745,
+        -29.8975
        ],
        [
         -51.07485,
-        -29.8978
+        -29.8975
        ],
        [
         -51.07485,
@@ -5023,54 +4982,50 @@
        [
         -51.073,
         -29.90203
-       ],
-       [
-        -51.07011,
-        -29.90095
-       ],
-       [
-        -51.0696,
-        -29.90083
        ]
       ]
      ],
      [
       [
        [
-        -51.07682,
-        -29.88604
+        -51.0665,
+        -29.89068
        ],
        [
-        -51.07838,
-        -29.88533
+        -51.0665,
+        -29.89097
        ],
        [
-        -51.07841,
-        -29.885
+        -51.0665,
+        -29.89103
        ],
        [
-        -51.07783,
-        -29.88522
+        -51.06737,
+        -29.89059
        ],
        [
-        -51.07758,
-        -29.88539
+        -51.06841,
+        -29.89007
        ],
        [
-        -51.07764,
-        -29.88547
+        -51.06959,
+        -29.88955
        ],
        [
-        -51.07759,
-        -29.8856
+        -51.06973,
+        -29.88943
        ],
        [
-        -51.07705,
-        -29.88585
+        -51.07057,
+        -29.88905
        ],
        [
-        -51.07682,
-        -29.88604
+        -51.07006,
+        -29.88905
+       ],
+       [
+        -51.0665,
+        -29.89068
        ]
       ]
      ]
