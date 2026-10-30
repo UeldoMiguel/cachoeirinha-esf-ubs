@@ -88,6 +88,24 @@
    "para": "UBS CAIC Granja",
    "ao_norte_da_via": "Rua Lateral da ERS-118",
    "motivo": "Secretaria (2026-10-27): a ESF Canarinho não passa da Rua Lateral da ERS-118; a faixa entre ela e a rodovia fica com a UBS CAIC Granja, que já responde pelo resto da beira da ERS-118."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS Nova Cachoeirinha",
+   "ao_sul_da_via": "Avenida Estados Unidos",
+   "motivo": "Secretaria (2026-10-29): ao sul do final da Avenida Estados Unidos, o território é da UBS Nova Cachoeirinha. Ao norte da avenida segue com a ESF Canarinho."
+  },
+  {
+   "de": "UBS Nova Cachoeirinha",
+   "para": "ESF Canarinho",
+   "caixa": [
+    -29.8998,
+    -51.075,
+    -29.8975,
+    -51.066
+   ],
+   "ao_leste_da_via": "Avenida Espírito Santo",
+   "motivo": "Secretaria (2026-10-29): a leste da Avenida Espírito Santo, da Avenida Estados Unidos até os campos de futebol, o território é da ESF Canarinho."
   }
  ]
 }

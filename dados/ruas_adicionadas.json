@@ -28,6 +28,14 @@
     "Rua Oliveira Vieira Aguiar"
    ],
    "motivo": "Secretaria (2026-10-27): via dentro do trecho transferido (entre a Avenida da Federação, a Estrada dos Capistranos e a RS-118) que não constava de nenhuma lista de abrangência."
+  },
+  {
+   "unidade": "ESF José Ari da Silveira",
+   "ruas": [
+    "Rua Guarujá",
+    "Rua Tiarajú"
+   ],
+   "motivo": "Secretaria (2026-10-29): as duas vias, na Vista Alegre, são de abrangência da ESF José Ari da Silveira."
   }
  ]
 }

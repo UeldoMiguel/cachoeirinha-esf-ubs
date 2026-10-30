@@ -2,7 +2,7 @@
  "type": "FeatureCollection",
  "name": "Áreas de ESF — Cachoeirinha/RS",
  "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
- "gerado_em": "2026-10-27",
+ "gerado_em": "2026-10-29",
  "features": [
   {
    "type": "Feature",
@@ -228,8 +228,8 @@
     "codigos": [
      "ESF-CANARINHO"
     ],
-    "descricao": "Território de abrangência da ESF Canarinho, com 69 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 69,
+    "descricao": "Território de abrangência da ESF Canarinho, com 74 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 74,
     "ruas": [
      "- Antenas:",
      "- Loteamento Chico Mendes:",
@@ -279,8 +279,11 @@
      "Rua Coruja",
      "Rua D",
      "Rua E",
+     "Rua Espanha",
+     "Rua França",
      "Rua G",
      "Rua H",
+     "Rua Holanda",
      "Rua Inglaterra",
      "Rua Italia",
      "Rua Martim Pescador",
@@ -288,10 +291,12 @@
      "Rua Mário Quintana",
      "Rua Pintassilgo",
      "Rua Polonia",
+     "Rua Romenia",
      "Rua Saracura",
      "Rua Suiça",
      "Rua Tangará",
      "Rua Tesourinha",
+     "Rua Áustria",
      "Suíça (586 a 1004)",
      "Travessa Maciel (35 a 80)",
      "Travessa Monte Claro (30 a 50)",
@@ -308,136 +313,190 @@
     "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde."
    },
    "geometry": {
-    "type": "Polygon",
+    "type": "MultiPolygon",
     "coordinates": [
      [
       [
-       -51.06563,
-       -29.89556
-      ],
+       [
+        -51.0665,
+        -29.90001
+       ],
+       [
+        -51.0687,
+        -29.90052
+       ],
+       [
+        -51.07082,
+        -29.90125
+       ],
+       [
+        -51.07215,
+        -29.90174
+       ],
+       [
+        -51.0726,
+        -29.90189
+       ],
+       [
+        -51.0726,
+        -29.90182
+       ],
+       [
+        -51.07011,
+        -29.90095
+       ],
+       [
+        -51.06869,
+        -29.90048
+       ],
+       [
+        -51.0671,
+        -29.90008
+       ],
+       [
+        -51.06547,
+        -29.89975
+       ],
+       [
+        -51.06547,
+        -29.89983
+       ],
+       [
+        -51.0665,
+        -29.90003
+       ],
+       [
+        -51.0665,
+        -29.90001
+       ]
+      ]
+     ],
+     [
       [
-       -51.06558,
-       -29.8958
-      ],
-      [
-       -51.06547,
-       -29.89984
-      ],
-      [
-       -51.06525,
-       -29.9007
-      ],
-      [
-       -51.06479,
-       -29.902
-      ],
-      [
-       -51.0665,
-       -29.902
-      ],
-      [
-       -51.0665,
-       -29.90001
-      ],
-      [
-       -51.0687,
-       -29.90052
-      ],
-      [
-       -51.07082,
-       -29.90125
-      ],
-      [
-       -51.0726,
-       -29.9019
-      ],
-      [
-       -51.0726,
-       -29.89866
-      ],
-      [
-       -51.0719,
-       -29.89832
-      ],
-      [
-       -51.0726,
-       -29.89731
-      ],
-      [
-       -51.0726,
-       -29.88971
-      ],
-      [
-       -51.0737,
-       -29.88972
-      ],
-      [
-       -51.07447,
-       -29.88966
-      ],
-      [
-       -51.07343,
-       -29.88775
-      ],
-      [
-       -51.07057,
-       -29.88905
-      ],
-      [
-       -51.06973,
-       -29.88943
-      ],
-      [
-       -51.06959,
-       -29.88955
-      ],
-      [
-       -51.06841,
-       -29.89007
-      ],
-      [
-       -51.06737,
-       -29.89059
-      ],
-      [
-       -51.0665,
-       -29.89103
-      ],
-      [
-       -51.0665,
-       -29.89097
-      ],
-      [
-       -51.06645,
-       -29.891
-      ],
-      [
-       -51.06633,
-       -29.89113
-      ],
-      [
-       -51.06623,
-       -29.89129
-      ],
-      [
-       -51.06588,
-       -29.89129
-      ],
-      [
-       -51.0659,
-       -29.89147
-      ],
-      [
-       -51.06588,
-       -29.8923
-      ],
-      [
-       -51.06605,
-       -29.89441
-      ],
-      [
-       -51.06563,
-       -29.89556
+       [
+        -51.07226,
+        -29.89975
+       ],
+       [
+        -51.0726,
+        -29.89975
+       ],
+       [
+        -51.0726,
+        -29.89866
+       ],
+       [
+        -51.07226,
+        -29.89849
+       ],
+       [
+        -51.07226,
+        -29.8978
+       ],
+       [
+        -51.0726,
+        -29.89731
+       ],
+       [
+        -51.0726,
+        -29.88971
+       ],
+       [
+        -51.0737,
+        -29.88972
+       ],
+       [
+        -51.07447,
+        -29.88966
+       ],
+       [
+        -51.07343,
+        -29.88775
+       ],
+       [
+        -51.07057,
+        -29.88905
+       ],
+       [
+        -51.06973,
+        -29.88943
+       ],
+       [
+        -51.06959,
+        -29.88955
+       ],
+       [
+        -51.06841,
+        -29.89007
+       ],
+       [
+        -51.06737,
+        -29.89059
+       ],
+       [
+        -51.0665,
+        -29.89103
+       ],
+       [
+        -51.0665,
+        -29.89097
+       ],
+       [
+        -51.06645,
+        -29.891
+       ],
+       [
+        -51.06633,
+        -29.89113
+       ],
+       [
+        -51.06623,
+        -29.89129
+       ],
+       [
+        -51.06588,
+        -29.89129
+       ],
+       [
+        -51.0659,
+        -29.89147
+       ],
+       [
+        -51.06588,
+        -29.8923
+       ],
+       [
+        -51.06605,
+        -29.89441
+       ],
+       [
+        -51.06563,
+        -29.89556
+       ],
+       [
+        -51.06558,
+        -29.8958
+       ],
+       [
+        -51.06547,
+        -29.89975
+       ],
+       [
+        -51.066,
+        -29.89975
+       ],
+       [
+        -51.066,
+        -29.8998
+       ],
+       [
+        -51.07226,
+        -29.8998
+       ],
+       [
+        -51.07226,
+        -29.89975
+       ]
       ]
      ]
     ]
@@ -453,12 +512,9 @@
     "codigos": [
      "ESF-JOSE-ARI-DA-SILVEIRA"
     ],
-    "descricao": "Território de abrangência da ESF José Ari da Silveira, com 45 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 45,
+    "descricao": "Território de abrangência da ESF José Ari da Silveira, com 44 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 44,
     "ruas": [
-     "==================================",
-     "==================================",
-     "==================================",
      "==================================",
      "Alameda Serafim",
      "Av. José Brambila (1589-2689 lado impar)",
@@ -475,6 +531,7 @@
      "Rua Ceará (5-280)",
      "Rua Fernando de Noronha",
      "Rua Goiás (16-797)",
+     "Rua Guarujá",
      "Rua Guarujá (253-343)",
      "Rua Maranhão (29-261)",
      "Rua Maranhão (45-650)",
@@ -493,6 +550,7 @@
      "Rua São João (382-686)",
      "Rua São Salvador (23-196)",
      "Rua São Salvador (308-586)",
+     "Rua Tiarajú",
      "Tv. Acre (12-174)",
      "Tv. Amizade",
      "Tv. Goiás",

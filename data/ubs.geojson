@@ -2,7 +2,7 @@
  "type": "FeatureCollection",
  "name": "Áreas de UBS — Cachoeirinha/RS",
  "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
- "gerado_em": "2026-10-27",
+ "gerado_em": "2026-10-29",
  "features": [
   {
    "type": "Feature",
@@ -4702,8 +4702,8 @@
     "codigos": [
      "UBS-NOVA-CACHOEIRINHA"
     ],
-    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 38 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 38,
+    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 40 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 40,
     "ruas": [
      "Av. Espirito Santo",
      "Av. Estados Unidos",
@@ -4711,6 +4711,7 @@
      "Av. Manoel Inacio Nunes",
      "Beco da Servidão",
      "Estrada dos Capistranos",
+     "Noruega",
      "Rua Bolivia",
      "Rua Canada",
      "Rua Dinamarca",
@@ -4739,6 +4740,7 @@
      "Rua Tangará",
      "Rua Uruguai",
      "Rua Áustria",
+     "Travessa Suiça A e B",
      "Tv. Rio Grande Do Sul",
      "Tv. Santos",
      "Tv. do Arvoredo",
@@ -4754,6 +4756,10 @@
     "coordinates": [
      [
       [
+       [
+        -51.06308,
+        -29.90619
+       ],
        [
         -51.06331,
         -29.90657
@@ -4875,8 +4881,12 @@
         -29.89731
        ],
        [
-        -51.0719,
-        -29.89832
+        -51.07226,
+        -29.8978
+       ],
+       [
+        -51.07226,
+        -29.89849
        ],
        [
         -51.0726,
@@ -4884,7 +4894,51 @@
        ],
        [
         -51.0726,
-        -29.9019
+        -29.89975
+       ],
+       [
+        -51.07226,
+        -29.89975
+       ],
+       [
+        -51.07226,
+        -29.8998
+       ],
+       [
+        -51.066,
+        -29.8998
+       ],
+       [
+        -51.066,
+        -29.89975
+       ],
+       [
+        -51.06547,
+        -29.89975
+       ],
+       [
+        -51.0671,
+        -29.90008
+       ],
+       [
+        -51.06869,
+        -29.90048
+       ],
+       [
+        -51.07011,
+        -29.90095
+       ],
+       [
+        -51.0726,
+        -29.90182
+       ],
+       [
+        -51.0726,
+        -29.90189
+       ],
+       [
+        -51.07215,
+        -29.90174
        ],
        [
         -51.07082,
@@ -4900,7 +4954,19 @@
        ],
        [
         -51.0665,
-        -29.902
+        -29.90003
+       ],
+       [
+        -51.06547,
+        -29.89983
+       ],
+       [
+        -51.06547,
+        -29.89984
+       ],
+       [
+        -51.06525,
+        -29.9007
        ],
        [
         -51.06479,
@@ -4917,10 +4983,6 @@
        [
         -51.06308,
         -29.90619
-       ],
-       [
-        -51.06331,
-        -29.90657
        ]
       ]
      ],
