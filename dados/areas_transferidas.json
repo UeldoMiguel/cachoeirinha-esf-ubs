@@ -118,6 +118,18 @@
    ],
    "ao_norte_da_via": "Avenida Estados Unidos",
    "motivo": "Secretaria (2026-10-30): a faixa entre a Avenida Estados Unidos e a divisa antiga da área, nas ruas Áustria, Noruega, Holanda e Romênia, é da ESF Canarinho. A área da unidade passa a chegar na própria avenida."
+  },
+  {
+   "de": "ESF José Ari da Silveira",
+   "para": "ESF Otacílio Silveira",
+   "caixa": [
+    -29.9145,
+    -51.078,
+    -29.9125,
+    -51.0735
+   ],
+   "ao_norte_da_via": "Avenida José Brambila",
+   "motivo": "Secretaria (2026-10-30): o trecho ao norte da Avenida José Brambila, entre o Beco Oriental e a esquina a leste, passa da ESF José Ari da Silveira para a ESF Otacílio Silveira."
   }
  ]
 }
