@@ -143,6 +143,18 @@
    "ao_leste_da_via": "Rua Guarujá",
    "ao_oeste_da_via": "Avenida São João",
    "motivo": "Secretaria (2026-10-30): o quarteirão entre a Rua Guarujá, a Avenida São João e a Rua Marte, com a Rua Tiarajú no meio, é da ESF José Ari da Silveira."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS Nova Cachoeirinha",
+   "caixa": [
+    -29.9035,
+    -51.08,
+    -29.893,
+    -51.072
+   ],
+   "ao_oeste_da_via": "Avenida Espírito Santo",
+   "motivo": "Secretaria (2026-10-30): a oeste da Avenida Espírito Santo, até a Avenida Estados Unidos, o território é da UBS Nova Cachoeirinha. A ESF Canarinho começa na avenida."
   }
  ]
 }
