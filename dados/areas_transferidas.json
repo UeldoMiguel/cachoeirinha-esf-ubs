@@ -161,6 +161,17 @@
    "para": "UBS Nova Cachoeirinha",
    "poligono": "Esporte Clube Nova Cachoeirinha",
    "motivo": "Secretaria (2026-10-30): o campo do Esporte Clube Nova Cachoeirinha é da UBS Nova Cachoeirinha."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS Nova Cachoeirinha",
+   "caixa": [
+    -29.89836,
+    -51.09,
+    -29.88,
+    -51.06
+   ],
+   "motivo": "Secretaria (2026-10-30): do campo do Esporte Clube Nova Cachoeirinha para o norte, até a Rua B — o Arroio Águas Mortas e o campo —, o território é da UBS Nova Cachoeirinha."
   }
  ]
 }
