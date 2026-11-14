@@ -163,18 +163,6 @@
    "ao_oeste_da_via": "Avenida Espírito Santo",
    "ao_leste_da_via": "Rua Juscelino Kubitschek de Oliveira",
    "motivo": "Secretaria (2026-11-14): o lado par da Rua Espírito Santo — ao norte da Avenida Estados Unidos, a oeste da Espírito Santo e até a Rua Juscelino Kubitschek de Oliveira — é da UBS Nova Cachoeirinha."
-  },
-  {
-   "de": "ESF Canarinho",
-   "para": "UBS Nova Cachoeirinha",
-   "caixa": [
-    -29.89924,
-    -51.08,
-    -29.885,
-    -51.06
-   ],
-   "ao_sul_da_via": "Arroio Águas Mortas",
-   "motivo": "Secretaria (2026-11-14): do final da Rua Manoel Inácio Nunes até o Arroio Águas Mortas, o território é da UBS Nova Cachoeirinha."
   }
  ]
 }
