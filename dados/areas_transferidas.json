@@ -218,6 +218,12 @@
     -51.0652
    ],
    "motivo": "Secretaria (2026-11-14): a Rua Suíça ao norte da Avenida Estados Unidos e suas transversais — Travessa Santos e Travessa Monte Claro — são área da ESF Canarinho."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS Nova Cachoeirinha",
+   "ao_sul_da_via": "Avenida Estados Unidos",
+   "motivo": "Secretaria (2026-11-14): entre a Rua Polônia e a Avenida Marechal Rondon, a borda ao sul da Avenida Estados Unidos é da UBS Nova Cachoeirinha. A regra vale para toda a avenida: a ESF Canarinho não passa para o lado sul. Entra por último, depois das transferências que devolvem área à Canarinho, para a divisa não voltar a cruzar a pista."
   }
  ]
 }
