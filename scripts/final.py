@@ -80,6 +80,12 @@ try:
 except (IOError,OSError,ValueError):
     INATIVAS={}
 
+# linhas nomeadas que não são via de trânsito (dados/osm_linhas_nomeadas.json)
+try:
+    LINHAS_NOMEADAS=json.load(open('osm_linhas_nomeadas.json',encoding='utf-8'))['linhas']
+except (IOError,OSError,ValueError,KeyError):
+    LINHAS_NOMEADAS={}
+
 # polígonos nomeados do OpenStreetMap, usados como limite de território
 try:
     POLIS=json.load(open('osm_poligonos.json',encoding='utf-8'))['poligonos']
@@ -493,6 +499,10 @@ if TRANSF:
         oeste), que é a borda daquele lado."""
         partes=[[(x,y) for x,y in lin['linhas'][i]]
                 for i in lin['porNome'].get(nome,[]) if len(lin['linhas'][i])>1]
+        if not partes and nome in LINHAS_NOMEADAS:
+            # arroio, ferrovia: limite que não é via de trânsito e por isso
+            # não está no índice da malha viária
+            partes=[[(x,y) for x,y in LINHAS_NOMEADAS[nome]]]
         if not partes: return None
         pts=[q for parte in partes for q in parte]
         eixo=0 if lado in ('norte','sul') else 1
