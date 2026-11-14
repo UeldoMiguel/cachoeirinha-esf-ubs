@@ -7,7 +7,8 @@
     "Rua Espírito Santo, nº 1900 — ponto sobre o traçado, 167 m ao norte da última quadra numerada do CNEFE 2022 (1595-1731), no mesmo passo de numeração daquela quadra",
     "Ponta norte da Rua Manoel Inácio Nunes (OpenStreetMap)",
     "Ponta norte da Rua Canadá (OpenStreetMap)",
-    "Ponta norte da Rua França (OpenStreetMap)"
+    "Ponta norte da Rua França (OpenStreetMap)",
+    "Ponto 40 m ao norte da sede da ESF Canarinho (Rua Espanha, 821), para a unidade continuar dentro do próprio território"
    ],
    "pontos": [
     [
@@ -25,6 +26,10 @@
     [
      -51.07189,
      -29.89899
+    ],
+    [
+     -51.07112,
+     -29.89795
     ]
    ]
   }

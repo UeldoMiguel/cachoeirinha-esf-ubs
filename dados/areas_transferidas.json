@@ -189,7 +189,13 @@
    "para": "UBS Nova Cachoeirinha",
    "ao_norte_da_via": "Linha Espírito Santo 1900 – Manoel Inácio Nunes – Canadá – França",
    "ao_sul_da_via": "Arroio Águas Mortas",
-   "motivo": "Secretaria (2026-11-14): da linha que liga o nº 1900 da Rua Espírito Santo às pontas das Ruas Manoel Inácio Nunes, Canadá e França, até o Arroio Águas Mortas, o território é da UBS Nova Cachoeirinha."
+   "motivo": "Secretaria (2026-11-14): da linha que liga o nº 1900 da Rua Espírito Santo às pontas das Ruas Manoel Inácio Nunes, Canadá e França até o Arroio Águas Mortas, o território é da UBS Nova Cachoeirinha. A oeste a área vai até o campo do Esporte Clube Canarinho, sem incluí-lo, e a linha passa ao norte da sede da ESF Canarinho, que fica na própria área.",
+   "caixa": [
+    -29.9,
+    -51.07139,
+    -29.89,
+    -51.06
+   ]
   }
  ]
 }
