@@ -86,6 +86,14 @@ try:
 except (IOError,OSError,ValueError,KeyError):
     LINHAS_NOMEADAS={}
 
+# linhas traçadas pela Secretaria entre pontos de referência nomeados
+# (dados/linhas_tracadas.json): servem de limite onde não há rua nem curso
+# d'água, e cada ponta fica registrada no próprio arquivo
+try:
+    LINHAS_TRACADAS=json.load(open('linhas_tracadas.json',encoding='utf-8'))['linhas']
+except (IOError,OSError,ValueError,KeyError):
+    LINHAS_TRACADAS={}
+
 # polígonos nomeados do OpenStreetMap, usados como limite de território
 try:
     POLIS=json.load(open('osm_poligonos.json',encoding='utf-8'))['poligonos']
@@ -503,6 +511,10 @@ if TRANSF:
             # arroio, ferrovia: limite que não é via de trânsito e por isso
             # não está no índice da malha viária
             partes=[[(x,y) for x,y in LINHAS_NOMEADAS[nome]]]
+        if not partes and nome in LINHAS_TRACADAS:
+            # linha traçada entre pontos de referência, quando a divisa que a
+            # Secretaria descreve não corre por nenhuma feição do mapa
+            partes=[[(x,y) for x,y in LINHAS_TRACADAS[nome]['pontos']]]
         if not partes: return None
         pts=[q for parte in partes for q in parte]
         eixo=0 if lado in ('norte','sul') else 1
@@ -568,8 +580,14 @@ if TRANSF:
             vai=so_poligonos(seu.intersection(molde)); fica=so_poligonos(seu.difference(molde))
             if vai.is_empty:
                 print('nada a mover: %s não tem área em %s' % (t['de'],' + '.join(rotulo))); continue
-            qs=[q for q in (fica.geoms if fica.geom_type=='MultiPolygon' else [fica])
-                if q.area>2000/(111320.0**2)]
+            inteiras=list(fica.geoms) if fica.geom_type=='MultiPolygon' else [fica]
+            qs=[q for q in inteiras if q.area>2000/(111320.0**2)]
+            # o que sobra em tiras de menos de 2.000 m2 não some do mapa: vai
+            # junto para a unidade de destino, senão abre vazio sem unidade
+            migalhas=[q for q in inteiras if q not in qs and not q.is_empty]
+            if migalhas:
+                vai=unary_union([vai]+migalhas)
+                print('  %d sobra(s) de menos de 2.000 m2 foram junto, para não abrir vazio' % len(migalhas))
             if not qs:
                 print('o corte pega a área inteira de %s, ignorado' % t['de']); continue
             guarda(origem,qs)

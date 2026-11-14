@@ -183,6 +183,13 @@
    "ao_norte_da_via": "Arroio Águas Mortas",
    "ao_sul_da_via": "Rua B",
    "motivo": "Secretaria (2026-11-14): o trecho entre a Rua Espírito Santo ao norte do Arroio Águas Mortas, o próprio arroio e a Rua B é da UBS Nova Cachoeirinha."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS Nova Cachoeirinha",
+   "ao_norte_da_via": "Linha Espírito Santo 1900 – Manoel Inácio Nunes – Canadá – França",
+   "ao_sul_da_via": "Arroio Águas Mortas",
+   "motivo": "Secretaria (2026-11-14): da linha que liga o nº 1900 da Rua Espírito Santo às pontas das Ruas Manoel Inácio Nunes, Canadá e França, até o Arroio Águas Mortas, o território é da UBS Nova Cachoeirinha."
   }
  ]
 }

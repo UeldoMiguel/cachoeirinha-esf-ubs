@@ -1,0 +1,32 @@
+{
+ "_fonte": "Linhas traçadas pela Secretaria Municipal de Saúde de Cachoeirinha/RS entre pontos de referência, para divisas que não correm por nenhuma feição do mapa.",
+ "_como_funciona": "Cada linha vale como via nos critérios \"ao <lado> da via\" das transferências. Os pontos são calculados a partir das referências listadas em \"ancoras\", não desenhados a olho.",
+ "linhas": {
+  "Linha Espírito Santo 1900 – Manoel Inácio Nunes – Canadá – França": {
+   "ancoras": [
+    "Rua Espírito Santo, nº 1900 — ponto sobre o traçado, 167 m ao norte da última quadra numerada do CNEFE 2022 (1595-1731), no mesmo passo de numeração daquela quadra",
+    "Ponta norte da Rua Manoel Inácio Nunes (OpenStreetMap)",
+    "Ponta norte da Rua Canadá (OpenStreetMap)",
+    "Ponta norte da Rua França (OpenStreetMap)"
+   ],
+   "pontos": [
+    [
+     -51.07473,
+     -29.89811
+    ],
+    [
+     -51.07335,
+     -29.89924
+    ],
+    [
+     -51.07262,
+     -29.899
+    ],
+    [
+     -51.07189,
+     -29.89899
+    ]
+   ]
+  }
+ }
+}
