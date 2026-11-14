@@ -731,8 +731,8 @@
     "codigos": [
      "UBS-CAIC-GRANJA"
     ],
-    "descricao": "Território de abrangência da UBS CAIC Granja, com 231 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 231,
+    "descricao": "Território de abrangência da UBS CAIC Granja, com 237 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 237,
     "ruas": [
      "Acesso 01",
      "Acesso 02",
@@ -765,6 +765,7 @@
      "Rainha do Mar",
      "República Piratini",
      "Rogério da Silva Oliveira",
+     "Rua 1",
      "Rua 22",
      "Rua 25",
      "Rua 27",
@@ -799,6 +800,7 @@
      "Rua 83",
      "Rua 86",
      "Rua 87",
+     "Rua A",
      "Rua Adelaide Helegda Rolim De Moura",
      "Rua Adriano dos Santos",
      "Rua Adão José Hass",
@@ -842,6 +844,7 @@
      "Rua Deli Silveira Nunes",
      "Rua Dep. Dorival C. L. De Oliveira",
      "Rua Diamante",
+     "Rua Dom Pedro I",
      "Rua Dona Isaura",
      "Rua Dona Palmira",
      "Rua Dormideira",
@@ -898,8 +901,10 @@
      "Rua Juan Albino Nunez Ayala",
      "Rua Juscelino K. De Oliveira",
      "Rua Juscelino Kubitschek de Oliveira",
+     "Rua K",
      "Rua Kaufmann",
      "Rua Larimar",
+     "Rua Lateral da ERS-118",
      "Rua Lavanda",
      "Rua Leonel Mafassioli",
      "Rua Lotario Orlando Maciel Martijosé",
@@ -964,7 +969,8 @@
      "Rua Íris Azul",
      "Salinas",
      "Travessa da Ponte",
-     "Tv. Ávila"
+     "Tv. Ávila",
+     "Viaduto sobre ERS-118"
     ],
     "endereco": "Rua Jardim das Flores, s/n",
     "telefone": "(51) 3074-5572",
@@ -2444,8 +2450,8 @@
     "codigos": [
      "UBS-COHAB"
     ],
-    "descricao": "Território de abrangência da UBS COHAB, com 72 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 72,
+    "descricao": "Território de abrangência da UBS COHAB, com 71 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 71,
     "ruas": [
      "Av. Frederico Augusto Ritter",
      "Av. Mario T. Haussem",
@@ -2496,7 +2502,6 @@
      "Rua João de Azevedo Barbosa Filho",
      "Rua Lidio Batista Soares",
      "Rua Luiz Pasteur",
-     "Rua Major Antônio Silveira de Lima",
      "Rua Maloha Haussem",
      "Rua Manoel P. Pinto",
      "Rua Novo Hamburgo",
@@ -4742,8 +4747,8 @@
     "codigos": [
      "UBS-NOVA-CACHOEIRINHA"
     ],
-    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 47 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 47,
+    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 54 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 54,
     "ruas": [
      "Av. Espirito Santo",
      "Av. Estados Unidos",
@@ -4756,6 +4761,9 @@
      "Espírito Santo (1458 ao 1730 lado par)",
      "Espírito Santo (1930 ao 2400)",
      "Estrada dos Capistranos",
+     "Rua 1",
+     "Rua A",
+     "Rua B",
      "Rua Bolivia",
      "Rua Canada",
      "Rua Dinamarca",
@@ -4774,6 +4782,7 @@
      "Rua Iugoslavia",
      "Rua Jamaica",
      "Rua José Rodrigues",
+     "Rua Lateral da ERS-118",
      "Rua Minas Gerais",
      "Rua Mário Quintana",
      "Rua N. Belgica",
@@ -4786,8 +4795,11 @@
      "Rua Tangará",
      "Rua Uruguai",
      "Rua Áustria",
+     "Travessa A",
+     "Travessa Monte Claro",
      "Travessa Suiça A e B",
      "Turquia",
+     "Tv. B",
      "Tv. Rio Grande Do Sul",
      "Tv. Santos",
      "Tv. do Arvoredo",

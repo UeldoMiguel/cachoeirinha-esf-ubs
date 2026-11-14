@@ -228,8 +228,8 @@
     "codigos": [
      "ESF-CANARINHO"
     ],
-    "descricao": "Território de abrangência da ESF Canarinho, com 79 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 79,
+    "descricao": "Território de abrangência da ESF Canarinho, com 84 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 84,
     "ruas": [
      "- Antenas:",
      "- Loteamento Chico Mendes:",
@@ -272,6 +272,7 @@
      "Quero-quero",
      "RS 118 (11438 a 11676)",
      "Romênia (205 a 533)",
+     "Rua 1",
      "Rua A",
      "Rua Aracuã",
      "Rua Azulão",
@@ -292,6 +293,7 @@
      "Rua H",
      "Rua Inglaterra",
      "Rua Italia",
+     "Rua Lateral da ERS-118",
      "Rua Martim Pescador",
      "Rua Maçanico",
      "Rua Mário Quintana",
@@ -303,7 +305,10 @@
      "Rua Tesourinha",
      "Rua Áustria",
      "Suíça (586 a 1004)",
+     "Travessa A",
+     "Travessa B",
      "Travessa Maciel (35 a 80)",
+     "Travessa Monte Claro",
      "Travessa Monte Claro (30 a 50)",
      "Travessa Santos (10 a 30)",
      "Travessa Suiça A e B",

@@ -95,14 +95,6 @@
   "distancia_m": 53,
   "por_nome": false
  },
- "UBS Getúlio Vargas": {
-  "endereco": "Rua Dom João VI, 188",
-  "bairro": "Vista Alegre",
-  "cep": "94945160",
-  "estabelecimento": "POSTO MUNICIPAL DE SAUDE",
-  "distancia_m": 30,
-  "por_nome": false
- },
  "UBS Nova Cachoeirinha": {
   "endereco": "Rua Eldorado, 260",
   "bairro": "Nova Cachoeirinha",

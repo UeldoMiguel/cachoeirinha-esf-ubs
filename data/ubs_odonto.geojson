@@ -704,7 +704,7 @@
      "UBS-COHAB"
     ],
     "descricao": "Território atendido em conjunto por UBS Décio Martins Costa e UBS COHAB.",
-    "ruas_cadastradas": 147,
+    "ruas_cadastradas": 146,
     "ruas": [
      "Av Delfin Moreira",
      "Av. Beira-Rio",
@@ -799,7 +799,6 @@
      "Rua Luiz Cardoso",
      "Rua Luiz Pasteur",
      "Rua Lupicínio Rodrigues",
-     "Rua Major Antônio Silveira de Lima",
      "Rua Mal. Hermes Da Fonseca",
      "Rua Maloha Haussem",
      "Rua Manoel P. Pinto",
@@ -1918,7 +1917,7 @@
      "UBS-JARDIM-DO-BOSQUE"
     ],
     "descricao": "Território atendido em conjunto por UBS CAIC Granja e UBS Jardim do Bosque.",
-    "ruas_cadastradas": 340,
+    "ruas_cadastradas": 345,
     "ruas": [
      "1.4 – Júlio",
      "Acesso 01",
@@ -2019,6 +2018,7 @@
      "Rua 86",
      "Rua 87",
      "Rua 9",
+     "Rua A",
      "Rua Abacateiro",
      "Rua Abraão Lincoln",
      "Rua Acácia",
@@ -2093,6 +2093,7 @@
      "Rua Deli Silveira Nunes",
      "Rua Dep. Dorival C. L. De Oliveira",
      "Rua Diamante",
+     "Rua Dom Pedro I",
      "Rua Dona Isaura",
      "Rua Dona Palmira",
      "Rua Dormideira",
@@ -2174,8 +2175,10 @@
      "Rua Julio De Castilhos",
      "Rua Juscelino K. De Oliveira",
      "Rua Juscelino Kubitschek de Oliveira",
+     "Rua K",
      "Rua Kaufmann",
      "Rua Larimar",
+     "Rua Lateral da ERS-118",
      "Rua Lavanda",
      "Rua Lenine Queiroz",
      "Rua Leonel Mafassioli",
@@ -2259,7 +2262,8 @@
      "Salinas",
      "Travessa da Ponte",
      "Tv. Liberdade",
-     "Tv. Ávila"
+     "Tv. Ávila",
+     "Viaduto sobre ERS-118"
     ],
     "unidades": [
      {
@@ -4286,8 +4290,8 @@
     "codigos": [
      "UBS-NOVA-CACHOEIRINHA"
     ],
-    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 47 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 47,
+    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 54 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 54,
     "ruas": [
      "Av. Espirito Santo",
      "Av. Estados Unidos",
@@ -4300,6 +4304,9 @@
      "Espírito Santo (1458 ao 1730 lado par)",
      "Espírito Santo (1930 ao 2400)",
      "Estrada dos Capistranos",
+     "Rua 1",
+     "Rua A",
+     "Rua B",
      "Rua Bolivia",
      "Rua Canada",
      "Rua Dinamarca",
@@ -4318,6 +4325,7 @@
      "Rua Iugoslavia",
      "Rua Jamaica",
      "Rua José Rodrigues",
+     "Rua Lateral da ERS-118",
      "Rua Minas Gerais",
      "Rua Mário Quintana",
      "Rua N. Belgica",
@@ -4330,8 +4338,11 @@
      "Rua Tangará",
      "Rua Uruguai",
      "Rua Áustria",
+     "Travessa A",
+     "Travessa Monte Claro",
      "Travessa Suiça A e B",
      "Turquia",
+     "Tv. B",
      "Tv. Rio Grande Do Sul",
      "Tv. Santos",
      "Tv. do Arvoredo",

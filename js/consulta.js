@@ -35,9 +35,11 @@
   /* Normalização de nome de via — a mesma do processamento em Python, para
      "R. 31 de Março", "Rua Trinta e Um de Março" e "rua 31 de marco" caírem
      na mesma chave. */
-  var TIPOS = { rua: 1, r: 1, avenida: 1, av: 1, travessa: 1, trav: 1, tv: 1, beco: 1, bc: 1,
-    estrada: 1, est: 1, praca: 1, pc: 1, alameda: 1, al: 1, rodovia: 1, rod: 1, largo: 1,
-    via: 1, viela: 1, passagem: 1, linha: 1, servidao: 1, esquina: 1 };
+  /* o valor e a forma canonica do tipo: "Tv." e "Travessa" dao a mesma chave */
+  var TIPOS = { rua: 'r', r: 'r', avenida: 'av', av: 'av', travessa: 'tv', trav: 'tv', tv: 'tv',
+    beco: 'bc', bc: 'bc', estrada: 'est', est: 'est', praca: 'pc', pc: 'pc', alameda: 'al',
+    al: 'al', rodovia: 'rod', rod: 'rod', largo: 'lg', via: 'via', viela: 'vl',
+    passagem: 'pss', linha: 'lnh', servidao: 'srv', esquina: 'esq' };
   var ABREV = { sto: 'santo', sta: 'santa', s: 'sao', sao: 'sao', dr: 'doutor', dra: 'doutora',
     prof: 'professor', profa: 'professora', pe: 'padre', cel: 'coronel', gal: 'general',
     gen: 'general', cap: 'capitao', ten: 'tenente', sgt: 'sargento', mal: 'marechal',
@@ -54,7 +56,13 @@
     s = String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
     s = s.replace(/,.*$/, ' ').replace(/\bn[º°ro]*\.?\s*\d+/g, ' ').replace(/[^a-z0-9 ]/g, ' ');
     var t = s.split(/\s+/).filter(Boolean);
-    if (t.length && TIPOS[t[0]]) t = t.slice(1);
+    /* "Travessa A" e "Rua A" sao vias diferentes: quando sobra so uma letra
+       ou um numero de ate dois digitos, o tipo e a unica coisa que distingue,
+       e entao ele fica, na forma canonica */
+    if (t.length && TIPOS[t[0]]) {
+      if (t.length > 2 || (t[1] || '').length > 2) t = t.slice(1);
+      else t = [TIPOS[t[0]]].concat(t.slice(1));
+    }
     t = t.map(function (x) { return ABREV[x] || x; }).filter(function (x) { return !STOP[x]; });
     t = t.map(function (x) { return /^\d+$/.test(x) ? String(parseInt(x, 10)) : (NUM[x] || x); });
     var o = [];

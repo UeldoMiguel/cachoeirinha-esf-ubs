@@ -11,7 +11,13 @@ def norm(s):
     s=strip_acc(str(s)).lower()
     s=re.sub(r'[^a-z0-9 ]',' ',s)
     toks=[t for t in s.split() if t]
-    if toks and toks[0] in TIPOS: toks=toks[1:]
+    if toks and toks[0] in TIPOS:
+        resto=toks[1:]
+        # "Travessa A" e "Rua A" sao vias diferentes: quando sobra so uma
+        # letra ou um numero de ate dois digitos, o tipo e a unica coisa que
+        # distingue uma da outra, entao ele fica
+        if len(resto)>1 or (resto and len(resto[0])>2): toks=resto
+        else: toks=[TIPOS[toks[0]]]+resto      # "Tv. I" e "Travessa I" viram a mesma chave
     toks=[ABREV.get(t,t) for t in toks]
     toks=[t for t in toks if t not in ('de','da','do','das','dos','e','no','na')]
     toks=[str(int(t)) if t.isdigit() else t for t in toks]
