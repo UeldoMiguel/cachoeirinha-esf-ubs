@@ -175,6 +175,14 @@
    ],
    "ao_sul_da_via": "Arroio Águas Mortas",
    "motivo": "Secretaria (2026-11-14): o trecho entre o campo do Havai FC e o do Esporte Clube Canarinho, do final da Rua Canadá até o Arroio Águas Mortas, é da UBS Nova Cachoeirinha."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS Nova Cachoeirinha",
+   "ao_leste_da_via": "Avenida Espírito Santo",
+   "ao_norte_da_via": "Arroio Águas Mortas",
+   "ao_sul_da_via": "Rua B",
+   "motivo": "Secretaria (2026-11-14): o trecho entre a Rua Espírito Santo ao norte do Arroio Águas Mortas, o próprio arroio e a Rua B é da UBS Nova Cachoeirinha."
   }
  ]
 }
