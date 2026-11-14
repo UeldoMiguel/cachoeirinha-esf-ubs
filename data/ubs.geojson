@@ -4738,14 +4738,15 @@
     "codigos": [
      "UBS-NOVA-CACHOEIRINHA"
     ],
-    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 42 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 42,
+    "descricao": "Território de abrangência da UBS Nova Cachoeirinha, com 43 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 43,
     "ruas": [
      "Av. Espirito Santo",
      "Av. Estados Unidos",
      "Av. Mal. Rondon",
      "Av. Manoel Inacio Nunes",
      "Beco da Servidão",
+     "Condomínio Reserva Vila Paraíso",
      "Espírito Santo (1458 ao 1730 lado par)",
      "Estrada dos Capistranos",
      "Rua Bolivia",
