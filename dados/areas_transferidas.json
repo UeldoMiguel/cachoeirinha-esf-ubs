@@ -207,6 +207,17 @@
     -51.0674
    ],
    "motivo": "Secretaria (2026-11-14): a Rua Escócia e as Travessas A e B, transversais da Rua Suíça, são área da ESF Canarinho."
+  },
+  {
+   "de": "UBS Nova Cachoeirinha",
+   "para": "ESF Canarinho",
+   "caixa": [
+    -29.9002,
+    -51.068,
+    -29.8945,
+    -51.0652
+   ],
+   "motivo": "Secretaria (2026-11-14): a Rua Suíça ao norte da Avenida Estados Unidos e suas transversais — Travessa Santos e Travessa Monte Claro — são área da ESF Canarinho."
   }
  ]
 }
