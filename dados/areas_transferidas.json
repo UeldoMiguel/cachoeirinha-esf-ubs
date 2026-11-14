@@ -155,6 +155,14 @@
    "ao_leste_da_via": "Rua Guarujá",
    "ao_oeste_da_via": "Avenida São João",
    "motivo": "Secretaria (2026-10-30): o quarteirão entre a Rua Guarujá, a Avenida São João e a Rua Marte, com a Rua Tiarajú no meio, é da ESF José Ari da Silveira."
+  },
+  {
+   "de": "ESF Canarinho",
+   "para": "UBS Nova Cachoeirinha",
+   "ao_norte_da_via": "Avenida Estados Unidos",
+   "ao_oeste_da_via": "Avenida Espírito Santo",
+   "ao_leste_da_via": "Rua Juscelino Kubitschek de Oliveira",
+   "motivo": "Secretaria (2026-11-14): o lado par da Rua Espírito Santo — ao norte da Avenida Estados Unidos, a oeste da Espírito Santo e até a Rua Juscelino Kubitschek de Oliveira — é da UBS Nova Cachoeirinha."
   }
  ]
 }
