@@ -2,7 +2,7 @@
  "type": "FeatureCollection",
  "name": "Áreas de ESF — Cachoeirinha/RS",
  "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
- "gerado_em": "2026-10-30",
+ "gerado_em": "2026-11-14",
  "features": [
   {
    "type": "Feature",
@@ -228,8 +228,8 @@
     "codigos": [
      "ESF-CANARINHO"
     ],
-    "descricao": "Território de abrangência da ESF Canarinho, com 78 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 78,
+    "descricao": "Território de abrangência da ESF Canarinho, com 79 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 79,
     "ruas": [
      "- Antenas:",
      "- Loteamento Chico Mendes:",
@@ -252,6 +252,7 @@
      "Escócia",
      "Espanha (575 ao 921)",
      "Espírito Santo (1457 ao 1731)",
+     "Espírito Santo (até 1729 lado ímpar)",
      "Estados Unidos (da rua Espírito Santo até a Holanda, lado ímpar)",
      "Estados Unidos 3 a 165",
      "Estrada dos Capistranos",
