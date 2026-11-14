@@ -925,6 +925,11 @@ for e in idx:
     casadas+=1
 for e in idx:
     if len(e)==7: e.append(None)
+    elif e[7]:
+        # a consulta fica com a primeira faixa que casa, então a mais
+        # específica vem antes: quem diz o lado ganha de quem não diz, e,
+        # entre iguais, a faixa mais curta ganha da mais larga
+        e[7].sort(key=lambda f:(f[2]==0,f[1]-f[0]))
 print('verbetes com faixa: traçado amarrado em %d | faixas ligadas à rua-base: %d' % (amarrados,casadas))
 
 for a in areas: a.pop('_orig',None)
