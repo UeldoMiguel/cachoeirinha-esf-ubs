@@ -92,6 +92,14 @@
    ],
    "renomear": "Beco União",
    "motivo": "Secretaria (2026-10-30): o Beco União, ao norte da Avenida José Brambila, é da ESF Otacílio Silveira. Vinha da lista como verbete solto (\"- União:\") e estava na ESF Canarinho, do outro lado da cidade."
+  },
+  {
+   "unidade": "ESF Carlos Wilkens",
+   "ruas": [
+    "Travessa B"
+   ],
+   "renomear": "Travessa B",
+   "motivo": "Secretaria (2026-11-14): a Travessa B é a transversal da Rua Suíça, da ESF Canarinho. A única Travessa B do OpenStreetMap tem 64 m, começa a 30 m da área da ESF Canarinho e fica a 7,2 km da área da ESF Carlos Wilkens, que por isso sai deste verbete. Se houver outra Travessa B no território da Wilkens, ela não está mapeada e precisa de verbete próprio."
   }
  ]
 }
