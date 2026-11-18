@@ -2,7 +2,7 @@
  "type": "FeatureCollection",
  "name": "Áreas de ESF — Cachoeirinha/RS",
  "fonte": "Mapa colaborativo público \"Mapeamento unidades de saúde — Cachoeirinha\" (Google My Maps). Dado de trabalho, não é cadastro oficial da Secretaria Municipal de Saúde.",
- "gerado_em": "2026-11-14",
+ "gerado_em": "2026-11-18",
  "features": [
   {
    "type": "Feature",
@@ -14,10 +14,11 @@
     "codigos": [
      "ESF-JARDIM-BETANIA"
     ],
-    "descricao": "Território de abrangência da ESF Jardim Betânia, com 54 vias na lista de ruas da fonte.",
-    "ruas_cadastradas": 54,
+    "descricao": "Território de abrangência da ESF Jardim Betânia, com 56 vias na lista de ruas da fonte.",
+    "ruas_cadastradas": 56,
     "ruas": [
      "Albatroz",
+     "Aparício Borges",
      "Areias Brancas",
      "Armação",
      "Arroio Teixeira",
@@ -61,6 +62,7 @@
      "RS 118, 12780 (serraria)",
      "Rainha do Mar",
      "Rondinha",
+     "Rua Aparício Borges",
      "Salinas",
      "Sereia do Mar",
      "Sítio Ipiranga (fora de área)",

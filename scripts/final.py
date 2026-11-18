@@ -885,11 +885,16 @@ if RECORTES:
         if r.get('transferir_orfas_para'):
             herdeiro[r['unidade']]=r['transferir_orfas_para']
     indice_por_nome={a['n']:i for i,a in enumerate(areas)}
+    # inclusão escrita pela Secretaria manda mais que a poda automática: a via
+    # entrou de propósito, mesmo que o traçado caia fora do desenho da unidade
+    incluidas_mao={(add['unidade'],norm(r)) for add in ADICOES for r in add['ruas']}
     podadas=0; orfas=[]; transferidas={}
     for e in idx:
         novas=[]; perdeu=[]
         for ai in e[2]:
             nome=areas[ai]['n'] if ai<len(areas) else None
+            if (nome,e[0]) in incluidas_mao:
+                novas.append(ai); continue
             if nome in poligonos and not rua_na_area(e,poligonos[nome]):
                 podadas+=1; perdeu.append(nome); continue
             novas.append(ai)

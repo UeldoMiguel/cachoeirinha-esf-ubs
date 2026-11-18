@@ -81,6 +81,13 @@
     "Travessa Monte Claro"
    ],
    "motivo": "Secretaria (2026-11-14): vias de abrangência da ESF Canarinho que não constavam de nenhuma lista. A Rua 1 não está no OpenStreetMap e entra sem traçado; as Travessas A e B e a Monte Claro têm traçado."
+  },
+  {
+   "unidade": "ESF Jardim Betânia",
+   "ruas": [
+    "Rua Aparício Borges"
+   ],
+   "motivo": "Lista de ruas das ESF (Secretaria, 2026-11-17): a Rua Aparício Borges é de abrangência da ESF Jardim Betânia — Área 2. No índice ela constava só da UBS CAIC Granja, cujo território cobre o traçado."
   }
  ],
  "_como_funciona_remocoes": "Em remocoes, a unidade sai da abrangência daquela via; o verbete continua no índice, respondendo pelas outras unidades. Com \"renomear\", o verbete passa a aparecer com o nome indicado.",
